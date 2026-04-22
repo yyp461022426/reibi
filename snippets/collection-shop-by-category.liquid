@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="{{ 'collection-shop-by-category.css' | asset_url }}">
+{% assign blocks = section.blocks | where: 'type', 'collection_link' %}
+{% assign block = blocks[0] %}
+{% if block.settings.collection_list != blank %}
+  <div class="collections-link">
+    <div
+      class="collections-link-swiper line-dots swiper-one-line"
+      data-loader-script="{{ 'halo.slide-custom.js' | asset_url }}"
+      slide-custom-init
+      data-infinite="true"
+      data-mb-dots="true"
+      data-arrow-enable="true"
+      data-slides-to-show="5"
+      data-mb-slides-to-show="3"
+    >
+      {% for collection in block.settings.collection_list limit: 20 %}
+        {% assign collection_title = collection.title %}
+        {% assign collection_img = collection.metafields.custom.representative_product_image %}
+        {% if collection_img %}
+          <a class="swiper-item" href="{{ collection.url }}">
+            {{ collection_img | image_url: width: '200' | image_tag: class: 'item-img', loading: 'lazy' }}
+            <div class="scene-words">{{ collection_title }}</div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

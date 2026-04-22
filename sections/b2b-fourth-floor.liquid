@@ -1,0 +1,78 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-fourth-floor.css' | asset_url }}">
+{% assign anchor = section.settings.anchor %}
+<div class="fourth-floor normal-floor blue-background-right anchor-content" id="{{ anchor }}">
+  <div class="container">
+    <div class="floor-title">
+      {{ section.settings.fourth_title_widthout_strong -}}
+      <span class="orange-strong"> {{ section.settings.fourth_title_orange_strong }}</span>
+    </div>
+    <div class="card-box">
+      {% for block in section.blocks limit: 4 %}
+        <div class="card-item">
+          <div class="card-item-inner">
+            <div class="img-box">
+              {% assign img_url = block.settings.image | img_url: 'medium' %}
+              {% assign img_alt = block.settings.image.alt %}
+              <img src="{{ img_url }}" alt="{{ img_alt }}">
+            </div>
+            <h5>{{ block.settings.title }}</h5>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="set-btn-pos">
+      <div class="quote-buttom width-hover keep-big" open-quote-dialog>Quote Now</div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "BtoB fourth Floor",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "AnchorName"
+    },
+    {
+      "type": "text",
+      "id": "fourth_title_widthout_strong",
+      "label": "title widthout strong"
+    },
+    {
+      "type": "text",
+      "id": "fourth_title_orange_strong",
+      "label": "title width orange strong"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "fourth-floor-card-show",
+      "type": "card-show",
+      "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+           "type": "text",
+           "id": "title",
+           "label": "Title"
+         },
+         {
+           "type": "text",
+           "id": "description",
+           "label": "Description"
+         }
+       ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BtoB fourth Floor"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,350 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "ebe8ded2-b7f9-4494-8b5a-35c41801863d": {
+          "type": "product-banner",
+          "settings": {
+            "display": false,
+            "alignment": "center",
+            "video_type": "mp4",
+            "video_link": "",
+            "banner_heading": "Metropolis",
+            "font_size_banner_heading": "40px",
+            "color_banner_heading": "#ffffff",
+            "banner_heading_sub": "",
+            "font_size_banner_heading_sub": "16px",
+            "color_banner_heading_sub": "#ffffff",
+            "banner_des": "Pellentesque posuere orci lobortis scelerisque blandit. Donec id tellus lacinia an tincidunt risus an consequat delit quisquemos.",
+            "font_size_banner_des": "12p16px",
+            "color_banner_des": "#ffffff",
+            "banner_button": "Shop Now",
+            "link": "",
+            "bg_banner_button": "#ffffff",
+            "border_banner_button": "#5a5a5a",
+            "color_banner_button": "#232323",
+            "bg_banner_button_hover": "",
+            "border_banner_button_hover": "",
+            "color_banner_button_hover": ""
+          }
+        },
+        "bd1606ce-082c-41d6-b43c-40e6433bfbf5": {
+          "type": "popup_information",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shipping-fast\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 640 512\"><path fill=\"currentColor\" d=\"M280 192c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240zm352 192h-24V275.9c0-16.8-6.8-33.3-18.8-45.2l-83.9-83.9c-11.8-12-28.3-18.8-45.2-18.8H416V78.6c0-25.7-22.2-46.6-49.4-46.6H113.4C86.2 32 64 52.9 64 78.6V96H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H96V78.6c0-8.1 7.8-14.6 17.4-14.6h253.2c9.6 0 17.4 6.5 17.4 14.6V384H207.6C193 364.7 170 352 144 352c-18.1 0-34.6 6.2-48 16.4V288H64v144c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16h195.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H632c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm-488 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm272-320h44.1c8.4 0 16.7 3.4 22.6 9.4l83.9 83.9c.8.8 1.1 1.9 1.8 2.8H416V160zm80 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-96h-16.4C545 364.7 522 352 496 352s-49 12.7-63.6 32H416v-96h160v96zM256 248v-16c0-4.4-3.6-8-8-8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8z\"></path></svg>",
+            "title": "Free Shipping",
+            "content": "<p>Free shipping on all items in the store.</p>\n<p>Delivered in 3 to 8 working days.</p>",
+            "content_popup": "<h3>Shipping<\/h3>\n<p>We have overseas warehouses in Houston, Los Angeles, and New Jersey, and the delivery time is 3-8 business days. We only ship to 48 contiguous states and Washington D.C. within the US, excluding Alaska, Hawaii and Puerto Rico..<\/p>\n<p>Each order is delivered by a third-party provider (e.g. FedEx, UPS, Amazon) to the address you provide. Depending on the workload of the logistics company, the estimated delivery time is 5-10 business days (2 business days for order processing and 3-8 business days for delivery). In the event of force majeure, it will delay the processing of the order.<\/p>"
+          }
+        },
+        "ac8f2971-4aa5-4c94-8042-311a73cf24c8": {
+          "type": "popup_information",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shield-alt\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 512 512\">\n    <path fill=\"currentColor\" d=\"M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM262.2 478.8c-4 1.6-8.4 1.6-12.3 0C152 440 48 304 48 128c0-6.5 3.9-12.3 9.8-14.8l192-80c3.9-1.6 8.4-1.6 12.3 0l192 80c6 2.5 9.9 8.3 9.8 14.8.1 176-103.9 312-201.7 350.8zM256 411V100l-142.7 59.5c10.1 120.1 77.1 215 142.7 251.5zm-32-66.8c-36.4-39.9-65.8-97.8-76.1-164.5L224 148z\"></path>\n</svg>",
+            "title": "30-days Return Guarantee",
+            "content": "<p>Learn More.</p>",
+            "content_popup": "<h3>Returns Policy<\/h3>\n<p>We have a 90-day return policy, which means you can apply for a return within 90 days of receiving the item.<\/p>\n<p>Non-Returnable Items: Used, Clearance, promotional, or custom-made items (unless defective), Return requests made after 90 days.<\/p>\n<p>If there is no quality problem, you need to bear the return cost yourself.<\/p>\n<p>To initiate a return, you can contact us at support@reibii.com. If your return is accepted, we will send you a specific return shipping label(only supported by FedEx) and instructions on how and where to send the package.<\/p>"
+          }
+        },
+        "0611a13c-c2ba-4171-91cd-3a1a73362f97": {
+          "type": "recommend",
+          "settings": {
+            "display_related_products": true,
+            "related_products_title": "Related Products",
+            "number_of_related_products": "8",
+            "related_products_per_row": "5"
+          }
+        },
+        "e4e4a268-c4e0-4ce6-be3b-3855168dcb37": {
+          "type": "recommend",
+          "disabled": true,
+          "settings": {
+            "display_related_products": true,
+            "related_products_title": "Related Products",
+            "number_of_related_products": "8",
+            "related_products_per_row": "5"
+          }
+        }
+      },
+      "block_order": [
+        "ebe8ded2-b7f9-4494-8b5a-35c41801863d",
+        "bd1606ce-082c-41d6-b43c-40e6433bfbf5",
+        "ac8f2971-4aa5-4c94-8042-311a73cf24c8",
+        "0611a13c-c2ba-4171-91cd-3a1a73362f97",
+        "e4e4a268-c4e0-4ce6-be3b-3855168dcb37"
+      ],
+      "settings": {
+        "style_moreview": "horizontal",
+        "enable_zoom_image": true,
+        "enable_zoom_text": true,
+        "enable_payment_button": true,
+        "enable_hot_stock": true,
+        "number_stock": "5",
+        "show_sold_in": false,
+        "item_prd": "",
+        "item_prds": "sold in last",
+        "hours_prs": "",
+        "item_hours": "",
+        "display_vendor": false,
+        "text_vendor": "Vendor:",
+        "display_product_sku": true,
+        "text_product_sku": "SKU:",
+        "display_availability": false,
+        "text_availability": "Availability:",
+        "display_product_type": false,
+        "text_product_type": "Product Type:",
+        "enable_countdown": false,
+        "countdown": "countdown_1",
+        "text_countdown": "",
+        "option_countdown": "all_product",
+        "count_down_timer": "",
+        "custombox_text": "",
+        "progressbar_1": "Please hurry, only",
+        "progressbar_2": "left in stock",
+        "total_items": "100",
+        "min_items_left": "8",
+        "max_items_left": "26",
+        "progressbar_color": "#f5f5f5",
+        "progressbar_active_color": "#69c69c",
+        "dpl_customers_view": false,
+        "title_view": "customers are viewing this product",
+        "number_view": "",
+        "show_desc": "short",
+        "display_subtotal": true,
+        "display_qty": true,
+        "display_product_detail_tag": false,
+        "display_product_detail_share": false,
+        "share_text": "Share",
+        "display_trust_img": false,
+        "show_tab": "horizontal",
+        "display_product_detail_description": true,
+        "product_description_title": "Description",
+        "display_product_reviews": false,
+        "product_review_title": "Customer Reviews",
+        "display_custom_tab_1": true,
+        "custom_tab_title_1": "Shipping & Returns",
+        "custom_tab_content_1": "<h3>DELIVERY :</h3>\n<p>Free shipping on all items in the REIBII online store.</p>\n<p>After you place your order, we will process your order within 2 working days.</p>\n<p>Typically, shipping time is expected to be 3-8 business days and your order will be delivered to your doorstep by a third-party provider (eg FedEx, UPS) to the address you provide.</p>\n<p>When the package arrives, we will send you an arrival email to remind you, or you can check the shipping status of your order on the responsible shipping company's website.</p>\n<h3>NOTICE:</h3>\n<p>Currently we only ship to the continental US, we do not ship to Alaska, Hawaii, Puerto Rico.</p>\n<p>Please refer to <a href=\"https://reibii.com/pages/shipping-and-delivery\"><span><u>https://reibii.com/pages/shipping-and-delivery</u></span></a> for specific shipping policies.</p>\n<h3>RETURNS & EXCHANGES:</h3>\n<p>TIME: We offer a <strong><em>30-day</em></strong> money-back guarantee, which means you can request a return within 30 days of receiving the item.</p>\n<p>REQUEST: The item you send back must be in the same condition as the item you received, unworn or unused, labeled, and in its original packaging.</p>\n<p>FEE: If the product has no quality problems, you need to bear the return and exchange fees by yourself.</p>\n<p>DAMAGE & PROBLEMS: If you receive a defective, incorrect or incomplete item, please contact us immediately and attach a photo of the damaged product (if applicable) so that we can promptly re-issue you a good product or refund to you.</p>\n<p><strong>NOTE</strong>: Please keep all items and packaging materials until your claim is resolved. For specific return policy, please refer to <span><a href=\"https://reibii.com/pages/return-policy\"><u>https://reibii.com/pages/return-policy</u></a></span></p>",
+        "display_custom_tab_2": false,
+        "custom_tab_title_2": "faq",
+        "custom_tab_content_2": "<p>\n</p><h3>Q: Will this wire garment rack fit in my wardrobe?</h3>\n<p>\nPlease measure the actual size of the inside of your wardrobe to see if it fits. It can be used as a whole wardrobe closet rack or can be split into 2 small wire garment racks. Overall closet rack dimension is: 75\" W x 18\" D x 77\" H, split small clothing rack dimension are: 29.5\" W x 17.8\" D x 77\" H.</p>\n<p></p><h3>Q: Is it high enough? I want to use it to hang my long dresses and suits without them touching the ground.</h3>\n<p>Its height is 77\", except the height of the hanging rod hook (about 3\") and the height of the hanger (about 1\"), you can hang long clothes with a length of 73\". In addition, if you need more space to hang longer clothes, you can remove the middle wire shelving on the left or right to keep your clothes naturally stretched without wrinkles.</p>\n<p></p><h3>Q: How’s the quality?</h3>\n<p>This stand up closet is constructed of high-quality heavy duty metal material to be very strong and not wobble. And it is equipped with anti-tipping parts to lock it on the wall to ensure better stability and safety.</p>\n<p></p><h3>Q: What is the real load bearing?</h3>\n<p>The load-bearing capacity of each clothes hanging rod is 54 LBS, and the load-bearing capacity of each layer of wire shelving is 88 LBS. You can hang at least 180 pieces of summer T-shirts or coats and 25 pairs of shoes.</p>\n<p></p><h3>Q: Is the installation complicated?</h3>\n<p>No, the installation is easy and can be completed independently in about 40 minutes.</p>\n<p></p><h3>Q: Are there installation instructions?</h3>\n<p>Each package comes with a paper instruction guide, and all accessories have been marked with the corresponding numbers, you can easily complete the installation. If you need electronic instructions, please feel free to \n<a href=\"https://reibii.com/pages/contact\"><span><u>contact us</u></span></a>\n.</p>\n<p></p><h3>Q:How do I pay for my purchase?</h3>\n<p>You can pay by credit card or PayPal.</p>\n<p></p><h3>Q: How do I change or cancel my order after I've placed it?</h3>\n<p>In-stock items normally ship within 2 business days after an order has been placed. Before delivery, you can \n<a href=\"https://reibii.com/pages/contact\"><span><u>contact us</u></span></a> to change the delivery information or cancel the order at any time. Once an item has shipped, change & cancellation are impossible.</p>\n<p></p><h3>Q: Do you ship to Alaska?</h3>\n<p>Only ship to 48 contiguous states and Washington D.C. within the US, excluding Alaska, Hawaii and Puerto Rico. You can refer to <a href=\"https://reibii.com/pages/shipping-and-delivery\"><span><u>https://reibii.com/pages/shipping-and-delivery</u></span></a> for specific shipping policies.</p>\n<p></p><h3>Q:How is the shipping cost calculated?</h3>\n<p>Free shipping on all items.</p>",
+        "display_custom_tab_3": false,
+        "custom_tab_title_3": "Custom Tab 3",
+        "custom_tab_content_3": "Custom Tab Content 3",
+        "display_custom_tab_4": false,
+        "custom_tab_title_4": "Custom Tab 4",
+        "custom_tab_content_4": "Custom Tab Content 4",
+        "display_custom_tab_5": false,
+        "custom_tab_title_5": "Custom Tab 5",
+        "custom_tab_content_5": "Custom Tab Content 5",
+        "display_custom_tab_6": true,
+        "custom_tab_title_6": "Recommendations",
+        "recommend_collection": "recommendations",
+        "dpl_lookbook_description": false,
+        "style_lookbook_description": "all_product",
+        "quote_title": "Sample Block Quote",
+        "quote_des": "Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras felis nunc commodo loremous convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec danos.",
+        "quote_title_2": "Sample Paragraph Text",
+        "quote_des_2": "<p>\nPraesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras felis nunc commodo eu convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec danos dui.\n</p>\n<p>\nCras suscipit quam et turpis eleifend vitae malesuada magna congue. Damus id ullamcorper neque. Sed vitae mi a mi pretium aliquet ac sed elitos. Pellentesque nulla eros accumsan quis justo at tincidunt lobortis denimes loremous. Suspendisse vestibulum lectus in lectus volutpat, ut dapibus purus pulvinar. Vestibulum sit amet auctor ipsum.\n</p>",
+        "dpl_gallery_lookbook": false,
+        "style_lookbook_gallery": "all_product",
+        "dpl_grouped_product": true,
+        "show_discount_box": true,
+        "grouped_product_style": "style_1",
+        "grouped_title": "Frequently Bought Together",
+        "grouped_choose_options_text": "Please choose options for all selected products",
+        "choose_options": "Choose Options",
+        "enable_bundle_discount": true,
+        "bundle_discount_text": "Get a [discount]% discount buying these products together | Erhalten Sie einen Rabatt von [discount]%, wenn Sie diese Produkte zusammen kaufen"
+      }
+    },
+    "supermarket_featured_products_yr6kXD": {
+      "type": "supermarket-featured-products",
+      "settings": {
+        "title_style": "style_2",
+        "featured_products_title": "People Who Bought This Item Also Bought",
+        "color_text_title": "",
+        "text_countdown": "",
+        "countdown": "",
+        "view_all": "",
+        "link_view_all": "",
+        "show_slider_featured_collection": "recommendations",
+        "slider_featured_limit_all": 10,
+        "collection_results_per_row1": "5",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "index_shop_by_category_xrmkEg": {
+      "type": "index-shop-by-category",
+      "blocks": {
+        "card_show_nfMfR9": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Storage_Shelves.jpg",
+            "category_name": "Steel Shelves",
+            "link": "shopify://collections/steel-shelves"
+          }
+        },
+        "card_show_WwLpyD": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/lQDPJxWmTxhasFfNBdzNBdywJ4jyTkuUIN4HpJAv98TcAA_1500_1500.jpg",
+            "category_name": "Wooden Shelves",
+            "link": "shopify://collections/wooden-shelves"
+          }
+        },
+        "card_show_QRMRAk": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Clothes_Rack.jpg",
+            "category_name": "Clothes Rack",
+            "link": "shopify://collections/clothes-rack"
+          }
+        },
+        "card_show_dGMCEw": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/lQDPJxe10N5S8FfNBdzNBdywb3n_3E_cptMHpJAv96NNAA_1500_1500.jpg",
+            "category_name": "Wire Shelves",
+            "link": "shopify://collections/wire-shelves"
+          }
+        },
+        "card_show_dXEM6w": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Dresser.jpg",
+            "category_name": "Fabric Dresser",
+            "link": "shopify://collections/fabric-dresser"
+          }
+        },
+        "card_show_cRGC9z": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Wooden_Dresser.png",
+            "category_name": "Wooden Dresser",
+            "link": "shopify://collections/wooden-dresser"
+          }
+        },
+        "card_show_K6xGzc": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Storage_Bins.jpg",
+            "category_name": "Storage Bins",
+            "link": "shopify://collections/storage-bins"
+          }
+        },
+        "card_show_bbpxAB": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Home_Office_Desk.jpg",
+            "category_name": "Home Office Desk",
+            "link": "shopify://collections/home-office-desk"
+          }
+        },
+        "card_show_TjfLAz": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Bed_Frame.jpg",
+            "category_name": "Bed Frame",
+            "link": "shopify://collections/bed-frame"
+          }
+        },
+        "card_show_W7imQb": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Nightstand.jpg",
+            "category_name": "Nightstand",
+            "link": "shopify://collections/nightstand"
+          }
+        },
+        "card_show_89H4H7": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Laundry_Sorter.jpg",
+            "category_name": "Laundry Sorter",
+            "link": "shopify://collections/laundry-sorter"
+          }
+        },
+        "card_show_cLfJdY": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Shoe_Rack.jpg",
+            "category_name": "Shoe Rack",
+            "link": "shopify://collections/shoe-rack"
+          }
+        },
+        "card_show_Hzhazq": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/6a0f48436f03bf48e8c7f28f9f150b4c.png",
+            "category_name": "Other Products",
+            "link": "shopify://collections/other-products"
+          }
+        }
+      },
+      "block_order": [
+        "card_show_nfMfR9",
+        "card_show_WwLpyD",
+        "card_show_QRMRAk",
+        "card_show_dGMCEw",
+        "card_show_dXEM6w",
+        "card_show_cRGC9z",
+        "card_show_K6xGzc",
+        "card_show_bbpxAB",
+        "card_show_TjfLAz",
+        "card_show_W7imQb",
+        "card_show_89H4H7",
+        "card_show_cLfJdY",
+        "card_show_Hzhazq"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "recently-view": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "display_recently_viewed_products": true,
+        "recently_viewed_products_title": "Recently Viewed Products",
+        "number_of_recently_viewed_products": "8",
+        "recently_viewed_products_per_row": "5"
+      }
+    },
+    "1662108799af134ffd": {
+      "type": "supermarket-featured-products",
+      "settings": {
+        "title_style": "style_1",
+        "featured_products_title": "Thing You'll Love",
+        "color_text_title": "",
+        "text_countdown": "",
+        "countdown": "",
+        "view_all": "",
+        "link_view_all": "",
+        "show_slider_featured_collection": "top-picks",
+        "slider_featured_limit_all": 10,
+        "collection_results_per_row1": "5",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "supermarket_featured_products_yr6kXD",
+    "index_shop_by_category_xrmkEg",
+    "recently-view",
+    "1662108799af134ffd"
+  ]
+}

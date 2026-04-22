@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1705987653906ce95c": {
+      "type": "apps",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "cart_notes": false,
+        "secure_text": "",
+        "img_trust": "shopify://shop_images/reibii_payment_options.webp",
+        "cart_countdown_enable": false,
+        "time_countdown": 30,
+        "coupon_code_enable": false,
+        "coupon_title": "Coupon Code:",
+        "coupon_content": "",
+        "gift_card_enable": false,
+        "product_to_use": "",
+        "gift_content": "",
+        "button_gift_text": "Add",
+        "show_cart_best_sellers_product": false,
+        "title": "Recommendations",
+        "show_slider_featured_collection": "recommendations",
+        "slider_featured_limit_all": 8,
+        "collection_results_per_row1": "5"
+      }
+    },
+    "170505361254ca9640": {
+      "type": "apps",
+      "settings": {}
+    },
+    "recently-view": {
+      "type": "recently-viewed-products",
+      "disabled": true,
+      "settings": {
+        "display_recently_viewed_products": true,
+        "recently_viewed_products_title": "Recently Viewed Products",
+        "number_of_recently_viewed_products": "8",
+        "recently_viewed_products_per_row": "5"
+      }
+    }
+  },
+  "order": [
+    "1705987653906ce95c",
+    "main",
+    "170505361254ca9640",
+    "recently-view"
+  ]
+}

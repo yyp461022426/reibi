@@ -1,0 +1,205 @@
+{% comment %}
+  MailChimp is the go-to newsletter service for Shopify.
+  Use the link below to find your MailChimp "form action"
+  and insert it in your site settings.
+
+  MailChimp newsletter integration and requirement:
+   - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
+{% endcomment %}
+{%- capture newsletter_form_action -%}/contact{%- endcapture -%}
+{%- capture newsletter_form -%}
+
+{%- form 'customer', action: newsletter_form_action, class: 'input-group newsletter-form' -%}
+  {% if form.posted_successfully? %}
+    {% if newsletter-form == 'password' %}
+      <p class="password-newsletter-success">{{message}}</p>
+    {% else %}
+      <script>
+        $(document).ready(function(){
+          var newsletterSuccessPopup = (function(){
+            
+                var popup = $('.newsletter-success-modal');
+                var close = popup.find('.close');
+              var success = popup.find('.success');
+              var error = popup.find('.error');
+                var overlay = popup.find('.modal-overlay');
+                popup.show();
+              error.hide();
+              success.show();
+                $.cookie('emailSubcribeModal', 'closed', {
+                    expires: 1,
+                    path: '/'
+                });
+                close.off('click').on('click',function(){
+                    popup.fadeOut();
+                });
+                overlay.off('click').on('click',function(){
+                    popup.fadeOut();
+                });
+            })();
+            var newURL = location.href.split("?")[0];
+            window.history.pushState('object', document.title, newURL);
+        })
+      </script>
+    {% endif %}
+  {% else %}
+  <script>
+    $(document).ready(function(){
+      if (window.location.href.indexOf('newsletter&form_type=customer') > -1) {
+        var newsletterSuccessPopup = (function(){
+          var popup = $('.newsletter-success-modal');
+          var close = popup.find('.close');
+          var success = popup.find('.success');
+          var error = popup.find('.error');
+          var overlay = popup.find('.modal-overlay');
+          popup.show();
+          error.show();
+          success.hide();
+          $.cookie('emailSubcribeModal', 'closed', {
+            expires: 1,
+            path: '/'
+          });
+          close.off('click').on('click',function(){
+            popup.fadeOut();
+          });
+          overlay.off('click').on('click',function(){
+            popup.fadeOut();
+          });
+        })();
+        var newURL = location.href.split("?")[0];
+        window.history.pushState('object', document.title, newURL);
+      }
+    })
+  </script>
+  {% endif %}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <div class="email-input-wrapper">
+      <input class="input-group-field email-validate" type="email" name="contact[email]" {% if settings.enable_multilang %}data-translate="general.newsletter_form.newsletter_text" translate-item="placeholder"{% endif %} aria-label="Email Address" placeholder="{% if settings.footer_layout == '06' or settings.footer_layout == '08' or settings.footer_layout == '04'%}{{ 'general.newsletter_form.newsletter_text_1' | t }}{% elsif settings.footer_layout == '07' %}{{ 'general.newsletter_form.newsletter_text_2' | t }}{% else %}{{ 'general.newsletter_form.newsletter_text' | t }}{% endif %}" required="required">
+      <div class="email-validation-message"></div>
+    </div>
+    <input class="btn" type="submit" value="{% if settings.footer_layout == '06' or settings.footer_layout == '09' %}{{ 'general.newsletter_form.submit_1' | t }}{% else %}{{ 'general.newsletter_form.submit' | t }}{% endif %}">
+{%- endform -%}
+
+<style>
+.newsletter-form .email-input-wrapper {
+  width: 100%;
+  position: relative;
+  flex: 1;
+}
+
+.newsletter-form .email-input {
+  width: 100%;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-form .email-input.valid {
+  border-color: #28a745;
+}
+
+.newsletter-form .email-input.invalid {
+  border-color: #dc3545;
+}
+
+.newsletter-form .email-validation-message {
+    font-size: 12px;
+    margin-bottom: 2px;
+    margin-top: 0;
+    min-height: 24px;
+}
+
+.newsletter-form .email-validation-message.valid {
+  color: #28a745;
+}
+
+.newsletter-form .email-validation-message.invalid {
+  color: #dc3545;
+}
+
+.newsletter-form .newsletter-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.newsletter-form .email-input-wrapper .input-group-field{
+  margin-bottom: 0;
+  width: 100%;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+  const emailInput = $('.email-validate');
+  const submitBtn = $('.newsletter-submit');
+  const validationMessage = $('.email-validation-message');
+  
+  // 邮箱格式验证正则表达式
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  // 实时验证函数
+  function validateEmail(email) {
+    if (email === '') {
+      return { isValid: false, message: '' };
+    }
+    
+    if (!emailRegex.test(email)) {
+      return { isValid: false, message: 'Please enter a valid email address' };
+    }
+    
+    return { isValid: true, message: '' };
+  }
+  
+  // 输入事件监听
+  emailInput.on('input', function() {
+    const email = $(this).val().trim();
+    const validation = validateEmail(email);
+    
+    // 移除之前的样式类
+    emailInput.removeClass('valid invalid');
+    validationMessage.removeClass('valid invalid');
+    
+    if (email === '') {
+      // 空值时重置状态
+      validationMessage.text('');
+      submitBtn.prop('disabled', true);
+    } else if (validation.isValid) {
+      // 有效邮箱
+      emailInput.addClass('valid');
+      validationMessage.addClass('valid').text(validation.message);
+      submitBtn.prop('disabled', false);
+    } else {
+      // 无效邮箱
+      emailInput.addClass('invalid');
+      validationMessage.addClass('invalid').text(validation.message);
+      submitBtn.prop('disabled', true);
+    }
+  });
+  
+  // 失去焦点时验证
+  emailInput.on('blur', function() {
+    const email = $(this).val().trim();
+    if (email !== '' && !validateEmail(email).isValid) {
+      emailInput.addClass('invalid');
+      validationMessage.addClass('invalid').text('Please enter a valid email address');
+    }
+  });
+  
+  // 表单提交前最终验证
+  $('.newsletter-form').on('submit', function(e) {
+    const email = emailInput.val().trim();
+    const validation = validateEmail(email);
+    
+    if (!validation.isValid) {
+      e.preventDefault();
+      emailInput.addClass('invalid');
+      validationMessage.addClass('invalid').text('请输入有效的邮箱地址后再提交');
+      emailInput.focus();
+      return false;
+    }
+  });
+});
+</script>
+
+{% endcapture %}
+
+{{ newsletter_form }}

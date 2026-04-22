@@ -1,0 +1,66 @@
+.affiliate-program-benefits {
+  margin-bottom: 36px;
+}
+.affiliate-program-benefits .item-box {
+  display: flex;
+  background: #ffffff;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #efefef;
+  margin-top: 32px;
+  padding: 18px;
+}
+.affiliate-program-benefits .item-index-box {
+  flex-shrink: 0;
+  position: relative;
+  transform: translateY(-36px);
+}
+.affiliate-program-benefits .item-index {
+  position: absolute;
+  font-weight: bold;
+  font-size: 60px;
+  color: #ffffff;
+  top: 40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.affiliate-program-benefits .item-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #00327b;
+  margin-bottom: 8px;
+}
+.affiliate-program-benefits .item-des {
+  font-size: 24px;
+  color: #333333;
+  line-height: 30px;
+}
+.affiliate-program-benefits .item-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (max-width: 767px) {
+  .affiliate-program-benefits .item-index-box {
+    width: 32px;
+
+    transform: translateY(-17px);
+  }
+  .affiliate-program-benefits .item-index {
+    font-size: 14px;
+    top: 0;
+  }
+  .affiliate-program-benefits .item-box {
+    margin-top: 20px;
+    padding: 12px 12px 12px 8px;
+  }
+
+  .affiliate-program-benefits .item-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .affiliate-program-benefits .item-des {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

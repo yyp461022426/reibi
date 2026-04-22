@@ -1,0 +1,109 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-first-floor.css' | asset_url }}">
+{% assign anchor = section.settings.anchor %}
+<div class="first-floor container" id="{{ anchor }}">
+  <div class="first-floor-info-box">
+    <div class="left-part">
+      <div>
+        We specialize in high-quality, custom metal shelving solutions for businesses. Our designs are engineered to
+        maximize storage efficiency and optimize space—crafted with precision to handle heavy loads, ideal for both
+        commercial and residential use.
+      </div>
+      <div class="quote-buttom width-hover" open-quote-dialog>Get Your Instant Quote</div>
+    </div>
+    {% comment %}
+      <div class="right-part">
+        <style>
+          .slick-slider img {
+            width: 100%;
+          }
+        </style>
+        <div class="image-box b2b-slick-slider">
+          {%- for item in section.blocks -%}
+            <div class="{% if forloop.index0 != 0 %}hide{% endif %}">{{ item.settings.image_item | image_url: width: 550 | image_tag }}</div>
+          {%- endfor -%}
+        </div>
+      </div>
+      <script>
+        $(document).ready(function () {
+          var slider = $('.b2b-slick-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            arrows: false,
+          });
+          $('.b2b-slick-slider div img').show();
+        });
+      </script>
+    {% endcomment %}
+    <div class="right-part">
+      <div>Direct Wholesale: Leading Metal Shelving Manufacturer</div>
+      <div>
+        Bulk Deals That Deliver Real Savings Factory-Direct Pricing, Starting at Just <br>
+        <span class="orange-strong">7 Units</span>
+      </div>
+      <div class="left-pdf">
+        <div class="pdf-link">{{ section.settings.pdf_link }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="add-info">
+    <div class="add-info-item">
+      <div>Reliable Quality</div>
+      <p>
+        Our furniture is manufactured in-house, guaranteeing consistent high quality—delivering reliable, efficient
+        storage solutions for your business.
+      </p>
+    </div>
+    <div class="add-info-item">
+      <div>Special Prices</div>
+      <p>
+        We offer highly competitive bulk prices, exceptional after-sales service, and a guaranteed return on investment to ensure your business success.
+      </p>
+    </div>
+    <div class="add-info-item">
+      <div>Fast Delivery</div>
+      <p>
+        Orders ship from our U.S. warehouse within 1-2 business days, with delivery to your door in 3-8 days.Free shipping & Fast logistics.
+      </p>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "BtoB First Floor",
+  "tag": "section",
+  "class": "b2b-first-floor",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "AnchorName"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "pdf_link",
+      "label": "PDFLink"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image Items",
+      "type": "image_items",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_item",
+          "label": "Image Item"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BtoB First Floor"
+    }
+  ]
+}
+{% endschema %}

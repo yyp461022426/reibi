@@ -1,0 +1,17 @@
+{% layout none %}
+<div class="product-metafields-box">
+  <div class="dimension-info col-xl-3" data-compare-added="compare-{{ product.id }}">
+    {% if product.metafields.custom.dimension %}
+      {{ product.metafields.custom.dimension }}
+    {% else %}
+      -
+    {% endif %}
+  </div>
+  <div class="load_capacity-info col-xl-3" data-compare-added="compare-{{ product.id }}">
+    {% if product.metafields.custom.load_capacity %}
+      {{ product.metafields.custom.load_capacity }}
+    {% else %}
+      -
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,171 @@
+{%- if request.page_type == 'index' -%}
+    {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": {{ shop.name | json }},
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {{ potential_action_target | json }},
+                "query-input": "required name=search_term_string"
+            },
+            "url": {{ request.origin | append: page.url | json }}
+        }
+    </script>
+{%- endif -%}
+{% if settings.header_layout == 'default' %}
+  <div class="wrapper-header wrapper_header_default {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header' %}
+    {% section 'navigation' %}
+  </div>
+
+{% elsif settings.header_layout == 'parallax' %}
+  <div class="wrapper-header wrapper_header_parallax {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-parallax' %}
+  </div>
+
+{% elsif settings.header_layout == '02' %}
+  <div class="wrapper-header wrapper_header_02 header-lang-style2 {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-02' %}
+    {% section 'navigation' %}
+  </div>
+
+{% elsif settings.header_layout == '02_copy' %}
+  {%- if template == 'page.b2b' -%}
+    {% section 'b2b-anchor' %}
+  {%- else -%}
+    <div class="wrapper-header wrapper_header_02 header-lang-style2 {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+      {% assign is_transp_header = false %}
+      {% assign with_gradient = false %}
+
+      {% if template contains 'about-us' or template contains 'affiliate-test' %}
+        {% assign is_transp_header = true %}
+      {% endif %}
+      {% if template contains 'about-us' %}
+        {% assign with_gradient = true %}
+      {% endif %}
+
+      {% comment %}
+        顶部折扣横幅：<div data-toolbar-newsletter class="newsletter-top-note cursor-pointer">
+          <div data-modal-newsletter class="newsletter-tn-content"><span>8% Off Exclusive for Subscribers!</span>{%  render 'icon-arrow-right' %}</div>
+        </div>
+      {% endcomment %}
+
+      {% comment %} {% if section.settings.display_header_top and section.settings.top_message_text != blank %} {% endcomment %}
+      <style>
+        .top-message .item {
+          display: none;
+          margin-bottom: 0;
+        }
+        .show-top-message {
+          display: block !important;
+          animation: flipIn 1s forwards;
+        }
+        @keyframes flipIn {
+          0% {
+            transform: translateY(-100%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0%);
+            opacity: 1;
+          }
+        }
+      </style>
+      <div class="header-top">
+        <div class="container top-message-scroll">
+          {%- if settings.top_notification_1 != blank or settings.top_notification_2 != blank or settings.top_notification_3 != blank -%}
+            <div class="top-message">
+              {%- if settings.top_notification_1 != blank -%}
+                <p class="item show-top-message">{{ settings.top_notification_1 }}</p>
+              {%- endif -%}
+              {%- if settings.top_notification_2 != blank -%}
+                <p class="item">{{ settings.top_notification_2 }}</p>
+              {%- endif -%}
+              {%- if settings.top_notification_3 != blank -%}
+                <p class="item">{{ settings.top_notification_3 }}</p>
+              {%- endif -%}
+              <a href="#" title="close" class="close" data-close-header-top>
+                {% render 'icon-close' %}
+              </a>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+      <script>
+        let currentIndex = 0;
+        const messages = $('.top-message .item');
+        const totalMessages = messages.length;
+        if (totalMessages > 1) {
+          setInterval(() => {
+            // 隐藏当前消息
+            messages.eq(currentIndex).removeClass('show-top-message');
+            // 计算下一个消息的索引
+            currentIndex = (currentIndex + 1) % totalMessages;
+            // 显示下一个消息
+            messages.eq(currentIndex).addClass('show-top-message');
+          }, 5000); // 每3秒切换一次消息
+        }
+      </script>
+      {% comment %} {% endif %} {% endcomment %}
+      <div class="{% if is_transp_header %}transp-nav{% endif %} {% if with_gradient %}header-gradient{% endif %}">
+        {% section 'header-02-copy' %}
+        {% section 'navigation-copy' %}
+      </div>
+    </div>
+    <script>
+      // $(document).ready(function () {
+      //   appendPrependMenuMobile();
+      //   // 防止滚动条消失时顶部抖动
+      //   var clientWidth = document.documentElement.clientWidth;
+      //   $('.transp-nav').width(clientWidth);
+      // });
+    </script>
+  {%- endif -%}
+
+{% elsif settings.header_layout == '03' %}
+  <div class="wrapper-header wrapper_header_03 header-lang-style2 {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-03' %}
+    {% section 'navigation' %}
+  </div>
+
+{% elsif settings.header_layout == '04' %}
+  <div class="wrapper-header wrapper_header_04 header-lang-style2 {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-04' %}
+  </div>
+
+{% elsif settings.header_layout == '05' %}
+  <div class="wrapper-header wrapper_header_05 header-lang-style2 {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-05' %}
+    {% section 'navigation-05' %}
+  </div>
+
+{% elsif settings.header_layout == '06' %}
+  <div class="wrapper-header wrapper_header_06 header-lang-style2 {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-06' %}
+    {% section 'navigation-06' %}
+  </div>
+  {% render 'ask_an_expert' %}
+{% elsif settings.header_layout == '07' %}
+  <div class="wrapper-header wrapper_header_07 header-lang-style2 {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-07' %}
+    {% section 'navigation-07' %}
+  </div>
+
+{% elsif settings.header_layout == '08' %}
+  <div class="wrapper-header wrapper_header_supermarket wrapper_header_08 header-lang-style2 {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-08' %}
+    {% section 'navigation-08' %}
+  </div>
+
+{% elsif settings.header_layout == 'vertical' %}
+  <div class="wrapper-header wrapper_header_vertical {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-vertical' %}
+  </div>
+{% elsif settings.header_layout == 'supermarket' %}
+  <div class="wrapper-header wrapper_header_supermarket header-lang-style2 {% if settings.header_style_mobile == 'header_mobile_3' %}header_mobile_style_3{% endif %}">
+    {% section 'header-supermarket' %}
+    {% section 'navigation-supermarket' %}
+  </div>
+{% endif %}

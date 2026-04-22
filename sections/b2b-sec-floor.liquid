@@ -1,0 +1,74 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-sec-floor.css' | asset_url }}">
+{% assign anchor = section.settings.anchor %}
+<div class="sec-floor normal-floor blue-background-left" id="{{ anchor }}">
+  <div class="container">
+    <div class="floor-title">
+      {{ section.settings.sec_title_widthout_strong -}}
+      <span class="orange-strong"> {{ section.settings.sec_title_orange_strong }}</span>
+    </div>
+    <div class="pdf-link">{{ section.settings.pdf_link }}</div>
+    <div class="card-box">
+      {% for block in section.blocks limit: 6 %}
+        <div class="card-item">
+          <div class="img-box">
+            {% assign img_url = block.settings.image | img_url: 'large' %}
+            {% assign img_alt = block.settings.image.alt %}
+            <img src="{{ img_url }}" alt="{{ img_alt }}">
+          </div>
+          <h2>{{ block.settings.description }}</h2>
+          <div class="quote-buttom width-hover" open-quote-dialog>Quote Now</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "BtoB Sec Floor",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "AnchorName"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "pdf_link",
+      "label": "PDFLink"
+    },
+    {
+      "type": "text",
+      "id": "sec_title_widthout_strong",
+      "label": "title widthout strong"
+    },
+    {
+      "type": "text",
+      "id": "sec_title_orange_strong",
+      "label": "title width orange strong"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "sec-floor-card-show",
+      "type": "card-show",
+      "settings": [
+         {
+           "type": "text",
+           "id": "description",
+           "label": "Description"
+         },
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         }
+       ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BtoB Sec Floor"
+    }
+  ]
+}
+{% endschema %}

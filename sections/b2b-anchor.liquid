@@ -1,0 +1,206 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-anchor-nav.css' | asset_url }}">
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-common.css' | asset_url }}">
+<style>
+  .nav-item {
+    list-style: none;
+  }
+  .anchor-nav {
+    display: flex;
+  }
+  .anchor-nav .nav-item a::after {
+    content: '';
+    height: 3px;
+    background-color: #3555db;
+    width: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .anchor-nav .nav-item a {
+    position: relative;
+    line-height: 26px;
+    text-transform: capitalize;
+    padding: 15px 0;
+    margin: 0 10px;
+    font-weight: 500;
+  }
+
+  .anchor-nav .active::after,
+  .anchor-nav .nav-item a:hover::after,
+  .anchor-nav .nav-item a:active::after {
+    width: calc(100% - 16px) !important;
+  }
+</style>
+<div class="full-width-box b2b-anchor">
+  <div class="fix-nav-box container">
+    <div class="anchor-flex-left">
+      <a href="/" aria-label="Go Main Page">
+        {% assign img_url = section.settings.logo_image | image_url: width: 150 %}
+        <img class="theme-image" src="{{ img_url }}" alt="{{ section.settings.logo_image.alt }}">
+      </a>
+      <div class="reibii-email" open-quote-dialog>Email: support@reibii.com</div>
+    </div>
+    <div class="anchor-flex-right">
+      <div class="anchor-nav">
+        {% for block in section.blocks %}
+          <li class="nav-item">
+            <a
+              class="scroll {% if forloop.index0 == 0%}active{% endif %}"
+              href="{{"#" | append: block.settings.anchor | downcase }}"
+            >
+              {{- block.settings.anchor_label -}}
+            </a>
+          </li>
+        {% endfor %}
+      </div>
+      <div class="quote-buttom nav-quote" open-quote-dialog>Quote Now</div>
+      <div class="point-line-box">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!--
+    <div class="fix-nav-box-small container">
+      <div class="quote-buttom" open-quote-dialog>Quote Now</div>
+      {% assign img_url = section.settings.logo_image | img_url %}
+      <img class="theme-image" src="{{ img_url }}" alt="{{ section.settings.logo_image.alt }}">
+      <div class="point-line-box">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  -->
+  <div class="drop-down-anchor">
+    {% for block in section.blocks %}
+      <a class="scroll" href="{{"#" | append: block.settings.anchor | downcase }}">
+        {{- block.settings.anchor_label -}}
+      </a>
+    {% endfor %}
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    let pop = $('.drop-down-anchor'); // 弹窗
+    $(document).mouseup(function (e) {
+      if (pop.is(':visible') && !pop.is(e.target) && pop.has(e.target).length === 0) {
+        // 关闭弹窗
+        pop.slideUp(300);
+      }
+    });
+    $(window).on('touchmove mousewheel', function (e) {
+      if (pop.is(':visible')) {
+        pop.slideUp(300);
+      }
+    });
+    $('.point-line-box').click(function (e) {
+      if (pop.is(':visible')) {
+        pop.slideUp(300);
+      } else {
+        pop.slideDown(300);
+      }
+    });
+    // 导航
+    initNavbar();
+    function initNavbar() {
+      // 禁用组件的smooth滚动到锚点位置
+      $('.anchor-nav a').on('click', function (e) {
+        e.preventDefault();
+        var targetId = $(this).attr('href');
+        var targetElement = $(targetId);
+        if (targetElement.length) {
+          $('html, body').scrollTop(targetElement.offset().top - 80);
+        }
+        $(this).addClass('active');
+        $(this).parent().siblings().find('a').removeClass('active');
+      });
+
+      $('.drop-down-anchor a').on('click', function (e) {
+        var targetId = $(this).attr('href');
+        var targetElement = $(targetId);
+        if (targetElement.length) {
+          $('body').scrollTop(targetElement.offset().top - 60);
+        }
+        pop.slideUp(300);
+      });
+
+      const tabContents = $('.anchor-content');
+      const tabLinks = $('.anchor-nav .nav-item a');
+      function updateTab() {
+        const scrollTop = $(window).scrollTop();
+        tabContents.each(function () {
+          const tab = $(this);
+          const offsetTop = tab.offset().top;
+          const offsetBottom = offsetTop + tab.height();
+          if (scrollTop >= offsetTop && scrollTop < offsetBottom) {
+            const targetHash = '#' + tab.attr('id');
+            tab.addClass('active').siblings().removeClass('active');
+            tabLinks
+              .filter(`[href="${targetHash}"]`)
+              .addClass('active')
+              .parent()
+              .siblings()
+              .find('a')
+              .removeClass('active');
+          }
+        });
+      }
+
+      $(window).on('scroll', updateTab);
+      // 初始加载时调用一次更新函数
+      updateTab();
+    }
+  });
+
+  /* 锚点滚动跳转样式
+  jQuery(document).ready(function($) {
+      $(".scroll").click(function(event){
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+      });
+  }); */
+</script>
+{% schema %}
+{
+  "name": "Ahchor Nav",
+  "tag": "section",
+  "class": "anchor-box",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "LogoImage"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Anchor",
+      "type": "anchor",
+      "settings": [
+        {
+          "type": "text",
+          "id": "anchor_label",
+          "label": "AnchorLabel"
+        },
+        {
+          "type": "text",
+          "id": "anchor",
+          "label": "AnchorName"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BtoB Ahchor Nav"
+    }
+  ]
+}
+{% endschema %}

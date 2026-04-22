@@ -1,0 +1,217 @@
+<div id="dropdown-customer" class="ct_login">
+  <div class="customer-title">
+    {% if customer %}
+      <h2>
+        {{ customer.name }}
+      </h2>
+    {% else %}
+      {% if settings.header_layout == '05' or settings.header_layout == '06' or settings.header_layout == '07' %}
+        <h2
+          {% if settings.enable_multilang %}
+            data-translate="customer.login.title_login"
+          {% endif %}
+        >
+          {{ 'customer.login.title_login' | t }}
+        </h2>
+      {% elsif settings.header_layout == '08' %}
+        <h2
+          {% if settings.enable_multilang %}
+            data-translate="customer.login.title"
+          {% endif %}
+        >
+          {{ 'customer.login.title' | t }}
+        </h2>
+        <p>{{ 'customer.login.note' | t }}</p>
+      {% elsif settings.header_layout == 'parallax' %}
+        <h2
+          {% if settings.enable_multilang %}
+            data-translate="customer.login.title"
+          {% endif %}
+        >
+          {{ 'customer.login.sign_in' | t }}
+        </h2>
+      {% else %}
+        <h2
+          {% if settings.enable_multilang %}
+            data-translate="customer.login.title"
+          {% endif %}
+        >
+          {{ 'customer.login.title' | t }}
+        </h2>
+      {% endif %}
+    {% endif %}
+    <div class="close-btn">
+      <a href="#" title="{{ 'cart.general.close_cart' | t }}" class="close-customer close">
+        <div class="rotate-btn">
+          {% render 'icon-close' %}
+        </div>
+        {% comment %}
+          <span {% if settings.enable_multilang %}data-translate="cart.general.close_cart"{% endif %}>
+            {{ 'cart.general.close_cart' | t }}
+          </span>
+        {% endcomment %}
+      </a>
+    </div>
+  </div>
+
+  <div class="customer-content">
+    {% if customer %}
+      <div class="customer-inner is-customer">
+        <a
+          class="acc"
+          href="{{ routes.account_url }}"
+          {% if settings.enable_multilang %}
+            data-translate="customer.account.title"
+          {% endif %}
+        >
+          {{ 'customer.account.title' | t }}
+        </a>
+
+        <a
+          class="btn btn-logout"
+          id="customer_logout_link"
+          href="{{ routes.account_logout_url }}"
+          {% if settings.enable_multilang %}
+            data-translate="layout.customer.log_out"
+          {% endif %}
+        >
+          {{ 'layout.customer.log_out' | t }}
+        </a>
+      </div>
+
+    {% else %}
+      <div class="customer-inner login-customer">
+        <form accept-charset="UTF-8" action="{{ routes.account_login_url }}" method="post">
+          <input name="form_type" type="hidden" value="customer_login">
+          <input name="utf8" type="hidden" value="✓">
+
+          <div class="ct-login">
+            <div class="form-group">
+              <label for="customer_email">
+                <div class="left-label">
+                  {% render 'icon-customer-email' %}
+                  <span
+                    {% if settings.enable_multilang %}
+                      data-translate="customer.login.email"
+                    {% endif %}
+                  >
+                    {{ 'customer.login.email' | t }}
+                  </span>
+                  <em>*</em>
+                </div>
+              </label>
+              <input
+                class="form-control"
+                type="email"
+                value=""
+                name="customer[email]"
+                placeholder="{{ 'customer.login.email' | t }}"
+                autocomplete="email"
+              >
+            </div>
+            <div class="form-group">
+              <label for="customer_password">
+                <div class="left-label">
+                  {% render 'icon-customer-password' %}
+                  <span
+                    {% if settings.enable_multilang %}
+                      data-translate="customer.login.password"
+                    {% endif %}
+                  >
+                    {{ 'customer.login.password' | t }}
+                  </span>
+                  <em>*</em>
+                </div>
+                <div class="right-label change-password-show">
+                  {% render 'icon-close-eyes' %}
+                  {% render 'icon-open-eyes' %}
+                  {% comment %} <span>Show</span> {% endcomment %}
+                </div>
+              </label>
+              <input
+                class="form-control"
+                type="password"
+                value=""
+                placeholder="{{ 'customer.login.password' | t }}"
+                name="customer[password]"
+                autocomplete="current-password"
+              >
+            </div>
+
+            <div class="action-btn">
+              <input
+                type="submit"
+                class="btn btn-login"
+                {% if settings.enable_multilang %}
+                  data-translate="customer.login.login"
+                {% endif %}
+                value="{{ 'customer.login.login' | t }}"
+              >
+              <a
+                class="text-hover forgot-password"
+                href="{{ routes.account_login_url }}#recover"
+                {% if settings.enable_multilang %}
+                  data-translate="customer.login.forgot_password"
+                {% endif %}
+              >
+                {{ 'customer.login.forgot_password' | t }}
+              </a>
+            </div>
+          </div>
+          {% if settings.layout_style == 'layout_style_suppermarket' %}
+            <p class="note-text">{{ 'customer.login.message' | t }}</p>
+          {% endif %}
+          <div class="ct-register">
+            {% if settings.header_layout == '06' or settings.header_layout == '07' %}
+              <a
+                href="{{ routes.account_register_url }}"
+                class="btn btn-register"
+                {% if settings.enable_multilang %}
+                  data-translate="customer.register.register"
+                {% endif %}
+              >
+                {{ 'customer.register.register' | t }}
+              </a>
+            {% else %}
+              <a
+                href="{{ routes.account_register_url }}"
+                class="btn btn-register"
+                {% if settings.enable_multilang %}
+                  data-translate="customer.register.title"
+                {% endif %}
+              >
+                {{ 'customer.register.title' | t }}
+              </a>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    {% endif %}
+  </div>
+</div>
+<script>
+  let toggleDom = $('.change-password-show').find('svg')
+    toggleDom.eq(0).show()
+    toggleDom.eq(1).hide()
+  $('.change-password-show').click(function () {
+    $('[name="customer[password]"]').togglePassword();
+  });
+  function changeShowPas(){
+    let toggleDom = $('.change-password-show').find('svg')
+    toggleDom.eq(0).toggle()
+    toggleDom.eq(1).toggle()
+  }
+  $.fn.togglePassword = function () {
+    return this.each(function () {
+      var $this = $(this);
+      var type = $this.attr('type');
+      $this.attr('type', type === 'text' ? 'password' : 'text');
+      changeShowPas()
+      // if (type === 'text') {
+      //   $this.attr('type', 'password');
+      // } else {
+      //   $this.attr('type', 'text');
+      // }
+    });
+  };
+</script>

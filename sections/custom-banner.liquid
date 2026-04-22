@@ -1,0 +1,225 @@
+<link rel="stylesheet" type="text/css" href="{{ 'custom-banner.css' | asset_url }}">
+<section id="custom-banner-{{section.id}}">
+  <div class="custom-banner">
+    <div class="inner-box {% if section.settings.is_in_container %}container{% endif %}">
+      {%  if section.settings.image_mb != blank %}
+        <div class="change-show-by-screen">
+          <div class="img_box">
+            {{ section.settings.image | image_url: width: 1920 | image_tag: class: 'banner-img' }}
+          </div>
+          <div class="img_box_mb">
+            {{ section.settings.image_mb | image_url: width: 800 | image_tag: class: 'banner-img' }}
+          </div>
+        </div>
+      {%  else %}
+        <div class="img_box">
+          {{ section.settings.image | image_url: width: 1920 | image_tag: class: 'banner-img' }}
+        </div>
+      {% endif %}
+      <div class="content-box">
+        <h2>{{ section.settings.header_text }}</h2>
+        <h3>{{ section.settings.header_text2 }}</h3>
+        <p>{{ section.settings.description }}</p>
+      </div>
+    </div>
+    {% if section.settings.with_affiliate_bottom_banner %}
+      <div class="bottom-banner">
+        <div>Become An Affiliate Today!</div>
+        <div>Click the registration button below to start your earning journey!</div>
+        <a href="{{ section.settings.affiliate_pro_link }}" class="normal-btn">Sign UP</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+<style>
+  @media (max-width: 767px) {
+      #custom-banner-{{section.id}} .content-box h2 {
+          font-weight: {{ section.settings.font_weight1 }};
+          font-size: {{ section.settings.font_size1_mb }}px;
+      }
+      #custom-banner-{{section.id}} .content-box h3 {
+          font-size: {{ section.settings.font_size2_mb }}px;
+      }
+      #custom-banner-{{section.id}} .content-box p {
+          font-size: {{ section.settings.font_size3_mb }}px;
+          line-height: {{ section.settings.line_height3_mb }}px;
+          margin-top: {{ section.settings.margin_top3_mb }}px;
+      }
+    
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+      #custom-banner-{{section.id}} .content-box h2 {
+          font-weight: {{ section.settings.font_weight1 }};
+          font-size: {{ section.settings.font_size1_pc }}px;
+      }
+      #custom-banner-{{section.id}} .content-box h3 {
+          font-size: {{ section.settings.font_size2_pc }}px;
+      }
+      #custom-banner-{{section.id}} .content-box p {
+          font-size: {{ section.settings.font_size3_pc }}px;
+          line-height: {{ section.settings.line_height3_pc }}px;
+      }
+  }
+
+  @media (min-width: 1200px) {
+      #custom-banner-{{section.id}} .content-box h2 {
+          font-weight: {{ section.settings.font_weight1 }};
+          font-size: {{ section.settings.font_size1_pc }}px;
+      }
+      #custom-banner-{{section.id}} .content-box h3 {
+          font-size: {{ section.settings.font_size2_pc }}px;
+      }
+      #custom-banner-{{section.id}} .content-box p {
+          font-size: {{ section.settings.font_size3_pc }}px;
+          line-height: {{ section.settings.line_height3_pc }}px;
+      }
+  }
+
+  
+</style>
+{% schema %}
+{
+  "name": "Custom Banner",
+  "class": "anchor-box",
+  "settings": [
+    {
+       "type": "image_picker",
+       "id": "image",
+       "label": "Select Image"
+     },
+     {
+       "type": "image_picker",
+       "id": "image_mb",
+       "label": "Select Image Mobile"
+     },
+    {
+       "type": "text",
+       "id": "header_text",
+       "label": "Header Text"
+     },
+    {
+      "type": "range",
+      "id": "font_weight1",
+      "label": "Header Text Font-Weight On PC",
+      "min": 300,
+      "max": 800,
+      "step": 100,
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "font_size1_pc",
+      "label": "Header Text Font-Size On PC",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "font_size1_mb",
+      "label": "Header Text Font-Size On MB",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
+    },
+     {
+       "type": "text",
+       "id": "header_text2",
+       "label": "Header Text2"
+     },
+    {
+      "type": "range",
+      "id": "font_size2_pc",
+      "label": "Header Text2 Font-Size On PC",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "font_size2_mb",
+      "label": "Header Text2 Font-Size On MB",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
+    },
+    {
+       "type": "text",
+       "id": "description",
+       "label": "Description"
+     },
+    {
+      "type": "range",
+      "id": "font_size3_pc",
+      "label": "Description Font-Size On PC",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "font_size3_mb",
+      "label": "Description Font-Size On MB",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "line_height3_pc",
+      "label": "Description Line Height On PC",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "line_height3_mb",
+      "label": "Description Line Height On MB",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "margin_top3_mb",
+      "label": "Description Margin Top On MB",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "is_in_container",
+      "label": "Is in container?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "with_affiliate_bottom_banner",
+      "label": "With Bottom Banner?",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "affiliate_pro_link",
+      "label": "Affiliate Pro Link(only for page affiliate-program)",
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,245 @@
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ 'index-new-arrivals.css' | asset_url }}"
+>
+<div class="index-new-arrivals home-grid-product-template-{{section}} index-normal-component">
+  <div class="container">
+    {% if section.settings.title and section.settings.title != '' %}
+      <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
+        {% if section.settings.title_style == '1' %}
+          <span class="small-title">{{ section.settings.title | upcase }}</span>
+          <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+        {% else %}
+          <span class="small-title2">{{ section.settings.title }}</span>
+        {% endif %}
+      </h2>
+      {% if section.settings.title_add_desc %}
+        <div class="desc-add">
+          {{ section.settings.title_add_desc }}
+        </div>
+      {% endif %}
+    {% endif %}
+    <div class="home-grid-product-outer">
+      <div class="bg-media-box">
+        <div class="pc-image show-img">
+          {{ section.settings.pc_img | image_url: width: 1500 | image_tag: class: 'pc-banner' }}
+        </div>
+        <div class="mb-image show-img">
+          {{ section.settings.mb_img | image_url: width: 550 | image_tag: class: 'mb-banner' }}
+        </div>
+        <div class="banner-cover"></div>
+      </div>
+      <div class="home-grid-product-box">
+        <div class="text-box">
+          <div class="common-header">
+            <h2 class="common-title">New Arrivals</h2>
+            <div class="common-subtitle animate-js">{{ section.settings.section_desc }}</div>
+            <a class="link-btn" href="{{ section.settings.collection.url }}">SHOP NOW</a>
+          </div>
+        </div>
+        <div class="product-box">
+          <div class="product-box-inner">
+            <div class="swiper-btn-prev swiper-button">
+              {%- render 'icon-arrow-left-btn' -%}
+            </div>
+            <div class="swiper-btn-next swiper-button">
+              {%- render 'icon-arrow-left-btn' -%}
+            </div>
+            <div class="home-grid-slide-box">
+              {%- if section.settings.collection -%}
+                {% for product in section.settings.collection.products limit: 8 %}
+                  {% assign index = forloop.index0 %}
+                  {% assign remainder = index | modulo: 4 %}
+                  {%- assign current_variant = product.selected_or_first_available_variant -%}
+                  {% if remainder == 0 %}
+                    <!-- 每组的开始 -->
+                    <div class="slick-slide-row">
+                  {%- endif -%}
+                  <a class="product-item" href="{{ product.url | within: collection }}" loader-img-box>
+                    {% if product.metafields.custom.show_on_main_page %}
+                      {{
+                        product.metafields.custom.show_on_main_page
+                        | image_url: width: 200, height: 200
+                        | image_tag: class: 'pro-img'
+                      }}
+                    {% else %}
+                      {{ product.images | last | image_url: width: 200, height: 200 | image_tag: class: 'pro-img' }}
+                    {% endif %}
+                    <div class="pro-info">
+                      <div class="pro-title">{{ product.title }}</div>
+                      <div class="pro-price">
+                        <div class="price">
+                          {% if current_variant.compare_at_price and current_variant.compare_at_price != 0 %}
+                            <div class="min-price">{{ current_variant.price | money }}</div>
+                            <div class="max-price">{{ current_variant.compare_at_price | money }}</div>
+                          {% else %}
+                            <div class="normal-price">{{ current_variant.price | money }}</div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  {% if remainder == 3 or forloop.last %}
+                    <!-- 每组的结束 -->
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    const scrollContainer = $('.home-grid-product-template-{{section}} .product-box-inner');
+    const scrollContent = $('.home-grid-product-template-{{section}} .home-grid-slide-box');
+    const prev_btn = $('.home-grid-product-template-{{section}} .swiper-btn-prev');
+    const next_btn = $('.home-grid-product-template-{{section}} .swiper-btn-next');
+    const product_item = $('.home-grid-product-template-{{section}} .product-item');
+
+    // 初始化按钮状态
+    checkButtonVisibility();
+
+    // 向左滑动按钮点击事件
+    prev_btn.click(function () {
+      const scrollLeft = scrollContainer.scrollLeft();
+      const itemWidth = product_item.outerWidth(true);
+      let needScrollWidth = itemWidth
+      // if(window.innerWidth > 767){
+        needScrollWidth = needScrollWidth * 2
+      // }
+      if (scrollLeft === 0) {
+        prev_btn.addClass("disabled");
+        return;
+      }
+
+      scrollContainer.animate({ scrollLeft: scrollLeft - needScrollWidth }, 200, function () {
+        checkButtonVisibility();
+      });
+    });
+
+    // 向右滑动按钮点击事件
+    next_btn.click(function () {
+      const scrollLeft = scrollContainer.scrollLeft();
+      const itemWidth = product_item.outerWidth(true);
+      const scrollWidth = scrollContent[0].scrollWidth;
+      const clientWidth = scrollContainer[0].clientWidth;
+      let needScrollWidth = itemWidth
+      // if(window.innerWidth > 767){
+        needScrollWidth = needScrollWidth * 2
+      // }
+
+      if (scrollLeft + clientWidth >= scrollWidth) {
+        next_btn.addClass("disabled");
+        return;
+      }
+
+      scrollContainer.animate({ scrollLeft: scrollLeft + needScrollWidth }, 200, function () {
+        checkButtonVisibility();
+      });
+    });
+
+    function throttle(func, delay) {
+      let timer = null;
+      return function () {
+        if (!timer) {
+          func.apply(this, arguments);
+          timer = setTimeout(() => {
+            timer = null;
+          }, delay);
+        }
+      };
+    }
+
+    // 监听滚动容器的滚动事件
+    scrollContainer.on(
+      'scroll',
+      throttle(function () {
+        checkButtonVisibility();
+      })
+    );
+
+    // 检查按钮显示状态的函数
+    function checkButtonVisibility() {
+      const scrollLeft = scrollContainer.scrollLeft();
+      const scrollWidth = scrollContent[0].scrollWidth;
+      const clientWidth = scrollContainer[0].clientWidth;
+
+      // 如果滚动到最左侧，隐藏左按钮
+      if (scrollLeft === 0) {
+        prev_btn.addClass("disabled");
+      } else {
+        prev_btn.removeClass("disabled");
+      }
+
+      // 如果滚动到最右侧，隐藏右按钮
+      if (scrollLeft + clientWidth >= scrollWidth) {
+        next_btn.addClass("disabled");
+      } else {
+        next_btn.removeClass("disabled");
+      }
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Index New Arrivals",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "radio",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title Style1(叠影)"
+        },
+        {
+          "value": "2",
+          "label": "Title Style1(单色)"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title_add_desc",
+      "label": "标题下方的描述"
+    },
+    {
+      "type": "text",
+      "id": "section_desc",
+      "label": "Section Description"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "pc_img",
+      "label": "Background Image Show on Pc"
+    },
+    {
+      "type": "image_picker",
+      "id": "mb_img",
+      "label": "Background Image Show on Mb"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index New Arrivals"
+    }
+  ]
+}
+{% endschema %}

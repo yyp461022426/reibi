@@ -1,0 +1,85 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-mock-comments.css' | asset_url }}">
+{% assign anchor = section.settings.anchor %}
+<div class="b2b-mock-comments normal-floor blue-background-right anchor-content with-tab" id="{{ anchor }}">
+  <div class="container">
+    <div class="floor-title">
+      {{ section.settings.sec_title_widthout_strong -}}
+      <span class="orange-strong"> {{ section.settings.sec_title_orange_strong }}</span>
+    </div>
+    <div class="reviews-cards">
+      {% for block in section.blocks limit: 5 -%}
+        <div class="card-item-outer">
+          <div class="card-item">
+            {{ block.settings.review_image | image_url: width: 240, height: 240 | image_tag: class: 'card-img' }}
+            <div class="strat-box">
+              <ul class="start-list">
+                <li>{%- render 'icon-fill-start' -%}</li>
+                <li>{%- render 'icon-fill-start' -%}</li>
+                <li>{%- render 'icon-fill-start' -%}</li>
+                <li>{%- render 'icon-fill-start' -%}</li>
+                <li>{%- render 'icon-fill-start' -%}</li>
+              </ul>
+            </div>
+            <div class="review-data">
+              <p class="review-content">
+                {{ block.settings.review_content }}
+              </p>
+              <span class="customer">——{{ block.settings.customer }}</span>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BtoB Mock Comments",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "AnchorName"
+    },
+    {
+      "type": "text",
+      "id": "sec_title_widthout_strong",
+      "label": "title widthout strong"
+    },
+    {
+      "type": "text",
+      "id": "sec_title_orange_strong",
+      "label": "title width orange strong"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Card Blocks",
+      "type": "comment-card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "review_image",
+          "label": "Review Image"
+        },
+        {
+          "type": "text",
+          "id": "customer",
+          "label": "Customer Name"
+        },
+        {
+          "type": "text",
+          "id": "review_content",
+          "label": "Review Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BtoB Mock Comments"
+    }
+  ]
+}
+{% endschema %}

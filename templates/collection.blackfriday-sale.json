@@ -1,0 +1,249 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "799c1dc4-19c4-4859-9dee-5cf2f5e1ca7d": {
+      "type": "home-custom-block-baner",
+      "blocks": {
+        "template--16633661620472__799c1dc4-19c4-4859-9dee-5cf2f5e1ca7d-16697743314738faa2-0": {
+          "type": "largeImg",
+          "settings": {
+            "image": "shopify://shop_images/Reibii_Black_Friday_Sale_2.webp",
+            "image_mb": "shopify://shop_images/Reibii_Black_Friday_Sale.webp",
+            "display_parallax": false,
+            "dpl_down_arrow": false,
+            "height_img_parallax": "970px",
+            "content_style": "style_1",
+            "display_bg_animation": false,
+            "color_bg_animation": "#f6f6f6",
+            "alignment": "left",
+            "banner_heading": "",
+            "font_size_banner_heading": "40px",
+            "font_size_banner_heading_mb": "24px",
+            "color_banner_heading": "#232323",
+            "color_banner_heading_style2": "#10ffda",
+            "color_banner_heading_mb": "#232323",
+            "banner_sub_heading": "",
+            "font_size_banner_sub_heading": "13px",
+            "font_size_banner_sub_heading_mb": "13px",
+            "color_banner_sub_heading": "#ffffff",
+            "color_banner_sub_heading_mb": "#232323",
+            "banner_des": "",
+            "font_size_banner_des": "12px",
+            "font_size_banner_des_mb": "12px",
+            "color_banner_des": "#232323",
+            "color_banner_des_mb": "#232323",
+            "countdown": "",
+            "banner_button": "",
+            "link": "",
+            "bg_banner_button": "#232323",
+            "border_banner_button": "#232323",
+            "color_banner_button": "#ffffff",
+            "bg_banner_button_mb": "#232323",
+            "border_banner_button_mb": "#232323",
+            "color_banner_button_mb": "#ffffff",
+            "min_width_banner_button": "237px"
+          }
+        }
+      },
+      "block_order": [
+        "template--16633661620472__799c1dc4-19c4-4859-9dee-5cf2f5e1ca7d-16697743314738faa2-0"
+      ],
+      "settings": {
+        "layout": "full",
+        "layout_style": "layout_style_1",
+        "display_bg_banner": false,
+        "bg_color_banner": "#f5f5f5",
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "img_align": "center",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "brand": {
+      "type": "brand-supermarket",
+      "blocks": {
+        "459674e6-d3ef-40cb-be17-3ea6ba3b9015": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reibii_Black_Friday_Sale_Shelf_Collection.webp",
+            "link": "shopify://collections/storage-shelves"
+          }
+        },
+        "621b757c-06fc-4f00-a14b-4c7fb89833c6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reibii_Black_Friday_Sale_Rack_Collection.webp",
+            "link": "shopify://collections/clothes-rack"
+          }
+        },
+        "3a3ae1f4-e0ad-4d82-b095-c137e362a5e5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reibii_Black_Friday_Sale_Dresser_Collection.webp",
+            "link": "shopify://collections/dresser"
+          }
+        },
+        "2d81690e-eed1-4bbc-ad7c-6d5a176bad3b": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Reibii_Black_Friday_Bed_Frames_Collection.webp",
+            "link": "shopify://collections/bed-frames-1"
+          }
+        }
+      },
+      "block_order": [
+        "459674e6-d3ef-40cb-be17-3ea6ba3b9015",
+        "621b757c-06fc-4f00-a14b-4c7fb89833c6",
+        "3a3ae1f4-e0ad-4d82-b095-c137e362a5e5",
+        "2d81690e-eed1-4bbc-ad7c-6d5a176bad3b"
+      ],
+      "settings": {
+        "background_color": "#f8f8f8",
+        "heading": "Trending now ",
+        "item_per_row": "3",
+        "enable_all": false,
+        "title_all": "",
+        "link": "shopify://collections/all-products",
+        "content": "",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {
+        "limited_view": true,
+        "view_as_enable": true,
+        "sort_enable": true,
+        "collection_results_per_row": "4",
+        "collection_results_per_page": "24",
+        "color_button_more": "#ffffff",
+        "bg_color_button_more": "#ba7a2d",
+        "border_color_button_more": "#ba7a2d",
+        "show_countdown": false,
+        "text_countdown": "End ins:",
+        "show_pro_des": false,
+        "show_banner": false,
+        "show_banner_1": true,
+        "link_banner_1": "",
+        "show_banner_2": true,
+        "link_banner_2": "",
+        "show_banner_3": true,
+        "link_banner_3": "",
+        "show_banner_4": true,
+        "link_banner_4": "",
+        "pro_image": "&nbsp;",
+        "pro_name": "Product",
+        "pro_price": "Price",
+        "pro_quantity": "Qty",
+        "pro_variant_options": "Options",
+        "btn_1_bg_color": "#232323",
+        "btn_1_border_color": "#232323",
+        "btn_1_text_color": "#ffffff",
+        "btn_2_bg_color": "#ffffff",
+        "btn_2_border_color": "#323232",
+        "btn_2_text_color": "#232323",
+        "btn_3_bg_color": "#ffffff",
+        "btn_3_border_color": "#e6e6e6",
+        "btn_3_text_color": "#232323",
+        "btn_4_bg_color": "#69c69c",
+        "btn_4_border_color": "#69c69c",
+        "btn_4_text_color": "#ffffff"
+      }
+    },
+    "testimonials": {
+      "type": "collection-testimonials",
+      "disabled": true,
+      "settings": {
+        "display_customer": false
+      }
+    },
+    "recently-view": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "display_recently_viewed_products": true,
+        "recently_viewed_products_title": "Recently Viewed Products",
+        "number_of_recently_viewed_products": "8",
+        "recently_viewed_products_per_row": "5"
+      }
+    },
+    "5527c9e4-850c-47b4-8775-d8cf5157f3f4": {
+      "type": "supermarket-new-arrivals",
+      "settings": {
+        "new_arrivals_title": "Up to 37% off: Heavy Duty Storage Shelf",
+        "new_arrivals_text": "",
+        "new_arrivals_text_link": "",
+        "color_text_link": "#ffffff",
+        "block_bg": "#ffffff",
+        "bg_grid_item": "#ffffff",
+        "product_list_collection": "black-friday-sale-shelf-collection",
+        "product_list_limit_all": 15,
+        "display_infinite_scrolling_homepage": false,
+        "collection_results_per_row1": "5",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "dfedcefe-c425-410f-a5a5-f7693d22d68a": {
+      "type": "supermarket-new-arrivals",
+      "settings": {
+        "new_arrivals_title": "Save $50: Freestanding Clothes Rack",
+        "new_arrivals_text": "",
+        "new_arrivals_text_link": "",
+        "color_text_link": "#202020",
+        "block_bg": "#ffffff",
+        "bg_grid_item": "#ffffff",
+        "product_list_collection": "black-friday-sale-rack-collection",
+        "product_list_limit_all": 15,
+        "display_infinite_scrolling_homepage": false,
+        "collection_results_per_row1": "5",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "e77e2775-4495-4eca-ba82-03def4d230ee": {
+      "type": "supermarket-new-arrivals",
+      "settings": {
+        "new_arrivals_title": "Up to 42% off: Bedroom Dresser",
+        "new_arrivals_text": "",
+        "new_arrivals_text_link": "",
+        "color_text_link": "#202020",
+        "block_bg": "#ffffff",
+        "bg_grid_item": "#ffffff",
+        "product_list_collection": "black-friday-sale-dresser-collection",
+        "product_list_limit_all": 15,
+        "display_infinite_scrolling_homepage": false,
+        "collection_results_per_row1": "5",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "799c1dc4-19c4-4859-9dee-5cf2f5e1ca7d",
+    "brand",
+    "main",
+    "testimonials",
+    "recently-view",
+    "5527c9e4-850c-47b4-8775-d8cf5157f3f4",
+    "dfedcefe-c425-410f-a5a5-f7693d22d68a",
+    "e77e2775-4495-4eca-ba82-03def4d230ee"
+  ]
+}

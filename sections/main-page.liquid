@@ -1,0 +1,15 @@
+<div class="page-tpl">
+  <div class="container content-box">
+    <div class="content-page">
+      {% render 'breadcrumb' %}
+      <header class="page-header">
+        <h2>
+          {% render 'multilang' with page.title %}
+        </h2>
+      </header>
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</div>

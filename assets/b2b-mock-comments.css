@@ -1,0 +1,116 @@
+.b2b-mock-comments .reviews-cards {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.b2b-mock-comments .reviews-cards .card-item {
+    border-radius: 8px;
+    overflow: hidden;
+    user-select: none;
+    height: 100%;
+}
+
+.b2b-mock-comments .strat-box {
+    display: flex;
+    align-items: center;
+}
+
+.b2b-mock-comments .start-list {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.06), 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-size: 22px;
+    margin: -23px auto 0;
+    padding: 12px 16px;
+    position: relative;
+    width: -moz-min-content;
+    width: min-content;
+    z-index: 3;
+}
+
+.b2b-mock-comments .start-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.b2b-mock-comments .card-item-outer {
+    flex: 1;
+    padding: 10px;
+}
+
+.b2b-mock-comments .card-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    box-shadow: 0 7px 12px -4px rgba(0, 0, 0, 0.22);
+}
+
+.b2b-mock-comments .review-data {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8px;
+    padding: 0 12px 12px;
+}
+
+.b2b-mock-comments .customer {
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    text-align: right;
+}
+
+.b2b-mock-comments .card-img {
+    width: 100%;
+}
+
+.b2b-mock-comments .review-content {
+    margin-bottom: 8px;
+    color: #666666;
+}
+
+.b2b-mock-comments .card-item-outer:hover .card-item {
+    transform: translateY(-4px);
+}
+
+@media (max-width: 991px) {
+    .b2b-mock-comments .reviews-cards {
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+    }
+
+    .b2b-mock-comments .reviews-cards .card-item {
+        width: 400px;
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .b2b-mock-comments .reviews-cards {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        /* Firefox 中的滚动条宽度 */
+        -ms-overflow-style: none;
+        /* Internet Explorer 和 Edge 中的滚动条样式 */
+    }
+
+    .b2b-mock-comments .reviews-cards .card-item {
+        width: 400px;
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .b2b-mock-comments .reviews-cards .card-item {
+        width: 300px;
+    }
+}

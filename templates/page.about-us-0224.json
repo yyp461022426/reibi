@@ -1,0 +1,306 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "wrapper": "div.page-tpl.about-us-2",
+  "sections": {
+    "header": {
+      "type": "page-header",
+      "disabled": true,
+      "settings": {
+        "text_color": "",
+        "menu": "",
+        "menu_bar_background": "",
+        "menu_bar_border": "",
+        "menu_item_background": "",
+        "menu_item_text_color": "",
+        "menu_item_background_color_h": "",
+        "menu_item_text_color_h": ""
+      }
+    },
+    "16600954134b7743ad": {
+      "type": "home-custom-block-text",
+      "blocks": {
+        "f3c3426e-86f3-4c36-b75a-8bdbef7f0c95": {
+          "type": "Text",
+          "settings": {
+            "text": "ABOUT US",
+            "link": "",
+            "color": "#232323",
+            "bg_color": "#f9ede1",
+            "border": "#f9ede1"
+          }
+        }
+      },
+      "block_order": [
+        "f3c3426e-86f3-4c36-b75a-8bdbef7f0c95"
+      ],
+      "settings": {
+        "layout": "full",
+        "layout_style": "style_2",
+        "bg_color_block": "rgba(0,0,0,0)",
+        "border_block": "#fafafa",
+        "font_size": "30px",
+        "font_weight_bold": "400",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "1660095607d37054bf": {
+      "type": "home-custom-block-text",
+      "blocks": {
+        "1e52541d-75d3-48a0-9323-3dc7c1e2a52d": {
+          "type": "Text",
+          "settings": {
+            "text": "Since the Reibii company established, Reibii has been committed to providing customers with high-quality household items and affordable price. We believe that every customer deserves excellent and cheerful household items.High-quality and modern design employ a sense of exquisite in every product, we would like to provide an option for you to create a unique lifestyle.",
+            "link": "",
+            "color": "#232323",
+            "bg_color": "#f9ede1",
+            "border": "#f9ede1"
+          }
+        },
+        "f58552c3-fdae-48ea-9491-1fecadf19e8d": {
+          "type": "Text",
+          "settings": {
+            "text": "With this original intention, Ray, our founder created the Raybee, Reibii and EnHomee brands. As a young and dynamic brand, we are constantly updating our products so that to satisfy your wishes and provide creative ideas for you to decorate your home.",
+            "link": "",
+            "color": "#232323",
+            "bg_color": "#f9ede1",
+            "border": "#f9ede1"
+          }
+        }
+      },
+      "block_order": [
+        "1e52541d-75d3-48a0-9323-3dc7c1e2a52d",
+        "f58552c3-fdae-48ea-9491-1fecadf19e8d"
+      ],
+      "settings": {
+        "layout": "padd_60",
+        "layout_style": "style_1",
+        "bg_color_block": "rgba(0,0,0,0)",
+        "border_block": "#fafafa",
+        "font_size": "16px",
+        "font_weight_bold": "400",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "main": {
+      "type": "about-us-2-content",
+      "blocks": {
+        "4eaa4f94-1d24-4be3-9d24-e5ecc13e757a": {
+          "type": "top_content",
+          "settings": {
+            "display_banner": true,
+            "banner": "shopify://shop_images/reibii-team2.jpg",
+            "alignment": "left",
+            "title_1": "",
+            "content_1": "",
+            "title_2": "Unique design",
+            "content_2": "You can find a plenty of natural tones in our design. It is suitable for most family and neutral color design will help you to build a more comfortable room. In the meantime, we try our best to minimize the loss of the wood and protect our environment.",
+            "title_3": "Title",
+            "content_3": "",
+            "title_4": "Title",
+            "content_4": "",
+            "title_5": "Title",
+            "content_5": ""
+          }
+        },
+        "edf16d68-1dda-4307-a540-05b1f67d7271": {
+          "type": "top_content",
+          "settings": {
+            "display_banner": true,
+            "banner": "shopify://shop_images/reibii-factory.jpg",
+            "alignment": "right",
+            "title_1": "Every detail matters",
+            "content_1": "We have set up a customer service team. Customers can communicate with our assistants, to enjoy a delightful and professional shopping experience.",
+            "title_2": "",
+            "content_2": "",
+            "title_3": "",
+            "content_3": "",
+            "title_4": "",
+            "content_4": "",
+            "title_5": "",
+            "content_5": ""
+          }
+        },
+        "fd45a959-3f01-4a17-90fb-77405a52d175": {
+          "type": "top_content",
+          "settings": {
+            "display_banner": true,
+            "banner": "shopify://shop_images/reibii-warehouse_6a2f402e-4e71-40b0-8dfe-84f83203cf2b.jpg",
+            "alignment": "left",
+            "title_1": "Fast Delivery",
+            "content_1": "We have three large warehouses in  Houston, Los Angeles, and New Jersey. You can get the products as fast as we can. At the same time, we will find the most suitable supply chain for you,we hope you don't need to take high freight and to worry about the damage.",
+            "title_2": "Title",
+            "content_2": "",
+            "title_3": "Title",
+            "content_3": "",
+            "title_4": "Title",
+            "content_4": "",
+            "title_5": "Title",
+            "content_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "4eaa4f94-1d24-4be3-9d24-e5ecc13e757a",
+        "edf16d68-1dda-4307-a540-05b1f67d7271",
+        "fd45a959-3f01-4a17-90fb-77405a52d175"
+      ],
+      "settings": {
+        "display_top_content": true,
+        "top_heading": "",
+        "top_subheading": "",
+        "border_color": "#ffffff",
+        "top_content_bgc": "#fafafa",
+        "top_content_tt_size": "30",
+        "top_content_ttc": "#232323",
+        "top_content_txtc": "#3c3c3c",
+        "dots_color": "#9c9c9c",
+        "display_bottom_content": false,
+        "bot_heading": "",
+        "bot_subheading": ""
+      }
+    },
+    "1660035155ad8400a5": {
+      "type": "home-custom-block-baner",
+      "blocks": {
+        "1660035155f4912b9e-0": {
+          "type": "largeImg",
+          "settings": {
+            "image": "shopify://shop_images/reibii-about_us-d.jpg",
+            "image_mb": "shopify://shop_images/reibii-about_us-m.jpg",
+            "display_parallax": false,
+            "dpl_down_arrow": false,
+            "height_img_parallax": "970px",
+            "content_style": "style_1",
+            "display_bg_animation": false,
+            "color_bg_animation": "#f6f6f6",
+            "alignment": "left",
+            "banner_heading": "",
+            "font_size_banner_heading": "40px",
+            "font_size_banner_heading_mb": "24px",
+            "color_banner_heading": "#232323",
+            "color_banner_heading_style2": "#10ffda",
+            "color_banner_heading_mb": "#232323",
+            "banner_sub_heading": "",
+            "font_size_banner_sub_heading": "13px",
+            "font_size_banner_sub_heading_mb": "13px",
+            "color_banner_sub_heading": "#ffffff",
+            "color_banner_sub_heading_mb": "#232323",
+            "banner_des": "",
+            "font_size_banner_des": "12px",
+            "font_size_banner_des_mb": "12px",
+            "color_banner_des": "#232323",
+            "color_banner_des_mb": "#232323",
+            "countdown": "",
+            "banner_button": "",
+            "link": "",
+            "bg_banner_button": "#232323",
+            "border_banner_button": "#232323",
+            "color_banner_button": "#ffffff",
+            "bg_banner_button_mb": "#232323",
+            "border_banner_button_mb": "#232323",
+            "color_banner_button_mb": "#ffffff",
+            "min_width_banner_button": "237px"
+          }
+        }
+      },
+      "block_order": [
+        "1660035155f4912b9e-0"
+      ],
+      "settings": {
+        "layout": "default",
+        "layout_style": "layout_style_1",
+        "display_bg_banner": false,
+        "bg_color_banner": "#f5f5f5",
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "img_align": "center",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 30,
+        "margin_bottom": 30
+      }
+    },
+    "1660101335ce4a1174": {
+      "type": "home-custom-block-text",
+      "blocks": {
+        "e9c6cddb-9071-421b-ab0a-974dde4a67b7": {
+          "type": "Text",
+          "settings": {
+            "text": "Email: support@reibii.com",
+            "link": "",
+            "color": "#232323",
+            "bg_color": "#f9ede1",
+            "border": "#f9ede1"
+          }
+        },
+        "74e7ae12-53f4-4894-9c32-caf4a605bc06": {
+          "type": "Text",
+          "settings": {
+            "text": "Phone: (+852)54918937",
+            "link": "",
+            "color": "#232323",
+            "bg_color": "#f9ede1",
+            "border": "#f9ede1"
+          }
+        },
+        "74959a82-9145-40d7-96a6-0c739a20ce85": {
+          "type": "Text",
+          "settings": {
+            "text": "Address: No.8, 11/F, Wang Fai Industrial Building, No.29 Luk Hop Street, San Po Kong, Kowloon, Hong Kong",
+            "link": "",
+            "color": "#232323",
+            "bg_color": "#f9ede1",
+            "border": "#f9ede1"
+          }
+        },
+        "74090281-9232-454f-b50b-dd4a513f9076": {
+          "type": "Text",
+          "settings": {
+            "text": "Service Time: Monday to Sunday: 9:00am - 10:00pm (Saturday: Closed)",
+            "link": "",
+            "color": "#232323",
+            "bg_color": "#f9ede1",
+            "border": "#f9ede1"
+          }
+        }
+      },
+      "block_order": [
+        "e9c6cddb-9071-421b-ab0a-974dde4a67b7",
+        "74e7ae12-53f4-4894-9c32-caf4a605bc06",
+        "74959a82-9145-40d7-96a6-0c739a20ce85",
+        "74090281-9232-454f-b50b-dd4a513f9076"
+      ],
+      "settings": {
+        "layout": "default",
+        "layout_style": "style_1",
+        "bg_color_block": "rgba(0,0,0,0)",
+        "border_block": "#fafafa",
+        "font_size": "14px",
+        "font_weight_bold": "400",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "header",
+    "16600954134b7743ad",
+    "1660095607d37054bf",
+    "main",
+    "1660035155ad8400a5",
+    "1660101335ce4a1174"
+  ]
+}

@@ -1,0 +1,117 @@
+.index-scene-display .scene-box {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: 40px; */
+}
+
+.index-scene-display .scene-item {
+  width: 20%;
+  border: 1px solid #929497;
+  position: relative;
+  overflow: hidden;
+}
+
+.index-scene-display .cover-img-move-out {
+  transform: translateY(-101%);
+}
+
+.index-scene-display .cover-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transition: all 0.4s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.index-scene-display .cover-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.index-scene-display .cover-img .info-box {
+  position: absolute;
+  padding: 8px 24px 8px 8px;
+  left: 40px;
+  top: calc(50% - 130px);
+}
+
+.index-scene-display .inner-box .inner-box {
+  position: relative;
+}
+
+.index-scene-display .inner-box >img{
+  width: 100%;
+}
+
+.index-scene-display .inner-box .info-box {
+  background: #0d489d;
+  padding: 18px 26px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.index-scene-display .info-box {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.index-scene-display .info-box > div:first-child {
+  font-size: 24px;
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.index-scene-display .info-box > div:nth-child(2) {
+  font-weight: 600;
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.index-scene-display .info-box > div:last-child{
+  font-size: 16px;
+  color: #fff;
+}
+@media (min-width: 1200px) {
+}
+@media (max-width: 1199px) {
+  .index-scene-display .info-box > div:first-child{
+    font-size: 22px;
+  }
+  .index-scene-display .info-box > div:nth-child(2){
+    font-size: 20px;
+  }
+  .index-scene-display .info-box > div:last-child{
+    font-size: 14px;
+  }
+  .index-scene-display .inner-box .info-box{
+    padding: 10px 16px;
+  }
+  .index-scene-display .cover-img .info-box{
+    left: 24px;
+  }
+}
+@media (max-width: 991px) {
+  .index-scene-display .info-box > div:first-child{
+    font-size: 20px;
+  }
+  .index-scene-display .info-box > div:nth-child(2){
+    font-size: 17px;
+  }
+  .index-scene-display .info-box > div:last-child{
+    font-size: 11px;
+  }
+  .index-scene-display .inner-box .info-box{
+    padding: 10px 16px;
+  }
+}
+@media (max-width: 767px) {
+  #shopify-section-index_scene_display_etLFD8 .loading-bar{
+    display: none;
+  }
+}

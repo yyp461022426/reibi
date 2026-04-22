@@ -1,0 +1,128 @@
+<link rel="stylesheet" type="text/css" href="{{ 'index-scene-display.css' | asset_url }}">
+<div class="index-scene-display index-normal-component">
+  {% if section.settings.title and section.settings.title != '' %}
+    <h2 class="main-page-title">
+      <span class="small-title">{{ section.settings.title | upcase }}</span>
+      <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+    </h2>
+  {% endif %}
+  <div class="loading-container">
+    <div class="loading-bar">
+      <div class="loader"></div>
+    </div>
+    <div class="loading-finish">
+      <div class="scene-box">
+        {% for block in section.blocks limit: 10 %}
+          <div class="scene-item">
+            <div class="cover-img">
+              {{ block.settings.cover_image | image_url: width: 384 | image_tag }}
+              <div class="info-box">
+                <div>
+                  {% if forloop.index < 10 %}{{ forloop.index | prepend: '0' }}{% else %}{{ forloop.index }}{% endif %}
+                </div>
+                <div>{{ block.settings.cover_words | upcase }}</div>
+                <div>{{ block.settings.desc_words | upcase }}</div>
+              </div>
+            </div>
+            <div class="inner-box">
+              <div class="info-box">
+                <div>
+                  {% if forloop.index < 10 %}{{ forloop.index | prepend: '0' }}{% else %}{{ forloop.index }}{% endif %}
+                </div>
+                <div>{{ block.settings.cover_words | upcase }}</div>
+              </div>
+              {{ block.settings.inner_image | image_url: width: 384 | image_tag }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  let slideDom = $('#shopify-section-index_scene_display_mobile_adeMWR');
+  let sceneDom = $('.scene-box');
+  function changeModelByWindowWidth() {
+    if ($(window).width() < 768) {
+      slideDom.find('.index-scene-dis-mobile-swiper').show();
+      sceneDom.hide();
+    } else {
+      slideDom.find('.index-scene-dis-mobile-swiper').hide();
+      sceneDom.show();
+    }
+  }
+  function debounce(func, wait) {
+    let timeout = null;
+    return function () {
+      const context = this;
+      const args = arguments;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+  }
+  $(document).ready(function () {
+    changeModelByWindowWidth();
+    //  监控窗口宽度变化
+    $(window).resize(function () {
+      debounce(changeModelByWindowWidth(), 200);
+    });
+    // 鼠标移入事件
+    $('.scene-item').mouseenter(function () {
+      if (this.timer) {
+        clearTimeout(this.timer);
+      }
+      $(this).find('.cover-img').addClass('cover-img-move-out');
+    });
+    // 鼠标移出事件
+    $('.scene-item').mouseleave(function () {
+      this.timer = setTimeout(() => {
+        $(this).find('.cover-img').removeClass('cover-img-move-out');
+      }, 1000);
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Index Scene Display",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Cover Image in Pc"
+        },
+        {
+          "type": "text",
+          "id": "cover_words",
+          "label": "Cover Words"
+        },
+        {
+          "type": "textarea",
+          "id": "desc_words",
+          "label": "Desc Words"
+        },
+        {
+          "type": "image_picker",
+          "id": "inner_image",
+          "label": "Inner Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Scene Display"
+    }
+  ]
+}
+{% endschema %}

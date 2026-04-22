@@ -1,0 +1,21 @@
+.sticky-product-mobile{
+    padding: 0 10px
+}
+.sticky-title{
+    margin-bottom: 12px;
+}
+
+.stick-swatch .swatch-element label{
+    min-width: 34px;
+    min-height: 30px;
+    border: 1px solid var(--border_color_2);
+    margin: 0;
+    text-align: center;
+    padding: 3px;
+    line-height: var(--font_size_plus14);
+    color: var(--color_slick_arrow);
+    cursor: pointer;
+    border-radius: var(--border-radius-17);
+    display: flex;
+    align-items: center;
+}

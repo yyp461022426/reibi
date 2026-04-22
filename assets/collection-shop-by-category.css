@@ -1,0 +1,39 @@
+.swiper-one-line{
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.collections-link .swiper-item{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    margin: 0 10px;
+}
+
+.collections-link .scene-words{
+    white-space: break-spaces;
+    line-height: normal;
+}
+
+.collections-link .item-img {
+    width: 200px;
+    height: auto;
+    background: #eeeeee;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+@media (max-width: 1199px) {
+    .collections-link .item-img {
+        width: 160px;
+    }
+}
+
+@media (max-width: 767px) {
+    .collections-link .item-img {
+        width: 100px;
+    }
+}

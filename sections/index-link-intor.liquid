@@ -1,0 +1,76 @@
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ 'index-link-intor.css' | asset_url }}"
+>
+<div class="index-link-intor index-normal-component">
+  <div class="container deals-box">
+    {% if section.settings.title and section.settings.title != '' %}
+      <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
+        {% if section.settings.title_style == '1' %}
+          <span class="small-title">{{ section.settings.title | upcase }}</span>
+          <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+        {% else %}
+          <span class="small-title2">{{ section.settings.title }}</span>
+        {% endif %}
+      </h2>
+      {% if section.settings.title_add_desc %}
+        <div class="desc-add">
+          {{ section.settings.title_add_desc }}
+        </div>
+      {% endif %}
+    {% endif %}
+    <div class="flex-center">
+      <a class="custom-action-btn action-full-btn" href="{{ section.settings.first_url }}">{{ section.settings.intor_btn }}</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Index Link Intor",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "radio",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title Style1(叠影)"
+        },
+        {
+          "value": "2",
+          "label": "Title Style1(单色)"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title_add_desc",
+      "label": "标题下方的描述"
+    },
+    {
+      "type": "text",
+      "id": "intor_btn",
+      "label": "Intro Button Description"
+    },
+    {
+      "type": "url",
+      "id": "first_url",
+      "label": "More Info Link To"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Index Link Intor"
+    }
+  ]
+}
+{% endschema %}

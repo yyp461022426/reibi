@@ -1,0 +1,113 @@
+.index-full-screen-video #index-video {
+  width: 100%;
+}
+
+.index-full-screen-video .video-box {
+  position: relative;
+}
+
+.index-full-screen-video .pause-btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.index-full-screen-video .pause-img {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  margin: auto;
+  transition: all 0.5s ease;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+/* ===================================== */
+.index-full-screen-video .card-box{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 32px;
+  gap: 12px;
+}
+.index-full-screen-video .card-item{
+  padding: 10px 150px 10px 32px;
+  border-radius: 10px;
+  background: #F5F9FF;
+  position: relative;
+  overflow: hidden;
+}
+.index-full-screen-video .card-item::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: var(--color_base);
+    left: 0;
+    top: 0;
+}
+.index-full-screen-video .card-title{
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text_color);
+  margin-bottom: 16px;
+}
+
+.index-full-screen-video .card-desc-list >div {
+    display: flex;
+    align-items: center;
+}
+
+.index-full-screen-video .card-desc-list >div:not(:last-child){
+    margin-bottom: 2px;
+}
+
+.index-full-screen-video .card-desc-list >div:before{
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #bfbfbf;
+    display: block;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+@media (min-width: 1200px) {
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 991px) {
+  .index-full-screen-video .pause-img{
+    width: 60px;
+  }
+}
+@media (max-width: 767px) {
+  .index-full-screen-video .card-item{
+    /* width: 100%; */
+    padding: 16px 32px;
+  }
+  .index-full-screen-video .card-title{
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .index-full-screen-video .pause-img{
+    width: 40px;
+  }
+  .index-full-screen-video .card-desc-list>div{
+    font-size: 14px;
+  }
+  .index-full-screen-video .card-box{
+    justify-content: space-around;
+    flex-direction: column;
+  }
+}

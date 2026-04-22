@@ -1,0 +1,459 @@
+<link rel="stylesheet" type="text/css" href="{{ 'index-inspiration-model.css' | asset_url }}">
+<style>
+  /* 公共弹窗 */
+  .model-pop-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .pop-model-template .model-pop-warp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    outline: 0;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .pop-model-template .model-pop-warp::before {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    content: '';
+  }
+  .pop-model-template .model-pop {
+    top: 0;
+    display: inline-block;
+    padding-bottom: 0;
+    vertical-align: middle;
+    width: 1187px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    animation: popScaleIn 0.2s ease-out;
+    padding: 10px;
+    position: relative;
+    /* max-width: calc(100vw - 32px); */
+  }
+  .pop-model-template .close-x {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pop-model-template .close-x svg {
+    width: 12px;
+  }
+
+  .pop-model-template .close-modal-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.45);
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .pop-model-template .pop-content {
+    padding: 16px;
+  }
+
+  /* 从底部滑入动画 */
+  @keyframes popScaleIn {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes popSlideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes popSlideDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  @media (max-width: 1500px) {
+    .pop-model-template .model-pop {
+      width: 850px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .pop-model-template .model-pop {
+      border-radius: unset;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+    }
+
+    .pop-model-template .pop-show {
+      animation: popSlideUp 0.2s ease;
+      animation-fill-mode: forwards;
+    }
+
+    .pop-model-template .pop-hide {
+      animation: popSlideDown 0.2s ease;
+      animation-fill-mode: forwards;
+    }
+
+    .pop-model-template .pop-option {
+      height: 50px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .pop-model-template .model-pop-warp {
+      overflow: initial;
+    }
+    .pop-model-template .model-pop-warp::before {
+      content: none;
+    }
+  }
+  /* 公共弹窗end */
+</style>
+<div class="index-inspiration-model index-normal-component">
+  <div class="container">
+    {% if section.settings.title and section.settings.title != '' %}
+      <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
+        {% if section.settings.title_style == '1' %}
+          <span class="small-title">{{ section.settings.title | upcase }}</span>
+          <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+        {% else %}
+          <span class="small-title2">{{ section.settings.title }}</span>
+        {% endif %}
+      </h2>
+      {% if section.settings.title_add_desc %}
+        <div class="desc-add">
+          {{ section.settings.title_add_desc }}
+        </div>
+      {% endif %}
+    {% endif %}
+    <div class="show-case-box ins-slick-scroll line-dots">
+      {% for block in section.blocks limit: 6 %}
+        <div class="show-case-card">
+          <div class="card-box">
+            <div>
+              <div class="img-box">
+                {%- if block.settings.display_img != blank -%}
+                  {{ block.settings.display_img | image_url: height: 300 | image_tag: class: 'display-img' }}
+                {%- else -%}
+                  <div class="not_img display-img">240 x 300px</div>
+                {%- endif -%}
+                {%- assign first_pro = block.settings.product_list | first -%}
+              </div>
+              <div class="stars-and-reviews">
+                <div class="stars-box">
+                  <div
+                    class="loox-rating"
+                    data-fetch
+                    data-id="{{ first_pro.id }}"
+                  ></div>
+                </div>
+                <div class="customer-info">
+                  {{
+                    block.settings.customer_profile_pic
+                    | image_url: width: 40, height: 40
+                    | image_tag: class: 'customer-profile-pic'
+                  }}
+                  <div class="customer-name">@{{ block.settings.customer_name }}</div>
+                </div>
+                <div class="reviews-box">
+                  {{ block.settings.customer_review }}
+                </div>
+              </div>
+            </div>
+            {%- assign product_list_handles = '' -%}
+            {%- for list in block.settings.product_list limit: 2 -%}
+              {%- if forloop.index0 == 0 -%}
+                {%- assign product_list_handles = product_list_handles | append: list.handle -%}
+              {%- else -%}
+                {%- assign product_list_handles = product_list_handles | append: ',' | append: list.handle -%}
+              {%- endif -%}
+            {%- endfor -%}
+            <div class="hide product-list-info" data-product-list="{{ product_list_handles }}"></div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="model-pop-overlay pop-model-template">
+      <div class="model-pop-warp">
+        <div class="model-pop pop-show">
+          <div class="pop-option">
+            <button type="button" aria-label="Close" class="close-modal-btn">
+              <span class="close-x">
+                {% render 'icon-close' %}
+              </span>
+            </button>
+          </div>
+          <div class="pop-content ins-pop-content">
+            <div class="left-part">
+              <div class="pop-user-info">
+                <img src="#" width="32" height="32" class="pop-profile-photo">
+                <div class="pop-customer-name"></div>
+              </div>
+              <img src="#" width="640" height="800" class="big-display">
+            </div>
+            <div class="right-part">
+              <div class="title">Recommended Products</div>
+              <div class="product-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $('.ins-slick-scroll').slick({
+      dots: false,
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 2,
+      adaptiveHeight: true,
+      get nextArrow() {
+        return (this.nextArrow = `<button type="button" aria-label="Next" class="slick-next">
+                        <svg t="1758703771314" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="19663" width="16" height="16">
+                        <path d="M413.696 494.364444l265.272889-216.348444a28.444444 28.444444 0 1 0-35.953778-44.032L351.800889 471.438222a28.444444 28.444444 0 0 0-0.853333 43.349334l291.214222 257.479111a28.444444 28.444444 0 1 0 37.660444-42.666667L413.696 494.364444z" transform="scale(-1, 1) translate(-1024, 0)" p-id="19664">
+                        </path>
+                        </svg>
+                        </button>`);
+      },
+      get prevArrow() {
+        return (this.prevArrow = `<button type="button" aria-label="Previous" class="slick-prev">
+                        <svg t="1758703771314" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="19663" width="16" height="16">
+                        <path d="M413.696 494.364444l265.272889-216.348444a28.444444 28.444444 0 1 0-35.953778-44.032L351.800889 471.438222a28.444444 28.444444 0 0 0-0.853333 43.349334l291.214222 257.479111a28.444444 28.444444 0 1 0 37.660444-42.666667L413.696 494.364444z" p-id="19664">
+                        </path>
+                        </svg>
+                        </button>`);
+      },
+      responsive: [
+        {
+          breakpoint: 1330,
+          settings: {
+            dots: false,
+            slidesToShow: 4,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            dots: false,
+            slidesToShow: 3,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            dots: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+      ],
+    });
+    setTimeout(function () {
+      $('.ins-slick-scroll').css('opacity', '1');
+    }, 100);
+    const openModalBtn = $('.index-inspiration-model .show-case-card');
+    const modalOverlay = $('.model-pop-overlay');
+    const modelPop = $('.model-pop');
+    const closeModalBtn = $('.close-modal-btn');
+    const closeWarp = $('.model-pop-warp');
+    const body = $('body');
+    openModalBtn.on('click', function (event) {
+      modalOverlay.show();
+      modelPop.removeClass('pop-hide').addClass('pop-show');
+      body.toggleClass('sidebar-show');
+      openInsPop.call(this, event);
+    });
+    closeModalBtn.on('click', function (event) {
+      closePop();
+    });
+    closeWarp.on('click', function (event) {
+      if (event.target === this) {
+        closePop();
+      }
+    });
+
+    function closePop() {
+      body.toggleClass('sidebar-show');
+      if (window.innerWidth > 900) {
+        modalOverlay.hide();
+        $('.product-container').empty();
+      } else {
+        modelPop.removeClass('pop-show').addClass('pop-hide');
+        modelPop.one('animationend', function () {
+          modalOverlay.hide();
+          $('.product-container').empty();
+        });
+      }
+    }
+    function openInsPop() {
+      let card = $(this).closest('.show-case-card');
+      let handle_about = card.find('.product-list-info').data('product-list');
+      let display_img_url = card.find('.display-img').attr('src');
+      let customer_name = card.find('.customer-name').text();
+      let profile_pic = card.find('.customer-profile-pic').attr('src');
+      $('.big-display').attr('src', '');
+      let newHeight = 800;
+      const regex = /height=\d+&/;
+      if (window.innerWidth < 500) {
+        newHeight = 600;
+      }
+      let bigger_display_img_url = display_img_url.replace(regex, `height=${newHeight}&`);
+      $('.big-display').attr('src', bigger_display_img_url);
+      $('.pop-profile-photo').attr('src', profile_pic);
+      $('.pop-customer-name').text(customer_name);
+      let pro_handle_arr = handle_about ? handle_about.split(',') : [];
+      getProductData(pro_handle_arr);
+    }
+    async function getProductData(pro_handle_arr) {
+      $('.product-container').empty();
+      showLoading();
+      await Promise.all(
+        pro_handle_arr.map(async (item) => {
+          try {
+            let item_str = await ajaxGetProductItem(item);
+            $('.product-container').append(item_str);
+          } catch (error) {
+            console.error('Failed to get product item:', error);
+          }
+        })
+      );
+      hideLoading();
+    }
+    function ajaxGetProductItem(item) {
+      return new Promise((resolve, reject) => {
+        $.ajax({
+          url: '/products/' + item + '?view=grid_item',
+          cache: false,
+          success: function (data) {
+            resolve(data);
+          },
+          error: function (xhr, status, error) {
+            reject(new Error('Ajax request failed: ' + status + ', ' + error));
+          },
+        });
+      });
+    }
+    function showLoading() {
+      $('.loading-modal').show();
+    }
+
+    function hideLoading() {
+      $('.loading-modal').hide();
+    }
+    // 阻止默认滚动行为的函数
+    function preventDefault(e) {
+      e.preventDefault();
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "index Inspiration Model",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "radio",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title Style1(叠影)"
+        },
+        {
+          "value": "2",
+          "label": "Title Style1(单色)"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title_add_desc",
+      "label": "标题下方的描述"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "display_img",
+          "label": "Display Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "customer_profile_pic",
+          "label": "Customer Profile Picture"
+        },
+        {
+          "type": "text",
+          "id": "customer_review",
+          "label": "Customer Review"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer Name"
+        },
+        {
+          "type": "product_list",
+          "id": "product_list",
+          "label": "Recommended Products",
+          "limit": 4
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "index Inspiration Model"
+    }
+  ]
+}
+{% endschema %}

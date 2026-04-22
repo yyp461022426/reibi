@@ -1,0 +1,107 @@
+/* affiliate-program页面公共样式 */
+.gradient-bg-to-bottom {
+  background: linear-gradient(180deg, #f1f7ff, transparent);
+  border-radius: 8px;
+  padding: 32px;
+}
+.gradient-bg-to-top {
+  background: linear-gradient(180deg, transparent, #f1f7ff);
+  border-radius: 8px;
+  padding: 32px;
+}
+.banner-title {
+  font-weight: bold;
+  font-size: 48px;
+  color: #00327b;
+  text-align: center;
+  line-height: 60px;
+  margin-bottom: 24px;
+}
+.normal-btn {
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #0d489d;
+  padding: 8px 35px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #0d489d;
+  cursor: pointer;
+  margin: 10px 0 8px 0;
+  background-color: #ffffff;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+.normal-btn:hover {
+  background-color: #0d489d;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+.main-content {
+  padding-bottom: 36px;
+}
+/* 公共样式end */
+.affiliate-program-start .banner-des {
+  text-align: center;
+  font-size: 20px;
+  color: #333333;
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+.affiliate-program-start .link-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.affiliate-program-start .link-item {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px 8px;
+}
+.affiliate-program-start .img-box {
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  margin: 40px 40px 20px 40px;
+}
+.affiliate-program-start .normal-btn {
+  background-color: #0d489d;
+  color: #fff;
+  border: 1px solid #ffffff;
+}
+@media (min-width: 1200px) {
+  .affiliate-program-start .link-box {
+    padding: 0 32px;
+  }
+}
+@media (max-width: 1199px) {
+  .banner-title {
+    font-size: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .banner-title {
+    font-size: 36px;
+    margin-bottom: 16px;
+    line-height: 50px;
+  }
+  .gradient-bg-to-bottom {
+    padding: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .affiliate-program-start .banner-des {
+    line-height: 24px;
+    font-size: 16px;
+  }
+  .affiliate-program-start .link-box {
+    flex-direction: column;
+  }
+  .affiliate-program-start .link-item {
+    margin-bottom: 16px;
+  }
+  .banner-title {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}

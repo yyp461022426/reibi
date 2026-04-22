@@ -1,0 +1,450 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1703156734faf42a8d": {
+      "type": "apps",
+      "blocks": {
+        "14c398cc-e5d3-401b-9c1f-f32b3de97acd": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "disabled": true,
+          "settings": {
+            "data_key": "credit-promotion-auto-size",
+            "theme": "dark",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        }
+      },
+      "block_order": [
+        "14c398cc-e5d3-401b-9c1f-f32b3de97acd"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "d2df0f3a-43e8-4113-8b44-15bfa68a6bee": {
+          "type": "popup_information",
+          "settings": {
+            "icon": "<?xml version=\"1.0\" standalone=\"no\"?>\n\n<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"body_2\" width=\"100\" height=\"100\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n\n<g transform=\"matrix(1.3333334 0 0 1.3333334 0 0)\">\n    <image x=\"0\" y=\"0\" xlink:href=\"data:image/png;base64,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\" width=\"75%\" height=\"75%\"></image>\n</g>\n</svg>",
+            "title": "90 Days Money Back Guarantee",
+            "content": "No-Hassle 100% Money-Back Guarantee!",
+            "content_popup": "<h3>Returns Policy</h3>\n<p>We have a 90-day return policy, which means you can apply for a return within 90 days of receiving the item.</p>\n<p>Non-Returnable Items: Used, Clearance, promotional, or custom-made items (unless defective), Return requests made after 90 days.</p>\n<p>If there is no quality problem, you need to bear the return cost yourself.</p>\n<p>To initiate a return, you can contact us at support@reibii.com. If your return is accepted, we will send you a specific return shipping label(only supported by FedEx) and instructions on how and where to send the package.</p>"
+          }
+        },
+        "f34d52e2-4756-4d63-941f-bee181cf0924": {
+          "type": "popup_information",
+          "settings": {
+            "icon": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n<svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" width=\"50px\" height=\"50px\" viewbox=\"0 0 50 50\" enable-background=\"new 0 0 50 50\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\">  <image id=\"image0\" width=\"50\" height=\"50\" x=\"0\" y=\"0\" href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAABGdBTUEAALGPC/xhBQAAACBjSFJN%0AAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA+VBMVEUAAAANSJ0MSZ4AVaoM%0ASJ0PSZ0NSJ0NSJ0NSJ0OSJ4MSZ4MSJ0NSZwMSJwPS54NSJ0NSJ0MSpwAVaoNR50NSJ0MRqIAQIAN%0ASJ0NSJ0JRp4NSJ0NSJwOR5wNSJ0NSJ0NSJ0NSJ0NSJ0NTZkAM5kNR50NSJ4PRpsNSJ0LSp8NSZ0N%0AR50NSZwNSJ0OSJ0AQJ8OR5wNSJ0NSJ0OSZ0ASZIKRZ0NSJ0OR5wKR5kNSJ0NR54UTp0NSJ0MSJ0A%0AVaoNR50RRJkMSJwNSJ0NSJ0NSJ0NSJ0NSJ0SSaQMSJsOR5wQUJ8MSZ4NSJ0MSJ0LSp8NSJ0NSJ4M%0AR50NSJ3///+jXfhqAAAAUXRSTlMA65MJkkbq5+mqKvVQWCKx+D4DoeYWBMS9Hex5S/77PI3jFAXI%0AoCH9MIyaO9mACG/KyW0HGtDPGdVPDdfOBtYPauXGUcWHDlJsEGnYzRj0x2v0chfdAAAAAWJLR0RS%0ADWAtkAAAAAd0SU1FB+YJFgYnNmVZY0MAAAFKSURBVEjH7ZR3U8IwGIfjHgUHat1oFSetg1GlpZYh%0ABRf6+/5fRkrp0aQ0Jtx5x52+/+T6/vpcnowLIf81kQVOTU3PyCLArKzBHObHsBYT+w1kDLEfkIVw%0A7sWl5QQxjrWSEkPSod/KKtbWxdfSHzIb2NySQ4i6jZ0MK8ZHyO4e9iURcnCYPZIS69UxtBNJ5DSH%0As4iYCELOlYtLSYRc4VpITAtO1K88dCHEiG5rln9ZB6FqaNGjEEGY1uQjN7d3inJfKI5AolEEKZWD%0A/TAfYggVDZFiGY8Vy0rZqDoMQkdDpIAn1x9dGzUGoaNeq468/91AJfiriWcGoaI0NNIKD9UK+t6I%0Ax5yKDOK06lTfTUb8SDPUUKGBwSvVjopxow7s/hpfdLwySFLkmHhrel5bx7vDIIlRyQy8qx+xO5IY%0AFTu5bvfzyyHx4kR/r74BSFqvOMN5aFwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDktMjJUMDY6%0AMzk6NTQrMDA6MDDWrj9qAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA5LTIyVDA2OjM5OjU0KzAw%0AOjAwp/OH1gAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMi0wOS0yMlQwNjozOTo1NCswMDowMPDm%0ApgkAAAAASUVORK5CYII=\"></image>\n</svg>",
+            "title": "Fast Delivery",
+            "content": "Delivered in 3 to 8 working days.",
+            "content_popup": "<h3>Shipping</h3>\n<p>We have overseas warehouses in Houston, Los Angeles, and New Jersey, and the delivery time is 3-8 business days. We only ship to 48 contiguous states and Washington D.C. within the US, excluding Alaska, Hawaii and Puerto Rico..</p>\n<p>Each order is delivered by a third-party provider (e.g. FedEx, UPS, Amazon) to the address you provide. Depending on the workload of the logistics company, the estimated delivery time is 5-10 business days (2 business days for order processing and 3-8 business days for delivery). In the event of force majeure, it will delay the processing of the order.</p>"
+          }
+        },
+        "ae13fc98-bd67-4283-862f-623858ba204d": {
+          "type": "popup_information",
+          "settings": {
+            "icon": "<?xml version=\"1.0\" standalone=\"no\"?>\n\n<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"body_1\" width=\"100\" height=\"100\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n\n<g transform=\"matrix(1.3333334 0 0 1.3333334 0 0)\">\n    <image x=\"0\" y=\"0\" xlink:href=\"data:image/png;base64,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\" width=\"75%\" height=\"75%\"></image>\n</g>\n</svg>",
+            "title": "3-Year Product Warranty",
+            "content": "<p>Read More.</p>",
+            "content_popup": "<p>All warranty questions can be consulted by our service email: support@reibii.com</p>\n<h3>Warranty Length</h3>\n<p>All our products carry a 3-year warranty.We would recommend that you read carefully the relevant instructions contained in your user manual.They contain conditions for their correct usage which if not followed will invalidate your warranty.</p>\n<h3>Warranty Overview</h3>\n<p>Reibii will repair or replace, at our discretion and free of charge to the original purchaser, any parts covered by this warranty that on examination, by Reibii staff, are found to be defective in material and/or workmanship.<br>\nAny unauthorised attempt by anyone other than the manufacturer to repair or dismantle a piece of product will invalidate the warranty. You should never make alterations to the design of the product or adapt it in any way – to do so will invalidate the warranty.</p>\n<h3>Warranty Exclusions</h3>\n<p>We will not be liable for a products failure in the following circumstances:<br>\nYou continue to use the product after notifying us of any faults.\nThe defect arises because you failed to follow instructions as to its storage, installation, commissioning, use or maintenance.<br>\nFabric damage resulting from misuse, negligence, abuse, accident or incorrect cleaning.\nUnauthorised or incorrect repairs, alterations and modifications.<br>\nDamage to the product from misuse, negligence, abuse or accident.<br>\nDamage caused from normal wear and tear.<br>\nDamage caused by common carrier abuse or mishandling and any special, indirect, incidental and/or consequential damages.</p>"
+          }
+        },
+        "0de2c6f1-1754-4a72-8e0a-d9cd53bb51bb": {
+          "type": "recommend",
+          "disabled": true,
+          "settings": {
+            "display_related_products": true,
+            "related_products_title": "Related Products",
+            "number_of_related_products": "4",
+            "related_products_per_row": "4"
+          }
+        }
+      },
+      "block_order": [
+        "d2df0f3a-43e8-4113-8b44-15bfa68a6bee",
+        "f34d52e2-4756-4d63-941f-bee181cf0924",
+        "ae13fc98-bd67-4283-862f-623858ba204d",
+        "0de2c6f1-1754-4a72-8e0a-d9cd53bb51bb"
+      ],
+      "settings": {
+        "style_moreview": "horizontal",
+        "enable_zoom_image": true,
+        "enable_zoom_text": true,
+        "enable_payment_button": true,
+        "enable_hot_stock": true,
+        "number_stock": "3",
+        "show_sold_in": false,
+        "item_prd": "3,5,6,7,8,10,12,15",
+        "item_prds": "sold in last",
+        "hours_prs": "10,15,16,17,18,20,25,35",
+        "item_hours": "hours",
+        "display_vendor": false,
+        "text_vendor": "Vendor:",
+        "display_product_sku": true,
+        "text_product_sku": "SKU:",
+        "display_availability": false,
+        "text_availability": "Availability:",
+        "display_product_type": false,
+        "text_product_type": "Product Type:",
+        "enable_countdown": false,
+        "countdown": "countdown_1",
+        "text_countdown": "Limited-Time Offers, End in:",
+        "option_countdown": "all_product",
+        "count_down_timer": "2020-12-25 22:11:00",
+        "custombox_text": "",
+        "progressbar_1": "Please hurry, only",
+        "progressbar_2": "left in stock",
+        "total_items": "100",
+        "min_items_left": "8",
+        "max_items_left": "26",
+        "progressbar_color": "#f5f5f5",
+        "progressbar_active_color": "#69c69c",
+        "dpl_customers_view": false,
+        "title_view": "customers are viewing this product",
+        "number_view": "283, 100, 59, 11, 14, 185, 193, 165, 50, 38, 99, 112, 46, 10, 125, 200, 250, 18",
+        "show_desc": "short",
+        "display_subtotal": true,
+        "display_qty": true,
+        "display_product_detail_tag": false,
+        "display_product_detail_share": false,
+        "share_text": "Share",
+        "display_trust_img": true,
+        "show_tab": "horizontal",
+        "display_product_detail_description": true,
+        "product_description_title": "Description",
+        "display_product_reviews": false,
+        "product_review_title": "Customer Reviews",
+        "display_custom_tab_1": false,
+        "custom_tab_title_1": "Features",
+        "custom_tab_content_1": "",
+        "display_custom_tab_2": false,
+        "custom_tab_title_2": "Specification",
+        "custom_tab_content_2": "<p>Color:Pink<br>Overall size: 40.55\"W x 11.8\"D x 43.7\"H<br>Large drawers size: 18.89\"W x 10.83\"D x 7.87\"H<br>Medium drawers size: 9.45\"W x 10.83\"D x 7.87\"H<br>Load capacity for each drawer: 10 lbs<br>Load capacity for wooden top: 60lbs<br>Load capacity in total: 180 lbs</p>\n<p><strong>Material details</strong><br><br>Frame: Metal<br>Drawers: Cationic fabric<br>Handles: Plastic\n</p><p><strong>Package includes</strong><br></p>\n<p>1 x EnHomee 12 drawer dresser <br>1 x Anti-tipping kit <br>1 x Assembly instruction <br>1 x Assembly tool</p>",
+        "display_custom_tab_3": true,
+        "custom_tab_title_3": "Shipping&Returns",
+        "custom_tab_content_3": "<h3>DELIVERY :</h3>\n<p>Free shipping on all items in the REIBII online store.</p>\n<p>After you place your order, we will process your order within 2 working days.</p>\n<p>Typically, shipping time is expected to be 3-8 business days and your order will be delivered to your doorstep by a third-party provider (eg FedEx, UPS) to the address you provide.</p>\n<p>When the package arrives, we will send you an arrival email to remind you, or you can check the shipping status of your order on the responsible shipping company's website.</p>\n<h3>NOTICE:</h3>\n<p>Currently we only ship to the continental US, we do not ship to Alaska, Hawaii, Puerto Rico.</p>\n<p>Please refer to <a href=\"https://reibii.com/pages/shipping-and-delivery\"><span><u>https://reibii.com/pages/shipping-and-delivery</u></span></a> for specific shipping policies.</p>\n<h3>RETURNS & EXCHANGES:</h3>\n<p>TIME: We offer a <strong><em>30-day</em></strong> money-back guarantee, which means you can request a return within 30 days of receiving the item.</p>\n<p>REQUEST: The item you send back must be in the same condition as the item you received, unworn or unused, labeled, and in its original packaging.</p>\n<p>FEE: If the product has no quality problems, you need to bear the return and exchange fees by yourself.</p>\n<p>DAMAGE & PROBLEMS: If you receive a defective, incorrect or incomplete item, please contact us immediately and attach a photo of the damaged product (if applicable) so that we can promptly re-issue you a good product or refund to you.</p>\n<p><strong>NOTE</strong>: Please keep all items and packaging materials until your claim is resolved. For specific return policy, please refer to <span><a href=\"https://reibii.com/pages/return-policy\"><u>https://reibii.com/pages/return-policy</u></a></span></p>",
+        "display_custom_tab_4": false,
+        "custom_tab_title_4": "Custom Tab 4",
+        "custom_tab_content_4": "Custom Tab Content 4",
+        "display_custom_tab_5": false,
+        "custom_tab_title_5": "Custom Tab 5",
+        "custom_tab_content_5": "Custom Tab Content 5",
+        "display_custom_tab_6": true,
+        "custom_tab_title_6": "Recommendations",
+        "recommend_collection": "recommendations",
+        "dpl_lookbook_description": true,
+        "style_lookbook_description": "all_product",
+        "quote_title": "",
+        "quote_des": "",
+        "quote_title_2": "",
+        "quote_des_2": "",
+        "dpl_gallery_lookbook": true,
+        "style_lookbook_gallery": "all_product",
+        "dpl_grouped_product": true,
+        "show_discount_box": true,
+        "grouped_product_style": "style_1",
+        "grouped_title": "Frequently Bought Together",
+        "grouped_choose_options_text": "Please choose options for all selected products",
+        "choose_options": "Choose Options",
+        "enable_bundle_discount": true,
+        "bundle_discount_text": "Get a [discount]% discount buying these products together | Erhalten Sie einen Rabatt von [discount]%, wenn Sie diese Produkte zusammen kaufen"
+      }
+    },
+    "supermarket_featured_products_yr6kXD": {
+      "type": "supermarket-featured-products",
+      "settings": {
+        "title_style": "style_2",
+        "featured_products_title": "People Who Bought This Item Also Bought",
+        "color_text_title": "",
+        "text_countdown": "",
+        "countdown": "",
+        "view_all": "",
+        "link_view_all": "",
+        "show_slider_featured_collection": "recommendations",
+        "slider_featured_limit_all": 10,
+        "collection_results_per_row1": "5",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "bc3abbc0-4e8f-4641-bbda-c0b17b87d0d0": {
+      "type": "home-instagram",
+      "blocks": {
+        "d406db8f-91c9-4ea3-a0f7-7a17939fea59": {
+          "type": "instagram",
+          "settings": {
+            "enable": true,
+            "image": "shopify://shop_images/enhomee_dresser_TV_stand.jpg",
+            "link": ""
+          }
+        },
+        "df6b281f-7308-4e43-b641-38d6fc8a4f50": {
+          "type": "instagram",
+          "settings": {
+            "enable": true,
+            "link": ""
+          }
+        },
+        "1375e368-b02d-4446-b39d-1ad2e7443f94": {
+          "type": "instagram",
+          "settings": {
+            "enable": true,
+            "image": "shopify://shop_images/Enhomee_Dresser_TV_Stand_Entertainment_Center_With_5_Drawers_2.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "d406db8f-91c9-4ea3-a0f7-7a17939fea59",
+        "df6b281f-7308-4e43-b641-38d6fc8a4f50",
+        "1375e368-b02d-4446-b39d-1ad2e7443f94"
+      ],
+      "settings": {
+        "show_instagram": true,
+        "layout": "default",
+        "display_border_top": false,
+        "instagram_bg": "#ffffff",
+        "instagram_icon_enable": false,
+        "instagram_title": "Show More",
+        "color_title": "",
+        "font_size_title": "",
+        "font_size_title_mb": "",
+        "font_weight_title": "700",
+        "text_transform_title": "capitalize",
+        "title_style": "style_2",
+        "instagram_des": "",
+        "display_instagram_button": false,
+        "instagram_button_text": "",
+        "instagram_button_link": "",
+        "type_instagram": "default",
+        "embed_code": "",
+        "type_instagram_by_gallery": "popup_image",
+        "limit": "10",
+        "images_per_row": "5",
+        "slide_ins": "default_ins",
+        "display_arrow": true,
+        "slide_rows": "1",
+        "margin_bottom_mb": 20,
+        "margin_bottom_tab": 30,
+        "margin_bottom": 35
+      }
+    },
+    "17053911024b23d754": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_trust_badge_pTxFRb": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-trust-badge/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "layout": "horizontal-slim",
+            "alignment": "fillContainer",
+            "scheme-type": "default",
+            "review-title": "reviews",
+            "rating-icon": true,
+            "average-rating": true,
+            "loox-branding": false,
+            "review-count": true,
+            "open-reviews": true,
+            "show-border": true,
+            "border-radius": 0,
+            "font-size": 20,
+            "background-color": "#FFFFFF",
+            "secondary-background-color": "",
+            "text-color": "#202020",
+            "rating-icon-color": "",
+            "border-color": ""
+          }
+        },
+        "loox_reviews_loox_dynamic_section_ycTWKy": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_trust_badge_pTxFRb",
+        "loox_reviews_loox_dynamic_section_ycTWKy"
+      ],
+      "settings": {}
+    },
+    "index_shop_by_category_xrmkEg": {
+      "type": "index-shop-by-category",
+      "blocks": {
+        "card_show_nfMfR9": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Storage_Shelves.jpg",
+            "category_name": "Steel Shelves",
+            "link": "shopify://collections/steel-shelves"
+          }
+        },
+        "card_show_WwLpyD": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/lQDPJxWmTxhasFfNBdzNBdywJ4jyTkuUIN4HpJAv98TcAA_1500_1500.jpg",
+            "category_name": "Wooden Shelves",
+            "link": "shopify://collections/wooden-shelves"
+          }
+        },
+        "card_show_QRMRAk": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Clothes_Rack.jpg",
+            "category_name": "Clothes Rack",
+            "link": "shopify://collections/clothes-rack"
+          }
+        },
+        "card_show_dGMCEw": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/lQDPJxe10N5S8FfNBdzNBdywb3n_3E_cptMHpJAv96NNAA_1500_1500.jpg",
+            "category_name": "Wire Shelves",
+            "link": "shopify://collections/wire-shelves"
+          }
+        },
+        "card_show_dXEM6w": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Dresser.jpg",
+            "category_name": "Fabric Dresser",
+            "link": "shopify://collections/fabric-dresser"
+          }
+        },
+        "card_show_cRGC9z": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Wooden_Dresser.png",
+            "category_name": "Wooden Dresser",
+            "link": "shopify://collections/wooden-dresser"
+          }
+        },
+        "card_show_K6xGzc": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Storage_Bins.jpg",
+            "category_name": "Storage Bins",
+            "link": "shopify://collections/storage-bins"
+          }
+        },
+        "card_show_bbpxAB": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Home_Office_Desk.jpg",
+            "category_name": "Home Office Desk",
+            "link": "shopify://collections/home-office-desk"
+          }
+        },
+        "card_show_TjfLAz": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Bed_Frame.jpg",
+            "category_name": "Bed Frame",
+            "link": "shopify://collections/bed-frame"
+          }
+        },
+        "card_show_W7imQb": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Nightstand.jpg",
+            "category_name": "Nightstand",
+            "link": "shopify://collections/nightstand"
+          }
+        },
+        "card_show_89H4H7": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Laundry_Sorter.jpg",
+            "category_name": "Laundry Sorter",
+            "link": "shopify://collections/laundry-sorter"
+          }
+        },
+        "card_show_cLfJdY": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Shoe_Rack.jpg",
+            "category_name": "Shoe Rack",
+            "link": "shopify://collections/shoe-rack"
+          }
+        },
+        "card_show_Hzhazq": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/6a0f48436f03bf48e8c7f28f9f150b4c.png",
+            "category_name": "Other Products",
+            "link": "shopify://collections/other-products"
+          }
+        }
+      },
+      "block_order": [
+        "card_show_nfMfR9",
+        "card_show_WwLpyD",
+        "card_show_QRMRAk",
+        "card_show_dGMCEw",
+        "card_show_dXEM6w",
+        "card_show_cRGC9z",
+        "card_show_K6xGzc",
+        "card_show_bbpxAB",
+        "card_show_TjfLAz",
+        "card_show_W7imQb",
+        "card_show_89H4H7",
+        "card_show_cLfJdY",
+        "card_show_Hzhazq"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "recently-view": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "display_recently_viewed_products": true,
+        "recently_viewed_products_title": "Recently Viewed Products",
+        "number_of_recently_viewed_products": "8",
+        "recently_viewed_products_per_row": "5"
+      }
+    },
+    "1661886767e2ca34fb": {
+      "type": "supermarket-featured-products",
+      "settings": {
+        "title_style": "style_2",
+        "featured_products_title": "Featured Products",
+        "color_text_title": "",
+        "text_countdown": "",
+        "countdown": "",
+        "view_all": "",
+        "link_view_all": "",
+        "show_slider_featured_collection": "wooden-dresser",
+        "slider_featured_limit_all": 10,
+        "collection_results_per_row1": "5",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "1703156734faf42a8d",
+    "main",
+    "supermarket_featured_products_yr6kXD",
+    "bc3abbc0-4e8f-4641-bbda-c0b17b87d0d0",
+    "17053911024b23d754",
+    "index_shop_by_category_xrmkEg",
+    "recently-view",
+    "1661886767e2ca34fb"
+  ]
+}

@@ -1,0 +1,60 @@
+<link rel="stylesheet" type="text/css" href="{{ 'affiliate-earn-commissions.css' | asset_url }}">
+<div class="affiliate-earn-commissions">
+  <div class="container">
+    <div class="gradient-bg-to-bottom set-position">
+      <h2 class="banner-title">{{ section.settings.title | upcase }}</h2>
+      <div class="step-box">
+        {% for block in section.blocks %}
+          <div class="item-box">
+            <div class="img-box">{{ block.settings.image | image_url: width: 262 | image_tag }}</div>
+            <div class="step-info">
+              <h3 class="step-title">{{ block.settings.step_title }}</h3>
+              <p class="step-des">{{ block.settings.step_des }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Affiliate Earn Money",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Affiliate Program Image"
+        },
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title"
+        },
+        {
+          "type": "text",
+          "id": "step_des",
+          "label": "Step Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Affiliate Earn Money"
+    }
+  ]
+}
+{% endschema %}

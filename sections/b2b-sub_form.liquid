@@ -1,0 +1,250 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-sub_form.css' | asset_url }}">
+{% assign anchor = section.settings.anchor %}
+<div class="sub_form normal-floor container anchor-content" id="{{ anchor }}">
+  <div class="form-box">
+    <div>
+      <div class="form-box-header">
+        <h5>Get Free Quote</h5>
+        <p>
+          Factory Direct Pricing from Just <span class="b2b-point">7 Units</span>
+        </p>
+      </div>
+      <div class="sbu-form-box">
+        {% form 'contact', id: 'contact_form2' %}
+          <!--
+            <form
+              method="post"
+              action="/contact#contact_form"
+              id="contact_form"
+              accept-charset="UTF-8"
+              class="contact-form"
+            >
+          -->
+          <input type="hidden" name="form_type" value="contact">
+          <input type="hidden" name="utf8" value="✓">
+          <!-- form content start -->
+          <!-- 成功的返回start -->
+          {% if form.posted_successfully? %}
+            <p
+              class="note form-success"
+              {% if settings.enable_multilang %}
+                data-translate="contact.form.post_success"
+              {% endif %}
+            >
+              {{ 'contact.form.post_success' | t }}
+            </p>
+            <script>
+              window.openMsgDialog(1);
+            </script>
+            <!-- 成功的返回end -->
+          {%- else -%}
+            <!-- 失败的返回start -->
+            <div id="fail-back"></div>
+            <script>
+              $(document).ready(function () {
+                if (window.location.href.indexOf('form_type=contact') > -1) {
+                  window.openMsgDialog(2);
+                  $('#fail-back').html(`<div class='errors'><ul><li>Email is invalid.</li></ul></div>`);
+                }
+              });
+            </script>
+            <!-- 失败的返回end -->
+          {% endif %}
+          <div id="contactFormWrapper" class="contact-form">
+            <div class="form-group">
+              <label for="contactFormEmail">
+                <span
+                  {% if settings.enable_multilang %}
+                    data-translate="contact.form.email"
+                  {% endif %}
+                >
+                  Your Email Address<span class="red">*</span>
+                </span>
+              </label>
+              <input
+                required
+                type="email"
+                name="contact[email]"
+                id="contactFormEmail"
+                data-validate="email"
+                autocorrect="off"
+                autocapitalize="off"
+                placeholder="Please enter your email address"
+              >
+            </div>
+            <div class="form-group">
+              <label for="contactFormCompany">
+                <span>Company</span>
+              </label>
+              <input
+                type="text"
+                id="contactFormCompany"
+                name="contact[customer-company]"
+                placeholder="Please enter your company"
+              >
+            </div>
+            <div class="form-group">
+              <label for="contactFormItem">
+                <span> Item SKU or Item Link</span>
+              </label>
+              <input
+                type="text"
+                id="contactFormItem"
+                name="contact[item-sku-or-item-link]"
+                placeholder="Please enter the Item Sku or Item Link you want to know"
+              >
+            </div>
+            <div class="form-group">
+              <label for="contactFormQuantity">
+                <span> Quantity</span>
+              </label>
+              <input
+                type="number"
+                id="contactFormQuantity"
+                name="contact[quantity]"
+                min="0"
+                placeholder="Please enter the quantity you need"
+              >
+            </div>
+            <div class="form-group">
+              <label for="contactFormMessage">
+                <span> Message</span>
+              </label>
+              <div class="form-textarea">
+                <textarea
+                  type="textarea"
+                  id="contactFormMessage"
+                  class="message-textarea"
+                  name="contact[message]"
+                  rows="5" 
+                  maxlength="500"
+                  placeholder="If you have any questions about bulk orders for this product, please contact us"
+                ></textarea>
+                <div class="textarea-word-count">
+                  <span class="current-count">0</span> / 500
+                </div>
+              </div>
+            </div>
+            <!--
+              <div class="form-group">
+                <label for="contactFormBusinessName">
+                  <span> Business Name</span>
+                </label>
+                <input
+                  type="text"
+                  id="contactFormBusinessName"
+                  name="contact[business-name]"
+                  autocapitalize="words"
+                  placeholder="Please enter your business name"
+                >
+              </div>
+              <div class="form-group">
+                <label for="contactFormShippingAddress">
+                  <span> Shipping Address</span>
+                </label>
+                <input
+                  type="text"
+                  id="contactFormShippingAddress"
+                  name="contact[shipping-address]"
+                  autocapitalize="words"
+                  placeholder="Please enter your shipping address"
+                >
+              </div>
+              <div class="form-group">
+                <label for="contactFormZipCode">
+                  <span> Zip Code</span>
+                </label>
+                <input
+                  type="text"
+                  id="contactFormZipCode"
+                  name="contact[zip-code]"
+                  autocapitalize="words"
+                  placeholder="Please enter your zip code"
+                >
+              </div>
+            -->
+            <input
+              type="submit"
+              class="quote-buttom"
+              {% if settings.enable_multilang %}
+                data-translate="contact.form.submit_contact"
+              {% endif %}
+              value="Quote Now"
+            >
+            <div class="pdf-link">{{ section.settings.pdf_link }}</div>
+          </div>
+          <!-- form content end -->
+          <!-- </form> -->
+        {% endform %}
+      </div>
+    </div>
+  </div>
+  <div class="desc">
+    <div>
+      <div class="desc-first">
+        <div><span class="orange-strong">Quick and Easy</span> Purchase of Metal Shelving</div>
+        <p>At REIBII, We turn complex Into Simple! Follow the following 3 steps to start today!</p>
+      </div>
+      <div class="desc-box">
+        <div class="desc-item">
+          <div>1</div>
+          <div>
+            <h5>Tell Us What You Need</h5>
+            <p>Please specify your needs in detail, including dimensions and quantities of metal warehouse shelving.</p>
+          </div>
+        </div>
+        <div class="desc-item">
+          <div>2</div>
+          <div>
+            <h5>Get Solution & Quote</h5>
+            <p>
+              We will work on the best solution according to your requirements, the specific quote will be provided
+              within 24 hours.
+            </p>
+          </div>
+        </div>
+        <div class="desc-item">
+          <div>3</div>
+          <div>
+            <h5>20+ US Domestic Warehouses, Rapid Shipping</h5>
+            <p>
+              We have 20+ warehouses across the United States. Upon receiving your order, we will process it within 48
+              hours and ship the products to you as quickly as possible.
+            </p>
+          </div>
+        </div>
+        <div class="desc-item">
+          <div>4</div>
+          <div>
+            <h5>Flexible Procurement with Lower MOQ</h5>
+            <p>
+              Maximize savings and boost profitability with a minimum order of just <span class="b2b-point">7 units</span>, giving you more flexibility for your business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "BtoB Sub_form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "AnchorName"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "pdf_link",
+      "label": "PDFLink"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BtoB Sub_form"
+    }
+  ]
+}
+{% endschema %}

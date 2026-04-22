@@ -1,0 +1,56 @@
+<link rel="stylesheet" type="text/css" href="{{ 'about-us-customer-reviews.css' | asset_url }}">
+<div class="about-us-customer-reviews">
+  <div class="customer-review-box">
+    <h2 class="banner-title">{{ section.settings.title | upcase }}</h2>
+    <div class="gradient-bg-to-bottom">
+    </div>
+    <!-- <div class="review-box">
+      {% for block in section.blocks %}
+        <div class="review-item">
+          <div class="header-box">
+          </div>
+        </div>
+      {% endfor -%}
+    </div> -->
+  </div>
+</div>
+{% schema %}
+{
+  "name": "About Us Customer Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Customer Review Block",
+      "type": "item-show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "profile_photo",
+          "label": "Profile Photo"
+        },
+        {
+          "type": "text",
+          "id": "customer-name",
+          "label": "Item Title"
+        },
+        {
+          "type": "text",
+          "id": "item_des",
+          "label": "Item Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us Customer Reviews"
+    }
+  ]
+}
+{% endschema %}

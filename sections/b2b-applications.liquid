@@ -1,0 +1,86 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-applications.css' | asset_url }}">
+{% assign anchor = section.settings.anchor %}
+<div class="applications normal-floor anchor-content blue-background-left" id="{{ anchor }}">
+  <div class="container">
+    <div class="floor-title change-to-black">
+      {{ section.settings.appl_title_widthout_strong -}}
+      <span class="orange-strong"> {{ section.settings.appl_title_orange_strong }}</span>
+    </div>
+    {% if section.settings.small_title %}
+      <h2 class="main-page-title">
+        <span class="small-title">{{ section.settings.small_title | upcase }}</span>
+        <span class="text-shadow">{{ section.settings.small_title | upcase }}</span>
+      </h2>
+    {% endif %}
+    <div class="card-box">
+      {% for block in section.blocks limit: 6 %}
+        <div class="card-item">
+          <div class="img-box">
+            {% assign img_url = block.settings.image %}
+            {{ img_url | image_url: width: 400 | image_tag: width: null }}
+          </div>
+          <h5>{{ block.settings.description }}</h5>
+          <p>{{ block.settings.content }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="set-btn-pos">
+      <div class="quote-buttom width-hover keep-big" open-quote-dialog>Quote Now</div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "BtoB Applications",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "AnchorName"
+    },
+    {
+      "type": "text",
+      "id": "appl_title_widthout_strong",
+      "label": "title widthout strong"
+    },
+    {
+      "type": "text",
+      "id": "appl_title_orange_strong",
+      "label": "title width orange strong"
+    },
+    {
+      "type": "text",
+      "id": "small_title",
+      "label": "Small Title"
+    },
+  ],
+  "blocks": [
+    {
+      "name": "applications-card-show",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BtoB Applications"
+    }
+  ]
+}
+{% endschema %}

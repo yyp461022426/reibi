@@ -1,0 +1,488 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [],
+      "settings": {}
+    },
+    "b2b_first_floor_VfL9bV": {
+      "type": "b2b-first-floor",
+      "blocks": {
+        "image_items_hLbNDL": {
+          "type": "image_items",
+          "settings": {
+            "image_item": "shopify://shop_images/b2b_intro_20250120_1.png"
+          }
+        },
+        "image_items_myqQ6B": {
+          "type": "image_items",
+          "settings": {
+            "image_item": "shopify://shop_images/b2b_intro_20250120_2.jpg"
+          }
+        },
+        "image_items_XLwE7F": {
+          "type": "image_items",
+          "settings": {
+            "image_item": "shopify://shop_images/b2b_intro_20250120_3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_items_hLbNDL",
+        "image_items_myqQ6B",
+        "image_items_XLwE7F"
+      ],
+      "settings": {
+        "anchor": "",
+        "pdf_link": "<a href=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/20251219.pdf?v=1766388718\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/20251219.pdf?v=1766388718\">View Online Catalog Reibii Online Catalog.PDF </a>"
+      }
+    },
+    "b2b_shop_by_category_tHgcRt": {
+      "type": "b2b-shop-by-category",
+      "blocks": {
+        "card_show_rDWPVj": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/category-4.jpg",
+            "category_name": "Steel Shelves",
+            "link": "shopify://collections/steel-shelves"
+          }
+        },
+        "card_show_kBVzGQ": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/category-2.png",
+            "category_name": "Wooden Shelves",
+            "link": "shopify://collections/wooden-shelves"
+          }
+        },
+        "card_show_WrEJAf": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/category-3.jpg",
+            "category_name": "Wire Shelves",
+            "link": "shopify://collections/wire-shelves"
+          }
+        },
+        "card_show_DGxRc7": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/category-2.jpg",
+            "category_name": "Heavy Duty Metal Shelving",
+            "link": "shopify://collections/heavy-duty-metal-shelving"
+          }
+        },
+        "card_show_VPj7zi": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/category-5.jpg",
+            "category_name": "Home Decor Shelving",
+            "link": "shopify://collections/home-decor-shelving"
+          }
+        }
+      },
+      "block_order": [
+        "card_show_rDWPVj",
+        "card_show_kBVzGQ",
+        "card_show_WrEJAf",
+        "card_show_DGxRc7",
+        "card_show_VPj7zi"
+      ],
+      "name": "B2b Shop By Category",
+      "settings": {
+        "title": "storage shelving",
+        "pdf_link": "<a href=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/20251219.pdf?v=1766388718\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/20251219.pdf?v=1766388718\">View Online Catalog Reibii Online Catalog.PDF </a>"
+      }
+    },
+    "b2b_applications_WzRRCQ": {
+      "type": "b2b-applications",
+      "blocks": {
+        "card_show_VaqqiC": {
+          "type": "card-show",
+          "settings": {
+            "description": "Heating ServicesFuel Delivery",
+            "content": "Ideal for storing fuel cans, heating components, and service equipment in garages. Built to support heavy loads and resist corrosion, ensuring safe and organized access for delivery and maintenance operations.",
+            "image": "shopify://shop_images/application-1.jpg"
+          }
+        },
+        "card_show_3HGkBF": {
+          "type": "card-show",
+          "settings": {
+            "description": "Logistics & Transportation",
+            "content": "Optimized for organizing parcels, sorting packages, and storing logistics materials in warehouses and distribution centers. Built to maximize storage density, support heavy loads, and streamline inventory management for efficient loading and dispatch operations.",
+            "image": "shopify://shop_images/application-2.jpg"
+          }
+        },
+        "card_show_4KHTJ4": {
+          "type": "card-show",
+          "settings": {
+            "description": "IT Consulting/IT Solutions",
+            "content": "Perfect for organizing server hardware, network equipment server rooms. Engineered to support substantial weight and ensure optimal airflow and stability for critical IT infrastructure.",
+            "image": "shopify://shop_images/application-3.jpg"
+          }
+        },
+        "card_show_UTKYnF": {
+          "type": "card-show",
+          "settings": {
+            "description": "home  furniture",
+            "content": "This unit is ideal for showcasing decorative items and cherished collectibles in living rooms, hallways. This unit combines a sleek design that organised storage for personal treasures.",
+            "image": "shopify://shop_images/application-4.jpg"
+          }
+        },
+        "card_show_FADH4W": {
+          "type": "card-show",
+          "settings": {
+            "description": "Chain SupermarketsGrocery Retail",
+            "content": "Designed to organize retail goods, promotional items and storage areas. Maximizes space, supports heavy loads, and improves visibility for streamlined restocking and customer access.",
+            "image": "shopify://shop_images/application-5.jpg"
+          }
+        },
+        "card_show_zrtFKC": {
+          "type": "card-show",
+          "settings": {
+            "description": "Home Storage Solutions",
+            "content": "Optimized for garage storage and home organization, seasonal deco. Supports heavy-duty use while maintaining a clean, functional aesthetic for living spaces.",
+            "image": "shopify://shop_images/application-6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "card_show_VaqqiC",
+        "card_show_3HGkBF",
+        "card_show_4KHTJ4",
+        "card_show_UTKYnF",
+        "card_show_FADH4W",
+        "card_show_zrtFKC"
+      ],
+      "settings": {
+        "anchor": "applications",
+        "appl_title_widthout_strong": "Applications",
+        "appl_title_orange_strong": "",
+        "small_title": "Low Shelf Investment Cost &  Shelf Save Space Large"
+      }
+    },
+    "b2b_normal_popup_dialog_7ETmY3": {
+      "type": "b2b-normal-popup-dialog",
+      "settings": {
+        "mask_txt_content_color": "#6f7881",
+        "mask_background_color": "#ffffff",
+        "border_color": "#ffffff"
+      }
+    },
+    "b2b_sub_form_hRWQfQ": {
+      "type": "b2b-sub_form",
+      "settings": {
+        "anchor": "contact",
+        "pdf_link": "<a href=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/20251219.pdf?v=1766388718\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/20251219.pdf?v=1766388718\">View Online Catalog Reibii Online Catalog.PDF</a>"
+      }
+    },
+    "b2b_hot_pro_display_PhDG9q": {
+      "type": "b2b-hot-pro-display",
+      "blocks": {
+        "tab_show_YnPb3Q": {
+          "type": "tab-show",
+          "settings": {
+            "tab_name": "Retail Shelving Solutions",
+            "collection": "b2b-landing-page-product"
+          }
+        },
+        "tab_show_QEDnFw": {
+          "type": "tab-show",
+          "disabled": true,
+          "settings": {
+            "tab_name": "Warehouse Storage Systems",
+            "collection": "b2b-warehouse-storage-systems"
+          }
+        },
+        "tab_show_qTLiTz": {
+          "type": "tab-show",
+          "disabled": true,
+          "settings": {
+            "tab_name": "Industrial Racking Solutions",
+            "collection": "b2b-industrial-racking-solutions"
+          }
+        }
+      },
+      "block_order": [
+        "tab_show_YnPb3Q",
+        "tab_show_QEDnFw",
+        "tab_show_qTLiTz"
+      ],
+      "settings": {
+        "anchor": "products",
+        "swiper_tabs": false,
+        "pdf_link": "<a href=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/20251219.pdf?v=1766388718\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/20251219.pdf?v=1766388718\">View Online Catalog Reibii Online Catalog.PDF</a>",
+        "sec_title_widthout_strong": "High-Performance",
+        "sec_title_orange_strong": "Metal Shelving",
+        "is_title_style2": false,
+        "title_style2": "",
+        "collection": "b2b-landing-page-product"
+      }
+    },
+    "b2b_mock_comments_b2bMkC": {
+      "type": "b2b-mock-comments",
+      "blocks": {
+        "comment_card_46P8UV": {
+          "type": "comment-card",
+          "settings": {
+            "review_image": "shopify://shop_images/b2b_review_1.jpg",
+            "customer": "Gloria Lee",
+            "review_content": "I am very pleased with the heavy-duty shelving from REIBII. I purchased 200 units for use in my warehouse, and they are extremely sturdy and easy to install. We were able to install all of them in under half a day. The shelves seem to have an anti-rust coating, though I haven't used them for an extended period yet. I am hopeful that they will prove to be as corrosion-resistant as described"
+          }
+        },
+        "comment_card_zFc84F": {
+          "type": "comment-card",
+          "settings": {
+            "review_image": "shopify://shop_images/b2b_review_2.jpg",
+            "customer": "Lisa T., Facilities Manager",
+            "review_content": "I purchased 250 units of the REIBII shelving for our manufacturing plant. The strength and easy assembly made this a great decision for our business. It's been a pleasure working with their team, and we're already planning future orders as our operations grow."
+          }
+        },
+        "comment_card_P4BrjC": {
+          "type": "comment-card",
+          "settings": {
+            "review_image": "shopify://shop_images/b2b_review_3.png",
+            "customer": "Mark L., Warehouse Manager",
+            "review_content": "REIBII's shelving solutions have been instrumental in helping us organize our warehouse. We bought 1,500 units, and they have delivered both in terms of quality and reliability. The shelves are solid, and the customer service is top-notch. Highly recommend for large-scale operations!"
+          }
+        }
+      },
+      "block_order": [
+        "comment_card_46P8UV",
+        "comment_card_zFc84F",
+        "comment_card_P4BrjC"
+      ],
+      "settings": {
+        "anchor": "reviews",
+        "sec_title_widthout_strong": "Business Client",
+        "sec_title_orange_strong": "Reviews"
+      }
+    },
+    "b2b_third_floor_tjxnQf": {
+      "type": "b2b-third-floor",
+      "settings": {
+        "anchor": "procurement-options",
+        "third_title_widthout_strong": "Flexible Procurement",
+        "third_title_orange_strong": "Options",
+        "first_image": "shopify://shop_images/4-1.Local-US-Warehouse-In-Stock-Purchase.webp",
+        "sec_image": "shopify://shop_images/4-2.Direct-Factory-Custom-Orders.webp"
+      }
+    },
+    "b2b_fourth_floor_gTkwd6": {
+      "type": "b2b-fourth-floor",
+      "blocks": {
+        "card_show_b9PNGE": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/adv-1.jpg",
+            "title": "Robust Production Capacity",
+            "description": "We operate 12 production lines with an annual output of 50,000 to 100,000 units. Our high production capacity enables faster order fulfillment and shorter production cycles, making us well-suited for rush orders."
+          }
+        },
+        "card_show_gxGJ8x": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/adv-2.jpg",
+            "title": "Top-of-the-line Equipment",
+            "description": "We have imported high-precision equipment from Germany, complemented by advanced cutting production lines, precision stamping workshops, efficient coating production lines, and state-of-the-art assembly workshops."
+          }
+        },
+        "card_show_RefWMU": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/adv-3.jpg",
+            "title": "Favorable Price",
+            "description": "Favorable PriceUp to 10% lower raw material costs contributed by bulk order needs and stable supply guaranteed by manufacturing process, make it possible for our lower price."
+          }
+        },
+        "card_show_Xajrag": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/adv-4.jpg",
+            "title": "Comprehensive Support & Service",
+            "description": "From production and procurement to after-sales support, we offer tailored solutions and provide a quote within 24 hours based on your specific needs."
+          }
+        }
+      },
+      "block_order": [
+        "card_show_b9PNGE",
+        "card_show_gxGJ8x",
+        "card_show_RefWMU",
+        "card_show_Xajrag"
+      ],
+      "settings": {
+        "anchor": "features",
+        "fourth_title_widthout_strong": "Our Unique",
+        "fourth_title_orange_strong": "Advantage"
+      }
+    },
+    "b2b_factory_JWLWfU": {
+      "type": "b2b-factory",
+      "blocks": {
+        "card_show_J9pPe6": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_1_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_TPBagp": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_2_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_ePqdCg": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_3_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_WDLVVB": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_4_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_HcBb8L": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_5_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_CmWEjR": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_6_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_hmrXJA": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_7_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_HURiec": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_8_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_3AKzMB": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_9_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_V3FF4B": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_10_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_BhbPUb": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_11_Our-Factory-Insight.webp"
+          }
+        },
+        "card_show_t3A8dk": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify://shop_images/7-_12_Our-Factory-Insight.webp"
+          }
+        }
+      },
+      "block_order": [
+        "card_show_J9pPe6",
+        "card_show_TPBagp",
+        "card_show_ePqdCg",
+        "card_show_WDLVVB",
+        "card_show_HcBb8L",
+        "card_show_CmWEjR",
+        "card_show_hmrXJA",
+        "card_show_HURiec",
+        "card_show_3AKzMB",
+        "card_show_V3FF4B",
+        "card_show_BhbPUb",
+        "card_show_t3A8dk"
+      ],
+      "disabled": true,
+      "settings": {
+        "anchor": "factory",
+        "appl_title_widthout_strong": "Our Factory",
+        "appl_title_orange_strong": "Insight"
+      }
+    },
+    "index_advantage_display_hX6jiJ": {
+      "type": "index-advantage-display",
+      "blocks": {
+        "card_show_Xi6kHY": {
+          "type": "card-show",
+          "settings": {
+            "pro_adv_image": "shopify://shop_images/adv_pro_1.png",
+            "adv_title": "Galvanized Steel Construction",
+            "description": "Ensuring your storage needs for weighty items"
+          }
+        },
+        "card_show_nnteiH": {
+          "type": "card-show",
+          "settings": {
+            "pro_adv_image": "shopify://shop_images/adv_pro_2.png",
+            "adv_title": "Click and Lock Systems",
+            "description": "Easy-to-assemble storage solutions"
+          }
+        },
+        "card_show_inUnn4": {
+          "type": "card-show",
+          "settings": {
+            "pro_adv_image": "shopify://shop_images/adv_pro_3.png",
+            "adv_title": "Adjustable Shelves",
+            "description": "Customizable configurations to accommodate goods of various sizes"
+          }
+        }
+      },
+      "block_order": [
+        "card_show_Xi6kHY",
+        "card_show_nnteiH",
+        "card_show_inUnn4"
+      ],
+      "settings": {
+        "title": "About REIBII Metal Shelving",
+        "title_style": "1",
+        "title_add_desc": ""
+      }
+    },
+    "b2b_sub_form_popup_dialog_DAUty6": {
+      "type": "b2b-sub-form-popup-dialog",
+      "settings": {
+        "pdf_link": "View Online Catalog <a href=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/product_manual250901.pdf?v=1756713353\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0632/4833/5096/files/product_manual250901.pdf?v=1756713353\">Reibii Online Catalog.PDF</a>",
+        "masklayer_info": "Get Free Quote",
+        "masklayer_code": "Factory Direct Pricing from Just <span class=\"b2b-point\">7 Units</span>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b2b_first_floor_VfL9bV",
+    "b2b_shop_by_category_tHgcRt",
+    "b2b_applications_WzRRCQ",
+    "b2b_normal_popup_dialog_7ETmY3",
+    "b2b_sub_form_hRWQfQ",
+    "b2b_hot_pro_display_PhDG9q",
+    "b2b_mock_comments_b2bMkC",
+    "b2b_third_floor_tjxnQf",
+    "b2b_fourth_floor_gTkwd6",
+    "b2b_factory_JWLWfU",
+    "index_advantage_display_hX6jiJ",
+    "b2b_sub_form_popup_dialog_DAUty6"
+  ]
+}

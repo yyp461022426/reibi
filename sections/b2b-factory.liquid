@@ -1,0 +1,64 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-factory.css' | asset_url }}">
+{% assign anchor = section.settings.anchor %}
+<div class="factory normal-floor blue-background-left anchor-content" id="{{ anchor }}">
+  <div class="container">
+    <div class="floor-title">
+      {{ section.settings.appl_title_widthout_strong -}}
+      <span class="orange-strong"> {{ section.settings.appl_title_orange_strong }}</span>
+    </div>
+    <div class="card-box">
+      {% for block in section.blocks limit: 12 %}
+        <div class="card-item">
+          <div class="img-box">
+            {% assign img_url = block.settings.image | img_url: 'large' %}
+            {% assign img_alt = block.settings.image.alt %}
+            <img src="{{ img_url }}" alt="{{ img_alt }}" loading="lazy">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="set-btn-pos">
+      <div class="quote-buttom width-hover" open-quote-dialog>Quote Now</div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "BtoB Factory",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "AnchorName"
+    },
+    {
+      "type": "text",
+      "id": "appl_title_widthout_strong",
+      "label": "title widthout strong"
+    },
+    {
+      "type": "text",
+      "id": "appl_title_orange_strong",
+      "label": "title width orange strong"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "factory-card-show",
+      "type": "card-show",
+      "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         }
+       ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BtoB Factory"
+    }
+  ]
+}
+{% endschema %}

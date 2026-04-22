@@ -1,0 +1,577 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_banner_TiCrk6": {
+      "type": "custom-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/affiliates-program-banner.png",
+        "image_mb": "shopify:\/\/shop_images\/affiliates-program-banner-mb.jpg",
+        "header_text": "AFFILIATE WITH <span class=\"change-blue\">REIBII<\/span>",
+        "font_weight1": 600,
+        "font_size1_pc": 72,
+        "font_size1_mb": 24,
+        "header_text2": "<span class=\"change-blue\">EARN<\/span> MONEY WITH <span class=\"change-blue\">EASE<\/span> AND <span class=\"change-blue\">FUN<\/span>!",
+        "font_size2_pc": 44,
+        "font_size2_mb": 20,
+        "description": "",
+        "font_size3_pc": 30,
+        "font_size3_mb": 30,
+        "line_height3_pc": 30,
+        "line_height3_mb": 30,
+        "is_in_container": false,
+        "with_affiliate_bottom_banner": false,
+        "affiliate_pro_link": ""
+      }
+    },
+    "custom_banner_D83xF6": {
+      "type": "custom-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/affiliates-program-banner-smaller.png",
+        "image_mb": "shopify:\/\/shop_images\/affiliates-program-banner-smaller-mb.jpg",
+        "header_text": "Join Reibii Affiliate Program",
+        "font_weight1": 600,
+        "font_size1_pc": 48,
+        "font_size1_mb": 22,
+        "header_text2": "",
+        "font_size2_pc": 30,
+        "font_size2_mb": 30,
+        "description": "Become a promoter of our innovative storage solutions, helping others enhance their living spaces while earning generous commission rewards of up to 15%.",
+        "font_size3_pc": 24,
+        "font_size3_mb": 14,
+        "line_height3_pc": 32,
+        "line_height3_mb": 20,
+        "margin_top3_mb": 12,
+        "is_in_container": true,
+        "with_affiliate_bottom_banner": false,
+        "affiliate_pro_link": ""
+      }
+    },
+    "affiliate_program_start_fQUf6q": {
+      "type": "affiliate-program-start",
+      "blocks": {
+        "card_show_FWrhph": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/impact-icon_0a2ea61b-11db-4428-934b-aa9c50ec94ff.png",
+            "link": "http:\/\/app.impact.com\/campaign-campaign-info-v2\/Reibii.brand"
+          }
+        },
+        "card_show_FfDW7B": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shareaSale-icon_47d44021-c502-47e2-b1f6-5c527df2b122.png",
+            "link": "http:\/\/www.shareasale.com\/join\/134627"
+          }
+        }
+      },
+      "block_order": [
+        "card_show_FWrhph",
+        "card_show_FfDW7B"
+      ],
+      "settings": {
+        "title": "How to Start?",
+        "description": "Click any link below to register for free and become our partner! Reibii partners with ShareASale and Impact to offer visual order tracking, helping you easily monitor your promotions and earn more commissions."
+      }
+    },
+    "affiliate_earn_commissions_6fERG6": {
+      "type": "affiliate-earn-commissions",
+      "blocks": {
+        "card_show_ACg3Vz": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/affiliate-1.png",
+            "step_title": "Join",
+            "step_des": "Register and get your unique affiliate link"
+          }
+        },
+        "card_show_yBW4Gh": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/affiliate-2.png",
+            "step_title": "Promotion",
+            "step_des": "Share your link via social media, blogs, emails, and more"
+          }
+        },
+        "card_show_AjynQn": {
+          "type": "card-show",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/affiliate-3.png",
+            "step_title": "Commission",
+            "step_des": "Get paid based on the sales generated from your referrals"
+          }
+        }
+      },
+      "block_order": [
+        "card_show_ACg3Vz",
+        "card_show_yBW4Gh",
+        "card_show_AjynQn"
+      ],
+      "settings": {
+        "title": "How to quickly earn commissions?"
+      }
+    },
+    "affiliate_program_benefits_AbhG4k": {
+      "type": "affiliate-program-benefits",
+      "blocks": {
+        "card_show_eNpLAa": {
+          "type": "card-show",
+          "settings": {
+            "step_title": "Commission Rewards:",
+            "step_des": "Earn a 10% base commission plus up to $500 in additional bonuses each month."
+          }
+        },
+        "card_show_tFwt4b": {
+          "type": "card-show",
+          "settings": {
+            "step_title": "Exclusive Discount Codes：",
+            "step_des": "Get special discount codes to help your audience save more."
+          }
+        },
+        "card_show_hmTFUW": {
+          "type": "card-show",
+          "settings": {
+            "step_title": "Product Sponsorship：",
+            "step_des": "Creators will receive 100% product sponsorship, allowing you to maximize your influence."
+          }
+        },
+        "card_show_HXLaKz": {
+          "type": "card-show",
+          "settings": {
+            "step_title": "Popularity Support:",
+            "step_des": "By consistently engaging with your audience, you will become an expert in innovative storage solutions, helping others improve their quality of life while gaining widespread recognition and support."
+          }
+        }
+      },
+      "block_order": [
+        "card_show_eNpLAa",
+        "card_show_tFwt4b",
+        "card_show_hmTFUW",
+        "card_show_HXLaKz"
+      ],
+      "settings": {
+        "title": "What Benefits Will You Receive?"
+      }
+    },
+    "custom_banner_UKCxKk": {
+      "type": "custom-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/join-now-banner.png",
+        "header_text": "We Have Paid Out",
+        "font_weight1": 400,
+        "font_size1_pc": 24,
+        "font_size1_mb": 14,
+        "header_text2": "Over $100,000+",
+        "font_size2_pc": 72,
+        "font_size2_mb": 24,
+        "description": "in Commissions!",
+        "font_size3_pc": 24,
+        "font_size3_mb": 14,
+        "line_height3_pc": 30,
+        "line_height3_mb": 14,
+        "is_in_container": false,
+        "with_affiliate_bottom_banner": true,
+        "affiliate_pro_link": "http:\/\/app.impact.com\/campaign-campaign-info-v2\/Reibii.brand"
+      }
+    },
+    "accordion_component_rHVW8A": {
+      "type": "accordion-component",
+      "blocks": {
+        "block_show_xrJpfE": {
+          "type": "block-show",
+          "settings": {
+            "setp_title": "What is affiliate marketing?",
+            "text_step_des": "<p>Affiliate marketing allows you to earn commissions by promoting products or services. Affiliates make money by directing customers to make purchases through their unique links.<\/p>"
+          }
+        },
+        "block_show_TEF7Y9": {
+          "type": "block-show",
+          "settings": {
+            "setp_title": "How can I join your affiliate program?",
+            "text_step_des": "<p>You can apply through our registration page. <\/p><p>Impact registration link: <a href=\"http:\/\/app.impact.com\/campaign-campaign-info-v2\/Reibii.brand\" title=\"http:\/\/app.impact.com\/campaign-campaign-info-v2\/Reibii.brand\">http:\/\/app.impact.com\/campaign-campaign-info-v2\/Reibii.brand<\/a>; <\/p><p>ShareASale registration link: <a href=\"http:\/\/www.shareasale.com\/join\/134627\" target=\"_blank\" title=\"http:\/\/www.shareasale.com\/join\/134627\">http:\/\/www.shareasale.com\/join\/134627<\/a>.  <\/p><p>We will contact you with the next steps after reviewing your application.<\/p>"
+          }
+        },
+        "block_show_N98Hg9": {
+          "type": "block-show",
+          "settings": {
+            "setp_title": "What is the commission structure?",
+            "text_step_des": "<p>Our commission rates vary based on the product and sales volume. For detailed information, please visit our commission page.<\/p>"
+          }
+        },
+        "block_show_mALCJc": {
+          "type": "block-show",
+          "settings": {
+            "setp_title": "How can I track my sales and commissions?",
+            "text_step_des": "<p>You can monitor your sales data and commission balance through affiliate dashboard.<\/p>"
+          }
+        },
+        "block_show_6bbaAX": {
+          "type": "block-show",
+          "settings": {
+            "setp_title": "What promotional materials are provided?",
+            "text_step_des": "<p>We offer a variety of promotional materials, including banners, text links, and product images, which you can use on your website or social media.<\/p>"
+          }
+        },
+        "block_show_JmxD7B": {
+          "type": "block-show",
+          "settings": {
+            "setp_title": "How is commission payment processed?",
+            "text_step_des": "<p>Commissions are locked 30 days after order placement and paid at the end of each month via your selected payment method.<\/p>"
+          }
+        },
+        "block_show_PkimY9": {
+          "type": "block-show",
+          "settings": {
+            "setp_title": "Can I promote multiple products simultaneously?",
+            "text_step_des": "<p>Absolutely! We encourage you to promote all our products to maximize your earning potential.<\/p>"
+          }
+        },
+        "block_show_nDWXna": {
+          "type": "block-show",
+          "settings": {
+            "setp_title": "How can I reach out if I have questions?",
+            "text_step_des": "<p>You can contact us via email <em><strong>affiliate@reibii.com<\/strong><\/em>, and we will respond promptly.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_show_xrJpfE",
+        "block_show_TEF7Y9",
+        "block_show_N98Hg9",
+        "block_show_mALCJc",
+        "block_show_6bbaAX",
+        "block_show_JmxD7B",
+        "block_show_PkimY9",
+        "block_show_nDWXna"
+      ],
+      "settings": {
+        "title": "FAQ"
+      }
+    },
+    "3e439d38-6b15-439b-a1d0-5d4214407013": {
+      "type": "home-lookbook",
+      "blocks": {
+        "template--16662435070200__3e439d38-6b15-439b-a1d0-5d4214407013-16733431239a356dfd-0": {
+          "type": "image",
+          "settings": {
+            "image_slide": "shopify:\/\/shop_images\/pc_3.jpg",
+            "lb_product_1": "",
+            "top_position_1": "10",
+            "left_position_1": "10",
+            "dots_color_1": "#ffffff",
+            "dots_bg_color_1": "#323232",
+            "dots_shadow_color_1": "#ffffff",
+            "lb_product_2": "",
+            "top_position_2": "10",
+            "left_position_2": "10",
+            "dots_color_2": "#ffffff",
+            "dots_bg_color_2": "#323232",
+            "dots_shadow_color_2": "#ffffff",
+            "lb_product_3": "",
+            "top_position_3": "10",
+            "left_position_3": "10",
+            "dots_color_3": "#ffffff",
+            "dots_bg_color_3": "#323232",
+            "dots_shadow_color_3": "#ffffff",
+            "lb_product_4": "",
+            "top_position_4": "10",
+            "left_position_4": "10",
+            "dots_color_4": "#ffffff",
+            "dots_bg_color_4": "#323232",
+            "dots_shadow_color_4": "#ffffff"
+          }
+        },
+        "image_t44nGj": {
+          "type": "image",
+          "settings": {
+            "image_slide": "shopify:\/\/shop_images\/pc_4.jpg",
+            "lb_product_1": "",
+            "top_position_1": "10",
+            "left_position_1": "10",
+            "dots_color_1": "#ffffff",
+            "dots_bg_color_1": "#323232",
+            "dots_shadow_color_1": "#ffffff",
+            "lb_product_2": "",
+            "top_position_2": "10",
+            "left_position_2": "10",
+            "dots_color_2": "#ffffff",
+            "dots_bg_color_2": "#323232",
+            "dots_shadow_color_2": "#ffffff",
+            "lb_product_3": "",
+            "top_position_3": "10",
+            "left_position_3": "10",
+            "dots_color_3": "#ffffff",
+            "dots_bg_color_3": "#323232",
+            "dots_shadow_color_3": "#ffffff",
+            "lb_product_4": "",
+            "top_position_4": "10",
+            "left_position_4": "10",
+            "dots_color_4": "#ffffff",
+            "dots_bg_color_4": "#323232",
+            "dots_shadow_color_4": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--16662435070200__3e439d38-6b15-439b-a1d0-5d4214407013-16733431239a356dfd-0",
+        "image_t44nGj"
+      ],
+      "disabled": true,
+      "settings": {
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "home_custom_block_spotlight_HCprbU": {
+      "type": "home-custom-block-spotlight",
+      "blocks": {
+        "image_xtrWte": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "image": "shopify:\/\/shop_images\/pc_5.jpg",
+            "title": "",
+            "des": "",
+            "button": "",
+            "link": "",
+            "color_button": ""
+          }
+        },
+        "image_LrmQba": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "image": "shopify:\/\/shop_images\/pc_6.jpg",
+            "title": "",
+            "des": "",
+            "button": "",
+            "link": "",
+            "color_button": ""
+          }
+        },
+        "image_wBdJ6L": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "image": "shopify:\/\/shop_images\/pc_7.jpg",
+            "title": "",
+            "des": "",
+            "button": "",
+            "link": "",
+            "color_button": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_xtrWte",
+        "image_LrmQba",
+        "image_wBdJ6L"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "default",
+        "layout_style": "layout_style_2",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 35,
+        "margin_bottom": 35,
+        "spotlight_block_title": "How Does It Work?",
+        "spotlight_block_des": "",
+        "title_style": "style_2"
+      }
+    },
+    "home_custom_block_spotlight_Vceqhz": {
+      "type": "home-custom-block-spotlight",
+      "blocks": {
+        "image_AiUTbC": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "image": "shopify:\/\/shop_images\/pc_8.jpg",
+            "title": "",
+            "des": "",
+            "button": "",
+            "link": "http:\/\/app.impact.com\/campaign-campaign-info-v2\/Reibii.brand",
+            "color_button": ""
+          }
+        },
+        "image_ifJbxp": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "image": "shopify:\/\/shop_images\/pc_9.jpg",
+            "title": "",
+            "des": "",
+            "button": "",
+            "link": "http:\/\/www.shareasale.com\/join\/134627",
+            "color_button": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_AiUTbC",
+        "image_ifJbxp"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "default",
+        "layout_style": "layout_style_2",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 35,
+        "margin_bottom": 35,
+        "spotlight_block_title": "Affiliate Partnership",
+        "spotlight_block_des": "",
+        "title_style": "style_2"
+      }
+    },
+    "home_custom_block_spotlight_7aQh8Y": {
+      "type": "home-custom-block-spotlight",
+      "blocks": {
+        "image_A6ytqY": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "image": "shopify:\/\/shop_images\/pc_10.jpg",
+            "title": "",
+            "des": "",
+            "button": "",
+            "link": "https:\/\/reibii.com\/collections\/bed-frames-1\/products\/enhomee-queen-bed-frame-with-charging-station-and-4-storage-drawers",
+            "color_button": ""
+          }
+        },
+        "image_MjM4BD": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "image": "shopify:\/\/shop_images\/pc_11.jpg",
+            "title": "",
+            "des": "",
+            "button": "",
+            "link": "https:\/\/reibii.com\/collections\/storage-shelves\/products\/reibii-55w-garage-shelving-3000lbs-garage-storage-shelves-heavy-duty-shelving-adjustable-metal-shelving-unit-for-industrial-warehouse",
+            "color_button": ""
+          }
+        },
+        "image_yHA3yy": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "image": "shopify:\/\/shop_images\/pc_12.jpg",
+            "title": "",
+            "des": "",
+            "button": "",
+            "link": "https:\/\/reibii.com\/collections\/clothes-rack\/products\/raybee-heavy-duty-clothes-rack-620lbs?variant=43699070173432",
+            "color_button": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_A6ytqY",
+        "image_MjM4BD",
+        "image_yHA3yy"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "default",
+        "layout_style": "layout_style_2",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 35,
+        "margin_bottom": 35,
+        "spotlight_block_title": "Hot Sales",
+        "spotlight_block_des": "",
+        "title_style": "style_2"
+      }
+    },
+    "home_custom_block_baner_RJKN9U": {
+      "type": "home-custom-block-baner",
+      "blocks": {
+        "large_img_XNchL9": {
+          "type": "largeImg",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pc-16-3_5ca0dd4b-d00e-4c38-83bb-da76ea833fd8.jpg",
+            "image_mb": "shopify:\/\/shop_images\/mobile-2-2.jpg",
+            "display_parallax": false,
+            "dpl_down_arrow": false,
+            "height_img_parallax": "970px",
+            "content_style": "style_1",
+            "display_bg_animation": false,
+            "color_bg_animation": "#f6f6f6",
+            "alignment": "left",
+            "banner_heading": "",
+            "font_size_banner_heading": "40px",
+            "font_size_banner_heading_mb": "24px",
+            "color_banner_heading": "#232323",
+            "color_banner_heading_style2": "#10ffda",
+            "color_banner_heading_mb": "#232323",
+            "banner_sub_heading": "",
+            "font_size_banner_sub_heading": "13px",
+            "font_size_banner_sub_heading_mb": "13px",
+            "color_banner_sub_heading": "#ffffff",
+            "color_banner_sub_heading_mb": "#232323",
+            "banner_des": "",
+            "font_size_banner_des": "12px",
+            "font_size_banner_des_mb": "12px",
+            "color_banner_des": "#232323",
+            "color_banner_des_mb": "#232323",
+            "countdown": "",
+            "banner_button": "",
+            "link": "",
+            "bg_banner_button": "#232323",
+            "border_banner_button": "#232323",
+            "color_banner_button": "#ffffff",
+            "bg_banner_button_mb": "#232323",
+            "border_banner_button_mb": "#232323",
+            "color_banner_button_mb": "#ffffff",
+            "min_width_banner_button": "237px"
+          }
+        }
+      },
+      "block_order": [
+        "large_img_XNchL9"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "padd_60",
+        "layout_style": "layout_style_2",
+        "display_bg_banner": false,
+        "bg_color_banner": "#f5f5f5",
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "img_align": "center",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 30,
+        "margin_bottom": 30
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_banner_TiCrk6",
+    "custom_banner_D83xF6",
+    "affiliate_program_start_fQUf6q",
+    "affiliate_earn_commissions_6fERG6",
+    "affiliate_program_benefits_AbhG4k",
+    "custom_banner_UKCxKk",
+    "accordion_component_rHVW8A",
+    "3e439d38-6b15-439b-a1d0-5d4214407013",
+    "home_custom_block_spotlight_HCprbU",
+    "home_custom_block_spotlight_Vceqhz",
+    "home_custom_block_spotlight_7aQh8Y",
+    "home_custom_block_baner_RJKN9U"
+  ]
+}

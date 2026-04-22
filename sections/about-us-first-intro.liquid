@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" href="{{ 'about-us-first-intro.css' | asset_url }}">
+<div class="about-us-first-intro">
+  <div class="container">
+    <div class="gradient-bg-to-bottom set-position">
+      <h2 class="banner-title">{{ section.settings.title | upcase }}</h2>
+      <p class="banner-des">{{ section.settings.description }}</p>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "About Us First Intro",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us First Intro"
+    }
+  ]
+}
+{% endschema %}

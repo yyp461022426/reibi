@@ -1,0 +1,284 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "67ab6d61-42d0-43e4-9cd8-4ff611273e6f": {
+          "type": "sidebar_blog",
+          "settings": {
+            "display_sidebar_blog_page": true,
+            "show_sidebar": "left",
+            "display_sidebar_link": true,
+            "sidebar_link_title": "Categories",
+            "style_categories": "style_little",
+            "link_list": "main-menu",
+            "sidebar_recent_art": true,
+            "sidebar_blog_tags": false,
+            "enable_product": true,
+            "title_product": "Featured Products",
+            "collection": "cosmetic-all",
+            "limit": "3",
+            "enable_img_1": true,
+            "link_img_1": "shopify://collections/cosmopolitan",
+            "enable_img_2": true,
+            "link_img_2": "shopify://collections/cosmopolis",
+            "enable_custom_block": true,
+            "title_custom_block": "Custom Block",
+            "quote_custom_block": "<p>Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own content here: text, html, images, media... whatever you like.</p>\n<p>There are many similar sample content placeholders across the store. All editable from admin panel.</p>"
+          }
+        },
+        "267e78de-ff17-4f52-8c54-533ad3d13605": {
+          "type": "image",
+          "settings": {
+            "lb_product_1_1": "aeque-mollis-urnan-lementum",
+            "top_position_1_1": "10",
+            "left_position_1_1": "10",
+            "dots_color_1_1": "#ffffff",
+            "dots_bg_color_1_1": "#323232",
+            "dots_shadow_color_1_1": "#ffffff",
+            "lb_product_1_2": "dempus-lortis-cosmo-sapiendo",
+            "top_position_1_2": "20",
+            "left_position_1_2": "20",
+            "dots_color_1_2": "#ffffff",
+            "dots_bg_color_1_2": "#323232",
+            "dots_shadow_color_1_2": "#ffffff",
+            "lb_product_1_3": "dinterdum-preteus-tomuir-leggings",
+            "top_position_1_3": "30",
+            "left_position_1_3": "30",
+            "dots_color_1_3": "#ffffff",
+            "dots_bg_color_1_3": "#323232",
+            "dots_shadow_color_1_3": "#ffffff",
+            "lb_product_2_1": "dempus-lortis-cosmo-sapiendo",
+            "top_position_2_1": "10",
+            "left_position_2_1": "10",
+            "dots_color_2_1": "#ffffff",
+            "dots_bg_color_2_1": "#323232",
+            "dots_shadow_color_2_1": "#ffffff",
+            "lb_product_2_2": "dinterdum-preteus-tomuir-leggings",
+            "top_position_2_2": "40",
+            "left_position_2_2": "40",
+            "dots_color_2_2": "#ffffff",
+            "dots_bg_color_2_2": "#323232",
+            "dots_shadow_color_2_2": "#ffffff",
+            "lb_product_2_3": "",
+            "top_position_2_3": "10",
+            "left_position_2_3": "10",
+            "dots_color_2_3": "#ffffff",
+            "dots_bg_color_2_3": "#323232",
+            "dots_shadow_color_2_3": "#ffffff",
+            "lb_product_3_1": "furus-pulvinar-vestibulum-mini",
+            "top_position_3_1": "10",
+            "left_position_3_1": "10",
+            "dots_color_3_1": "#ffffff",
+            "dots_bg_color_3_1": "#323232",
+            "dots_shadow_color_3_1": "#ffffff",
+            "lb_product_3_2": "dinterdum-pretium-de-condimento",
+            "top_position_3_2": "40",
+            "left_position_3_2": "40",
+            "dots_color_3_2": "#ffffff",
+            "dots_bg_color_3_2": "#323232",
+            "dots_shadow_color_3_2": "#ffffff",
+            "lb_product_3_3": "faucibus-sullamcorper-matti-drost",
+            "top_position_3_3": "60",
+            "left_position_3_3": "60",
+            "dots_color_3_3": "#ffffff",
+            "dots_bg_color_3_3": "#323232",
+            "dots_shadow_color_3_3": "#ffffff"
+          }
+        },
+        "04805fd1-a157-4a62-bd8d-4966971c1ebb": {
+          "type": "sidebar_blog",
+          "disabled": true,
+          "settings": {
+            "display_sidebar_blog_page": true,
+            "show_sidebar": "left",
+            "display_sidebar_link": true,
+            "sidebar_link_title": "Categories",
+            "style_categories": "style_show_all",
+            "link_list": "main-menu",
+            "sidebar_recent_art": true,
+            "sidebar_blog_tags": false,
+            "enable_product": true,
+            "title_product": "Featured Products",
+            "collection": "",
+            "limit": "8",
+            "enable_img_1": true,
+            "link_img_1": "",
+            "enable_img_2": true,
+            "link_img_2": "",
+            "enable_custom_block": true,
+            "title_custom_block": "Custom Block",
+            "quote_custom_block": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "67ab6d61-42d0-43e4-9cd8-4ff611273e6f",
+        "267e78de-ff17-4f52-8c54-533ad3d13605",
+        "04805fd1-a157-4a62-bd8d-4966971c1ebb"
+      ],
+      "settings": {
+        "blog_show_author": true,
+        "blog_show_date": true,
+        "dpl_lookbook_description": false,
+        "quote_title": "Sample Block Quote",
+        "quote_des": "Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras felis nunc commodo loremous convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec danos.",
+        "quote_title_2": "Sample Paragraph Text",
+        "quote_des_2": "<p>\nPraesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras felis nunc commodo eu convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec danos dui.\n</p>\n<p>\nCras suscipit quam et turpis eleifend vitae malesuada magna congue. Damus id ullamcorper neque. Sed vitae mi a mi pretium aliquet ac sed elitos. Pellentesque nulla eros accumsan quis justo at tincidunt lobortis denimes loremous. Suspendisse vestibulum lectus in lectus volutpat, ut dapibus purus pulvinar. Vestibulum sit amet auctor ipsum.\n</p>",
+        "dpl_gallery_lookbook": false,
+        "gallery_lb_title": "LookBook Gallery",
+        "show_cart_best_sellers_product": true,
+        "title": "Best Sellers",
+        "show_slider_featured_collection": "clothes-rack",
+        "slider_featured_limit_all": 13,
+        "collection_results_per_row1": "4"
+      }
+    },
+    "165364520590b7c148": {
+      "type": "home-custom-block-spotlight",
+      "blocks": {
+        "1653645205ddad33c9-0": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "title": "Lorem De Dorus",
+            "des": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue an melitos. Duis tristique del ante le maliquam. Praesent murna de tellus laoreet cosmopolis.",
+            "button": "Shop Now",
+            "link": "",
+            "color_button": ""
+          }
+        },
+        "1653645205ddad33c9-1": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "title": "Lorem De Dorus",
+            "des": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue an melitos. Duis tristique del ante le maliquam. Praesent murna de tellus laoreet cosmopolis.",
+            "button": "Shop Now",
+            "link": "",
+            "color_button": ""
+          }
+        },
+        "1653645205ddad33c9-2": {
+          "type": "image",
+          "settings": {
+            "bg_color_column": "",
+            "title": "Lorem De Dorus",
+            "des": "Nullam aliquet vestibulum augue non varius. Cras cosmo congue an melitos. Duis tristique del ante le maliquam. Praesent murna de tellus laoreet cosmopolis.",
+            "button": "Shop Now",
+            "link": "",
+            "color_button": ""
+          }
+        }
+      },
+      "block_order": [
+        "1653645205ddad33c9-0",
+        "1653645205ddad33c9-1",
+        "1653645205ddad33c9-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "default",
+        "layout_style": "layout_style_1",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 35,
+        "margin_bottom": 35,
+        "spotlight_block_title": "#Featured On Ella",
+        "spotlight_block_des": "",
+        "title_style": "style_1"
+      }
+    },
+    "1653645221f83eebcf": {
+      "type": "home-spotlight-slider",
+      "blocks": {
+        "16536452217a5c6ac8-0": {
+          "type": "image",
+          "settings": {
+            "title": "Lorem De Dorus",
+            "content": "",
+            "link_text": "Shop Now",
+            "link": ""
+          }
+        },
+        "16536452217a5c6ac8-1": {
+          "type": "image",
+          "settings": {
+            "title": "Lorem De Dorus",
+            "content": "",
+            "link_text": "Shop Now",
+            "link": ""
+          }
+        },
+        "16536452217a5c6ac8-2": {
+          "type": "image",
+          "settings": {
+            "title": "Lorem De Dorus",
+            "content": "",
+            "link_text": "Shop Now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16536452217a5c6ac8-0",
+        "16536452217a5c6ac8-1",
+        "16536452217a5c6ac8-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "default",
+        "layout_style": "style_1",
+        "display_padding": true,
+        "display_slider": false,
+        "bg_color": "#f5f5f5",
+        "bg_border_color": "rgba(0,0,0,0)",
+        "item_bg_color": "rgba(0,0,0,0)",
+        "spotlight_block_title": "#Spotlight",
+        "spotlight_block_title_color": "rgba(0,0,0,0)",
+        "fontsize_title": "",
+        "fontsize_title_mb": "",
+        "font_weight_title": "700",
+        "text_transform_title": "capitalize",
+        "spotlight_block_des": "Phasellus lorem malesuada ligula pulvinar commodo maecenas",
+        "spotlight_block_view_all": "",
+        "spotlight_block_view_all_link": "",
+        "title_style": "style_2",
+        "fontsize_text": "",
+        "fontsize_text_mb": "",
+        "font_weight_text": "700",
+        "text_transform_text": "capitalize",
+        "margin_bottom_mb": 0,
+        "margin_bottom": 0
+      }
+    },
+    "1653645277dbbbabc5": {
+      "type": "home-product-tabs",
+      "disabled": true,
+      "settings": {
+        "product_tabs_title": "New Arrivals",
+        "product_tabs_des": "",
+        "title_style": "style_1",
+        "collection_results_per_row": "5",
+        "tabs_style": "style_1",
+        "margin_bottom_mb": 40,
+        "margin_bottom_tab": 40,
+        "margin_bottom": 10
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165364520590b7c148",
+    "1653645221f83eebcf",
+    "1653645277dbbbabc5"
+  ]
+}

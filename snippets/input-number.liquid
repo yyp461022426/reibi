@@ -1,0 +1,16 @@
+<div class="cart-input-number">
+  <button class="btn-decrease">-</button>
+  <input
+    type="number"
+    class="input-number"
+    min="1"
+    id="updates{{ item.id }}"
+    value="{{ item.quantity }}"
+    name="updates[]"
+    step="1"
+    {% if item.variant.inventory_management != null and item.variant.inventory_quantity > 0 %}
+      data-line="{{ item.variant.inventory_quantity }}"
+    {% endif %}
+  >
+  <button class="btn-increase">+</button>
+</div>

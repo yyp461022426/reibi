@@ -1,0 +1,288 @@
+{% for option in product.options %}
+  {% if option == swatchSticky %}
+    {% assign found_option = true %}
+    {% assign option_index = forloop.index0 %}
+
+    <style>
+      #add-to-cart-form .selector-wrapper,.sticky-product-mobile .selector-wrapper {
+        display: none;
+      }
+    </style>
+
+    {% assign downcased_option_1 = swatchSticky | downcase %}
+    {% assign option_color_swatch = settings.option_color_swatch | downcase %}
+    {% if option_color_swatch contains downcased_option_1 %}
+      {% assign is_color = true %}
+    {% endif %}
+
+    {% assign downcased_option_2 = swatchSticky | downcase %}
+    {% assign downcased_sizechart_opt = settings.display_size_chart_at | downcase %}
+    {% if downcased_sizechart_opt contains downcased_option_2 %}
+      {% assign size = true %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+<div class="stick-swatch">
+  <div class="sticky-title">
+    {{ swatchSticky }}:<span data-option-select>{{ swatchSticky.selected_value }}</span>
+  </div>
+  {% assign values = '' %}
+  {% for variant in product.variants %}
+    {% assign value = variant.options[option_index] %}
+
+    {% unless values contains value %}
+      {% assign values = values | join: ';' %}
+      {% assign values = values | append: ';' | append: value %}
+      {% assign values = values | split: ';' %}
+      <div
+        data-value="{{ value | escape }}"
+        class="swatch-element{% if is_color %} color{% endif %} {{ value | handle }}{% if variant.available %} available{% else %} soldout{% endif %}"
+      >
+        {% if is_color %}
+          <div class="tooltip">
+            {{ value }}
+          </div>
+        {% endif %}
+
+        <input
+          {% if is_color != blank and settings.color_swatch_style == 'variant_grouped' %}
+            data-filter=".filter-{{ value | handle }}"
+          {% endif %}
+          id="stick-swatch-{{ option_index }}-{{ value | handle }}"
+          type="radio"
+          name="stick-option-{{ option_index }}"
+          value="{{ value | escape }}"
+          {% unless variant.available %}
+            disabled
+          {% endunless %}
+          {% if forloop.length == 1 %}
+            checked
+          {% endif %}
+        >
+
+        {% if is_color %}
+          {% if settings.color_swatch_style == 'normal' %}
+            {% if variant.metafields.custom.variant_color != blank %}
+              {% assign color_string = variant.metafields.custom.variant_color %}
+              {% assign temp_color_string = color_string
+                | replace: '["', ''
+                | replace: '"]', ''
+                | replace: '","', ','
+              %}
+              {% assign color_split = temp_color_string | split: ',' %}
+              {% assign color_count = color_split | size %}
+              <label for="stick-swatch-{{ option_index }}-{{ value | handle }}">
+                <div
+                  class="bg-img"
+                  style="{%  if color_count > 1 %}background: linear-gradient(45deg, {{ color_split[0] }}, {{ color_split[1] }});{% else %}background: {{ color_split[0] }};{% endif %}"
+                ></div>
+              </label>
+            {% else %}
+              <label for="stick-swatch-{{ option_index }}-{{ value | handle }}">
+                <div
+                  class="bg-img"
+                  style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }})"
+                ></div>
+              </label>
+            {% endif %}
+
+          {% elsif settings.color_swatch_style == 'variant' or settings.color_swatch_style == 'variant_grouped' %}
+            <label class="swatch_variant_img" for="stick-swatch-{{ option_index }}-{{ value | handle }}">
+              <div
+                class="bg-img"
+                {% if variant.image.src != blank %}
+                  style="background-image: url({{ variant.image.src | product_img_url: '100x' }}); background-size: cover;"
+                {% else %}
+                  style="background-color: {{ value | split: ' ' | last | handle }};{% if settings.show_product_color_img %}background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }}){% endif %}"
+                {% endif %}
+              >
+              </div>
+            </label>
+          {% endif %}
+
+        {% else %}
+          <label for="stick-swatch-{{ option_index }}-{{ value | handle }}">
+            {{ value }}
+          </label>
+        {% endif %}
+      </div>
+    {% endunless %}
+
+    {% comment %}
+      <input
+        class="text"
+        data-value="swatch-{{ option_index }}-{{ value | handle }}"
+        type="hidden"
+        data-value-sticky="{{ variant.id }}"
+      >
+    {% endcomment %}
+  {% endfor %}
+</div>
+
+{% comment %}
+  Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
+{% endcomment %}
+
+{% comment %}
+  {% assign file_extension = 'png' %}
+
+  {% if swatchSticky == blank %}
+    <div class="swatch error">
+      <p>You must render the snippet swatch.liquid with the name of a product option.</p>
+      <p>
+        Use: <code>{% raw %}{% render 'swatch' with 'name of your product option here' %}{% endraw %}</code>
+      </p>
+      <p>
+        Example: <code>{% raw %}{% render 'swatch' with 'Color' %}{% endraw %}</code>
+      </p>
+    </div>
+  {% else %}
+    {% assign found_option = false %}
+    {% assign is_color = false %}
+    {% assign option_index = 0 %}
+    {% assign size = false %}
+
+    {% for option in product.options %}
+      {% if option == swatchSticky %}
+        {% assign found_option = true %}
+        {% assign option_index = forloop.index0 %}
+
+        <style>
+          #add-to-cart-form .selector-wrapper,.sticky-product-mobile .selector-wrapper {
+            display: none;
+          }
+        </style>
+
+        {% assign downcased_option_1 = swatchSticky | downcase %}
+        {% assign option_color_swatch = settings.option_color_swatch | downcase %}
+        {% if option_color_swatch contains downcased_option_1 %}
+          {% assign is_color = true %}
+        {% endif %}
+
+        {% assign downcased_option_2 = swatchSticky | downcase %}
+        {% assign downcased_sizechart_opt = settings.display_size_chart_at | downcase %}
+        {% if downcased_sizechart_opt contains downcased_option_2 %}
+          {% assign size = true %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% unless found_option %}
+      <div class="swatch error">
+        <p>
+          You renderd the snippet swatch.liquid with the name of a product option — <code>'{{ swatchSticky }}'</code> —
+          that does not belong to your product.
+        </p>
+        <p>
+          Use <code>{% raw %}{% render 'swatch' with 'name of your product option here' %}{% endraw %}</code>
+        </p>
+        <p>
+          Example: <code>{% raw %}{% render 'swatch' with 'Color' %}{% endraw %}</code>
+        </p>
+        <p>
+          <strong>This is case-sensitive!</strong> Do not put in <code>'color'</code> if your product option name is
+          <code>'Color'</code>.
+        </p>
+      </div>
+
+    {% else %}
+      <div
+        class="swatch{% if settings.swatch_size_color == 'large' %} swatch_size_large{% endif %}"
+        data-option-index="{{ option_index }}"
+      >
+        <div class="sticky-header">
+          {{ swatchSticky }}:<span data-option-select>{{ swatchSticky.selected_value }}</span>
+        </div>
+        {% assign values = '' %}
+        {% for variant in product.variants %}
+          {% assign value = variant.options[option_index] %}
+
+          {% unless values contains value %}
+            {% assign values = values | join: ';' %}
+            {% assign values = values | append: ';' | append: value %}
+            {% assign values = values | split: ';' %}
+            <div
+              data-value="{{ value | escape }}"
+              class="swatch-element{% if is_color %} color{% endif %} {{ value | handle }}{% if variant.available %} available{% else %} soldout{% endif %}"
+            >
+              {% if is_color %}
+                <div class="tooltip">
+                  {{ value }}
+                </div>
+              {% endif %}
+
+              <input
+                {% if is_color != blank and settings.color_swatch_style == 'variant_grouped' %}
+                  data-filter=".filter-{{ value | handle }}"
+                {% endif %}
+                id="swatch-{{ option_index }}-{{ value | handle }}"
+                type="radio"
+                name="option-{{ option_index }}"
+                value="{{ value | escape }}"
+                {% unless variant.available %}
+                  disabled
+                {% endunless %}
+                {% if forloop.length == 1 %}
+                  checked
+                {% endif %}
+              >
+
+              {% if is_color %}
+                {% if settings.color_swatch_style == 'normal' %}
+                  {% if variant.metafields.custom.variant_color != blank %}
+                    {% assign color_string = variant.metafields.custom.variant_color %}
+                    {% assign temp_color_string = color_string
+                      | replace: '["', ''
+                      | replace: '"]', ''
+                      | replace: '","', ','
+                    %}
+                    {% assign color_split = temp_color_string | split: ',' %}
+                    {% assign color_count = color_split | size %}
+                    <label for="swatch-{{ option_index }}-{{ value | handle }}">
+                      <span
+                        class="bgImg"
+                        style="{%  if color_count > 1 %}background: linear-gradient(45deg, {{ color_split[0] }}, {{ color_split[1] }});{% else %}background: {{ color_split[0] }};{% endif %}"
+                      ></span>
+                    </label>
+                  {% else %}
+                    <label for="swatch-{{ option_index }}-{{ value | handle }}">
+                      <span
+                        class="bgImg"
+                        style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }})"
+                      ></span>
+                    </label>
+                  {% endif %}
+
+                {% elsif settings.color_swatch_style == 'variant' or settings.color_swatch_style == 'variant_grouped' %}
+                  <label class="swatch_variant_img" for="swatch-{{ option_index }}-{{ value | handle }}">
+                    <span
+                      class="bgImg"
+                      {% if variant.image.src != blank %}
+                        style="background-image: url({{ variant.image.src | product_img_url: '100x' }}); background-size: cover;"
+                      {% else %}
+                        style="background-color: {{ value | split: ' ' | last | handle }};{% if settings.show_product_color_img %}background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }}){% endif %}"
+                      {% endif %}
+                    >
+                    </span>
+                  </label>
+                {% endif %}
+
+              {% else %}
+                <label for="swatch-{{ option_index }}-{{ value | handle }}">
+                  {{ value }}
+                </label>
+              {% endif %}
+            </div>
+          {% endunless %}
+
+          {% comment %} <input
+            class="text"
+            data-value="swatch-{{ option_index }}-{{ value | handle }}"
+            type="hidden"
+            data-value-sticky="{{ variant.id }}"
+          > {% endcomment %}
+        {% endfor %}
+      </div>
+    {% endunless %}
+  {% endif %}
+{% endcomment %}

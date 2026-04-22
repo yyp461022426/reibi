@@ -1,0 +1,184 @@
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ 'index-classified-products-show.css' | asset_url }}"
+>
+<div class="index-classified-products-show with-tab index-normal-component">
+  <div class="container deals-box">
+    <h2 class="main-page-title">
+      <span class="small-title">{{ section.settings.title | upcase }}</span>
+      <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+    </h2>
+    <div>
+      <!-- 滑块 -->
+      <div class="tabs-contain">
+        <div class="tabs-box">
+          <div class="tabs-box-option">
+            {% for block in section.blocks limit: 4 %}
+              <div class="tab-item {% if forloop.index0 == 0 %}is-active{% endif %}">
+                {{ block.settings.tab_name }}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="tab-slider"></div>
+        </div>
+      </div>
+      <!-- 商品展示 -->
+      <div class="products-show-box deals-box-mb">
+        {% for block in section.blocks limit: 4 %}
+          <div class="tab-content">
+            <div class="index-normal-product-card">
+              {% for product in block.settings.collection.products limit: 8 %}
+                {%- assign current_variant = product.selected_or_first_available_variant -%}
+                <a class="product-item" href="{{ product.url | within: collection }}" loader-img-box>
+                  <div class="item-card">
+                    <div>
+                      <div class="img-box">
+                        <div class="img-pic">
+                          {% render 'product-label' with product as product, serial: forloop.index %}
+                          {% if product.metafields.custom.show_on_main_page %}
+                            {{
+                              product.metafields.custom.show_on_main_page
+                              | image_url: width: 214, height: 214
+                              | image_tag: class: 'pro-img'
+                            }}
+                          {% else %}
+                            {{ product | image_url: width: 214, height: 214 | image_tag: class: 'pro-img' }}
+                          {% endif %}
+                        </div>
+                      </div>
+                      <div class="item-options">
+                        <div class="pro-title">{{ product.title }}</div>
+                        <div class="pro-price">
+                          <div class="price">
+                            {% if current_variant.compare_at_price and current_variant.compare_at_price != 0 %}
+                              <div class="min-price">{{ current_variant.price | money }}</div>
+                              <div class="max-price">{{ current_variant.compare_at_price | money }}</div>
+                            {% else %}
+                              <div class="normal-price">{{ current_variant.price | money }}</div>
+                            {% endif %}
+                          </div>
+                        </div>
+                        {% if product.metafields.custom.dimension %}
+                          <div class="pro-param pro-size">
+                            <span>{{ product.metafields.custom.dimension }}</span>
+                          </div>
+                        {% endif %}
+                        {% if product.metafields.custom.load_capacity %}
+                          <div class="pro-param pro-weight">
+                            <span>{{ product.metafields.custom.load_capacity }}</span>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="option-box">
+                      <div class="purchase-btn" data-id="{{product.variants[0].id}}">Buy Now</div>
+                      {% if product.available %}
+                        {% render 'icon-cart-3' %}
+                        {% comment %}
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0632/4833/5096/files/cart_1.1.png?v=1721966364"
+                            width="24"
+                            height="22"
+                            class="add-to-cart"
+                            data-id="{{product.variants[0].id}}"
+                            alt="add to cart"
+                          >
+                        {% endcomment %}
+                      {% else %}
+                        <div class="sold-out-note">Sold Out</div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </a>
+              {% endfor %}
+              <div class="flex-center collection-link">
+                <button
+                  class="custom-action-btn action-empty-btn"
+                  data-url="{{ block.settings.collection.url }}"
+                  custom-link-btn
+                >
+                  MORE INFO
+                </button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const sliderDom = $('.tab-slider');
+  const liSet = Array.from(document.getElementsByClassName('with-tab')[0].getElementsByClassName('tab-item'));
+  const pro_content = $('.with-tab .tab-content');
+  // tab滑块切换
+  function cutToSetSlider() {
+    if (liSet.length) {
+      const li = liSet.find((i) => i.className.includes('is-active'));
+      const { offsetLeft, offsetWidth } = li;
+      let letf = offsetLeft + offsetWidth / 2 + 'px';
+      sliderDom.css('left', letf);
+    }
+  }
+  function initSlider() {
+    liSet.forEach((li, index) => {
+      li.onclick = function () {
+        const bool = this.classList.contains('is-active');
+        if (bool) return;
+        liSet.forEach((i) => i.classList.remove('is-active'));
+        this.classList.add('is-active');
+        this.scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest',
+        });
+        showContent(index); // 显示对应的内容项
+        cutToSetSlider(true);
+      };
+    });
+  }
+  // 内容切换
+  function showContent(index) {
+    pro_content.eq(index).siblings().hide();
+    pro_content.eq(index).fadeIn();
+  }
+  showContent(0);
+  initSlider();
+  cutToSetSlider();
+</script>
+{% schema %}
+{
+  "name": "Index Products Show",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Brands section title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Tab Blocks",
+      "type": "tab-show",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_name",
+          "label": "Name of this tab"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Products Show"
+    }
+  ]
+}
+{% endschema %}

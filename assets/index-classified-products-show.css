@@ -1,0 +1,310 @@
+.index-classified-products-show .container{
+  padding-top: 32px;
+}
+.index-classified-products-show .tabs-contain {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.index-classified-products-show .tabs-box {
+  position: relative;
+}
+
+.index-classified-products-show .tabs-box-option {
+  display: flex;
+}
+
+.index-classified-products-show .tab-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333333;
+  white-space: nowrap;
+}
+
+.index-classified-products-show .products-show-box {
+  display: flex;
+}
+
+.index-classified-products-show .tabs-box .is-active {
+  font-weight: 600;
+  color: var(--color_base);
+}
+
+.index-classified-products-show .tab-slider {
+  width: 68px;
+  height: 4px;
+  background: var(--color_base);
+  position: absolute;
+  border-radius: 4px;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+  left: 0;
+  bottom: 0px;
+}
+
+.index-classified-products-show .tab-content {
+  /* display: none; */
+}
+
+.index-classified-products-show .index-normal-product-card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.index-classified-products-show .product-item {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.index-classified-products-show .item-card {
+  padding: 10px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.index-classified-products-show .item-card:hover {
+  /* box-shadow: 0px 0px 16px 0px #2c70d142; */
+  border: 1px solid #005BDB;
+  transition: all 0.3s ease;
+}
+
+.index-classified-products-show .img-pic {
+  display: inline-block;
+  position: relative;
+}
+
+.index-classified-products-show .option-box {
+  padding: 10px 14px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.index-classified-products-show .option-box svg{
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.index-classified-products-show .sale-label {
+  /* position: absolute; */
+  background-color: var(--bg_sale);
+  color: var(--sale_text);
+  line-height: 1em;
+  font-size: var(--font_size);
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 4px 7px 3px;
+  border: none;
+  margin: 0;
+  right: 0;
+  top: 0;
+}
+
+.index-classified-products-show .sold-out {
+  position: absolute;
+  background-color: var(--bg_sold_out);
+  color: var(--sold_out_text);
+  line-height: 1em;
+  font-size: var(--font_size);
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 4px 7px 3px;
+  border: none;
+  margin: 0;
+  right: 0;
+  top: 0;
+}
+
+.index-classified-products-show .sold-out-note {
+  color: var(--bg_sold_out);
+  line-height: 1em;
+  font-size: var(--font_size);
+  text-align: right;
+}
+
+.index-classified-products-show .pro-title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 4px;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.index-classified-products-show .item-options {
+  padding: 10px 14px;
+}
+
+.index-classified-products-show .pro-param span {
+  font-size: 14px;
+  color: #8C8C8C;
+  display: flex;
+  align-items: center;
+}
+
+.index-classified-products-show .pro-param span::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #bfbfbf;
+  display: block;
+  margin-right: 4px;
+}
+
+.index-classified-products-show .pro-price {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  font-weight: 600;
+  font-size: 22px;
+  margin: 10px 0;
+  color: #f44336;
+}
+
+.index-classified-products-show .max-price {
+  color: var(--color_compare_price);
+  text-decoration: line-through;
+  margin-right: 8px;
+  font-weight: 400;
+  font-size: var(--font_size);
+  margin-left: 4px;
+}
+
+@media (max-width: 991px) {
+  .index-classified-products-show .max-price {
+    font-size: 14px;
+  }
+}
+
+.index-classified-products-show .price {
+  display: flex;
+  align-items: baseline;
+}
+
+.index-classified-products-show .add-to-cart {
+  cursor: pointer;
+}
+
+.index-classified-products-show .purchase-btn {
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #0d489d;
+  padding: 8px 35px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #0d489d;
+  cursor: pointer;
+  margin: 10px 0 8px 0;
+  background-color: #ffffff;
+  white-space: nowrap;
+}
+
+.index-classified-products-show .purchase-btn:hover {
+  background-color: var(--background_5);
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  transition: background-color 0.3s;
+}
+
+.index-classified-products-show .tabs-box {
+  overflow-x: auto;
+  /* border-bottom: 2px solid #f3f3f3; */
+}
+
+.index-classified-products-show .tabs-box::-webkit-scrollbar {
+  display: none;
+}
+.index-classified-products-show .deals-on {
+  background: url("https://cdn.shopify.com/s/files/1/0632/4833/5096/files/deal-pic.png?v=1724395566");
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 68px;
+  height: 32px;
+  left: 0;
+  top: -4px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.index-classified-products-show .deal-num {
+  font-weight: bold;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: initial;
+}
+.index-classified-products-show .deal-off {
+  margin-top: -4px;
+  font-weight: bold;
+  font-size: 10px;
+  color: #ffffff;
+  line-height: initial;
+}
+.index-classified-products-show .custom-action-btn{
+  margin-top: 12px;
+}
+/* deals模块混用end */
+
+@media (min-width: 1200px) {
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+  .index-classified-products-show .product-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .index-classified-products-show .container{
+    padding-top: 0;
+  }
+  .index-classified-products-show .index-normal-product-card{
+    margin-bottom: 12px;
+  }
+  .index-classified-products-show .pro-title {
+    font-size: 15px;
+  }
+
+  .index-classified-products-show .pro-price {
+    font-size: 16px;
+    margin: 4px 0;
+  }
+
+  .index-classified-products-show .item-options {
+    padding: 6px 0 0 0;
+  }
+
+  .index-classified-products-show .purchase-btn {
+    padding: 3px 14px;
+    font-size: 16px;
+    color: #0d489d;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .index-classified-products-show .option-box {
+    padding: 6px 0 0 0;
+  }
+
+}

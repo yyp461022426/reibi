@@ -1,0 +1,11 @@
+{% assign is_defer = defer | default: false %}
+{% assign url = filename | asset_url %}
+{%- if request.design_mode -%}
+{%- else -%}
+  {% assign url = filename | asset_url | append: '&enable_js_minification=1' %}
+{%- endif -%}
+{%- if is_defer -%}
+  <script src="{{ url }}" defer type="text/javascript"></script>
+{%- else -%}
+  <script src="{{ url }}" async type="text/javascript"></script>
+{%- endif -%}

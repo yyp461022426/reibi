@@ -1,0 +1,130 @@
+.full-width-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #e4e9ff;
+  position: fixed;
+  height: 105px;
+  top: -5px;
+  z-index: 999;
+}
+
+.b2b-anchor .fix-nav-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.b2b-anchor .theme-image {
+  width: 115px;
+  height: 45px;
+  border-radius: 4px;
+}
+
+.b2b-anchor .anchor-flex-left {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.b2b-anchor .anchor-flex-left a {
+  flex-shrink: 0;
+}
+
+.b2b-anchor .reibii-email {
+  font-size: 24px;
+  color: var(--color_base);
+}
+
+.b2b-anchor .anchor-flex-right {
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.b2b-anchor .anchor-nav a {
+  margin-right: 1.25rem;
+}
+
+.b2b-anchor .point-line-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.b2b-anchor .point-line-box>span {
+  width: 50px;
+  display: block;
+  background: #111a27;
+  width: 27px;
+  height: 2px;
+  margin-bottom: 5px;
+}
+
+.b2b-anchor .drop-down-anchor {
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  background: #fff;
+  display: none;
+}
+
+.b2b-anchor .drop-down-anchor a {
+  display: block;
+  padding: 5px 10px;
+  border-bottom: 1px solid #e3e3e3;
+  color: rgba(49, 50, 51, 0.7);
+  font-size: 18px;
+}
+
+@media (max-width: 1299px) {
+  .b2b-anchor .point-line-box {
+    display: block;
+  }
+
+  .b2b-anchor .anchor-nav {
+    display: none;
+  }
+
+  /* .full-width-box {
+    height: 85px;
+  } */
+
+  .b2b-anchor .drop-down-anchor {
+    top: 100px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .b2b-anchor .point-line-box {
+    display: none;
+  }
+}
+
+/* @media (max-width: 767px) {
+  .b2b-anchor .fix-nav-box-small {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .b2b-anchor .fix-nav-box {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .b2b-anchor .fix-nav-box-small {
+    display: none;
+  }
+  .b2b-anchor .fix-nav-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+} */

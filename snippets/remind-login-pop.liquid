@@ -1,0 +1,23 @@
+<div class="remind-login-pop">
+  <div class="corner-mark-box">
+    <div class="corner-mark"></div>
+    <div class="corner-mark-cover"></div>
+  </div>
+  <div class="close-btn">{%- render 'icon-close' -%}</div>
+  <div class="small-title">Sign in or <a href="{{ routes.account_register_url }}" class="create-account">create an account</a></div>
+  <div class="box-content">
+    <div class="better-service">
+      {%- render 'icon-vip' -%}
+      <span>Earn Rewards</span>
+    </div>
+    <div class="better-service">
+      {%- render 'icon-lightning' -%}
+      <span>Faster Checkout</span>
+    </div>
+    <div class="better-service">
+      {%- render 'icon-service' -%}
+      <span>Better Customer Support</span>
+    </div>
+    <button class="go-sign-in" data-user-pc-translate href="{{ routes.account_url }}">sign in</button>
+  </div>
+</div>

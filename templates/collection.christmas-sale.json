@@ -1,0 +1,244 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "799c1dc4-19c4-4859-9dee-5cf2f5e1ca7d": {
+      "type": "home-custom-block-baner",
+      "blocks": {
+        "template--16633661620472__799c1dc4-19c4-4859-9dee-5cf2f5e1ca7d-16697743314738faa2-0": {
+          "type": "largeImg",
+          "settings": {
+            "image": "shopify://shop_images/reibii_christmas_sale.webp",
+            "image_mb": "shopify://shop_images/reibii_christmas_banner.webp",
+            "display_parallax": false,
+            "dpl_down_arrow": false,
+            "height_img_parallax": "970px",
+            "content_style": "style_1",
+            "display_bg_animation": false,
+            "color_bg_animation": "#f6f6f6",
+            "alignment": "left",
+            "banner_heading": "",
+            "font_size_banner_heading": "40px",
+            "font_size_banner_heading_mb": "24px",
+            "color_banner_heading": "#232323",
+            "color_banner_heading_style2": "#10ffda",
+            "color_banner_heading_mb": "#232323",
+            "banner_sub_heading": "",
+            "font_size_banner_sub_heading": "13px",
+            "font_size_banner_sub_heading_mb": "13px",
+            "color_banner_sub_heading": "#ffffff",
+            "color_banner_sub_heading_mb": "#232323",
+            "banner_des": "",
+            "font_size_banner_des": "12px",
+            "font_size_banner_des_mb": "12px",
+            "color_banner_des": "#232323",
+            "color_banner_des_mb": "#232323",
+            "countdown": "",
+            "banner_button": "",
+            "link": "",
+            "bg_banner_button": "#232323",
+            "border_banner_button": "#232323",
+            "color_banner_button": "#ffffff",
+            "bg_banner_button_mb": "#232323",
+            "border_banner_button_mb": "#232323",
+            "color_banner_button_mb": "#ffffff",
+            "min_width_banner_button": "237px"
+          }
+        }
+      },
+      "block_order": [
+        "template--16633661620472__799c1dc4-19c4-4859-9dee-5cf2f5e1ca7d-16697743314738faa2-0"
+      ],
+      "settings": {
+        "layout": "full",
+        "layout_style": "layout_style_1",
+        "display_bg_banner": false,
+        "bg_color_banner": "#f5f5f5",
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "img_align": "center",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "brand": {
+      "type": "brand-supermarket",
+      "blocks": {
+        "459674e6-d3ef-40cb-be17-3ea6ba3b9015": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "459674e6-d3ef-40cb-be17-3ea6ba3b9015"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#f5f5f5",
+        "heading": "Top Brands",
+        "item_per_row": "3",
+        "enable_all": true,
+        "title_all": "View all",
+        "link": "",
+        "content": "",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {
+        "limited_view": true,
+        "view_as_enable": true,
+        "sort_enable": true,
+        "collection_results_per_row": "4",
+        "collection_results_per_page": "24",
+        "color_button_more": "#ffffff",
+        "bg_color_button_more": "#ba7a2d",
+        "border_color_button_more": "#ba7a2d",
+        "show_countdown": false,
+        "text_countdown": "End ins:",
+        "show_pro_des": false,
+        "show_banner": false,
+        "show_banner_1": true,
+        "link_banner_1": "",
+        "show_banner_2": true,
+        "link_banner_2": "",
+        "show_banner_3": true,
+        "link_banner_3": "",
+        "show_banner_4": true,
+        "link_banner_4": "",
+        "pro_image": "&nbsp;",
+        "pro_name": "Product",
+        "pro_price": "Price",
+        "pro_quantity": "Qty",
+        "pro_variant_options": "Options",
+        "btn_1_bg_color": "#232323",
+        "btn_1_border_color": "#232323",
+        "btn_1_text_color": "#ffffff",
+        "btn_2_bg_color": "#ffffff",
+        "btn_2_border_color": "#323232",
+        "btn_2_text_color": "#232323",
+        "btn_3_bg_color": "#ffffff",
+        "btn_3_border_color": "#e6e6e6",
+        "btn_3_text_color": "#232323",
+        "btn_4_bg_color": "#69c69c",
+        "btn_4_border_color": "#69c69c",
+        "btn_4_text_color": "#ffffff"
+      }
+    },
+    "testimonials": {
+      "type": "collection-testimonials",
+      "disabled": true,
+      "settings": {
+        "display_customer": false
+      }
+    },
+    "recently-view": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "display_recently_viewed_products": true,
+        "recently_viewed_products_title": "Recently Viewed Products",
+        "number_of_recently_viewed_products": "8",
+        "recently_viewed_products_per_row": "5"
+      }
+    },
+    "1c19beaf-21a4-4801-ad58-40741376c3da": {
+      "type": "supermarket-new-arrivals",
+      "settings": {
+        "new_arrivals_title": "Shelves Collection - Up to 37% off",
+        "new_arrivals_text": "",
+        "new_arrivals_text_link": "shopify://collections/storage-shelves",
+        "color_text_link": "#202020",
+        "block_bg": "#ffffff",
+        "bg_grid_item": "#ffffff",
+        "product_list_collection": "sale-garage-shelf",
+        "product_list_limit_all": 15,
+        "display_infinite_scrolling_homepage": false,
+        "collection_results_per_row1": "5",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "ac0c9adb-1d90-4cdd-8c1e-f52acdde895c": {
+      "type": "supermarket-new-arrivals",
+      "settings": {
+        "new_arrivals_title": "Clothes Rack Collection - Up to 38% off",
+        "new_arrivals_text": "",
+        "new_arrivals_text_link": "shopify://collections/clothes-rack",
+        "color_text_link": "#588f32",
+        "block_bg": "#ffffff",
+        "bg_grid_item": "#ffffff",
+        "product_list_collection": "sale-clothes-rack",
+        "product_list_limit_all": 8,
+        "display_infinite_scrolling_homepage": false,
+        "collection_results_per_row1": "4",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "163a5cc6-06a7-4855-a5af-245e6c585399": {
+      "type": "supermarket-new-arrivals",
+      "settings": {
+        "new_arrivals_title": "Dresser Collection - Up to 30% Off",
+        "new_arrivals_text": "",
+        "new_arrivals_text_link": "shopify://collections/dresser",
+        "color_text_link": "#202020",
+        "block_bg": "#ffffff",
+        "bg_grid_item": "#ffffff",
+        "product_list_collection": "sale-dresser",
+        "product_list_limit_all": 4,
+        "display_infinite_scrolling_homepage": false,
+        "collection_results_per_row1": "4",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "2cf8df2a-3f94-4202-8425-3dee1698a3ff": {
+      "type": "supermarket-new-arrivals",
+      "disabled": true,
+      "settings": {
+        "new_arrivals_title": "<h3><span style=\"color: #588f32;\">Kitchen Rack Collection - Get extra 5% Off</span></h3>",
+        "new_arrivals_text": "",
+        "new_arrivals_text_link": "shopify://collections/kitchen-bakers-rack",
+        "color_text_link": "#202020",
+        "block_bg": "#ffffff",
+        "bg_grid_item": "#ffffff",
+        "product_list_collection": "kitchen-bakers-rack",
+        "product_list_limit_all": 4,
+        "display_infinite_scrolling_homepage": false,
+        "collection_results_per_row1": "4",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "799c1dc4-19c4-4859-9dee-5cf2f5e1ca7d",
+    "brand",
+    "main",
+    "testimonials",
+    "recently-view",
+    "1c19beaf-21a4-4801-ad58-40741376c3da",
+    "ac0c9adb-1d90-4cdd-8c1e-f52acdde895c",
+    "163a5cc6-06a7-4855-a5af-245e6c585399",
+    "2cf8df2a-3f94-4202-8425-3dee1698a3ff"
+  ]
+}

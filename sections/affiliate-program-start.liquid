@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="{{ 'affiliate-program-start.css' | asset_url }}">
+<div class="affiliate-program-start">
+  <div class="container">
+    <div class="gradient-bg-to-bottom set-position">
+      <h2 class="banner-title">{{ section.settings.title | upcase }}</h2>
+      <p class="banner-des">{{ section.settings.description }}</p>
+      <div class="link-box">
+        {% for block in section.blocks %}
+          <div class="link-item">
+            <div class="img-box">{{ block.settings.image | image_url: width: 460 | image_tag }}</div>
+            <a href="{{ block.settings.link }}" class="normal-btn">Join Now</a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Affiliate Program Start",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Affiliate Program Image"
+        },
+        {
+          "type":"url",
+          "id":"link",
+          "label":"Link To"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Affiliate Program Start"
+    }
+  ]
+}
+{% endschema %}

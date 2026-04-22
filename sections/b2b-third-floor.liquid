@@ -1,0 +1,151 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-third-floor.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'iconfont.css' | asset_url }}">
+{% assign anchor = section.settings.anchor %}
+<div class="third-floor normal-floor anchor-content" id="{{ anchor }}">
+  <div class="container">
+    <div class="floor-title">
+      {{ section.settings.third_title_widthout_strong -}}
+      <span class="orange-strong"> {{ section.settings.third_title_orange_strong }}</span>
+    </div>
+    <div class="procurement-options-box">
+      <div class="order-desc-box">
+        <div class="order-description">
+          <div>
+            <div class="small-title"><strong>Local US Warehouse, In-Stock Purchase</strong></div>
+            <div class="amount"><strong>Quantity: </strong><span class="orange-strong">7-200 units</span></div>
+            <div class="description-box">
+              <p>
+                <span class="iconfont icon-huoyun"></span><strong>Warehouses: </strong>20+ locations nationwide,
+                including Los Angeles, New Jersey, and Houston
+              </p>
+              <p>
+                <span class="iconfont icon-weibiaoti--"></span><strong>Shipping: </strong>Options include truck pick-up
+                or fast delivery via UPS or FedEx
+              </p>
+              <p>
+                <span class="iconfont icon-shijian"></span><strong>ETA:</strong>
+                <span>3-8 days</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="order-image">
+          {% assign img_url = section.settings.first_image | img_url: 'grande' %}
+          {% assign img_alt = section.settings.first_image.alt %}
+          <img src="{{ img_url }}" alt="{{ img_alt }}">
+        </div>
+      </div>
+      <div class="order-desc-box">
+        <div class="order-image">
+          {% assign img_url = section.settings.sec_image | img_url: 'grande' %}
+          {% assign img_alt = section.settings.sec_image %}
+          <img src="{{ img_url }}" alt="{{ img_alt }}">
+        </div>
+        <div class="order-description">
+          <div>
+            <div class="small-title"><strong>Direct Factory Custom Orders</strong></div>
+            <div class="amount"><strong>Quantity: </strong><span class="orange-strong">200+ units</span></div>
+            <div class="description-box">
+              <p>
+                <span class="iconfont icon-sheji"></span><strong>Customization: </strong>Custom sizes and designs with
+                complimentary professional design services from our engineers
+              </p>
+              <p>
+                <span class="iconfont icon-haiyunyouxianquan"></span><strong>Shipping: </strong>By sea<br>
+                Choose the option that best suits your needs and experience our professional and reliable service.
+              </p>
+              <p><span class="iconfont icon-riqi"></span><strong>ETA: </strong><span>Minimum 45 days</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="procurement-options-box-small">
+      <div class="item-card">
+        {% assign img_url = section.settings.first_image | img_url: 'grande' %}
+        {% assign img_alt = section.settings.first_image.alt %}
+        <img src="{{ img_url }}" alt="{{ img_alt }}">
+        <div class="order-description">
+          <div>
+            <div class="small-title"><strong>Local US Warehouse, In-Stock Purchase</strong></div>
+            <div class="amount"><strong>Quantity: </strong><span class="orange-strong">10-200 units</span></div>
+            <div class="description-box">
+              <p>
+                <span class="iconfont icon-huoyun"></span><strong>Warehouses: </strong>20+ locations nationwide,
+                including Los Angeles, New Jersey, and Houston
+              </p>
+              <p>
+                <span class="iconfont icon-weibiaoti--"></span><strong>Shipping: </strong>Options include truck pick-up
+                or fast delivery via UPS or FedEx
+              </p>
+              <p>
+                <span class="iconfont icon-shijian"></span><strong>ETA:</strong>
+                <span>3-8 days</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-card">
+        {% assign img_url = section.settings.sec_image | img_url: 'grande' %}
+        {% assign img_alt = section.settings.sec_image.alt %}
+        <img src="{{ img_url }}" alt="{{ img_alt }}">
+        <div class="order-description">
+          <div>
+            <div class="small-title"><strong>Direct Factory Custom Orders</strong></div>
+            <div class="amount"><strong>Quantity: </strong><span class="orange-strong">200+ units</span></div>
+            <div class="description-box">
+              <p>
+                <span class="iconfont icon-sheji"></span><strong>Customization: </strong>Custom sizes and designs with
+                complimentary professional design services from our engineers
+              </p>
+              <p>
+                <span class="iconfont icon-haiyunyouxianquan"></span><strong>Shipping: </strong>By sea<br>
+                Choose the option that best suits your needs and experience our professional and reliable service.
+              </p>
+              <p><span class="iconfont icon-riqi"></span><strong>ETA: </strong><span>Minimum 45 days</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BtoB Third Floor",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "AnchorName"
+    },
+    {
+      "type": "text",
+      "id": "third_title_widthout_strong",
+      "label": "title widthout strong"
+    },
+    {
+      "type": "text",
+      "id": "third_title_orange_strong",
+      "label": "title width orange strong"
+    },
+    {
+       "type": "image_picker",
+       "id": "first_image",
+       "label": "ImageLeft"
+     },
+    {
+       "type": "image_picker",
+       "id": "sec_image",
+       "label": "ImageRight"
+     }
+  ],
+  "presets": [
+    {
+      "name": "BtoB Third Floor"
+    }
+  ]
+}
+{% endschema %}

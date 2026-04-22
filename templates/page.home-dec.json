@@ -1,0 +1,268 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "7f7ff1ef-6fd5-4ace-a51a-09f20f8d04f6": {
+      "type": "home-rich-text",
+      "settings": {
+        "content_top": "000",
+        "content_bottom": "xczxv",
+        "font_size": "14px",
+        "text_alignment": "center",
+        "button_text_more": "",
+        "button_text_less": "Read Less",
+        "color_text": "",
+        "margin_bottom_mb": 50,
+        "margin_bottom_tab": 65,
+        "margin_bottom": 65
+      }
+    },
+    "6e94a696-e654-4f6c-bbeb-3458abed5085": {
+      "type": "home-sub-banner",
+      "blocks": {
+        "template--16662435070200__6e94a696-e654-4f6c-bbeb-3458abed5085-16733430697f08374e-0": {
+          "type": "image",
+          "settings": {
+            "title": "Editor’s Pick",
+            "color_title": "#fff",
+            "link": ""
+          }
+        },
+        "template--16662435070200__6e94a696-e654-4f6c-bbeb-3458abed5085-16733430697f08374e-1": {
+          "type": "image",
+          "settings": {
+            "title": "Editor’s Pick",
+            "color_title": "#fff",
+            "link": ""
+          }
+        },
+        "template--16662435070200__6e94a696-e654-4f6c-bbeb-3458abed5085-16733430697f08374e-2": {
+          "type": "image",
+          "settings": {
+            "title": "Editor’s Pick",
+            "color_title": "#fff",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16662435070200__6e94a696-e654-4f6c-bbeb-3458abed5085-16733430697f08374e-0",
+        "template--16662435070200__6e94a696-e654-4f6c-bbeb-3458abed5085-16733430697f08374e-1",
+        "template--16662435070200__6e94a696-e654-4f6c-bbeb-3458abed5085-16733430697f08374e-2"
+      ],
+      "settings": {
+        "display_sub_banner": true,
+        "layout": "default",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0,
+        "font_size_title": "16px",
+        "display_padding": true
+      }
+    },
+    "eff74763-50eb-46c7-beda-d6c94405db5e": {
+      "type": "home-brands",
+      "settings": {
+        "layout": "default",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0,
+        "display_brand_border": true,
+        "display_bg_banner": false,
+        "bg_color_banner": "#f5f5f5",
+        "brand_title": "",
+        "color_title": "#232323",
+        "fontsize_title": "",
+        "fontsize_title_mb": "",
+        "font_weight_title": "700",
+        "text_transform_title": "capitalize",
+        "brand_des": "",
+        "brands_view_all": "",
+        "brands_view_all_link": "",
+        "title_style": "style_1",
+        "brand_rows": "5"
+      }
+    },
+    "c44b55b2-eb56-42a4-bbe0-0128cccf2314": {
+      "type": "home-custom-block-bottom-baner",
+      "blocks": {
+        "template--16662435070200__c44b55b2-eb56-42a4-bbe0-0128cccf2314-1673342970fad3a0bc-0": {
+          "type": "largeImg",
+          "settings": {
+            "display_parallax": false,
+            "dpl_down_arrow": false,
+            "height_img_parallax": "970px",
+            "banner_sub_heading": "Metropolis",
+            "font_size_banner_sub_heading": "20px",
+            "color_banner_sub_heading": "#232323",
+            "banner_heading": "Metropólis",
+            "font_size_banner_heading": "40px",
+            "color_banner_heading": "#232323",
+            "banner_des": "Pellentesque posuere orci lobortis scelerisque blandit. Donec id tellus lacinia an tincidunt risus an consequat delit quisquemos.",
+            "font_size_banner_des": "12px",
+            "color_banner_des": "#232323",
+            "countdown": "",
+            "banner_button": "Shop The Looks",
+            "link": "",
+            "bg_banner_button": "#232323",
+            "border_banner_button": "#232323",
+            "color_banner_button": "#fff",
+            "min_width_banner_button": "248px",
+            "video_link": "eTCtDW7O1aM",
+            "video_icon_color": "#fff"
+          }
+        }
+      },
+      "block_order": [
+        "template--16662435070200__c44b55b2-eb56-42a4-bbe0-0128cccf2314-1673342970fad3a0bc-0"
+      ],
+      "settings": {
+        "layout": "full",
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "img_align": "center",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 30,
+        "margin_bottom": 30
+      }
+    },
+    "3e439d38-6b15-439b-a1d0-5d4214407013": {
+      "type": "home-lookbook",
+      "blocks": {
+        "template--16662435070200__3e439d38-6b15-439b-a1d0-5d4214407013-16733431239a356dfd-0": {
+          "type": "image",
+          "settings": {
+            "lb_product_1": "",
+            "top_position_1": "10",
+            "left_position_1": "10",
+            "dots_color_1": "#fff",
+            "dots_bg_color_1": "#323232",
+            "dots_shadow_color_1": "#fff",
+            "lb_product_2": "",
+            "top_position_2": "10",
+            "left_position_2": "10",
+            "dots_color_2": "#fff",
+            "dots_bg_color_2": "#323232",
+            "dots_shadow_color_2": "#fff",
+            "lb_product_3": "",
+            "top_position_3": "10",
+            "left_position_3": "10",
+            "dots_color_3": "#fff",
+            "dots_bg_color_3": "#323232",
+            "dots_shadow_color_3": "#fff",
+            "lb_product_4": "",
+            "top_position_4": "10",
+            "left_position_4": "10",
+            "dots_color_4": "#fff",
+            "dots_bg_color_4": "#323232",
+            "dots_shadow_color_4": "#fff"
+          }
+        },
+        "template--16662435070200__3e439d38-6b15-439b-a1d0-5d4214407013-16733431239a356dfd-1": {
+          "type": "image",
+          "settings": {
+            "lb_product_1": "",
+            "top_position_1": "10",
+            "left_position_1": "10",
+            "dots_color_1": "#fff",
+            "dots_bg_color_1": "#323232",
+            "dots_shadow_color_1": "#fff",
+            "lb_product_2": "",
+            "top_position_2": "10",
+            "left_position_2": "10",
+            "dots_color_2": "#fff",
+            "dots_bg_color_2": "#323232",
+            "dots_shadow_color_2": "#fff",
+            "lb_product_3": "",
+            "top_position_3": "10",
+            "left_position_3": "10",
+            "dots_color_3": "#fff",
+            "dots_bg_color_3": "#323232",
+            "dots_shadow_color_3": "#fff",
+            "lb_product_4": "",
+            "top_position_4": "10",
+            "left_position_4": "10",
+            "dots_color_4": "#fff",
+            "dots_bg_color_4": "#323232",
+            "dots_shadow_color_4": "#fff"
+          }
+        }
+      },
+      "block_order": [
+        "template--16662435070200__3e439d38-6b15-439b-a1d0-5d4214407013-16733431239a356dfd-0",
+        "template--16662435070200__3e439d38-6b15-439b-a1d0-5d4214407013-16733431239a356dfd-1"
+      ],
+      "settings": {
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_2",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "629c45a4-2639-4f73-8932-98406ade35ba": {
+      "type": "home-blog-posts",
+      "settings": {
+        "layout": "full",
+        "blog_posts": "blog",
+        "blog_results_per_row": "3",
+        "post_limit": 2,
+        "blog_show_author": true,
+        "blog_show_date": true,
+        "blog_post_number": 18,
+        "blog_post_read_more": false,
+        "blog_post_title": "Latest Posts",
+        "blog_post_des": "",
+        "title_style": "style_1",
+        "layout_style": "style_2",
+        "margin_bottom_mb": 20,
+        "margin_bottom_tab": 20,
+        "margin_bottom": 35
+      }
+    },
+    "fa152283-3b2b-40c8-bc59-63780a419ab3": {
+      "type": "home-blog-posts",
+      "settings": {
+        "layout": "default",
+        "blog_posts": "blog",
+        "blog_results_per_row": "2",
+        "post_limit": 2,
+        "blog_show_author": true,
+        "blog_show_date": true,
+        "blog_post_number": 33,
+        "blog_post_read_more": false,
+        "blog_post_title": "Latest Posts",
+        "blog_post_des": "",
+        "title_style": "style_1",
+        "layout_style": "style_1",
+        "margin_bottom_mb": 20,
+        "margin_bottom_tab": 20,
+        "margin_bottom": 35
+      }
+    }
+  },
+  "order": [
+    "main",
+    "7f7ff1ef-6fd5-4ace-a51a-09f20f8d04f6",
+    "6e94a696-e654-4f6c-bbeb-3458abed5085",
+    "eff74763-50eb-46c7-beda-d6c94405db5e",
+    "c44b55b2-eb56-42a4-bbe0-0128cccf2314",
+    "3e439d38-6b15-439b-a1d0-5d4214407013",
+    "629c45a4-2639-4f73-8932-98406ade35ba",
+    "fa152283-3b2b-40c8-bc59-63780a419ab3"
+  ]
+}

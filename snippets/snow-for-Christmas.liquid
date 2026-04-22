@@ -1,0 +1,307 @@
+<style>
+  #snow-control {
+    position: fixed;
+    left: -35px;
+    top: calc(50% + 62px);
+    transition: all ease 0.2s;
+    z-index: 98;
+  }
+
+  #snow-control .snow-control-btn{
+    background: rgba(182, 29, 47, 0.5);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 14px;
+    margin-left: 2px;
+    color: #ffffff;
+    user-select: none;
+  }
+  #snow-control:hover{
+      left: 0;
+  }
+  #snow-control:hover .snow-control-btn {
+    background: rgba(182, 29, 47, 1);
+  }
+</style>
+<script
+  type="text/javascript"
+>
+  function debounce(func, wait) {
+    let timeout = null;
+    return function () {
+      const context = this;
+      const args = arguments;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+  }
+
+  // 图片雪花
+  (function (a) {
+    let timer = null;
+    // 用于存储所有生成的雪花元素，方便后续统一清理
+    let snowflakes = [];
+    a.fn.snow = function (b) {
+      if (timer) {
+        // 如果定时器存在，清除之前的定时器
+        clearInterval(timer);
+      }
+      var c = a('<div class="snowbox" />')
+        .css({ position: 'fixed', 'z-index': b.zIndex, top: '-50px', pointerEvents: 'none' })
+        .html('\x26#10052;');
+      var viewportHeight = window.innerHeight;
+      var viewportWidth = window.innerWidth;
+      b = a.extend({}, { minSize: 10, maxSize: 20, newOn: 1e3, flakeColor: '#AFDAEF' }, b);
+      timer = setInterval(function () {
+        var e = Math.random() * viewportWidth - 100,
+          g = 0.5 + Math.random(),
+          h = b.minSize + Math.random() * b.maxSize,
+          k = viewportHeight - 30,
+          l = e - 500 + 500 * Math.random(),
+          m = 10 * viewportHeight + 5e3 * Math.random();
+
+        var newSnowflake = c
+          .clone()
+          .appendTo('body')
+          .css({ left: e, opacity: g, 'font-size': h, color: b.flakeColor })
+          .animate({ top: k, left: l, opacity: 0.3 }, m, 'linear', function () {
+            a(this).remove();
+          });
+        snowflakes.push(newSnowflake);
+      }, b.newOn);
+    };
+    a.fn.stopSnow = function () {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+      // 移除页面上所有已生成的雪花元素
+      a.each(snowflakes, function (index, element) {
+        a(element).remove();
+      });
+      snowflakes = [];
+    };
+  })(jQuery);
+  // 点状雪花
+  /* 控制下雪 */
+  function snowFall(snow) {
+    /* 可配置属性 */
+    snow = snow || {};
+    this.maxFlake = snow.maxFlake || 40; /* 最多片数 */
+    this.flakeSize = snow.flakeSize || 10; /* 雪花形状 */
+    this.fallSpeed = snow.fallSpeed || 1; /* 坠落速度 */
+    // 用于存储requestAnimationFrame返回的id，以便后续取消动画帧请求
+    this.animationFrameId = null;
+    // 存储雪花对象的数组
+    this.flakes = [];
+  }
+  /* 兼容写法 */
+  requestAnimationFrame =
+    window.requestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    function (callback) {
+      setTimeout(callback, 1000 / 60);
+    };
+
+  cancelAnimationFrame =
+    window.cancelAnimationFrame ||
+    window.mozCancelAnimationFrame ||
+    window.webkitCancelAnimationFrame ||
+    window.msCancelAnimationFrame ||
+    window.oCancelAnimationFrame;
+  /* 开始下雪 */
+  snowFall.prototype.start = function () {
+    /* 创建画布 */
+    snowCanvas.apply(this);
+    /* 创建雪花形状 */
+    createFlakes.apply(this);
+    /* 画雪 */
+    drawSnow.apply(this);
+  };
+
+  // 在snowFall的原型上添加一个改变雪花数量的方法
+  snowFall.prototype.changeFlakeNumber = function (newMaxFlake) {
+    this.maxFlake = newMaxFlake;
+    var currentFlakes = this.flakes;
+    var currentLength = currentFlakes.length;
+    if (newMaxFlake > currentLength) {
+      // 需要添加新的雪花对象到flakes数组
+      for (var i = currentLength; i < newMaxFlake; i++) {
+        currentFlakes.push(new flakeMove(this.canvas.width, this.canvas.height, this.flakeSize, this.fallSpeed));
+      }
+    } else if (newMaxFlake < currentLength) {
+      // 需要移除多余的雪花对象
+      currentFlakes = currentFlakes.slice(0, newMaxFlake);
+    }
+    this.flakes = currentFlakes;
+  };
+
+  // 停止下雪的方法
+  snowFall.prototype.stop = function () {
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+      this.animationFrameId = null;
+    }
+    var canvas = this.canvas;
+    var ctx = canvas.getContext('2d');
+    // 清空画布
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // 重置雪花数组
+    this.flakes = [];
+  };
+
+  /* 创建画布 */
+  function snowCanvas() {
+    /* 添加Dom结点 */
+    var snowcanvas = document.createElement('canvas');
+    snowcanvas.id = 'snowfall';
+    snowcanvas.width = window.innerWidth;
+    // snowcanvas.height = document.body.clientHeight;
+    snowcanvas.height = window.innerHeight;
+    snowcanvas.setAttribute('style', 'position:fixed; top: 0; left: 0; z-index: 1; pointer-events: none;');
+    document.getElementsByTagName('body')[0].appendChild(snowcanvas);
+    this.canvas = snowcanvas;
+    this.ctx = snowcanvas.getContext('2d');
+    /* 窗口大小改变的处理 */
+    window.onresize = function () {
+      snowcanvas.width = window.innerWidth;
+      snowcanvas.height = window.innerHeight;
+    };
+  }
+  /* 雪运动对象 */
+  function flakeMove(canvasWidth, canvasHeight, flakeSize, fallSpeed) {
+    this.x = Math.floor(Math.random() * canvasWidth); /* x坐标 */
+    this.y = Math.floor(Math.random() * canvasHeight); /* y坐标 */
+    this.size = Math.random() * flakeSize + 2; /* 形状 */
+    this.maxSize = flakeSize; /* 最大形状 */
+    this.speed = Math.random() * 1 + fallSpeed; /* 坠落速度 */
+    this.fallSpeed = fallSpeed; /* 坠落速度 */
+    this.velY = this.speed; /* Y方向速度 */
+    this.velX = 0; /* X方向速度 */
+    this.stepSize = Math.random() / 30; /* 步长 */
+    this.step = 0; /* 步数 */
+  }
+  flakeMove.prototype.update = function () {
+    var x = this.x,
+      y = this.y;
+    /* 左右摆动(余弦) */
+    this.velX *= 0.98;
+    if (this.velY <= this.speed) {
+      this.velY = this.speed;
+    }
+    this.velX += Math.cos((this.step += 0.05)) * this.stepSize;
+
+    this.y += this.velY;
+    this.x += this.velX;
+    /* 飞出边界的处理 */
+    if (this.x >= canvas.width || this.x <= 0 || this.y >= canvas.height || this.y <= 0) {
+      this.reset(canvas.width, canvas.height);
+    }
+  };
+  /* 飞出边界-放置最顶端继续坠落 */
+  flakeMove.prototype.reset = function (width, height) {
+    this.x = Math.floor(Math.random() * width);
+    this.y = 0;
+    this.size = Math.random() * this.maxSize + 2;
+    this.speed = Math.random() * 1 + this.fallSpeed;
+    this.velY = this.speed;
+    this.velX = 0;
+  };
+  // 渲染雪花-随机形状（此处可修改雪花颜色！！！）
+  flakeMove.prototype.render = function (ctx) {
+    var snowFlake = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+    snowFlake.addColorStop(0, 'rgba(255, 255, 255, 0.9)'); /* 此处是雪花颜色，默认是白色 */
+    snowFlake.addColorStop(0.5, 'rgba(255, 255, 255, 0.5)'); /* 若要改为其他颜色，请自行查 */
+    snowFlake.addColorStop(1, 'rgba(255, 255, 255, 0)'); /* 找16进制的RGB 颜色代码。 */
+    ctx.save();
+    ctx.fillStyle = snowFlake;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  };
+  /* 创建雪花-定义形状 */
+  function createFlakes() {
+    var maxFlake = this.maxFlake,
+      flakes = (this.flakes = []),
+      canvas = this.canvas;
+    for (var i = 0; i < maxFlake; i++) {
+      flakes.push(new flakeMove(canvas.width, canvas.height, this.flakeSize, this.fallSpeed));
+    }
+  }
+  /* 画雪 */
+  function drawSnow() {
+    var maxFlake = this.maxFlake,
+      flakes = this.flakes;
+    (ctx = this.ctx), (canvas = this.canvas), (that = this);
+    /* 清空雪花 */
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var e = 0; e < maxFlake; e++) {
+      flakes[e].update();
+      flakes[e].render(ctx);
+    }
+    // 记录requestAnimationFrame返回的id，以便后续停止下雪时使用
+    /*  一帧一帧的画 */
+    that.animationFrameId = requestAnimationFrame(function () {
+      drawSnow.apply(that);
+    });
+  }
+
+  // 定义处理页面宽度变化的函数
+  function handleResize(snow) {
+    var width = $(window).width();
+    // console.log('当前页面宽度是：', width + 'px');
+    // 在这里可以添加更多根据宽度变化而执行的逻辑，比如改变元素样式、布局等
+    // console.log(snow);
+    if (width < 750) {
+      $.fn.snow({ minSize: 10, maxSize: 30, newOn: 1000, zIndex: 98 }); // 调整片状雪花
+      snow.changeFlakeNumber(20); // 将雪花数量动态修改为20片
+    } else {
+      $.fn.snow({ minSize: 10, maxSize: 50, newOn: 1000, zIndex: 101 }); // 调整片状雪花
+      snow.changeFlakeNumber(40); // 将雪花数量动态修改为40片
+    }
+  }
+
+  function createSnowControl(snow) {
+    const dom = `<div class="snow-switch-off" id="snow-control"><div class="snow-control-btn">stop snow</div></div>`
+    {% comment %} $('<div>').addClass('snow-switch-off').attr('id', 'snow-control').text('').appendTo('body'); {% endcomment %}
+    $(dom).appendTo("body")
+    // 控制雪花开关
+    $('#snow-control').click(function () {
+      $(this).toggleClass("snow-switch-on snow-switch-off");
+      if ($(this).hasClass("snow-switch-off")) {
+        $(this).children(".snow-control-btn").text('stop snow');
+        handleResize(snow);
+        snow.start();
+      } else {
+        $(this).children(".snow-control-btn").text('start snow');
+        $.fn.stopSnow();
+        snow.stop();
+      }
+    });
+  }
+
+  // 页面初次加载时也执行一次，获取初始宽度
+  /* 调用及控制方法 */
+  var snow = new snowFall({ maxFlake: 20, fallSpeed: 1 });
+  snow.start();
+  // 执行页面宽度检测
+  handleResize(snow);
+  // 创建雪花控件
+  createSnowControl(snow);
+
+  // 使用 debounce 对处理函数进行防抖处理
+  var debouncedHandleResize = debounce(handleResize(snow), 200);
+
+  // 使用$(window).resize()绑定经过防抖处理后的函数
+  $(window).resize(debouncedHandleResize);
+</script>

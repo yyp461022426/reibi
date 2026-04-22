@@ -1,0 +1,50 @@
+.index-challenge .content-box{
+    overflow: hidden;
+    position: relative;
+}
+
+.index-challenge .cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+}
+
+.index-challenge .swiper-box{
+    z-index: 1;
+}
+
+.index-challenge .slick-slider .slick-list{
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.index-challenge .info-item{
+    padding: 24px;
+    color: #FFFFFF
+}
+
+.index-challenge .info-item .card-title{
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 16px
+}
+
+.index-challenge .info-item .card-content{
+    
+}
+@media (max-width: 767px) {
+    .index-challenge .info-item{
+        padding: 20px;
+    }
+    .index-challenge .info-item .card-title{
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .index-challenge .info-item .card-content{
+        font-size: 12px;
+        line-height: 20px;
+    }
+}

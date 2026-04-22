@@ -1,0 +1,173 @@
+<style>
+  .discount-list .item {
+    min-height: 60px;
+    display: flex;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 14px;
+    min-width: 220px;
+    width: 100%;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+  .discount-list .item .disct {
+    background-color: var(--color_base);
+    width: 103px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .discount-list .item::after {
+    content: ' ';
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    right: 0px;
+    top: 34%;
+    border: 1px solid var(--color_base);
+    background: #fff;
+    border-radius: 20px 0px 0px 20px;
+    border-right: 0px;
+    -webkit-border-radius: 20px 0px 0px 20px;
+  }
+  .discount-list .item .disct-right-block {
+    border: 1px solid var(--color_base);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-left: 1px dashed var(--color_base);
+  }
+  .discount-list .item .disct-right-block .disct-des {
+    padding: 4px 5px 2px 20px;
+    margin: 0px;
+    text-align: left;
+    color: #666666;
+    line-height: 18px;
+    color: #666;
+    flex: 1;
+  }
+  .discount-list .item .disct-right-block .disct-code {
+    color: #666;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+    line-height: 22px;
+  }
+  .discount-list .item .disct-right-block .disabled {
+    background-color: var(--color_disabled);
+  }
+  .discount-list .disct-copy-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    height: 40px;
+    background-color: var(--color_base);
+    min-width: 70px;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    color: #ffffff;
+    font-size: 14px;
+    margin: 10px 20px 10px 0px;
+    cursor: pointer;
+    border: unset;
+  }
+  @media (max-width: 767px) {
+    .discount-list .item {
+      height: auto;
+      margin-bottom: 13px;
+    }
+    .discount-list .item .disct {
+      font-size: 18px;
+      width: 64px;
+    }
+    .discount-list .disct-copy-btn {
+      height: 30px;
+      width: 50px;
+      font-size: 13px;
+    }
+    .discount-list .item .disct-right-block .disct-code {
+      font-size: 16px;
+    }
+    .discount-list .item .disct-right-block .disct-des {
+      padding: 4px 5px 2px 8px;
+    }
+  }
+</style>
+<div>
+  <div class="discount-list">
+    {%- if product.metafields.custom.extra_discount_for_product -%}
+      {%- assign extra_discount = product.metafields.custom.extra_discount_for_product.value -%}
+      {%- for item in extra_discount.discountArr -%}
+        <div class="item">
+          <div class="disct">-${{ item.get }}</div>
+          <div class="disct-right-block">
+            <div class="disct-des">
+              {%- if item.desc != '' -%}
+                <p>
+                  {{ item.desc }}
+                </p>
+              {%- else -%}
+                <p>
+                  Get <strong>${{ item.get }}</strong> off orders over <strong>${{ item.cost }}</strong>
+                </p>
+              {%- endif -%}
+              <div class="disct-code">code: {{ item.code }}</div>
+            </div>
+            <button copy-discount-code data-clipboard-text="{{ item.code }}" class="disct-copy-btn">COPY</button>
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if product.metafields.custom.not_show_global_discount != true -%}
+      {%- for i in (1..3) -%}
+        {%- case i -%}
+          {%- when 1 -%}
+            {%- assign code = settings.discount_1_code -%}
+            {%- assign cost = settings.discount_1_cost -%}
+            {%- assign get = settings.discount_1_get -%}
+            {%- assign unit = settings.discount_1_unit -%}
+          {%- when 2 -%}
+            {%- assign code = settings.discount_2_code -%}
+            {%- assign cost = settings.discount_2_cost -%}
+            {%- assign get = settings.discount_2_get -%}
+            {%- assign unit = settings.discount_2_unit -%}
+          {%- when 3 -%}
+            {%- assign code = settings.discount_3_code -%}
+            {%- assign cost = settings.discount_3_cost -%}
+            {%- assign get = settings.discount_3_get -%}
+            {%- assign unit = settings.discount_3_unit -%}
+        {%- endcase -%}
+
+        {%- if code != blank -%}
+          <div class="item">
+            {% if unit == 'percentage' %}
+              <div class="disct">-{{ get }}%</div>
+            {% else %}
+              <div class="disct">-${{ get }}</div>
+            {% endif %}
+            <div class="disct-right-block">
+              <div class="disct-des">
+                <p>
+                  Get
+                  <strong>
+                    {%- if unit == 'percentage' %}{{ get }}%{% else %}${{ get }}{% endif -%}
+                  </strong>
+                  off orders over <strong>${{ cost }}</strong>
+                </p>
+                <div class="disct-code">code: {{ code }}</div>
+              </div>
+              <button copy-discount-code data-clipboard-text="{{ code }}" class="disct-copy-btn">COPY</button>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+</div>

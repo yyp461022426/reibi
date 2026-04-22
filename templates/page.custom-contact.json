@@ -1,0 +1,213 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "home_about_us_nRzFTg": {
+      "type": "home-about-us",
+      "settings": {
+        "style_about": "style_1",
+        "display_border_top": false,
+        "bg_color": "transparent",
+        "border_bg_color": "#f5f5f5",
+        "bg_color_item_style_3": "#fff",
+        "style_title": "style_1",
+        "title": "Reibii Wholesale Direct",
+        "color_title": "#232323",
+        "font_size_title": "26px",
+        "font_size_title_mb": "",
+        "font_weight_title": "700",
+        "text_transform_title": "capitalize",
+        "title_sub": "",
+        "font_size_title_sub": "12px",
+        "color_title_sub": "",
+        "des": "Thank you for visiting our Wholesale Direct page! We are dedicated to providing high-quality shelving solutions. By contacting us, you will receive competitive pricing and excellent service. Our minimum order quantity is 10 units, and we offer custom sizes for larger orders. With over 22 years of professional manufacturing experience, our factory ensures top-quality products. Enjoy the best discounts through our direct sales channel. Contact us now for a customized quote.",
+        "color_des": "#0f0f0f",
+        "font_size_des": "16px",
+        "button_text": "",
+        "button_text_link": "",
+        "color_button": "#202020",
+        "color_border_button": "#ffffff",
+        "bg_color_button": "#ffffff",
+        "font_size_title_item": "",
+        "font_size_desc_item": "",
+        "font_size_button_item": "",
+        "margin_bottom": 0,
+        "margin_bottom_mb": 0
+      }
+    },
+    "main": {
+      "type": "custom-contact-template",
+      "settings": {
+        "display_google_map": false,
+        "google_map_code": "",
+        "contact_title": "Contact Us",
+        "contact_text_desc": "",
+        "display_location": true,
+        "location_code": ""
+      }
+    },
+    "home_custom_block_bottom_baner_D8yB6j": {
+      "type": "home-custom-block-bottom-baner",
+      "blocks": {
+        "small_img_eNBYYU": {
+          "type": "smallImg",
+          "settings": {
+            "banner_is": "left",
+            "image": "shopify://shop_images/Reibii_B2B_Payment_Options.webp",
+            "bg_banner_content": "#fafafa",
+            "banner_heading": "Multiple Payment Methods",
+            "font_size_banner_heading": "24px",
+            "color_banner_heading": "#0f0f0f",
+            "banner_des": "We offer various payment methods, including bank transfers, credit and debit card payments, ACH, Stripe, and mobile payments, ensuring convenience and flexibility.",
+            "font_size_banner_des": "18px",
+            "color_banner_des": "#0f0f0f",
+            "banner_button": "",
+            "link": "",
+            "bg_banner_button": "#fff",
+            "border_banner_button": "#5a5a5a",
+            "color_banner_button": "#232323"
+          }
+        }
+      },
+      "block_order": [
+        "small_img_eNBYYU"
+      ],
+      "settings": {
+        "layout": "full",
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "img_align": "center",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 30,
+        "margin_bottom": 30
+      }
+    },
+    "home_custom_block_bottom_baner_cfUMmP": {
+      "type": "home-custom-block-bottom-baner",
+      "blocks": {
+        "small_img_zrUQmJ": {
+          "type": "smallImg",
+          "settings": {
+            "banner_is": "right",
+            "image": "shopify://shop_images/Reibii_B2B_Shipping_Methods.webp",
+            "bg_banner_content": "#fafafa",
+            "banner_heading": "Various Shipping Options",
+            "font_size_banner_heading": "24px",
+            "color_banner_heading": "#0f0f0f",
+            "banner_des": "We support various shipping options, including truck pick-up, courier delivery, and self-pick-up from our warehouse, giving you the flexibility to choose the best method.",
+            "font_size_banner_des": "18px",
+            "color_banner_des": "#0f0f0f",
+            "banner_button": "",
+            "link": "",
+            "bg_banner_button": "#fff",
+            "border_banner_button": "#5a5a5a",
+            "color_banner_button": "#232323"
+          }
+        }
+      },
+      "block_order": [
+        "small_img_zrUQmJ"
+      ],
+      "settings": {
+        "layout": "full",
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "img_align": "center",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 30,
+        "margin_bottom": 30
+      }
+    },
+    "home_custom_block_bottom_baner_KbHkan": {
+      "type": "home-custom-block-bottom-baner",
+      "blocks": {
+        "small_img_xXEADe": {
+          "type": "smallImg",
+          "settings": {
+            "banner_is": "left",
+            "image": "shopify://shop_images/reibii_factory_display.webp",
+            "bg_banner_content": "#fafafa",
+            "banner_heading": "Product Advantages",
+            "font_size_banner_heading": "24px",
+            "color_banner_heading": "#0f0f0f",
+            "banner_des": "Our products are made of galvanized steel, offering corrosion resistance and the ability to withstand high loads, ensuring durability and strength.",
+            "font_size_banner_des": "18px",
+            "color_banner_des": "#0f0f0f",
+            "banner_button": "",
+            "link": "",
+            "bg_banner_button": "#fff",
+            "border_banner_button": "#5a5a5a",
+            "color_banner_button": "#232323"
+          }
+        }
+      },
+      "block_order": [
+        "small_img_xXEADe"
+      ],
+      "settings": {
+        "layout": "full",
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "img_align": "center",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 30,
+        "margin_bottom": 30
+      }
+    },
+    "home_custom_block_bottom_baner_pnYa47": {
+      "type": "home-custom-block-bottom-baner",
+      "blocks": {
+        "small_img_zyQEqy": {
+          "type": "smallImg",
+          "settings": {
+            "banner_is": "right",
+            "image": "shopify://shop_images/reibii_shelving_products_wareshouse_b73cf368-c8f3-400d-bc2a-4ef5a38d99b9.webp",
+            "bg_banner_content": "#fafafa",
+            "banner_heading": "Faster Logistics Support",
+            "font_size_banner_heading": "24px",
+            "color_banner_heading": "#0f0f0f",
+            "banner_des": "With warehouses in the USA, Japan, and the UK, we offer faster logistics support, ensuring your orders are delivered promptly.",
+            "font_size_banner_des": "18px",
+            "color_banner_des": "#0f0f0f",
+            "banner_button": "",
+            "link": "",
+            "bg_banner_button": "#fff",
+            "border_banner_button": "#5a5a5a",
+            "color_banner_button": "#232323"
+          }
+        }
+      },
+      "block_order": [
+        "small_img_zyQEqy"
+      ],
+      "settings": {
+        "layout": "full",
+        "widget_title": "",
+        "widget_des": "",
+        "title_style": "style_1",
+        "img_align": "center",
+        "margin_bottom_mb": 25,
+        "margin_bottom_tab": 30,
+        "margin_bottom": 30
+      }
+    }
+  },
+  "order": [
+    "home_about_us_nRzFTg",
+    "main",
+    "home_custom_block_bottom_baner_D8yB6j",
+    "home_custom_block_bottom_baner_cfUMmP",
+    "home_custom_block_bottom_baner_KbHkan",
+    "home_custom_block_bottom_baner_pnYa47"
+  ]
+}

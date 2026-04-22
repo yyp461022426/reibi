@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "16684985572418dc0d": {
+      "type": "apps",
+      "blocks": {
+        "721878c5-985e-45b0-a31b-048e652eb430": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_page/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "721878c5-985e-45b0-a31b-048e652eb430"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "16684985572418dc0d"
+  ]
+}

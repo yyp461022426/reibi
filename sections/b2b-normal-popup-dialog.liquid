@@ -1,0 +1,165 @@
+<!-- 普通弹框：需将该模块放在打开该模块的方法之前 -->
+<div class="coupon-dialog" id="couponDialog">
+  <div class="coupon-dialog__flex">
+    <div class="coupon-dialog__box">
+      <div class="coupon-dialog__wraper">
+        <div class="coupon-dialog__inner-box">
+          <div class="sub-success">
+            <h3 class="coupon-dialog__title">Submitted Successfully!</h3>
+            <h4 class="coupon-dialog__subtitle">We will contact you as soon as possible.</h4>
+          </div>
+          <div class="sub-fail">
+            <h3 class="coupon-dialog__title">Submitted Failed!</h3>
+            <h4 class="coupon-dialog__subtitle">Email is invalide, please confirm the email you entered.</h4>
+          </div>
+        </div>
+      </div>
+      <span class="coupon-dialog__btn-close">
+        <svg
+          t="1607667093846"
+          class="icon"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="4228"
+          width="30"
+          height="30"
+        >
+          <path d="M512 0a512 512 0 0 0-512 512 512 512 0 0 0 512 512 512 512 0 0 0 512-512 512 512 0 0 0-512-512z" fill="#FFFFFF" p-id="4229"></path><path d="M717.165714 306.176a35.986286 35.986286 0 0 0-50.834285 0.146286L512 461.019429 357.668571 306.322286a35.986286 35.986286 0 0 0-50.980571 50.761143L461.165714 512 306.688 666.916571a35.986286 35.986286 0 0 0 50.980571 50.761143L512 562.980571l154.331429 154.843429a35.693714 35.693714 0 0 0 50.834285 0.073143 35.986286 35.986286 0 0 0 0.146286-50.907429L562.834286 512l154.331428-154.916571a35.913143 35.913143 0 0 0 0-50.907429z" fill="#000000" p-id="4230"></path>
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+<style>
+  .coupon-dialog{
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(0,0,0,0.5);
+  }
+  .coupon-dialog__flex {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+  }
+  .coupon-dialog__box {
+      width: 500px;
+      align-self: center;
+      background: {{ section.settings.mask_background_color }};
+      position: relative;
+      padding: 12px;
+      max-width: 90%;
+      border-radius: 20px 0 20px 0;
+  }
+
+  .coupon-dialog__wraper{
+      border: 1px solid {{ section.settings.border_color }};
+  }
+
+  .coupon-dialog__inner-box{
+      width: 90%;
+      text-align: center;
+      margin: 15px auto;
+  }
+  .coupon-dialog__title{
+      font-size: 26px;
+      font-weight: bold;
+      line-height: 1.25em;
+      border: none;
+      margin-bottom: 20px;
+  }
+  .sub-success .coupon-dialog__title{
+      color: #3555db;
+  }
+  .sub-fail .coupon-dialog__title{
+      color: red;
+  }
+  .coupon-dialog__subtitle{
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 18px;
+      margin-bottom: 12px;
+      color: {{ section.settings.mask_txt_content_color }};
+      border: none;
+  }
+  .coupon-dialog__btn-close{
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      z-index: 118040;
+      background-position: 0 0;
+      font-size: 0;
+      background-color: transparent;
+      background-size: 44px 152px;
+  }
+  .coupon-dialog__btn-close svg{
+      width: 28px !important;
+      height: 28px !important;
+  }
+</style>
+<script>
+  function openMsgDialog(code) {
+    document.documentElement.style.overflowY = 'hidden';
+    $('.coupon-dialog').show();
+    let pop_success = $('.coupon-dialog .sub-success')
+    let pop_fail = $('.coupon-dialog .sub-fail')
+    if(code == 2 ){
+      pop_success.hide()
+      pop_fail.show()
+    } else {
+      pop_success.show()
+      pop_fail.hide()
+    }
+  }
+  (function () {
+    var close = document.getElementsByClassName('coupon-dialog__btn-close')[0];
+    close.onclick = function () {
+      couponDialog.style.display = 'none';
+      document.documentElement.style.overflowY = 'scroll';
+    };
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "通用弹窗",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "可以编辑弹窗的各项参数，需将该模块放在触发按钮之前"
+    },
+    {
+      "type": "color",
+      "id": "mask_txt_content_color",
+      "label": "文本颜色",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "mask_background_color",
+      "label": "背景颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "单色边框颜色",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "通用弹窗"
+    }
+  ]
+}
+{% endschema %}

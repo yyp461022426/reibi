@@ -1,0 +1,99 @@
+<link rel="stylesheet" type="text/css" href="{{ 'index-scene-dis-mobile.css' | asset_url }}">
+<div class="index-scene-dis-mobile container index-normal-component">
+  {% if section.settings.title and section.settings.title != '' %}
+    <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
+      {% if section.settings.title_style == '1' %}
+        <span class="small-title">{{ section.settings.title | upcase }}</span>
+        <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+      {% else %}
+        <span class="small-title2">{{ section.settings.title }}</span>
+      {% endif %}
+    </h2>
+    {% if section.settings.title_add_desc %}
+      <div class="desc-add">
+        {{ section.settings.title_add_desc }}
+      </div>
+    {% endif %}
+  {% endif %}
+  <div
+    class="index-scene-dis-mobile-swiper line-dots"
+    data-loader-script="{{ 'halo.slide-custom.js' | asset_url }}"
+    slide-custom-init
+    data-infinite="true"
+    data-mb-dots="true"
+    data-mb-slides-to-show="2"
+  >
+    {% for block in section.blocks limit: 30 %}
+      {%- assign inner_image = block.settings.inner_image -%}
+      <div class="swiper-item">
+        {{ inner_image | image_url: width: inner_image.width | image_tag: class: 'item-img', loading: 'lazy' }}
+        <div class="scene-content">
+          <div class="scene-words">{{ block.settings.cover_words }}</div>
+          <div class="scene-desc">{{ block.settings.cover_desc }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Index Scene Dis Mobile",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "radio",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title Style1(叠影)"
+        },
+        {
+          "value": "2",
+          "label": "Title Style1(单色)"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title_add_desc",
+      "label": "标题下方的描述"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "text",
+          "id": "cover_words",
+          "label": "Cover Words"
+        },
+        {
+          "type": "textarea",
+          "id": "cover_desc",
+          "label": "Desc Words"
+        },
+        {
+          "type": "image_picker",
+          "id": "inner_image",
+          "label": "Inner Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Scene Dis Mobile"
+    }
+  ]
+}
+{% endschema %}

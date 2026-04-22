@@ -1,0 +1,174 @@
+<link rel="stylesheet" type="text/css" href="{{ 'rolling-display-brands.css' | asset_url }}">
+<div class="rolling-brands-box index-normal-component">
+  {% if section.settings.title and section.settings.title != '' %}
+    <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
+      {% if section.settings.title_style == '1' %}
+        <span class="small-title">{{ section.settings.title | upcase }}</span>
+        <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+      {% else %}
+        <span class="small-title2">{{ section.settings.title }}</span>
+      {% endif %}
+    </h2>
+    {% if section.settings.title_add_desc %}
+      <div class="desc-add">
+        {{ section.settings.title_add_desc }}
+      </div>
+    {% endif %}
+  {% endif %}
+  <div class="loading-container">
+    <div class="loading-bar">
+      <div class="loader"></div>
+    </div>
+    <div class="loading-finish">
+      <div class="brands-outer-box">
+        <div class="left-shandow box-shandow"></div>
+        <div class="right-shandow box-shandow"></div>
+        <div class="brands-box-line"></div>
+        <div class="row-line scroll-from-right">
+          <div class="images-box">
+            {% for block in section.blocks %}
+              {% if block.settings.level == '1' %}
+                {{ block.settings.image | image_url: width: 240 | image_tag: class: 'image-item' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="images-copy-box">
+            {% for block in section.blocks %}
+              {% if block.settings.level == '1' %}
+                {{ block.settings.image | image_url: width: 240 | image_tag: class: 'image-item' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="row-line scroll-from-left">
+          <div class="images-box">
+            {% for block in section.blocks %}
+              {% if block.settings.level == '2' %}
+                {{ block.settings.image | image_url: width: 240 | image_tag: class: 'image-item' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="images-copy-box">
+            {% for block in section.blocks %}
+              {% if block.settings.level == '2' %}
+                {{ block.settings.image | image_url: width: 240 | image_tag: class: 'image-item' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="row-line scroll-from-right">
+          <div class="images-box">
+            {% for block in section.blocks %}
+              {% if block.settings.level == '3' %}
+                {{ block.settings.image | image_url: width: 240 | image_tag: class: 'image-item' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="images-copy-box">
+            {% for block in section.blocks %}
+              {% if block.settings.level == '3' %}
+                {{ block.settings.image | image_url: width: 240 | image_tag: class: 'image-item' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="row-line scroll-from-left">
+          <div class="images-box">
+            {% for block in section.blocks %}
+              {% if block.settings.level == '4' %}
+                {{ block.settings.image | image_url: width: 240 | image_tag: class: 'image-item' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="images-copy-box">
+            {% for block in section.blocks %}
+              {% if block.settings.level == '4' %}
+                {{ block.settings.image | image_url: width: 240 | image_tag: class: 'image-item' }}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="brands-box-line"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .scroll-from-left .images-box {
+    animation: formLeft {{ section.settings.row_speed }}s linear infinite;
+  }
+  .scroll-from-left .images-copy-box {
+    animation: copyFormLeft {{ section.settings.row_speed }}s linear infinite;
+  }
+  .scroll-from-right .images-box {
+    animation: formRight {{ section.settings.row_speed }}s linear infinite;
+  }
+  .scroll-from-right .images-copy-box {
+    animation: copyFormRight {{ section.settings.row_speed }}s linear infinite;
+  }
+</style>
+{% schema %}
+{
+  "name": "Rolling Display Brands",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "radio",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title Style1(叠影)"
+        },
+        {
+          "value": "2",
+          "label": "Title Style1(单色)"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title_add_desc",
+      "label": "标题下方的描述"
+    },
+    {
+      "type": "range",
+      "id": "row_speed",
+      "label": "Row Speed",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "name": "brand image block",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "text",
+          "id": "level",
+          "label": "Image Level"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rolling Display Brands"
+    }
+  ]
+}
+{% endschema %}

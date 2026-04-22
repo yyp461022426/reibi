@@ -1,0 +1,124 @@
+<link rel="stylesheet" type="text/css" href="{{ 'index-advantage-display.css' | asset_url }}">
+<div class="index-advantage-display index-normal-component">
+  <div class="container">
+    {% if section.settings.title and section.settings.title != '' %}
+      <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
+        {% if section.settings.title_style == '1' %}
+          <span class="small-title">{{ section.settings.title | upcase }}</span>
+          <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+        {% else %}
+          <span class="small-title2">{{ section.settings.title }}</span>
+        {% endif %}
+      </h2>
+      {% if section.settings.title_add_desc %}
+        <div class="desc-add">
+          {{ section.settings.title_add_desc }}
+        </div>
+      {% endif %}
+    {% endif %}
+    <div class="adv-box">
+      {% for block in section.blocks limit: 3 %}
+        <div class="adv-item">
+          {% comment %}
+            <div class="img-box {% if forloop.index == 2 %}left-img{% else %}right-img{% endif %}">
+              {{ block.settings.pro_adv_image | image_url: width: 611 | image_tag }}
+            </div>
+          {% endcomment %}
+          {% if forloop.index == 2 %}
+            {{ block.settings.pro_adv_image | image_url: width: 611 | image_tag: class: 'left-img' }}
+          {% else %}
+            {{ block.settings.pro_adv_image | image_url: width: 611 | image_tag: class: 'right-img' }}
+          {% endif %}
+
+          <div class="adv-info-box {% if forloop.index == 2 %}right-info{% else %}left-info{% endif %}">
+            <div class="blod-des">{{ block.settings.adv_title }}</div>
+            <div class="small-des">{{ block.settings.description }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    let options = {
+      root: null, // 视口
+      rootMargin: '-50% 0px -50% 0px', // 触发区域设置为视口中间高度
+      threshold: 0,
+    };
+
+    let observer = new IntersectionObserver(function (entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          $(entry.target).addClass('adv-item-in-view');
+        } else {
+          $(entry.target).removeClass('adv-item-in-view');
+        }
+      });
+    }, options);
+    $('.adv-item').each(function () {
+      observer.observe(this);
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Index Advantage Display",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "radio",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title Style1(叠影)"
+        },
+        {
+          "value": "2",
+          "label": "Title Style1(单色)"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title_add_desc",
+      "label": "标题下方的描述"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "pro_adv_image",
+          "label": "Advantage Image"
+        },
+        {
+          "type": "text",
+          "id": "adv_title",
+          "label": "Blod title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Advantage Display"
+    }
+  ]
+}
+{% endschema %}

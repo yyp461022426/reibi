@@ -1,0 +1,351 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-hot-pro-display.css' | asset_url }}">
+{% render 'style-header-02-copy' %}
+{% assign anchor = section.settings.anchor %}
+<div class="sec-floor normal-floor blue-background-left anchor-content with-tab" id="{{ anchor }}">
+  <div class="container">
+    {% if section.settings.is_title_style2 %}
+      <h2 class="main-page-title">
+        <span class="small-title">{{ section.settings.title_style2 | upcase }}</span>
+        <span class="text-shadow">{{ section.settings.title_style2 | upcase }}</span>
+      </h2>
+    {% else %}
+      <div class="floor-title">
+        {{ section.settings.sec_title_widthout_strong -}}
+        <span class="orange-strong"> {{ section.settings.sec_title_orange_strong }}</span>
+      </div>
+    {% endif %}
+    {% if section.settings.pdf_link %}
+      <div class="pdf-link">{{ section.settings.pdf_link }}</div>
+    {% endif %}
+    {% if section.settings.swiper_tabs %}
+      <!-- 滑块 -->
+      <div class="tabs-contain">
+        <div class="tabs-box">
+          <div class="tabs-box-option">
+            {% for block in section.blocks limit: 4 %}
+              <div class="tab-item {% if forloop.index0 == 0 %}is-active{% endif %}">
+                {{ block.settings.tab_name }}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="tab-slider"></div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="card-box">
+      {% for block in section.blocks limit: 4 %}
+        {% if section.settings.swiper_tabs == false %}
+          <h2 class="main-page-title">
+            <span class="small-title">{{ block.settings.tab_name | upcase }}</span>
+            <span class="text-shadow">{{ block.settings.tab_name | upcase }}</span>
+          </h2>
+        {% endif %}
+        <div class="tab-content">
+          {% assign limit_show = 8 %}
+          {% if section.settings.swiper_tabs %}
+            {% assign limit_show = 4 %}
+          {% else %}
+            {% assign limit_show = 28 %}
+          {% endif %}
+          {% assign show_more_limit = 12 %}
+          {% for product in block.settings.collection.products limit: limit_show %}
+            <div class="card-item{% if product.metafields.custom.b2b_status == 1 %} new-item{% endif %}{% if product.metafields.custom.b2b_status == 2 %} hot-item{% endif %}{% if forloop.index0 >= show_more_limit %} toggle-show-more{% endif %}">
+              <div class="card-info">
+                <div class="img-box">
+                  <div class="img-inner-box">
+                    {% if product.metafields.custom.b2b_status == 1 %}
+                      <div class="new-arr flag">New Arrival</div>
+                    {% endif %}
+                    {% if product.metafields.custom.b2b_status == 2 %}
+                      <div class="new-arr flag">Hot Sale</div>
+                    {% endif %}
+                    {% if product.metafields.custom.show_on_main_page %}
+                      {{
+                        product.metafields.custom.show_on_main_page
+                        | image_url: width: 240, height: 240
+                        | image_tag: class: 'pro-img'
+                      }}
+                    {% else %}
+                      {{ product.images | last | image_url: width: 240, height: 240 | image_tag: class: 'pro-img' }}
+                    {% endif %}
+                  </div>
+                </div>
+                {%- if product.metafields.custom.b2b_product_description -%}
+                  <div class="product-desc">
+                    <span>
+                      {{ product.metafields.custom.b2b_product_description }}
+                    </span>
+                  </div>
+                {%- endif -%}
+
+                {% comment %}
+                  <h3 class="product-title">
+                    {%- if product.metafields.custom.b2b_title -%}
+                      {{ product.metafields.custom.b2b_title }}
+                    {%- else -%}
+                      {{ product.title }}
+                    {%- endif -%}
+                  </h3>
+                {% endcomment %}
+                {% if product.metafields.custom.b2b_status == 999 %}
+                  <div class="num-picker-box">
+                    <div class="custom-dropdown">
+                      <div class="dropdown-input">
+                        <input
+                          class="selected-text"
+                          readonly="readonly"
+                          autocomplete="off"
+                          value=""
+                          name=""
+                          placeholder="Select num to quote"
+                        >
+                        <i class="fa fa-angle-down"></i>
+                      </div>
+                      <div class="dropdown-box">
+                        <div class="dropdown-option" data-value="5" data-label="5 about $10/per" open-quote-dialog>
+                          <span>5</span>
+                          <span>about $10/per</span>
+                        </div>
+                        <div class="dropdown-option" data-value="10" data-label="10 about $10/per" open-quote-dialog>
+                          <span>10</span>
+                          <span>about $9/per</span>
+                        </div>
+                        <div class="dropdown-option" data-value="15" data-label="15 about $10/per" open-quote-dialog>
+                          <span>15</span>
+                          <span>about $8/per</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script>
+                    $(document).ready(function () {
+                      if ($('.num-picker-box').length > 0) {
+                        let focus_one = null;
+                        $('.dropdown-input').click(function (event) {
+                          event.stopPropagation();
+                          $(this).toggleClass('is-focus');
+                          $(this).find('.fa-angle-down').toggleClass('icon-rotate');
+                          $('.dropdown-box').toggleClass('show');
+                          focus_one = this;
+                        });
+                        $('.dropdown-option')
+                          .off('click')
+                          .click(function (e) {
+                            let option = $(this);
+                            let input_box = option.parent().siblings('.dropdown-input').find('.selected-text');
+                            let sku = option.parents('.card-item').find('.sku-text').text();
+                            input_box.val(option.data('label'));
+                            input_box.attr('data-value', option.data('value'));
+
+                            $("input[name='contact[quantity]']").val(option.data('value'));
+                            $("input[name='contact[item-sku-or-item-link]']").val(sku);
+                          });
+                        $(document)
+                          .off('click')
+                          .click(function (event) {
+                            $(focus_one).removeClass('is-focus');
+                            $(focus_one).find('.fa').removeClass('icon-rotate');
+                            $(focus_one).siblings('.dropdown-box').removeClass('show');
+                          });
+                      }
+                    });
+                  </script>
+                {% endif %}
+                <div class="product-info">
+                  <div class="sku">
+                    SKU:<span class="sku-text">{{ product.variants[0].sku }}</span>
+                  </div>
+                  <ul>
+                    {%- if product.metafields.custom.dimension -%}
+                      <li>
+                        <span>{{ product.metafields.custom.dimension }}</span>
+                      </li>
+                    {%- endif -%}
+                    {%- if product.metafields.custom.load_capacity -%}
+                      <li>
+                        <span>{{ product.metafields.custom.load_capacity }}</span>
+                      </li>
+                    {%- endif -%}
+                    {%- if product.metafields.custom.b2b_material -%}
+                      <li>
+                        <span>{{ product.metafields.custom.b2b_material }}</span>
+                      </li>
+                    {%- endif -%}
+                    {%- if product.metafields.custom.b2b_number_of_shelf_layers -%}
+                      <li>
+                        <span>{{ product.metafields.custom.b2b_number_of_shelf_layers }}</span>
+                      </li>
+                    {%- endif -%}
+                  </ul>
+                  <div class="card-adv-box">
+                    {%- if product.metafields.custom.b2b_product_price -%}
+                      <div class="product-price">
+                        {{ product.metafields.custom.b2b_product_price | times: 100 | money }}
+                      </div>
+                    {%- endif -%}
+                    {%- if product.metafields.custom.b2b_product_special_intro -%}
+                      <div class="b2b-special-intro">{{ product.metafields.custom.b2b_product_special_intro }}</div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+              {% assign sku = product.variants[0].sku %}
+              <div
+                class="quote-buttom width-hover pro-click"
+                open-quote-dialog
+                onclick="assignToSKU(this,'{{ sku }}')"
+              >
+                Quote Now
+              </div>
+            </div>
+          {% endfor %}
+          {% if limit_show > show_more_limit %}
+            <div class="btn-container">
+              <div class="show-more-toggle-btn">SHOW MORE</div>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% if section.settings.swiper_tabs %}
+  <script>
+    const sliderDom = $('.tab-slider');
+    const liSet = Array.from(document.getElementsByClassName('with-tab')[0].getElementsByClassName('tab-item'));
+    const pro_content = $('.with-tab .tab-content');
+    function assignToSKU(e, data) {
+      $("input[name='contact[item-sku-or-item-link]']").val(data);
+    }
+    // tab滑块切换
+    function cutToSetSlider() {
+      if (liSet.length) {
+        const li = liSet.find((i) => i.className.includes('is-active'));
+        const { offsetLeft, offsetWidth } = li;
+        let letf = offsetLeft + offsetWidth / 2 + 'px';
+        sliderDom.css('left', letf);
+      }
+    }
+    function initSlider() {
+      liSet.forEach((li, index) => {
+        li.onclick = function () {
+          const bool = this.classList.contains('is-active');
+          if (bool) return;
+          liSet.forEach((i) => i.classList.remove('is-active'));
+          this.classList.add('is-active');
+          this.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center',
+            block: 'nearest',
+          });
+          showContent(index); // 显示对应的内容项
+          cutToSetSlider(true);
+        };
+      });
+    }
+    // 内容切换
+    function showContent(index) {
+      console.log(206, pro_content, index);
+
+      pro_content.eq(index).siblings().hide();
+      pro_content.eq(index).fadeIn();
+    }
+    showContent(0);
+    initSlider();
+    cutToSetSlider();
+  </script>
+{% else %}
+  <script>
+    let $floor = $('.sec-floor');
+    let contentBox = $('.sec-floor .tab-content');
+    let changeBtn = contentBox.find('.show-more-toggle-btn');
+    changeBtn.on('click.changeShowMore', function () {
+      let toggleColl = contentBox.find('.toggle-show-more');
+      console.log(toggleColl);
+      var topPosition = $floor.offset().top;
+      if (changeBtn.hasClass('show-more')) { // 收起
+        toggleColl.hide();
+        changeBtn.text('SHOW MORE');
+        $(window).scrollTop(topPosition);
+        changeBtn.removeClass('show-more');
+      } else { // 展开
+        toggleColl.css('display','flex');
+        changeBtn.text('CLOSE');
+        changeBtn.addClass('show-more');
+      }
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "BtoB Hot Products Display",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "AnchorName"
+    },
+    {
+      "type": "checkbox",
+      "id": "swiper_tabs",
+      "label": "is Swiper Tabs",
+      "default": false
+    },
+    {
+      "type": "inline_richtext",
+      "id": "pdf_link",
+      "label": "PDFLink"
+    },
+    {
+      "type": "text",
+      "id": "sec_title_widthout_strong",
+      "label": "title widthout strong"
+    },
+    {
+      "type": "text",
+      "id": "sec_title_orange_strong",
+      "label": "title width orange strong"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_title_style2",
+      "label": "Title Style2",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title_style2",
+      "label": "Show title style2 when Title Style2 is true"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Tab Blocks",
+      "type": "tab-show",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_name",
+          "label": "Name of this tab"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BtoB Hot Products Display"
+    }
+  ]
+}
+{% endschema %}

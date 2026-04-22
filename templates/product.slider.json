@@ -1,0 +1,259 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "style_moreview": "horizontal",
+        "enable_zoom_image": true,
+        "enable_zoom_text": true,
+        "enable_payment_button": true,
+        "enable_hot_stock": true,
+        "number_stock": "3",
+        "show_sold_in": true,
+        "item_prd": "3,5,6,7,8,10,12,15",
+        "item_prds": "sold in last",
+        "hours_prs": "10,15,16,17,18,20,25,35",
+        "item_hours": "hours",
+        "display_vendor": true,
+        "text_vendor": "Vendor:",
+        "display_product_sku": true,
+        "text_product_sku": "SKU:",
+        "display_availability": true,
+        "text_availability": "Availability:",
+        "display_product_type": false,
+        "text_product_type": "Product Type:",
+        "enable_countdown": true,
+        "countdown": "countdown_1",
+        "text_countdown": "Limited-Time Offers, End in:",
+        "option_countdown": "all_product",
+        "count_down_timer": "2020-12-25 22:11:00",
+        "custombox_text": "",
+        "progressbar_1": "Please hurry, only",
+        "progressbar_2": "left in stock",
+        "total_items": "100",
+        "min_items_left": "8",
+        "max_items_left": "26",
+        "progressbar_color": "#f5f5f5",
+        "progressbar_active_color": "#69c69c",
+        "dpl_customers_view": true,
+        "title_view": "customers are viewing this product",
+        "number_view": "283, 100, 59, 11, 14, 185, 193, 165, 50, 38, 99, 112, 46, 10, 125, 200, 250, 18",
+        "show_desc": "short",
+        "display_subtotal": true,
+        "display_qty": true,
+        "display_product_detail_tag": true,
+        "display_product_detail_share": false,
+        "share_text": "Share",
+        "display_trust_img": true,
+        "show_tab": "horizontal",
+        "display_product_detail_description": true,
+        "product_description_title": "Description",
+        "display_product_reviews": true,
+        "product_review_title": "Customer Reviews",
+        "display_custom_tab_1": true,
+        "custom_tab_title_1": "Custom Tab 1",
+        "custom_tab_content_1": "<h3>DELIVERY :</h3>\n<p>Free shipping on all items in the REIBII online store.</p>\n<p>After you place your order, we will process your order within 2 working days.</p>\n<p>Typically, shipping time is expected to be 5-11 business days and your order will be delivered to your doorstep by a third-party provider (eg FedEx, UPS) to the address you provide.</p>\n<p>When the package arrives, we will send you an arrival email to remind you, or you can check the shipping status of your order on the responsible shipping company's website.</p>\n<h3>NOTICE:</h3>\n<p>Currently we only ship to the continental US, we do not ship to Alaska, Guam, Hawaii, Puerto Rico.</p>\n<p>Please refer to <a href=\"https://reibii.com/pages/shipping-and-delivery\"><span><u>https://reibii.com/pages/shipping-and-delivery</u></span></a> for specific shipping policies.</p>\n<h3>RETURNS & EXCHANGES:</h3>\n<p>TIME: We offer a <strong><em>30-day</em></strong> money-back guarantee, which means you can request a return within 30 days of receiving the item.</p>\n<p>REQUEST: The item you send back must be in the same condition as the item you received, unworn or unused, labelled, and in its original packaging.</p>\n<p>FEE: If the product has no quality problems, you need to bear the return and exchange fees by yourself.</p>\n<p>Damage & Problems: If you receive a defective, incorrect or incomplete item, please contact us immediately and attach a photo of the damaged product (if applicable) so that we can promptly re-issue you a good product or refund to you.</p>\n<p>NOTE: Please keep all items and packaging materials until your claim is resolved. For specific return policy, please refer to <span><a href=\"https://reibii.com/pages/return-policy\"><u>https://reibii.com/pages/return-policy</u></a></span></p>",
+        "display_custom_tab_2": true,
+        "custom_tab_title_2": "Custom Tab 2",
+        "custom_tab_content_2": "Custom Tab Content 2",
+        "display_custom_tab_3": true,
+        "custom_tab_title_3": "Custom Tab 3",
+        "custom_tab_content_3": "Custom Tab Content 3",
+        "display_custom_tab_4": true,
+        "custom_tab_title_4": "Custom Tab 4",
+        "custom_tab_content_4": "Custom Tab Content 4",
+        "display_custom_tab_5": false,
+        "custom_tab_title_5": "Custom Tab 5",
+        "custom_tab_content_5": "Custom Tab Content 5",
+        "display_custom_tab_6": true,
+        "custom_tab_title_6": "Recommendations",
+        "recommend_collection": "recommendations",
+        "dpl_lookbook_description": true,
+        "style_lookbook_description": "all_product",
+        "quote_title": "",
+        "quote_des": "",
+        "quote_title_2": "",
+        "quote_des_2": "",
+        "dpl_gallery_lookbook": true,
+        "style_lookbook_gallery": "all_product",
+        "dpl_grouped_product": true,
+        "show_discount_box": true,
+        "grouped_product_style": "style_1",
+        "grouped_title": "Frequently Bought Together",
+        "grouped_choose_options_text": "Please choose options for all selected products",
+        "choose_options": "Choose Options",
+        "enable_bundle_discount": true,
+        "bundle_discount_text": "Get a [discount]% discount buying these products together | Erhalten Sie einen Rabatt von [discount]%, wenn Sie diese Produkte zusammen kaufen"
+      }
+    },
+    "supermarket_featured_products_yr6kXD": {
+      "type": "supermarket-featured-products",
+      "settings": {
+        "title_style": "style_2",
+        "featured_products_title": "People Who Bought This Item Also Bought",
+        "color_text_title": "",
+        "text_countdown": "",
+        "countdown": "",
+        "view_all": "",
+        "link_view_all": "",
+        "show_slider_featured_collection": "recommendations",
+        "slider_featured_limit_all": 10,
+        "collection_results_per_row1": "5",
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    },
+    "index_shop_by_category_xrmkEg": {
+      "type": "index-shop-by-category",
+      "blocks": {
+        "card_show_nfMfR9": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Storage_Shelves.jpg",
+            "category_name": "Steel Shelves",
+            "link": "shopify://collections/steel-shelves"
+          }
+        },
+        "card_show_WwLpyD": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/lQDPJxWmTxhasFfNBdzNBdywJ4jyTkuUIN4HpJAv98TcAA_1500_1500.jpg",
+            "category_name": "Wooden Shelves",
+            "link": "shopify://collections/wooden-shelves"
+          }
+        },
+        "card_show_QRMRAk": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Clothes_Rack.jpg",
+            "category_name": "Clothes Rack",
+            "link": "shopify://collections/clothes-rack"
+          }
+        },
+        "card_show_dGMCEw": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/lQDPJxe10N5S8FfNBdzNBdywb3n_3E_cptMHpJAv96NNAA_1500_1500.jpg",
+            "category_name": "Wire Shelves",
+            "link": "shopify://collections/wire-shelves"
+          }
+        },
+        "card_show_dXEM6w": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Dresser.jpg",
+            "category_name": "Fabric Dresser",
+            "link": "shopify://collections/fabric-dresser"
+          }
+        },
+        "card_show_cRGC9z": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Wooden_Dresser.png",
+            "category_name": "Wooden Dresser",
+            "link": "shopify://collections/wooden-dresser"
+          }
+        },
+        "card_show_K6xGzc": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Storage_Bins.jpg",
+            "category_name": "Storage Bins",
+            "link": "shopify://collections/storage-bins"
+          }
+        },
+        "card_show_bbpxAB": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Home_Office_Desk.jpg",
+            "category_name": "Home Office Desk",
+            "link": "shopify://collections/home-office-desk"
+          }
+        },
+        "card_show_TjfLAz": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Bed_Frame.jpg",
+            "category_name": "Bed Frame",
+            "link": "shopify://collections/bed-frame"
+          }
+        },
+        "card_show_W7imQb": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Nightstand.jpg",
+            "category_name": "Nightstand",
+            "link": "shopify://collections/nightstand"
+          }
+        },
+        "card_show_89H4H7": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Laundry_Sorter.jpg",
+            "category_name": "Laundry Sorter",
+            "link": "shopify://collections/laundry-sorter"
+          }
+        },
+        "card_show_cLfJdY": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/character_line_Shoe_Rack.jpg",
+            "category_name": "Shoe Rack",
+            "link": "shopify://collections/shoe-rack"
+          }
+        },
+        "card_show_Hzhazq": {
+          "type": "card-show",
+          "settings": {
+            "series_img": "shopify://shop_images/6a0f48436f03bf48e8c7f28f9f150b4c.png",
+            "category_name": "Other Products",
+            "link": "shopify://collections/other-products"
+          }
+        }
+      },
+      "block_order": [
+        "card_show_nfMfR9",
+        "card_show_WwLpyD",
+        "card_show_QRMRAk",
+        "card_show_dGMCEw",
+        "card_show_dXEM6w",
+        "card_show_cRGC9z",
+        "card_show_K6xGzc",
+        "card_show_bbpxAB",
+        "card_show_TjfLAz",
+        "card_show_W7imQb",
+        "card_show_89H4H7",
+        "card_show_cLfJdY",
+        "card_show_Hzhazq"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "recently-view": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "display_recently_viewed_products": true,
+        "recently_viewed_products_title": "Recently Viewed Products",
+        "number_of_recently_viewed_products": "8",
+        "recently_viewed_products_per_row": "5"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "supermarket_featured_products_yr6kXD",
+    "index_shop_by_category_xrmkEg",
+    "recently-view"
+  ]
+}

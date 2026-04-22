@@ -1,0 +1,88 @@
+.accordion-component-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.accordion-component .item-title-box {
+  cursor: pointer;
+  border: 1px solid #0d489d;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background: #0d489d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  word-break: break-word;
+}
+.accordion-component .title-icon {
+  width: 12px;
+  height: 2px;
+  background: #ffffff;
+  flex-shrink: 0;
+  margin-left: 8px;
+  position: relative;
+}
+.accordion-component .title-icon:before {
+  content: "";
+  width: 12px;
+  height: 2px;
+  background: #ffffff;
+  transform: rotate(-90deg);
+  position: absolute;
+  transition: all 0.5s ease;
+}
+.accordion-component .treeview .active .title-icon::before {
+  transform: rotate(0deg);
+}
+.accordion-component .item-content {
+  display: none;
+  word-wrap: break-word;
+  background: #ffffff;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.accordion-component .item-content a {
+  text-decoration: underline;
+}
+.accordion-component .accordion-outer-box {
+  max-width: 800px;
+  width: 100%;
+}
+.accordion-component .accordion-box {
+  margin-bottom: 0;
+}
+.accordion-component .hidden-cover {
+  height: 50px;
+  transform: translateY(-50px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+.accordion-component .note-words {
+  transform: translateY(44px);
+}
+.accordion-component .hidden-some .accordion-box {
+  overflow-y: hidden;
+  height: 150px;
+}
+.accordion-component .hidden-some .hidden-cover {
+  background: linear-gradient(180deg, transparent, #fff);
+}
+.accordion-component .note-words-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: grey;
+  pointer-events: auto;
+}
+.accordion-component .hide-note {
+  display: none;
+}

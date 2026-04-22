@@ -1,0 +1,53 @@
+/* about-us页面公共样式 */
+.gradient-bg-to-bottom {
+  background: linear-gradient(180deg, #f1f7ff, transparent);
+  border-radius: 8px;
+  padding: 32px;
+}
+.gradient-bg-to-top {
+  background: linear-gradient(180deg, transparent, #f1f7ff);
+  border-radius: 8px;
+  padding: 32px;
+}
+.banner-title {
+  font-weight: bold;
+  font-size: 72px;
+  color: #d0ddf7;
+  text-align: center;
+  line-height: 60px;
+  margin-bottom: 24px;
+}
+#about-us .slideshow{
+  padding: 0 10px;
+}
+
+/* 公共样式end */
+.about-us-first-intro .banner-des {
+  font-size: 16px;
+  color: #333333;
+  line-height: 26px;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  
+}
+@media (max-width: 1199px) {
+  .banner-title{
+    font-size: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .banner-title{
+    font-size: 36px;
+    margin-bottom: 16px;
+    line-height: 50px;
+  }
+  .gradient-bg-to-bottom{
+    padding: 24px;
+  }
+  .about-us-first-intro .banner-des{
+    line-height: 24px;
+  }
+}
+@media (max-width: 767px) {
+}

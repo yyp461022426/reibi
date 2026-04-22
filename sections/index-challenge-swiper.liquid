@@ -1,0 +1,110 @@
+<link rel="stylesheet" type="text/css" href="{{ 'index-challenge.css' | asset_url }}">
+<div class="index-challenge section-block-{{section.id}} index-normal-component">
+  <div class="container">
+    {% if section.settings.title and section.settings.title != '' %}
+      <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
+        {% if section.settings.title_style == '1' %}
+          <span class="small-title">{{ section.settings.title | upcase }}</span>
+          <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+        {% else %}
+          <span class="small-title2">{{ section.settings.title }}</span>
+        {% endif %}
+      </h2>
+      {% if section.settings.title_add_desc %}
+        <div class="desc-add">
+          {{ section.settings.title_add_desc }}
+        </div>
+      {% endif %}
+    {% endif %}
+    {% assign bg_image_banner = section.settings.bg_img %}
+    <div class="content-box" style="padding-top: {{ 1 | divided_by: bg_image_banner.aspect_ratio | times: 100 }}%">
+        <div
+          class="swiper-box banner-dots"
+          data-loader-script="{{ 'halo.slide-custom.js' | asset_url }}"
+          slide-custom-init
+          data-mb-dots="true"
+          data-arrow-enable="true"
+        >
+          {% for block in section.blocks limit: 3 %}
+            <div class="info-item">
+              <div class="card-title">{{ block.settings.card_title }}</div>
+              <div class="card-content">{{ block.settings.card_content }}</div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="cover"></div>
+    </div>
+  </div>
+</div>
+<style>
+  {% liquid
+    assign bg_img = section.settings.bg_img
+  %}
+  .section-block-{{section.id}} .content-box{
+    background: url({{ bg_img | image_url: width: 1920  }});
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
+{% schema %}
+{
+  "name": "Index Challenges Swiper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "radio",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title Style1(叠影)"
+        },
+        {
+          "value": "2",
+          "label": "Title Style1(单色)"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title_add_desc",
+      "label": "标题下方的描述"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "背景图"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "card-show",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title"
+        },
+        {
+          "type": "text",
+          "id": "card_content",
+          "label": "Card Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Challenges Swiper"
+    }
+  ]
+}
+{% endschema %}

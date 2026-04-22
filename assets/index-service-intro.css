@@ -1,0 +1,174 @@
+.index-service-intro .deals-box{
+    padding-top: 32px;
+}
+.index-service-intro .desc-add{
+    font-weight: 700;
+    color: #000000a6;
+}
+.index-service-intro .more-info{
+    margin-bottom: 38px;
+    display: flex;
+    justify-content: center;
+}
+.index-service-intro .content-box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.index-service-intro .bigger-card-content{
+    display: flex;
+    gap: 40px;
+    padding: 0 32px;
+    margin-bottom: 22px;
+}
+
+.index-service-intro .bigger-card-item{
+    background: #fff;
+    border: 1px solid rgba(13, 72, 157, 0.25);
+    border-radius: 12px;
+    color: var(--text_color2);
+    padding: 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.index-service-intro .bigger-card-content .card-title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.index-service-intro .bigger-card-content .card-desc{
+    font-size: 18px;
+    margin-bottom: 48px;
+}
+
+.index-service-intro .bigger-card-content .bigger-card-count{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.index-service-intro .bigger-card-content .count-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.index-service-intro .bigger-card-content .count-item .count{
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--color_base);
+}
+
+.index-service-intro .bigger-card-content .count-item .count-desc{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.index-service-intro .sm-card-swiper{
+    width: 100%;
+}
+
+.index-service-intro .sm-card-swiper .card-item{
+    padding: 16px 32px;
+    border-radius: 12px;
+    background: #F5F9FF;
+    margin: 0 18px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+
+.index-service-intro .slick-slider .slick-track{
+    display: flex;
+}
+.index-service-intro .sm-card-swiper .card-title{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text_color);
+    margin-bottom: 16px;
+}
+
+.index-service-intro .sm-card-swiper .card-count{
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color_base);
+    margin-bottom: 16px;
+}
+
+.index-service-intro .sm-card-swiper .card-desc{
+    color: var(--text_color);
+}
+.index-service-intro .bigger-card-header{
+    flex-grow: 1;
+}
+.index-service-intro .bigger-card-content .started-now{
+    display: flex;
+    justify-content: flex-start;
+}
+.index-service-intro .bigger-card-content .started-now .custom-action-btn{
+    margin-bottom: 0;
+}
+.index-service-intro .line-dots .slick-dots{
+    margin-top: 12px;
+}
+@media (min-width: 1200px) {
+
+}
+@media (max-width: 1199px) {
+
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+    .index-service-intro .bigger-card-content .started-now{
+        justify-content: center;
+    }
+    .index-service-intro .bigger-card-item{
+        padding: 16px 16px;
+    }
+    .index-service-intro .bigger-card-content .card-title{
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    .index-service-intro .bigger-card-content .card-desc{
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+    .index-service-intro .more-info{
+        margin-bottom: 24px;
+    }
+    .index-service-intro .deals-box{
+        padding-top: 0;
+    }
+    .index-service-intro .bigger-card-content{
+        flex-wrap: wrap;
+        padding: unset;
+        gap: 12px;
+    }
+    .index-service-intro .bigger-card-content .count-item .count{
+        font-size: 24px;
+    }
+    .index-service-intro .bigger-card-content .count-item .count-desc{
+        font-size: 14px;
+    }
+    .index-service-intro .bigger-card-content .bigger-card-count{
+            margin-bottom: 24px;
+    }
+    .index-service-intro .sm-card-swiper .card-item{
+        padding: 16px;
+        margin: 0 6px;
+    }
+    .index-service-intro .sm-card-swiper .card-title{
+        font-size: 16px;
+    }
+    .index-service-intro .sm-card-swiper .card-count{
+        font-size: 24px;
+    }
+}

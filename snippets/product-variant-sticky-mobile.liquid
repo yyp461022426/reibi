@@ -1,0 +1,308 @@
+<link rel="stylesheet" type="text/css" href="{{ 'product-variant-sticky-mobile.css' | asset_url }}">
+<div id="stick-product-variants">
+  {% if variantCount > 0 and product.variants[0].title != 'Default Title' %}
+    <select id="product-selectors-sticky" name="id" style="display: none;">
+      {% for variant in product.variants %}
+        {% if variant.available %}
+          <option
+            data-imge="{% if variant.image.size != blank %}{{ variant.image.src | product_img_url: 'compact' }}{% else  %}{{ product.featured_image.src | product_img_url: 'compact' }}{% endif %}"
+            {% if variant == current_variant %}
+              selected="selected"
+            {% endif %}
+            value="{{ variant.id }}"
+            {%- if variant.metafields.custom.variant_custom_name -%}
+              data-custom-name="{{ variant.metafields.custom.variant_custom_name | escape }}"
+            {%- endif -%}
+          >
+            {{ variant.title }}
+          </option>
+        {% else %}
+          <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+
+    {% if settings.use_color_swatch %}
+      {% for option in product.options %}
+        {% render 'swatchSticky' with option %}
+      {% endfor %}
+    {% endif %}
+
+  {% else %}
+    <input type="hidden" name="id" value="{{ product.variants[0].id }}">
+  {% endif %}
+
+  {% if enable_hot_stock and product.variants.size > 0 %}
+    {% assign max_stock = section.settings.number_stock | plus: 0 %}
+    <div class="hot_stock" data-stock-hot data-value="{{max_stock}}">
+      {% if current_variant.inventory_management %}
+        {% if current_variant.inventory_quantity > 0 and current_variant.inventory_quantity <= max_stock %}
+          {{ 'products.product.stock_hot' | t | replace: '[inventory]', current_variant.inventory_quantity }}
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+{% comment %} <script>
+  $(function($) {
+    debugger
+    if($('#product-selectors-sticky').length > 0){
+      debugger
+      new Shopify.OptionSelectors('product-selectors-sticky', {
+          product: {{ product | json }},
+          onVariantSelected: selectCallback,
+          enableHistoryState: true
+      });
+    }
+     var selectCallback = function(variant, selector) {
+      debugger
+        console.log(313,variant)
+          var addToCartBtn = $('#product-add-to-cart'),
+              productPrice = $('.product .price'),
+              comparePrice = $('.product .compare-price'),
+              productInventory = $('.product-inventory'),
+              productSku = $('.product .sku-product'),
+              labelSave = $('.product-photos .sale-label'),
+              max_stock = $('[data-stock-hot]').data('value');
+              productTitle = $('#shopify-section-product-template-default h1.product-title')
+              stickyAddProductTitle = $(".sticky_form[data-sticky-add-to-cart]")
+
+          if(variant) {
+              // addToCartbtn
+              if (variant.available) {
+                  if (variant.inventory_management!=null) {
+                    for( variant_id in inven_array){
+                      if(variant.id == variant_id ){
+                        inven_num = inven_array[variant_id];
+                        var inventoryQuantity = parseInt(inven_num);
+                      }
+                    }
+                    // Hot stock
+                    if(inventoryQuantity > 0 && inventoryQuantity <= max_stock){
+                        var text_stock = window.inventory_text.hotStock.replace('[inventory]', inventoryQuantity);
+                        $('[data-stock-hot]').text(text_stock).show();
+                        productInventory.find('span').text(inventoryQuantity + ' ' + window.inventory_text.in_stock);
+                    }else if (inventoryQuantity > 0) {
+                        productInventory.find('span').text(inventoryQuantity + ' ' + window.inventory_text.in_stock);
+                        $('[data-stock-hot]').hide();
+                    } else{
+                      productInventory.find('span').text(window.inventory_text.out_of_stock);
+                      $('[data-stock-hot]').hide();
+                    }
+                    // Button Text
+                    if(inventoryQuantity > 0){
+                      // We have a valid product variant, so enable the submit button
+                      addToCartBtn.removeClass('disabled').removeAttr('disabled').val(window.inventory_text.add_to_cart);
+                      $('.groups-btn').removeClass('remove');
+                    }else{
+                      addToCartBtn.removeClass('disabled').removeAttr('disabled').val(window.inventory_text.pre_order);
+                      $('.groups-btn').addClass('remove');
+                    }
+                  } else {
+
+                    addToCartBtn.removeClass('disabled').removeAttr('disabled').val(window.inventory_text.add_to_cart);
+                  }
+                  $('[data-form-notify]').slideUp();
+                  $('[data-soldOut-product]').show();
+              }
+              else {
+                  $('[data-soldOut-product]').hide();
+                  addToCartBtn.val(window.inventory_text.sold_out).addClass('disabled').attr('disabled', 'disabled');
+                  $('[data-stock-hot]').hide();
+                  $('[data-form-notify]').slideDown();
+                  var url = window.location.href.split('?variant')[0];
+                  $('[data-value-email]').val(url + '?variant=' + variant.id);
+                  productInventory.find('span').text(window.inventory_text.out_of_stock);
+                  $('[data-stock-hot]').hide();
+              };
+              // Prices
+              $('.product-template .swatch').each(function(){
+                console.log(370,$(this).find('input:checked').val())
+                $(this).find('[data-option-select]').text($(this).find('input:checked').val());
+              })
+              console.log(374,$('.halo-productView-mobile .swatch'))
+              $('.halo-productView-mobile .swatch').each(function(){
+                console.log(375,$(this).find('input:checked').val())
+                $(this).find('[data-option-select]').text($(this).find('input:checked').val());
+              })
+              $('.product #product_regular_price').val(variant.price);
+              productPrice.html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}"));
+              if(variant.compare_at_price > variant.price) {
+                  productPrice.addClass("on-sale");
+                  comparePrice
+                      .html(Shopify.formatMoney(variant.compare_at_price, "{{ shop.money_format }}"))
+                      .show();
+                  {% unless settings.type_label_sale == 'label_sale' %}
+                  labelSave.html('-' + Math.round((variant.compare_at_price - variant.price) * 100 / variant.compare_at_price) + '%').show();
+                  {% endunless %}
+              }
+              else {
+                  comparePrice.hide();
+                  productPrice.removeClass("on-sale");
+                  {% unless settings.type_label_sale == 'label_sale' %}
+                  labelSave.hide();
+                  {% endunless %}
+              };
+
+              {% if section.settings.display_subtotal and product.available and section.settings.display_qty %}
+              updatePricing();
+              {% endif %}
+
+              {% if settings.enable_multiple_currencies %}
+                  Currency.convertAll(window.shop_currency, $('#currencies .active').attr('data-currency'), 'span.money', 'money_format');
+              {% endif %}
+
+              var form = $('#' + selector.domIdPrefix).closest('form');
+
+              for (var i=0,length=variant.options.length; i<length; i++) {
+                  var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+
+                  if (radioButton.size()) {
+                      radioButton.get(0).checked = true;
+                  }
+              };
+
+              $('.product-template .swatch').each(function(){
+                $(this).find('[data-option-select]').text($(this).find('input:checked').val());
+              })
+              $('.halo-productView-mobile .swatch').each(function(){
+                $(this).find('[data-option-select]').text($(this).find('input:checked').val());
+              })
+          }
+          else {
+              addToCartBtn.val(window.inventory_text.sold_out).addClass('disabled').attr('disabled', 'disabled');
+          };
+
+          const customName = $('#product-selectors option:selected').data('custom-name');
+          if(!!customName){
+            productTitle.find('span').text(customName)
+            stickyAddProductTitle.find('span').text(customName)
+          } else {
+            productTitle.find('span').text(variant.name)
+            stickyAddProductTitle.find('span').text(variant.name)
+          }
+
+          {% if section.settings.display_product_sku %}
+          if (variant) {
+              productSku.find('span').text(variant.sku);
+          }
+          else {
+              productSku.find('span').empty();
+          }
+          {% endif %}
+
+          updateContent(variant.id);
+
+          {% if settings.product_layout == "slider" %}
+            /*begin variant image*/
+
+            {% unless settings.image_detail_default %}
+            $(document).ready(function(){
+            {% endunless %}
+
+              if (variant && variant.featured_image) {
+                var originalImage = $("img[id|='product-featured-image']");
+                var newImage = variant.featured_image;
+                var element = originalImage[0];
+                Shopify.Image.switchImage(newImage, element, function (newImageSizedSrc, newImage, element) {
+                  jQuery('.slider-for img').each(function() {
+                    var grandSize = $(this).attr('src').split('?')[0];
+
+                    newImageSizedSrc = newImageSizedSrc.split('?')[0].replace('https:','').replace('http:','') || '';
+
+                    if (grandSize == newImageSizedSrc) {
+                      var item = $(this).closest('.thumb');
+                      var idSlickDots = item.attr('aria-describedby');
+                      var slickDotsItem = item.closest('.slick-list').siblings('.slick-dots').children();
+
+                      slickDotsItem.each(function() {
+                        var id= $(this).attr('id');
+
+                        if(id == idSlickDots) {
+                          var index = $(this).index();
+                          $('[data-moreview-product-slider] .slider-for').slick('slickGoTo', index);
+                          return false;
+                        };
+                      });
+                    }
+                  });
+                });
+              };
+            {% unless settings.image_detail_default %}
+              });
+            {% endunless %}
+          {% elsif settings.product_layout == "gallery" %}
+            /*begin variant image*/
+            {% unless settings.image_detail_default %}
+            $(document).ready(function(){
+            {% endunless %}
+              if (variant && variant.featured_image) {
+                var originalImage = $("img[id|='product-featured-image']");
+                var newImage = variant.featured_image;
+                var element = originalImage[0];
+
+                Shopify.Image.switchImage(newImage, element, function (newImageSizedSrc, newImage, element) {
+                  jQuery('.slider-for img').each(function() {
+                    var grandSize = $(this).attr('src').split('?')[0];
+
+                    newImageSizedSrc = newImageSizedSrc.split('?')[0].replace('https:','').replace('http:','');
+
+                    if (grandSize == newImageSizedSrc) {
+                      var item = $(this).closest('.thumb');
+                      var idSlickDots = item.attr('aria-describedby');
+
+                      if(!idSlickDots) {
+                        idSlickDots = item.closest('.slick-slide').attr('aria-describedby');
+                      }
+
+                      var slickDotsItem = item.closest('.slick-list').siblings('.slick-dots').children();
+
+                      slickDotsItem.each(function() {
+                        var id= $(this).attr('id');
+
+                        if(id == idSlickDots) {
+                          var index = $(this).index();
+                          $('[data-moreview-product-gallery] .slider-for').slick('slickGoTo', index);
+                          return false;
+                        };
+                      });
+                    }
+                  });
+                });
+              };
+            {% unless settings.image_detail_default %}
+            });
+            {% endunless %}
+          {% else %}
+            /*begin variant image*/
+            {% unless settings.image_detail_default %}
+            $(document).ready(function(){
+            {% endunless %}
+                if (variant && variant.featured_image) {
+                    var originalImage = $("img[id|='product-featured-image']");
+                    var newImage = variant.featured_image;
+                    var element = originalImage[0];
+
+                    Shopify.Image.switchImage(newImage, element, function (newImageSizedSrc, newImage, element) {
+                        jQuery('.slider-nav img').each(function() {
+                            var grandSize = $(this).attr('src').split('?')[0].replace('_compact','');
+
+                          newImageSizedSrc = newImageSizedSrc? newImageSizedSrc.split('?')[0].replace('https:','').replace('http:','') : '';
+                          // newImageSizedSrc = newImageSizedSrc.split('?')[0].replace('https:','').replace('http:','') || '';
+                            if(grandSize === newImageSizedSrc) {
+                                var item = $(this).closest('.item');
+
+                                item.trigger('click');
+                                return false;
+                            }
+                        });
+                    });
+                };
+            {% unless settings.image_detail_default %}
+            });
+            {% endunless %}
+          {% endif %}
+
+      };
+  })
+</script> {% endcomment %}

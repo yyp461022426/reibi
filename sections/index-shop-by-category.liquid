@@ -1,0 +1,121 @@
+<link rel="stylesheet" type="text/css" href="{{ 'index-shop-by-category.css' | asset_url }}">
+<div class="index-shop-by-category index-normal-component">
+  <div class="container">
+    {% if section.settings.title and section.settings.title != '' %}
+      <h2 class="main-page-title">
+        <span class="small-title">{{ section.settings.title | upcase }}</span>
+        <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+      </h2>
+    {% endif %}
+    <div class="series-box">
+      <div class="series-box-view category-slick-scroll line-dots custom-scrollbar-track">
+        {% for block in section.blocks limit: 30 %}
+          <a href="{{ block.settings.link }}" class="series-item">
+            <div class="img-box">
+              {% if block.settings.series_img != blank %}
+                {{ block.settings.series_img | image_url: width: 380 | image_tag: class: 'series-img' }}
+              {% else %}
+                <div class="not_img">210 x 210px</div>
+              {% endif %}
+            </div>
+            <div class="category-name">{{ block.settings.category_name }}</div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    const initSlick = function () {
+      $('.category-slick-scroll').slick({
+        dots: false,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 3,
+        adaptiveHeight: true,
+        get nextArrow() {
+          return (this.nextArrow = `<button type="button" aria-label="Next" class="slick-next">
+          <svg t="1758703771314" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="19663" width="16" height="16">
+          <path d="M413.696 494.364444l265.272889-216.348444a28.444444 28.444444 0 1 0-35.953778-44.032L351.800889 471.438222a28.444444 28.444444 0 0 0-0.853333 43.349334l291.214222 257.479111a28.444444 28.444444 0 1 0 37.660444-42.666667L413.696 494.364444z" transform="scale(-1, 1) translate(-1024, 0)" p-id="19664">
+          </path>
+          </svg>
+          </button>`);
+        },
+        get prevArrow() {
+          return (this.prevArrow = `<button type="button" aria-label="Previous" class="slick-prev">
+                <svg t="1758703771314" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="19663" width="16" height="16">
+          <path d="M413.696 494.364444l265.272889-216.348444a28.444444 28.444444 0 1 0-35.953778-44.032L351.800889 471.438222a28.444444 28.444444 0 0 0-0.853333 43.349334l291.214222 257.479111a28.444444 28.444444 0 1 0 37.660444-42.666667L413.696 494.364444z" p-id="19664">
+          </path>
+          </svg>
+          </button>`);
+        },
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              dots: false,
+              slidesToShow: 4,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              dots: true,
+              slidesToShow: 3,
+              slidesToScroll: 2,
+            },
+          },
+        ],
+      });
+    };
+
+    if ($('.category-slick-scroll').length) {
+      initSlick();
+      $(window).on('load', function () {
+        $('.category-slick-scroll').slick('refresh');
+      });
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Index Shop By Category",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "series_img",
+          "label": "Series Image"
+        },
+        {
+          "type": "text",
+          "id": "category_name",
+          "label": "Category Name"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Collection Link of This Series"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Shop By Category"
+    }
+  ]
+}
+{% endschema %}

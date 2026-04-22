@@ -1,0 +1,691 @@
+{% assign blocks = section.blocks | where: 'type', 'header' %}
+{% assign block = blocks[0] %}
+<header class="collection-header collection-header-sections {% if block.settings.collection_header_style == 'style_2' %}layout-header--style2{% endif %}">
+  <div class="relative {% if block.settings.collection_header_layout == 'default' %}container{% endif %}">
+    {% if block.settings.display_collection_image %}
+      {% if collection.description contains '<img' %}
+        {%- assign img_url = collection.description | split: '<img' | last | split: '>' | first -%}
+
+      {% elsif block.settings.collection_image != blank %}
+        {%- assign img_url = block.settings.collection_image | img_url: 'master' -%}
+      {% endif %}
+      <div class="collection-image">
+        <div class="collection-image-box">
+          {% if collection.description contains '<img' or block.settings.collection_image != blank %}
+            {% if collection.description contains '<img' %}
+              <img
+                {{ img_url }}
+                alt="{{ collection_title }}"
+                class="lazyautosizes lazyloaded{% if block.settings.collection_image_mb != blank %} show-pc-banner{% endif %}"
+                data-sizes="auto"
+              >
+            {% else %}
+              <img
+                data-src="{{ img_url }}"
+                class="lazyload{% if block.settings.collection_image_mb != blank %} show-pc-banner{% endif %}"
+                data-sizes="auto"
+              >
+            {% endif %}
+          {% endif %}
+          {% if block.settings.collection_image_mb != blank %}
+            {%- assign img_url_mb = block.settings.collection_image_mb | img_url: 'master' -%}
+            <img
+              data-srcset="{{ img_url_mb }}"
+              alt="{{ collection_title }}"
+              class="lazyautosizes lazyload show-mb-banner"
+              data-sizes="auto"
+            >
+          {% endif %}
+          {% if template contains 'collection.flash-sale' %}
+            {% if block.settings.show_discount_btn %}
+              <style type="text/css">
+                {% comment %} 折扣按钮配置 {% endcomment %}
+                #shopify-section-collection-template-default .absolute-copy-btn-1{
+                  top: {{ block.settings.discount_btn_top_position_1 }}%;
+                  left: {{ block.settings.discount_btn_left_position_1 }}%;
+                }
+                #shopify-section-collection-template-default .absolute-copy-btn-2{
+                  top: {{ block.settings.discount_btn_top_position_2 }}%;
+                  left: {{ block.settings.discount_btn_left_position_2 }}%;
+                }
+                #shopify-section-collection-template-default .absolute-copy-btn-3{
+                  top: {{ block.settings.discount_btn_top_position_3 }}%;
+                  left: {{ block.settings.discount_btn_left_position_3 }}%;
+                }
+
+                #shopify-section-collection-template-default .copy-btn{
+                  width: {{ block.settings.discount_btn_width }}%;
+                  height: {{ block.settings.discount_btn_height }}%;
+                  color: {{ block.settings.discount_btn_color }};
+                  background: {{ block.settings.discount_btn_bg }};
+                  font-size: {{ block.settings.discount_btn_font_size }}vw;
+                  border: {{block.settings.discount_btn_border_bold}}px solid {{block.settings.discount_btn_border_color}};
+                }
+
+                #shopify-section-collection-template-default .copy-discount-code-cover{
+                  color: {{ block.settings.discount_btn_cover_fz_color }} !important;
+                  background: {{ block.settings.discount_btn_cover_bg_color }};
+                }
+                @media (max-width: 767px){
+                  #shopify-section-collection-template-default .absolute-copy-btn-1{
+                    top: {{ block.settings.discount_btn_top_position_1_mb }}%;
+                    left: {{ block.settings.discount_btn_left_position_1_mb }}%;
+                  }
+                  #shopify-section-collection-template-default .absolute-copy-btn-2{
+                    top: {{ block.settings.discount_btn_top_position_2_mb }}%;
+                    left: {{ block.settings.discount_btn_left_position_2_mb }}%;
+                  }
+                  #shopify-section-collection-template-default .absolute-copy-btn-3{
+                    top: {{ block.settings.discount_btn_top_position_3_mb }}%;
+                    left: {{ block.settings.discount_btn_left_position_3_mb }}%;
+                  }
+
+                  #shopify-section-collection-template-default .copy-btn{
+                    width: {{ block.settings.discount_btn_width_mb }}%;
+                    height: {{ block.settings.discount_btn_height_mb }}%;
+                    font-size: {{ block.settings.discount_btn_font_size_mb }}vw;
+                  }
+                }
+                {% comment %} 折扣按钮配置 end {% endcomment %}
+              </style>
+              {% if block.settings.show_discount_btn %}
+                {%- for i in (1..3) -%}
+                  {%- case i -%}
+                    {%- when 1 -%}
+                      {%- assign code = settings.discount_1_code -%}
+                      {%- assign show_btn = block.settings.show_discount_btn_1 -%}
+                    {%- when 2 -%}
+                      {%- assign code = settings.discount_2_code -%}
+                      {%- assign show_btn = block.settings.show_discount_btn_2 -%}
+                    {%- when 3 -%}
+                      {%- assign code = settings.discount_3_code -%}
+                      {%- assign show_btn = block.settings.show_discount_btn_3 -%}
+                  {%- endcase -%}
+
+                  {%- if code != blank and show_btn -%}
+                    <button
+                      class="absolute-copy-btn-{{ i }} copy-btn"
+                      copy-discount-code
+                      data-clipboard-text="{{ code }}"
+                    >
+                      CODE: {{ code }}&nbsp;{% render 'icon-copy' %}
+                    </button>
+                  {%- endif -%}
+                {%- endfor -%}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+          {%- if block.settings.right_buttom_note != blank -%}
+            <div class="banner-note">{{ block.settings.right_buttom_note }}</div>
+          {%- endif -%}
+        </div>
+        {% if block.settings.collection_header_style == 'style_1' and template != 'collection.flash-sale' %}
+          <div class="page-header tab-abs{% unless collection.description contains 'img' or block.settings.collection_image != blank %} collection-static{% endunless %}{% if block.settings.collection_header_layout == 'full' %} fullwidth{% endif %}">
+            <h1 class="{% if collection.title == '' or block.settings.display_collection_title == false %}hide{% endif %}">
+              {% render 'multilang' with collection.title %}
+            </h1>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if section.settings.show_countdown %}
+      <style>
+        /* 倒计时 */
+        .countdown-box{
+            padding: 10px 12px;
+            margin-bottom: 32px;
+            left: 0;
+            color: #FFFFFF;
+          {% if settings.is_Christmas %}
+            {% comment %} border-radius: 0 0 8px 8px;
+            background-color: var(--Christmas_red_color); {% endcomment %}
+            background-color: var(--Christmas_black_color);
+            border-bottom: 4px solid var(--Christmas_red_color);
+            border-radius: .5rem;
+          {% elsif settings.is_BlackFriday %}
+            background-color: var(--BlackFriDay_black_color);
+            border-bottom: 4px solid var(--BlackFriDay_red_color);
+            border-radius: .5rem;
+          {%  else %}
+            background-color: var(--color_base);
+            border-bottom: 4px solid var(--color_base_sec);
+            border-radius: .5rem;
+          {% endif %}
+        }
+
+        .countdown-box:not(.countdown-fix){
+            margin-top: 32px;
+        }
+
+        .countdown-banner-img{
+          display: none;
+        }
+
+        .countdown-box-inner{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .countdown-box .small-unit {
+          display: none;
+        }
+
+        .countdown-fix{
+          position: fixed;
+          width: 100%;
+          border-radius: 0;
+          z-index: 98;
+          border-radius: 0 !important;
+          border-bottom: unset;
+          animation-name: cdFadeInDown;
+          animation-duration: .5s;
+          animation-fill-mode: both;
+          padding: 0 !important;
+        }
+        @-webkit-keyframes cdFadeInDown {
+          from {
+              opacity: 0;
+              -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0)
+          }
+
+          to {
+              opacity: 1;
+              -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0)
+          }
+        }
+
+        @keyframes cdFadeInDown {
+          from {
+              opacity: 0;
+              -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0)
+          }
+
+          to {
+              opacity: 1;
+              -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0)
+          }
+        }
+        .countdown-box .countdown-des{
+          font-size: 24px;
+          margin-right: 20px;
+          line-height: normal;
+        }
+        .countdown-box .countdown-des span{
+          {% if settings.is_BlackFriday %}
+            color: var(--BlackFriDay_red_color);
+          {% elsif settings.is_Christmas %}
+            color: var(--Christmas_red_color);
+          {% else %}
+            color: var(--color_base_sec);
+          {% endif %}
+        }
+        #active-count-down{
+          font-size: 24px;
+          line-height: 24px;
+          display: flex;
+        }
+        #active-count-down >div{
+          min-width: 52px
+        }
+        #active-count-down .time-item{
+          margin: 0 8px;
+          font-weight: 500;
+          font-size: 24px;
+          text-align: center;
+        }
+        #active-count-down span{
+          font-size: 16px;
+          font-weight: 500;
+          color: #FFFFFF;
+        }
+        #active-count-down .unit{
+          font-size: 12px;
+          text-align: center;
+          line-height: 12px;
+          margin-top: 4px;
+        }
+
+        .countdown-fix .countdown-box-inner {
+          border-bottom: unset;
+          padding: 4px 50px;
+          justify-content: center;
+        }
+        .countdown-fix .countdown-des {
+          font-size: 16px;
+          margin-right: 8px;
+        }
+
+        .countdown-fix .unit {
+          display: none;
+        }
+
+        .countdown-fix .small-unit {
+          display: block;
+        }
+        .countdown-fix #active-count-down >div{
+          min-width: unset;
+        }
+        .countdown-fix .time-item {
+          margin: 0px 4px !important;
+          font-weight: 400 !important;
+          font-size: 16px !important;
+          display: flex;
+          align-items: baseline;
+        }
+        .countdown-fix #active-count-down span{
+          font-weight: 400;
+        }
+        @media (max-width:767px) {
+          .countdown-box{
+            padding: 6px 12px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+          }
+          .countdown-box:not(.countdown-fix){
+            margin-top: 16px;
+          }
+
+          .countdown-box:not(.countdown-fix) .countdown-des span{
+            display: block;
+          }
+          .countdown-box .countdown-des{
+            font-size: 14px;
+            margin-right: 12px;
+          }
+          #active-count-down .time-item{
+            font-size: 18px;
+          }
+          #active-count-down .unit{
+            margin-top: 0px;
+          }
+          .countdown-fix .countdown-box-inner {
+            border-bottom: unset;
+            padding: 2px 20px;
+          }
+          .countdown-fix .countdown-des {
+            font-size: 16px;
+            margin-right: 8px;
+          }
+
+          .countdown-fix .unit {
+            display: none;
+          }
+
+          .countdown-fix .small-unit {
+            display: block;
+          }
+          .countdown-fix #active-count-down >div{
+            min-width: unset;
+          }
+          .countdown-fix .time-item {
+            margin: 0px 4px !important;
+            font-weight: 400 !important;
+            font-size: 16px !important;
+            display: flex;
+            align-items: baseline;
+          }
+          .countdown-fix #active-count-down span{
+            font-weight: 400;
+          }
+        }
+        /* 倒计时end */
+        /* 圣诞活动进度条 */
+        .santa-pic{
+          height: 70px;
+          width: auto;
+          position: absolute;
+          left: 0;
+          bottom: -20px;
+          transition: left ease-in-out 2.5s;
+          transform: translateX(-50%);
+          z-index: 3;
+        }
+        .progress-bar-box{
+          position: relative;
+        }
+        .active-progress{
+          height: 8px;
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          background-color: #daba89;
+          border-radius: 8px;
+          width: 100%;
+        }
+
+        .active-progress::after{
+          content: 'END';
+          color: #000000;
+          height: 32px;
+          width: 32px;
+          font-size: 12px;
+          position: absolute;
+          right: 0;
+          top: 0;
+          background-color: #daba89;
+          border-radius: 50%;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: translate(16%, -32%);
+          font-weight: bold;
+        }
+
+        .already-progress{
+          background-color: var(--Christmas_green_color);
+          height: 8px;
+          border-radius: 8px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 0%;
+          transition: width ease-in-out 2.5s;
+          max-width: 100%;
+        }
+
+        .main-content {
+          {% comment %} overflow: hidden; {% endcomment %}
+        }
+        {% if settings.is_Christmas %}
+          {% assign flash_countdown_banner_image = section.settings.flash_countdown_banner_image %}
+          {% if flash_countdown_banner_image != blank %}
+            @media (min-width: 768px){
+              .countdown-box:not(.countdown-fix){
+                border-bottom: unset;
+                border-radius: unset;
+                background-size: 100% 100%;
+                background-color: unset;
+                padding: unset;
+                position: relative;
+                padding-top: {{ 1 | divided_by: flash_countdown_banner_image.aspect_ratio | times: 100 }}%;
+                margin-bottom: 0;
+              }
+
+              .countdown-box:not(.countdown-fix) .countdown-banner-img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+              }
+              .countdown-box:not(.countdown-fix) .countdown-box-inner{
+                position: absolute;
+                left: 50%;
+                top: 52%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          {% endif %}
+        {% endif %}
+
+        @media (max-width:767px) {
+          .active-progress::after{
+            height: 24px;
+            width: 24px;
+            font-size: 8px;
+          }
+          .santa-pic{
+            height: 55px;
+          }
+        }
+      </style>
+      {% comment %}
+        {% if settings.is_Christmas %}
+          <div class="progress-bar-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0632/4833/5096/files/Santa.png?v=1734490646"
+              width="120"
+              height="60"
+              class="santa-pic"
+            >
+            <div class="active-progress">
+              <div class="already-progress"></div>
+            </div>
+          </div>
+          <script>
+            const startDate = new Date('2024-12-26 3:00:00');
+            const startTimestamp = startDate.getTime();
+            const endDate = new Date('2024-01-10 3:00:00');
+            const endTimestamp = endDate.getTime();
+            const nowTimestamp = Date.now();
+            let totalProgress = endTimestamp - startTimestamp;
+            let alreadyProgress = nowTimestamp - startTimestamp;
+            let progress = Math.round((alreadyProgress / totalProgress) * 10000) / 100;
+            progress = progress >= 100 ? 100 : progress;
+            let progress_str = progress + '%';
+            setTimeout(() => {
+              $('.already-progress').css('width', progress_str);
+              $('.santa-pic').css('left', progress_str);
+            }, 2000);
+          </script>
+        {% endif %}
+      {% endcomment %}
+      <div class="countdown-box">
+        {% if flash_countdown_banner_image != blank %}
+          {{ flash_countdown_banner_image | image_url: width: 1920 | image_tag: class: 'countdown-banner-img' }}
+        {% endif %}
+        <div class="countdown-box-inner container">
+          <div class="countdown-des"><span>Flash Sales</span> end in</div>
+          <div id="active-count-down"></div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="collection-wrapper page-header{% unless collection.description contains 'img' or block.settings.collection_image != blank %} collection-static{% endunless %}{% if block.settings.display_collection_title == false and block.settings.display_collection_des == false %} hide{% endif %}">
+      <div class="{% if settings.category_layout == "full_with" or template.suffix == 'fullwidth' %}container-padd60{% else %}{% unless block.settings.collection_header_layout == 'default' %}container{% endunless %} container-regular{% endif %}">
+        {% if block.settings.collection_header_style == 'style_2' %}
+          <div
+            class="absolute {% unless collection.description contains '<img' or block.settings.collection_image != blank %}no-image{% endunless %}"
+          >
+        {% endif %}
+        <h1 class="{% if collection.title == '' or block.settings.display_collection_title == false %}hide{% endif %}">
+          {% render 'multilang' with collection.title %}
+        </h1>
+
+        {% if collection.description != '' and block.settings.display_collection_des %}
+          <div class="collection-des">
+            {% if settings.enable_multilang and collection.description contains '[lang2]' %}
+              <div class="rte lang1">
+                {{ collection.description | split: '[lang2]' | first | split: '<img' | first }}
+              </div>
+              <div class="rte lang2">
+                {{ collection.description | split: '[lang2]' | last | split: '<img' | first }}
+              </div>
+            {% else %}
+              <div class="rte">
+                {{ collection.description | split: '[lang2]' | first | split: '<img' | first }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if block.settings.collection_header_style == 'style_2' %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if block.settings.enable_sub and linklists[collection.handle] != blank %}
+    <div class="sub-collection">
+      <div class="container">
+        {% if block.settings.sub_style == 'style_1' %}
+          <div class="d-flex">
+            <span>{{ block.settings.sub_title }}</span>
+            <ul class="list-sub-collection {% if block.settings.sub_style == 'style_1' %}sub-collection-style-1{% endif %}">
+              {% for link in linklists[collection.handle].links %}
+                <li class="item {% if link.active %}active{% endif %}">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          <div class="sub-slider">
+            <span>{{ block.settings.sub_title }}</span>
+            <div class="list-sub-collection" data-slider-sub-collection>
+              {% for link in linklists[collection.handle].links %}
+                <div class="item">
+                  {% assign imgColl = link.object.image | img_url: '210x', format: 'jpg' -%}
+                  {%- assign hs_imgColl = link.object.image %}
+                  <a href="{{ link.url }}">
+                    {% if link.object %}
+                      <img
+                        alt="{{ link.title }}"
+                        class="lazyload hs-lazyload hs-id-226697fa"
+                        data-src="{{ imgColl }}"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                      >
+                    {% endif %}
+                    <span>{{ link.title }}</span>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</header>
+<style>
+  {% if block.settings.display_collection_image %}
+    .collection-header h1 span,
+    .collection-header-sections .collection-des .rte,
+    .collection-header-sections .collection-des .rte a,
+    .collection-header-sections .collection-des .rte p {
+      color: {{ block.settings.color_wrapper }};
+    }
+    @media (max-width: 1199px) {
+      .collection-header.collection-header-sections .collection-image .tab-abs:not(.collection-static) {
+        position: static;
+        -moz-transform: none;
+        -o-transform: none;
+        -ms-transform: none;
+        -webkit-transform: none;
+        transform: none;
+        max-width: initial;
+        text-align: left;
+        margin-top: 30px;
+      }
+    }
+    @media(max-width: 1024px) {
+        .collection-header h1 span,
+        .collection-header-sections .collection-des .rte,
+        .collection-header-sections .collection-des .rte a,
+        .collection-header-sections .collection-des .rte p {
+          color: {{ block.settings.color_wrapper_mb }};
+        }
+      }
+     @media (min-width: 1200px) {
+        {% if block.settings.collection_header_style == 'style_2' %}
+          .layout-header--style2 .container .absolute {
+            background-color: {{ block.settings.bg_color_content }};
+          }
+          .layout-header--style2 .container .absolute:before {
+            border-color: {{ block.settings.border_color_content }};
+          }
+          .layout-header--style2 .container .absolute .collection-des a {
+            color: {{ block.settings.color_wrapper }};
+          }
+        {% endif %}
+     }
+     @media (min-width: 768px) and (max-width: 1199px) {
+        {% if block.settings.collection_header_style == 'style_1' %}
+          .collection-header.collection-header-sections .collection-wrapper h1 {
+            display: none !important;
+          }
+        {% endif %}
+        .countdown-box .countdown-des,#active-count-down .time-item{
+          font-size: 22px;
+        }
+      }
+  {% endif %}
+</style>
+{% if settings.category_layout != 'default' %}
+  <style>
+    {% if block.settings.display_collection_image %}
+    @media (min-width: 768px) {
+      .collection-header-sections .page-header h1 {
+        color: {{ block.settings.color_wrapper }};
+      }
+      .collection-header-sections .collection-static.page-header h1 {
+        color: #000;
+      }
+    }
+    {% endif %}
+
+    @media (min-width: 1200px) {
+      .collection-header-sections .collection-image img {
+        height: {{ block.settings.height_img }};
+      }
+
+      {% if block.settings.display_collection_image %}
+      .collection-header.collection-header-sections {
+        position: relative;
+      }
+
+      {% if block.settings.collection_header_style == 'style_1' %}
+        .collection-header.collection-header-sections .collection-wrapper:not(.collection-static) {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -moz-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+          width: 100%;
+          max-width: 500px;
+          margin: 0;
+        }
+        {% if settings.layout_style == 'layout_style_fullwidth' %}
+          .collection-header.collection-header-sections .collection-wrapper:not(.collection-static) {
+              bottom: 55px;
+              top: auto;
+              transform: translate(-50%, 0);
+          }
+        {% endif %}
+      {% else %}
+        .layout-header--style2 .container .absolute {
+          background-color: {{ block.settings.bg_color_content }};
+        }
+        .layout-header--style2 .container .absolute:before {
+          border-color: {{ block.settings.border_color_content }};
+        }
+        .layout-header--style2 .container .absolute .collection-des a {
+          color: {{ block.settings.color_wrapper }};
+        }
+      {% endif %}
+
+      .collection-header.collection-header-sections .collection-static {
+        position: static;
+        width: 100%;
+        max-width: 500px;
+        margin: 30px auto 0;
+        text-align: center;
+      }
+
+      .collection-header.collection-header-sections .collection-image {
+        margin-bottom: 1px;
+      }
+
+      {% else %}
+      .collection-template .reverse-mb {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column-reverse;
+        -moz-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+      }
+      {% endif %}
+    }
+  </style>
+{% endif %}

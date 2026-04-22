@@ -1,0 +1,80 @@
+.affiliate-earn-commissions {
+  margin-bottom: 10px;
+}
+.affiliate-earn-commissions .step-box {
+  gap: 64px;
+  display: flex;
+  justify-content: space-between;
+}
+.affiliate-earn-commissions .item-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 33.33%;
+}
+.affiliate-earn-commissions .img-box img {
+  width: 80%;
+  max-width: 262px;
+}
+.affiliate-earn-commissions .step-box .item-box:first-child {
+  padding-top: 19px;
+}
+.affiliate-earn-commissions .step-box .item-box:last-child {
+  padding-top: 23px;
+}
+.affiliate-earn-commissions .step-title {
+  font-weight: bold;
+  font-size: 36px;
+  color: #333333;
+  margin-bottom: 16px;
+}
+.affiliate-earn-commissions .step-des {
+  font-size: 20px;
+  color: #333333;
+  line-height: 30px;
+}
+.affiliate-earn-commissions .step-info {
+  border-radius: 12px;
+  background: #fff;
+  transform: translateY(-80px);
+  padding: 12px 12px;
+  margin-bottom: -80px;
+}
+@media (max-width: 991px) {
+  .affiliate-earn-commissions .step-box {
+    gap: 16px;
+  }
+  .affiliate-earn-commissions .step-box .item-box:first-child {
+    padding-top: 16px;
+  }
+  .affiliate-earn-commissions .step-box .item-box:last-child {
+    padding-top: 11px;
+  }
+}
+@media (max-width: 767px) {
+  .affiliate-earn-commissions .step-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .affiliate-earn-commissions .step-title {
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  /* .affiliate-earn-commissions .step-box .item-box:first-child {
+    padding-top: 0;
+  }
+  .affiliate-earn-commissions .step-box .item-box:last-child {
+    padding-top: 0;
+  } */
+  .affiliate-earn-commissions .item-box {
+    width: unset;
+    padding: 20px;
+  }
+  .affiliate-earn-commissions .step-des {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

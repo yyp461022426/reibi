@@ -1,0 +1,228 @@
+.index-inspiration-model .ins-slick-scroll {
+    transition: all ease-in-out 0.5s;
+    opacity: 0;
+}
+
+.index-inspiration-model .img-box {
+    width: fit-content;
+    height: 240px;
+    width: 240px;
+    /* margin-bottom: 15px; */
+    border-radius: 4px 4px 0px 0px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.index-inspiration-model .img-box .display-img {
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.index-inspiration-model .img-box:hover .display-img {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.index-inspiration-model .customer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+}
+
+.index-inspiration-model .customer-name {
+    word-break: break-word;
+}
+
+.index-inspiration-model .customer-profile-pic {
+    margin: unset;
+    border-radius: 50%;
+}
+
+.index-inspiration-model .show-case-card {
+    margin-right: 12px;
+    display: flex;
+    height: auto;
+}
+
+.index-inspiration-model .card-box {
+    width: min-content;
+    box-shadow: 0 7px 12px -4px rgba(0, 0, 0, .22);
+    margin: 12px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.index-inspiration-model .loox-rating-label {
+    display: none;
+}
+
+.index-inspiration-model .loox-rating .loox-rating-content {
+    margin-right: 0;
+    flex-wrap: nowrap;
+}
+
+.index-inspiration-model .stars-and-reviews {
+    width: 100%;
+    padding: 30px 8px 8px 8px;
+    position: relative;
+}
+
+.index-inspiration-model .stars-box {
+    border-radius: 8px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, .06), 0 4px 20px rgba(0, 0, 0, .08);
+    background-color: #ffffff;
+    padding: 8px 16px 12px 16px;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.index-inspiration-model .reviews-box {
+    overflow-wrap: anywhere;
+    line-height: normal;
+}
+
+.index-inspiration-model .slick-slider .slick-track {
+    display: flex;
+}
+
+.ins-pop-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.ins-pop-content .left-part {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.ins-pop-content .right-part {
+    margin-left: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.ins-pop-content .right-part .title {
+    font-size: 24px;
+    line-height: 29.14px;
+    color: #000;
+    margin: 12px 0 16px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.ins-pop-content .big-display {
+    height: auto;
+}
+
+.ins-pop-content .pop-user-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #fff;
+    border-radius: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.ins-pop-content .pop-profile-photo {
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    margin-right: 8px;
+}
+
+.ins-pop-content .pop-customer-name {
+    font-size: 16px;
+    line-height: 16px;
+    color: #000;
+}
+
+.ins-pop-content .product-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ins-pop-content .product-container .product-item {
+    width: 50%;
+    padding: 15px;
+}
+
+
+
+
+/* 淡入动画 */
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1500px) {
+    .ins-pop-content .big-display {
+        width: 350px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .index-inspiration-model .img-box {
+        height: 208px;
+        width: 208px;
+    }
+}
+
+@media (max-width: 991px) {
+    .index-inspiration-model .show-case-card {
+        margin-right: 8px;
+    }
+
+    .index-inspiration-model .img-box {
+        height: 160px;
+        width: 160px;
+    }
+}
+
+@media (max-width: 900px) {
+    .ins-pop-content {
+        height: calc(100vh - 50px);
+        display: block;
+        padding: 16px;
+        overflow: auto;
+    }
+
+    .ins-pop-content .product-container .product-item {
+        max-width: 320px;
+        padding: 0;
+        margin: 16px 16px 16px 0;
+    }
+
+    .ins-pop-content .big-display {
+        width: 100%;
+    }
+
+    .ins-pop-content .right-part {
+        margin-left: 0;
+        margin-top: 24px;
+    }
+}

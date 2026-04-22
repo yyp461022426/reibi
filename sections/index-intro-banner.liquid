@@ -1,0 +1,102 @@
+<link rel="stylesheet" type="text/css" href="{{ 'index-intro-banner.css' | asset_url }}">
+<div class="index-intro-banner index-normal-component">
+  <div class="container">
+    {% if section.settings.title and section.settings.title != '' %}
+      <h2 class="main-page-title">
+        <span class="small-title">{{ section.settings.title | upcase }}</span>
+        <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+      </h2>
+    {% endif %}
+    <div class="banner-box">
+      {% for block in section.blocks limit: 4 %}
+        <div class="banner-item animate--slide-in scroll-trigger" data-cascade style="--animation-order: {{ forloop.index }};">
+          <div class="img-box">
+            {{ block.settings.brand_image | image_url: width: 88 | image_tag }}
+          </div>
+          <div class="info-box">
+            <div class="blod-des">
+              <span class="rolling-digit" data-target="{{ block.settings.bold_des_num | plus: 0 }}">0</span>
+              {{- block.settings.bold_des_unit }}
+            </div>
+            <div class="small-des">{{ block.settings.small_des }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    const $numbers = $('.rolling-digit');
+    const $scrollLists = $('.index-intro-banner');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          $numbers.each(function () {
+            const $this = $(this);
+            const target = parseInt($this.data('target'));
+            $({ counter: 0 }).animate(
+              { counter: target },
+              {
+                duration: 2000,
+                easing: 'swing',
+                step: function () {
+                  $this.text(Math.ceil(this.counter));
+                },
+              }
+            );
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe($scrollLists[0]);
+  });
+</script>
+{% schema %}
+{
+  "name": "Index Intor Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "card-show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "brand_image",
+          "label": "Banner Image"
+        },
+        {
+          "type": "text",
+          "id": "bold_des_num",
+          "label": "Blod Des Num(Please fill in the number)"
+        },
+        {
+          "type": "text",
+          "id": "bold_des_unit",
+          "label": "Blod Des Unit"
+        },
+        {
+          "type": "text",
+          "id": "small_des",
+          "label": "Small Des"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Intor Banner"
+    }
+  ]
+}
+{% endschema %}

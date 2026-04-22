@@ -1,0 +1,132 @@
+
+/* 公共的属性 */
+.b2b-point{
+    font-size: 1.2em;
+    color: red;
+}
+/* 外部pdf链接 */
+.pdf-link {
+  text-align: center;
+  color: #666666;
+  margin: 16px 0;
+}
+
+.pdf-link a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  background: #ff912e;
+  padding: 0px 4px;
+  border-radius: 4px;
+}
+
+/* 按钮样式 */
+.quote-buttom {
+  color: #ffffff;
+  background-color: #3555db;
+  border-image: none;
+  border: 1px solid #3555db;
+  padding: 14px 25px;
+  border-radius: 0.31rem;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.quote-buttom.keep-big {
+  padding: 14px 25px !important;
+  font-size: 16px !important;
+}
+
+.width-hover:hover {
+  color: #3555db;
+  background-color: #ffffff;
+  transition: all 0.3s linear;
+}
+
+/* 每层的标题（蓝加橘色的部分） */
+.floor-title {
+  color: #3555db;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  line-height: 70px;
+  margin-bottom: 25px;
+}
+
+.orange-strong {
+  color: #ff912e;
+  font-weight: bold;
+}
+
+/* 背景蓝色渐变 */
+.blue-background-left {
+  background-image: linear-gradient(180deg,
+      rgba(238, 238, 253, 1) 0%,
+      rgba(255, 255, 255, 0) 27%);
+  margin: 90px 0px 0px 0px;
+  border-radius: 100px 0px 0px 0px;
+}
+
+.blue-background-right {
+  background-image: linear-gradient(180deg,
+      rgba(238, 238, 253, 1) 0%,
+      rgba(255, 255, 255, 0) 27%);
+  margin: 90px 0px 0px 0px;
+  border-radius: 0px 100px 0px 0px;
+}
+
+.errors {
+  color: red;
+}
+
+@media (min-width: 768px) {
+  .normal-floor {
+    padding: 90px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .quote-buttom {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+  .nav-quote {
+    display: none;
+  }
+
+  .b2b-anchor .anchor-flex-left {
+    display: block;
+  }
+
+  .floor-title {
+    font-size: 30px;
+    line-height: 45px;
+  }
+
+  .normal-floor {
+    padding: 60px 0 0 0;
+  }
+
+  .blue-background-left {
+    margin: 70px 0px 0px 0px;
+  }
+
+  .blue-background-right {
+    background-image: linear-gradient(180deg,
+        rgba(238, 238, 253, 1) 0%,
+        rgba(255, 255, 255, 0) 27%);
+    margin: 70px 0px 0px 0px;
+  }
+
+
+  .b2b-anchor .reibii-email {
+    font-size: 16px;
+    color: var(--color_base);
+    margin-top: 8px;
+  }
+
+  .b2b-anchor .fix-nav-box{
+    padding: 18px 20px 8px 20px;
+  }
+}

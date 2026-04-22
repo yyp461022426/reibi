@@ -1,0 +1,258 @@
+<link rel="stylesheet" type="text/css" href="{{ 'b2b-sub-form-popup-dialog.css' | asset_url }}">
+<!-- 大订单弹窗 -->
+<div class="large-order-dialog" id="largeOrderDialog">
+  <div class="large-order-dialog__flex">
+    <div class="large-order-dialog__box">
+      <div class="large-order-dialog__inner-box">
+        {% if section.settings.masklayer_info %}
+          <h3 class="large-order-dialog__title">
+            {{ section.settings.masklayer_info }}
+          </h3>
+        {% endif %}
+        {% if section.settings.masklayer_code != '' %}
+          <h4 class="large-order-dialog__subtitle">
+            {{ section.settings.masklayer_code }}
+          </h4>
+        {% endif %}
+        <hr class="large-order-dialog__line">
+        <div class="form-box">
+          {% form 'contact', id: 'contact_form1' %}
+            <!--
+              <form
+                method="post"
+                action="/contact#contact_form"
+                id="contact_form"
+                accept-charset="UTF-8"
+                class="contact-form"
+              >
+            -->
+            <input type="hidden" name="form_type" value="contact">
+            <input type="hidden" name="utf8" value="✓">
+            <!-- form content start -->
+            <!-- 成功的返回start -->
+            {% if form.posted_successfully? %}
+              <p
+                class="note form-success"
+                id="large-order-sub-success"
+                {% if settings.enable_multilang %}
+                  data-translate="contact.form.post_success"
+                {% endif %}
+              >
+                {{ 'contact.form.post_success' | t }}
+              </p>
+              <script>
+                window.openDialog();
+              </script>
+              <!-- 成功的返回end -->
+            {%- else -%}
+              <!-- 失败的返回start -->
+              <div id="fail-back2"></div>
+              <script>
+                $(document).ready(function () {
+                  if (window.location.href.indexOf('form_type=contact#contact_form') > -1) {
+                    $('#fail-back2').html(`<div class='errors'><ul><li>Email is invalid.</li></ul></div>`);
+                  }
+                });
+              </script>
+              <!-- 失败的返回end -->
+            {% endif %}
+            <div id="contactFormWrapper-pop" class="contact-form-box">
+              <div class="form-group">
+                <label for="contactFormEmail-pop">
+                  <span
+                    {% if settings.enable_multilang %}
+                      data-translate="contact.form.email"
+                    {% endif %}
+                  >
+                    Your Email Address<span class="red">*</span>
+                  </span>
+                </label>
+                <input
+                  required
+                  type="email"
+                  name="contact[email]"
+                  id="contactFormEmail-pop"
+                  data-validate="email"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  placeholder="Please enter your email address"
+                >
+
+              </div>
+
+              <div class="form-group">
+                <label for="contactFormItem-pop">
+                  <span> Item SKU or Item Link</span>
+                </label>
+                <input
+                  type="text"
+                  id="contactFormItem-pop"
+                  name="contact[item-sku-or-item-link]"
+                  autocapitalize="words"
+                  placeholder="Please enter the Item Sku or Item Link you want to know"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="contactFormQuantity-pop">
+                  <span> Quantity</span>
+                </label>
+                <input
+                  type="number"
+                  id="contactFormQuantity-pop"
+                  name="contact[quantity]"
+                  autocapitalize="words"
+                  min="0"
+                  placeholder="Please enter the quantity you need"
+                >
+              </div>
+
+              <!--
+                <div class="form-group">
+                  <label for="contactFormBusinessName">
+                    <span> Business Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="contactFormBusinessName"
+                    name="contact[business-name]"
+                    autocapitalize="words"
+                    placeholder="Please enter your business name"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="contactFormShippingAddress">
+                    <span> Shipping Address</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="contactFormShippingAddress"
+                    name="contact[shipping-address]"
+                    autocapitalize="words"
+                    placeholder="Please enter your shipping address"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="contactFormZipCode">
+                    <span> Zip Code</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="contactFormZipCode"
+                    name="contact[zip-code]"
+                    autocapitalize="words"
+                    placeholder="Please enter your zip code"
+                  >
+                </div>
+              -->
+              <div class="set-btn-pos">
+                <input
+                  type="submit"
+                  class="quote-buttom"
+                  {% if settings.enable_multilang %}
+                    data-translate="contact.form.submit_contact"
+                  {% endif %}
+                  value="Quote Now"
+                >
+              </div>
+              <div class="pdf-link">{{ section.settings.pdf_link }}</div>
+            </div>
+            <!-- form content end -->
+            <!-- </form> -->
+          {% endform %}
+        </div>
+      </div>
+      <span class="large-order-dialog__btn-close">
+        <svg
+          t="1607667093846"
+          class="icon"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="4228"
+          width="30"
+          height="30"
+        >
+          <path d="M512 0a512 512 0 0 0-512 512 512 512 0 0 0 512 512 512 512 0 0 0 512-512 512 512 0 0 0-512-512z" fill="#FFFFFF" p-id="4229"></path><path d="M717.165714 306.176a35.986286 35.986286 0 0 0-50.834285 0.146286L512 461.019429 357.668571 306.322286a35.986286 35.986286 0 0 0-50.980571 50.761143L461.165714 512 306.688 666.916571a35.986286 35.986286 0 0 0 50.980571 50.761143L512 562.980571l154.331429 154.843429a35.693714 35.693714 0 0 0 50.834285 0.073143 35.986286 35.986286 0 0 0 0.146286-50.907429L562.834286 512l154.331428-154.916571a35.913143 35.913143 0 0 0 0-50.907429z" fill="#000000" p-id="4230"></path>
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+<script>
+  function openDialog() {
+    document.documentElement.style.overflowY = 'hidden';
+    $('#largeOrderDialog').show();
+  }
+  function closeDialog() {
+    document.documentElement.style.overflowY = 'scroll';
+    $("input[name='contact[item-sku-or-item-link]']").val('');
+    $("input[name='contact[quantity]']").val('');
+    $('#largeOrderDialog').hide();
+  }
+  //获取url中的参数
+  function getUrlParam(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)'); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return null; //返回参数值
+  }
+  $(document).ready(function () {
+    var openBtn = $('[open-quote-dialog]');
+    openBtn.click(function () {
+      openDialog();
+    });
+    var closeBtn = $('.large-order-dialog__btn-close');
+    closeBtn.click(function (e) {
+      closeDialog();
+    });
+    $('.large-order-dialog__box').click(function (e) {
+      e.stopPropagation();
+    });
+    $('.large-order-dialog').click(function (e) {
+      closeDialog();
+    });
+    // 查询是否存在sku
+    let sku = getUrlParam('sku');
+    if (!!sku) {
+      $("input[name='contact[item-sku-or-item-link]']").attr('value', sku);
+      openDialog();
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Btob Large Order Dialog",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "可以编辑弹窗的各项参数，需将该模块放在触发按钮之前"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "pdf_link",
+      "label": "PDFLink"
+    },
+    {
+      "type": "text",
+      "id": "masklayer_info",
+      "label": "标题",
+      "default": "Submitted successfully!"
+    },
+    {
+      "type": "text",
+      "id": "masklayer_code",
+      "label": "字幕",
+      "default": "We will contact you as soon as possible."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Btob Large Order Dialog"
+    }
+  ]
+}
+{% endschema %}

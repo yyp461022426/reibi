@@ -1,0 +1,226 @@
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ 'index-flash-sales.css' | asset_url }}"
+>
+{%- assign render_slide = 'card-slide-show-' | append: section.id -%}
+{%- assign card_selector = '.' | append: render_slide -%}
+<div class="index-flash-sales index-normal-component">
+  <div class="container">
+    {% if section.settings.title and section.settings.title != '' %}
+      <div class="show-mb">
+        <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
+          {% if section.settings.title_style == '1' %}
+            <span class="small-title">{{ section.settings.title | upcase }}</span>
+            <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+          {% else %}
+            <span class="small-title2">{{ section.settings.title }}</span>
+          {% endif %}
+        </h2>
+        {% if section.settings.title_add_desc %}
+          <div class="desc-add">
+            {{ section.settings.title_add_desc }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="deals-box">
+      <h2 class="deals-title">{{ section.settings.title | upcase }}</h2>
+      <!-- 商品展示 -->
+      <div class="products-show-box deals-box-mb">
+        <div class="tab-content" style="opacity: 0;">
+          <div class="index-normal-product-card {{ render_slide }} line-dots">
+            {% for product in section.settings.collection.products limit: 8 %}
+              {%- assign current_variant = product.selected_or_first_available_variant -%}
+              <a class="product-item" href="{{ product.url | within: collection }}" loader-img-box>
+                <div class="item-card">
+                  <div class="info-box">
+                    <div class="img-box">
+                      <div class="img-pic">
+                        {% if product.available == false %}
+                          <strong class="sold-out">Sold Out</strong>
+                        {% elsif current_variant.compare_at_price
+                          and current_variant.compare_at_price != 0
+                          and current_variant.available
+                        %}
+                          <div class="deals-on">
+                            <strong class="deal-num">
+                              -
+                              {{-
+                                current_variant.compare_at_price
+                                | minus: current_variant.price
+                                | times: 100.0
+                                | divided_by: current_variant.compare_at_price
+                                | round
+                              -}}
+                              %
+                            </strong>
+                            <strong class="deal-off"> OFF </strong>
+                          </div>
+                        {% endif %}
+                        {% if product.metafields.custom.show_on_main_page %}
+                          {{
+                            product.metafields.custom.show_on_main_page
+                            | image_url: width: 214, height: 214
+                            | image_tag: class: 'pro-img'
+                          }}
+                        {% else %}
+                          {{ product.images | last | image_url: width: 214, height: 214 | image_tag: class: 'pro-img' }}
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="item-options">
+                      <div class="pro-title">{{ product.title }}</div>
+                      <div class="pro-price">
+                        <div class="price">
+                          {% if current_variant.compare_at_price and current_variant.compare_at_price != 0 %}
+                            <div class="min-price">{{ current_variant.price | money }}</div>
+                            <div class="max-price">{{ current_variant.compare_at_price | money }}</div>
+                          {% else %}
+                            <div class="normal-price">{{ current_variant.price | money }}</div>
+                          {% endif %}
+                        </div>
+                      </div>
+                      {% if product.metafields.custom.dimension %}
+                        <div class="pro-param pro-size">
+                          <span>{{ product.metafields.custom.dimension }}</span>
+                        </div>
+                      {% endif %}
+                      {% if product.metafields.custom.load_capacity %}
+                        <div class="pro-param pro-weight">
+                          <span>{{ product.metafields.custom.load_capacity }}</span>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="option-box">
+                    <div class="purchase-btn" data-id="{{product.variants[0].id}}">Buy Now</div>
+                    {% if product.available %}
+                      {% render 'icon-cart-3' %}
+                      {% comment %}
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0632/4833/5096/files/cart_1.1.png?v=1721966364"
+                          width="24"
+                          height="22"
+                          class="add-to-cart"
+                          data-id="{{product.variants[0].id}}"
+                          alt="add to cart"
+                        >
+                      {% endcomment %}
+                    {% else %}
+                      <div class="sold-out-note">Sold Out</div>
+                    {% endif %}
+                  </div>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+          {%- if section.settings.enable_go_collection -%}
+            <div class="flex-center collection-link">
+              <button
+                class="custom-action-btn action-empty-btn"
+                data-url="{{ section.settings.collection.url }}"
+                custom-link-btn
+              >
+                MORE INFO
+              </button>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    /* $('{{ card_selector }}').slick({
+      dots: false,
+      infinite: true,
+      rows: 2,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      adaptiveHeight: true,
+      get nextArrow() {
+        return (this.nextArrow =
+          '<button type="button" aria-label="Next" class="slick-next"><svg viewBox="0 0 478.448 478.448" class="icon icon-chevron-right" id="icon-chevron-right"><g><g><polygon points="131.659,0 100.494,32.035 313.804,239.232 100.494,446.373 131.65,478.448 377.954,239.232"></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>');
+      },
+      get prevArrow() {
+        return (this.prevArrow =
+          '<button type="button" aria-label="Previous" class="slick-prev"><svg viewBox="0 0 370.814 370.814" class="icon icon-chevron-left" id="icon-chevron-left"><g><g><polygon points="292.92,24.848 268.781,0 77.895,185.401 268.781,370.814 292.92,345.961 127.638,185.401"></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>');
+      },
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            dots: false,
+            rows: 4,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            dots: true,
+            rows: 4,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+      ],
+    });
+    setTimeout(function () {
+      $('{{ card_selector }}').slick('refresh');
+      $('.tab-content').css('opacity', '1');
+    }, 100); */
+  });
+</script>
+{% schema %}
+{
+  "name": "Index Best Sellers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "radio",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title Style1(叠影)"
+        },
+        {
+          "value": "2",
+          "label": "Title Style1(单色)"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title_add_desc",
+      "label": "标题下方的描述"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_go_collection",
+      "label": "Enable Go Collection?",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Best Sellers"
+    }
+  ]
+}
+{% endschema %}

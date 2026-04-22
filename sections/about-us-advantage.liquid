@@ -1,0 +1,51 @@
+<link rel="stylesheet" type="text/css" href="{{ 'about-us-advantage.css' | asset_url }}">
+<div class="about-us-advantage">
+  <div class="container about-us-advantage-box">
+    {% for block in section.blocks %}
+      <div class="item-box gradient-bg-to-top">
+        <div class="img-box">
+          {{ block.settings.item_img | image_url: width: 500 | image_tag: class: 'adv-img' }}
+        </div>
+        <div class="content-box">
+          <h3 class="item-title">{{ block.settings.item_title }}</h3>
+          <p class="item-des">{{ block.settings.item_des }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "About Us Advantage",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "item-show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "item_img",
+          "label": "Item Image"
+        },
+        {
+          "type": "text",
+          "id": "item_title",
+          "label": "Item Title"
+        },
+        {
+          "type": "text",
+          "id": "item_des",
+          "label": "Item Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us Advantage"
+    }
+  ]
+}
+{% endschema %}

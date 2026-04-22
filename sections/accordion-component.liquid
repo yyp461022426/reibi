@@ -1,0 +1,95 @@
+<link rel="stylesheet" type="text/css" href="{{ 'accordion-component.css' | asset_url }}">
+<div class="accordion-component">
+  <div class="container">
+    <div class="gradient-bg-to-bottom accordion-component-box">
+      <h2 class="banner-title">{{ section.settings.title | upcase }}</h2>
+      <div class="accordion-outer-box hidden-some">
+        <ul class="accordion-box">
+          {% for block in section.blocks %}
+            <li class="treeview">
+              <div class="item-title-box">
+                <div>{{ block.settings.setp_title }}</div>
+                <div class="title-icon"></div>
+              </div>
+              <div class="item-content">
+                <div>{{ block.settings.text_step_des }}</div>
+                {% if block.settings.image_step_exp %}
+                  {{ block.settings.image_step_exp | image_url: width: '1920' | image_tag }}
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="hidden-cover">
+          <div class="note-words">
+            <div class="show-note">
+              <div class="note-words-box">{% render 'icon-down' %}see more</div>
+            </div>
+            <div class="hide-note">
+              <div class="note-words-box">{% render 'icon-up' %}close</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{{ 'accordion.js' | asset_url }}" defer></script>
+<script type="text/javascript">
+  $(function() {
+      $('.accordion-box').accordion({
+          //获取树干元素
+          treeTrunk: '.treeview .item-title-box',
+          treeLeaf: '.treeview .item-content',
+          treeIs: false,
+          speed: 300
+      })
+        $(".note-words").click((e)=>{
+          $(".accordion-outer-box").toggleClass("hidden-some")
+          $(".show-note").toggle()
+          $(".hide-note").toggle()
+        })
+
+  })
+</script>
+{% schema %}
+{
+  "name": "Accordion Component",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Every block",
+      "type": "block-show",
+      "settings": [
+        {
+          "type": "text",
+          "id": "setp_title",
+          "label": "Text Step Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text_step_des",
+          "label": "Text Step Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_step_exp",
+          "label": "Picture Step Explanation"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion Component"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "contact-template",
+      "settings": {
+        "display_google_map": false,
+        "google_map_code": "",
+        "contact_title": "Contact Us",
+        "contact_text_desc": "",
+        "contact_your_name": "",
+        "contact_phone_number": "",
+        "contact_your_email": "",
+        "display_location": true,
+        "location_code": "<h4>Store Information</h4>\n<p>We'd love to hear from you - please use the form to send us your message or ideas.</p>\n<p class=\"addr\" shop wang fai industrial building liu hop street>San Po Kong, Kowloon,<br>Hong Kong\n</p>\n\n<p class=\"addr\">Email: <a href=\"mailto:support@reibii.com\">support@reibii.com</a></p><div class=\"open-hours\">\n<strong>Opening Hours:</strong>\n<br>Monday to Saturday: 9am - 10pm\n<br>Sundays: 10am - 6pm\n<p></p>\n</div>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

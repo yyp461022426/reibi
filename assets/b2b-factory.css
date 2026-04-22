@@ -1,0 +1,34 @@
+.factory .card-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.factory .img-box img {
+  width: 100%;
+  padding: 1px;
+}
+.factory .set-btn-pos {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  .factory .card-item {
+    width: 25%;
+  }
+}
+@media (max-width: 1199px) {
+  .factory .card-item {
+    width: 33.33%;
+  }
+}
+@media (max-width: 991px) {
+  .factory .card-item {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .factory .card-item {
+    width: 100%;
+  }
+}

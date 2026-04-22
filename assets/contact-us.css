@@ -1,0 +1,54 @@
+.contact-us-page .contact-info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-us-page .contact-info-first{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    line-height: 32px;
+}
+
+.contact-us-page .info-cards{
+    color: #3a5774;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.contact-us-page .item-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #3a577457;
+    border-radius: 8px;
+    text-align: center;
+    width: calc(25% - 9px);
+}
+.contact-us-page .card-header{
+
+}
+.contact-us-page .card-content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.contact-us-page .info-card-svg svg{
+    width: 40px;
+    height: 40px;
+}
+.contact-us-page .card-title{
+    font-size: var(--font_size_plus4);
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 1199px) {
+    .contact-us-page .item-card{
+        width: 50%;
+        width: calc(50% - 12px);
+    }
+}

@@ -1,0 +1,242 @@
+<style>
+  .level-discount-box {
+    flex: 1;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background: #fff7f4;
+    display: none;
+  }
+  .radio-container {
+    margin-bottom: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: inherit;
+    padding: 12px 16px;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 6px;
+    border: 1px solid #dfe3e8;
+  }
+
+  /* 隐藏默认的单选按钮 */
+  .disct-radio-box input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .disct-radio-box .pro-id{
+    width: unset !important;
+  }
+
+  /* 创建自定义的单选按钮样式 */
+  .radio-container .radio-checkmark {
+    position: relative;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 0px 10px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px transparent, 0 1px 0 0 rgb(22 29 37 / 5%);
+    background: 0 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: 2px solid #ff6800;
+  }
+
+  /* 创建单选按钮的勾选标记 */
+  .radio-container .radio-checkmark:after {
+    content: '';
+    display: none;
+    width: 8px;
+    height: 8px;
+    background: #ff6800;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+  }
+
+  /* 显示选中状态下的勾选标记 */
+  .disct-radio-box input:checked + .radio-container .radio-checkmark:after {
+    display: block;
+  }
+
+  .radio-container p {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: inherit;
+    line-height: 20px;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  .disct-radio-box input:checked + .radio-container {
+    background-color: rgb(255, 104, 0, 0.15);
+    border-color: #ff6800;
+  }
+
+  /* 折扣 */
+  .disct-radio-box .radio-left {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .disct-radio-box .radio-right > div {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: inherit;
+    justify-content: flex-end;
+  }
+
+  .normal-price,
+  .total-normal-price {
+    font-weight: 400;
+    text-decoration: line-through;
+  }
+
+  .disct-price,
+  .total-disct-price {
+    margin: 0 8px;
+  }
+
+  .level-discount-box .radio-option {
+    display: flex;
+    align-items: center;
+  }
+
+  .level-discount-box .most-pop {
+    display: inline-block;
+    font-size: 14px;
+    color: #ffffff;
+    background: #ff3c00;
+    text-align: center;
+    border-radius: 100px;
+    padding: 4px 12px;
+    margin-top: 13px;
+    font-weight: 500;
+    line-height: 12px;
+    width: 90px;
+  }
+
+  .level-discount-title {
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+
+  .bulk-add-btn {
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    background: #ff6800;
+    border: none;
+    color: #ffffff;
+    padding: 12px 18px;
+    letter-spacing: inherit;
+    line-height: inherit;
+  }
+</style>
+{% if level_discount.isShowLevelDiscount %}
+  <div class="level-discount-box">
+    <div class="level-discount-title">{{ level_discount.title }}</div>
+    <div class="disct-radio-box">
+      <div>
+        <input class="hide pro-id" type="text" name="pro_id" value="{{ current_variant.id }}">
+        {% for item in level_discount.levelDiscountArr %}
+          {% assign off_rate = item.off_rate %}
+          {% assign buy_num = item.buy_num %}
+          <div class="level-disct-item">
+            <div class="hide" data-record data-off_rate="{{ off_rate }}" data-buy_num="{{ buy_num }}"></div>
+            <input
+              type="radio"
+              name="buy_num"
+              id="{{ 'disct_' | append: forloop.index0 }}"
+              {% if item.isMostPopular %}
+                checked
+              {% endif %}
+            >
+            <label class="radio-container" for="{{ 'disct_' | append: forloop.index0 }}">
+              <div class="radio-left">
+                <div class="radio-option">
+                  <span class="radio-checkmark"></span>
+                  <p>Buy {{ buy_num }} for {{ off_rate }}% Off</p>
+                </div>
+                {% if item.isMostPopular %}
+                  <div class="most-pop">Most Popular</div>
+                {% endif %}
+              </div>
+
+              <div class="radio-right">
+                <div>
+                  <div class="disct-price">
+                    {{ 100.0 | minus: off_rate | times: current_variant.price | divided_by: 100 | ceil | money }}
+                  </div>
+                  <div class="normal-price">
+                    {{ current_variant.price | money }}
+                  </div>
+                </div>
+                <div>
+                  <span>Total </span>
+                  <div class="total-disct-price">
+                    {{
+                      100.0
+                      | minus: off_rate
+                      | times: current_variant.price
+                      | divided_by: 100
+                      | ceil
+                      | times: buy_num
+                      | money
+                    }}
+                  </div>
+                  <div class="total-normal-price">
+                    {{ current_variant.price | times: buy_num | money }}
+                  </div>
+                </div>
+              </div>
+            </label>
+          </div>
+        {% endfor %}
+        <div class="bulk-add-btn">GRAB THIS DEAL</div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+<script>
+  //<button class="bulk-add-btn" onclick="graThisDeal(event)">GRAB THIS DEAL</button>
+  // function graThisDeal(e) {
+  //   e.preventDefault();
+  //   let choice_num = $('.disct-radio-box').find('input:checked').prev().data('buy_num');
+  //   console.log('data:', choice_num);
+  //   var variantId = getQueryParam('variant'); // 假设变体ID的参数名是'variant'
+  //   console.log(variantId); // 输出变体ID
+  //   let params = {
+  //     id: variantId,
+  //     quantity: choice_num,
+  //   };
+  //   $.ajax({
+  //     type: 'POST',
+  //     url: '/cart/add.js', // Shopify 购物车 API 端点
+  //     data: params,
+  //     dataType: 'json',
+  //     success: function (response) {
+  //     },
+  //     error: function (error) {
+  //     },
+  //   });
+  // }
+</script>

@@ -1,0 +1,92 @@
+.index-intro-banner .banner-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  background: linear-gradient(180deg, #f1f7ff, transparent);
+  border-radius: 8px;
+  padding: 36px 0;
+}
+
+.index-intro-banner .blod-des {
+  font-weight: 700;
+  font-size: 36px;
+  color: #0d489d;
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
+
+.index-intro-banner .small-des {
+  font-size: 14px;
+  color: #666666;
+}
+
+.index-intro-banner .banner-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.index-intro-banner .banner-item .img-box img {
+  margin-right: 16px;
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (max-width: 1199px) {
+  .index-intro-banner .banner-item {
+    display: inline-block;
+    text-align: center;
+    padding: 8px;
+  }
+
+  .index-intro-banner .banner-item .img-box img {
+    margin-bottom: 16px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+  .index-intro-banner .blod-des {
+    font-size: 30px;
+  }
+
+  .index-intro-banner .banner-box {
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .index-intro-banner .small-des{
+    line-height: 18px;
+  }
+
+  .index-intro-banner .banner-item {
+    display: flex;
+    width: 25%;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .index-intro-banner .banner-item .img-box img{
+    margin-bottom: 8px;
+  }
+  .index-intro-banner .info-box {
+    margin-bottom: 16px;
+  }
+
+  .index-intro-banner .small-des{
+    font-size: 13px;
+  }
+
+  .index-intro-banner .blod-des {
+    text-align: center;
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,120 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "blocks": {
+        "a41b1061-7460-4eb7-8afe-40c5f260dd4b": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify://shop_images/reibii_collection_bedroom.webp",
+            "collection": "bedroom",
+            "display_countdow": false,
+            "title": "",
+            "des": "",
+            "countdown": "",
+            "color": "#ffffff"
+          }
+        },
+        "26f450bd-ad83-4513-8d20-34b652a7c5de": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify://shop_images/reibii_collectiom_living_room.webp",
+            "collection": "living-room",
+            "display_countdow": false,
+            "title": "",
+            "des": "",
+            "countdown": "",
+            "color": "#ffffff"
+          }
+        },
+        "5b921185-959a-425c-94ff-34a47e3af093": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify://shop_images/reibii_collection_garage.webp",
+            "collection": "storage-shelves",
+            "display_countdow": false,
+            "title": "",
+            "des": "",
+            "countdown": "",
+            "color": "#ffffff"
+          }
+        },
+        "6d9d0e3f-857a-42ee-a2a3-8e39985f8446": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify://shop_images/reibii_collection_kitchen.webp",
+            "collection": "kitchen",
+            "display_countdow": false,
+            "title": "",
+            "des": "",
+            "countdown": "",
+            "color": "#ffffff"
+          }
+        },
+        "9b471744-8a01-4d16-9825-9bf3276d32e8": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify://shop_images/reibii_collection_home_office.webp",
+            "collection": "home-office-1",
+            "display_countdow": false,
+            "title": "",
+            "des": "",
+            "countdown": "",
+            "color": "#ffffff"
+          }
+        },
+        "00e41c7b-6f27-446d-a5d8-3b4128d07da0": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify://shop_images/reibii_collection_entryway.webp",
+            "collection": "entryway",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020/01/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "394f0752-9ebe-42cc-bee4-bd142089e98b": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify://shop_images/reibii_laundry_room.jpg",
+            "collection": "laundry-room",
+            "display_countdow": false,
+            "title": "",
+            "des": "",
+            "countdown": "",
+            "color": "#fff"
+          }
+        }
+      },
+      "block_order": [
+        "a41b1061-7460-4eb7-8afe-40c5f260dd4b",
+        "26f450bd-ad83-4513-8d20-34b652a7c5de",
+        "5b921185-959a-425c-94ff-34a47e3af093",
+        "6d9d0e3f-857a-42ee-a2a3-8e39985f8446",
+        "9b471744-8a01-4d16-9825-9bf3276d32e8",
+        "00e41c7b-6f27-446d-a5d8-3b4128d07da0",
+        "394f0752-9ebe-42cc-bee4-bd142089e98b"
+      ],
+      "settings": {
+        "list_collection_results_per_row": "3",
+        "list_collection_title_size": "20",
+        "style_categories": "style_little",
+        "bg_color": "#fafafa"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,87 @@
+{{ 'vendor.min.css' | asset_url | stylesheet_tag }}
+{% render 'hs-minify-css' with filename: 'theme-styles.css' %}
+{% render 'hs-minify-css' with filename: 'theme-styles-responsive.css' %}
+{% render 'hs-minify-css' with filename: 'theme-settings.css' %}
+{% render 'hs-minify-css' with filename: 'fade-up-animation.css' %}
+
+<style>
+	{% comment %} @media screen and (max-width: 768px) {
+        #judgeme_product_reviews .widget-product {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+		#judgeme_product_reviews .widget-product .grid-item {
+			max-width: 50%;
+			padding-left: 10px;
+    		padding-right: 10px;
+		}
+	} {% endcomment %}
+</style>
+{% if settings.layout_style == 'layout_style_1170' %}
+	{% render 'hs-minify-css' with filename: 'layout_style_1170.css' %}
+{% endif %}
+
+{% if settings.header_layout == '05' %}
+	{% render 'hs-minify-css' with filename: 'header-05.css' %}
+{% endif %}
+
+{% if settings.header_layout == '06' %}
+	{% render 'hs-minify-css' with filename: 'header-06.css' %}
+{% endif %}
+
+{% if settings.header_layout == '07' %}
+	{% render 'hs-minify-css' with filename: 'header-07.css' %}
+{% endif %}
+
+{% if settings.header_layout == '08' %}
+	{% render 'hs-minify-css' with filename: 'header-08.css' %}
+{% endif %}
+
+{% if settings.footer_layout == '06' %}
+	{% render 'hs-minify-css' with filename: 'footer-06.css' %}
+{% endif %}
+
+{% if settings.footer_layout == '07' %}
+	{% render 'hs-minify-css' with filename: 'footer-07.css' %}
+{% endif %}
+
+{% if settings.footer_layout == '08' %}
+	{% render 'hs-minify-css' with filename: 'footer-08.css' %}
+{% endif %}
+
+{% if settings.footer_layout == '09' %}
+	{% render 'hs-minify-css' with filename: 'footer-09.css' %}
+{% endif %}
+
+{% if settings.product_layout == 'skin_1' or template.suffix == 'skin-1' %}
+	{% render 'hs-minify-css' with filename: 'product-skin.css' %}
+{% endif %}
+
+{% if settings.product_layout == 'supermarket' or template.suffix == 'supermarket' %}
+	{% render 'hs-minify-css' with filename: 'product-supermarket.css' %}
+{% endif %}
+
+{% if settings.product_layout == 'surfup' or template.suffix == 'product-08' %}
+	{% render 'hs-minify-css' with filename: 'product-surfup.css' %}
+{% endif %}
+
+{% if settings.category_layout == 'supermarket' or template.suffix == 'supermarket' %}
+	{% render 'hs-minify-css' with filename: 'category-supermarket.css' %}
+{% endif %}
+
+{% if settings.layout_style == 'layout_style_fullwidth' %}
+	{% render 'hs-minify-css' with filename: 'layout_style_fullwidth.css' %}
+{% endif %}
+
+{% if settings.layout_style == 'layout_style_flower' %}
+	{% render 'hs-minify-css' with filename: 'layout_style_flower.css' %}
+{% endif %}
+
+{% if settings.layout_style == 'layout_style_suppermarket' %}
+	{% render 'hs-minify-css' with filename: 'layout_style_suppermarket.css' %}
+{% endif %}
+
+{% if settings.layout_style == 'layout_style_surfup' %}
+	{% render 'hs-minify-css' with filename: 'layout_style_surfup.css' %}
+{% endif %}

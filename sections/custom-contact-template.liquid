@@ -1,0 +1,218 @@
+{% comment %}
+  This page template is a requirement if you are submitting your theme to the Shopify Theme Store.
+  Be sure to select page.contact as the template from the admin page to have this template take effect.
+
+  For information on adding more fields, visit:
+    - http://docs.shopify.com/support/configuration/store-customization/adding-fields-to-the-liquid-contact-form
+{% endcomment %}
+
+{% comment %}
+  Google Map
+{% endcomment %}
+
+<div class="contact-us-page">
+  {% if section.settings.display_google_map %}
+    <div class="map">
+      {% if section.settings.google_map_code != blank %}
+        {{ section.settings.google_map_code }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="container">
+    {% render 'breadcrumb' %}
+
+    {%- comment -%}
+      <header class="page-header">
+        <h1>
+          {{ section.settings.contact_title | split: '|' | first }}
+        </h1>
+        <span class="line"></span>
+      </header>
+    {%- endcomment -%}
+
+    {% if page.content != blank %}
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    {% endif %}
+
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-lg-8 form-contact" style="max-width: 94vw;margin-left: auto;margin-right: auto;">
+          {% if settings.enable_multilang %}
+            <div class="lang1 des">
+              {{ section.settings.contact_text_desc | split: '[lang2]' | first }}
+            </div>
+            <div class="lang2 des">
+              {{ section.settings.contact_text_desc | split: '[lang2]' | last }}
+            </div>
+          {% else %}
+            <div class="des">
+              {{ section.settings.contact_text_desc | split: '[lang2]' | first }}
+            </div>
+          {% endif %}
+
+          <img
+            src="https://cdn.shopify.com/s/files/1/0632/4833/5096/files/Reibii_wholesale.webp?v=1717121829"
+            alt="reibii wholesale with discount"
+            loading="lazy"
+          >
+
+          {% form 'contact' %}
+            {% comment %}
+              Successful message
+            {% endcomment %}
+
+            {% if form.posted_successfully? %}
+              <p
+                class="note form-success"
+                {% if settings.enable_multilang %}
+                  data-translate="contact.form.post_success"
+                {% endif %}
+              >
+                {{ 'contact.form.post_success' | t }}
+              </p>
+              <script>
+                alert('Submitted successfully! We will contact you as soon as possible.');
+              </script>
+            {% endif %}
+
+            {{ form.errors | default_errors }}
+
+            <div id="contactFormWrapper">
+              <div class="form-group">
+                <label for="contactFormEmail">
+                  <span
+                    {% if settings.enable_multilang %}
+                      data-translate="contact.form.email"
+                    {% endif %}
+                  >
+                    Your Email Address:
+                  </span>
+                </label>
+                <input
+                  type="email"
+                  name="contact[email]"
+                  id="contactFormEmail"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  placeholder="{{ section.settings.contact_your_email }}"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="contactFormItem">
+                  <span> Item No or Item Link: </span>
+                </label>
+                <input type="text" id="contactFormItem" name="contact[item-no-or-item-link]" autocapitalize="words">
+              </div>
+
+              <div class="form-group">
+                <label for="contactFormQuantity">
+                  <span> Quantity: </span>
+                </label>
+                <input type="text" id="contactFormQuantity" name="contact[quantity]" autocapitalize="words">
+              </div>
+
+              <div class="form-group">
+                <label for="contactFormBusinessName">
+                  <span> Business Name: </span>
+                </label>
+                <input type="text" id="contactFormBusinessName" name="contact[business-name]" autocapitalize="words">
+              </div>
+
+              <div class="form-group">
+                <label for="contactFormShippingAddress">
+                  <span> Shipping Address: </span>
+                </label>
+                <input
+                  type="text"
+                  id="contactFormShippingAddress"
+                  name="contact[shipping-address]"
+                  autocapitalize="words"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="contactFormZipCode">
+                  <span> Zip Code: </span>
+                </label>
+                <input type="text" id="contactFormZipCode" name="contact[zip-code]" autocapitalize="words">
+              </div>
+
+              <input
+                type="submit"
+                class="btn"
+                {% if settings.enable_multilang %}
+                  data-translate="contact.form.submit_contact"
+                {% endif %}
+                value="Submit"
+              >
+            </div>
+          {% endform %}
+        </div>
+
+        {% if section.settings.display_location %}
+          <div class="col-md-5 col-lg-4 col-xl-3 offset-xl-2">
+            {% if section.settings.location_code != blank %}
+              {% if settings.enable_multilang %}
+                <div class="location lang1">
+                  {{ section.settings.location_code | split: '|' | first }}
+                </div>
+                <div class="location lang2">
+                  {{ section.settings.location_code | split: '|' | last }}
+                </div>
+              {% else %}
+                <div class="location">
+                  {{ section.settings.location_code | split: '|' | first }}
+                </div>
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact Page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "display_google_map",
+      "label": "Display Google Map?",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "google_map_code",
+      "label": "Google Map Code"
+    },
+    {
+      "type": "text",
+      "id": "contact_title",
+      "label": "Title",
+      "default": "Drop Us A Line"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_text_desc",
+      "label": "Text Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_location",
+      "label": "Display Location?",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "location_code",
+      "label": "Location Code"
+    }
+  ]
+}
+{% endschema %}

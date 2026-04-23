@@ -234,36 +234,29 @@
         "stat_item_iLAmnK": {
           "type": "stat_item",
           "settings": {
-            "stat_number": "1600+",
-            "stat_label": "Employee"
+            "stat_number": "200%",
+            "stat_label": "Capacity Increase"
           }
         },
         "stat_item_2": {
           "type": "stat_item",
           "settings": {
-            "stat_number": "20M+",
-            "stat_label": "Families"
+            "stat_number": "50%",
+            "stat_label": "Time Saved"
           }
         },
         "stat_item_3": {
           "type": "stat_item",
           "settings": {
-            "stat_number": "70+",
-            "stat_label": "Countries & Regions"
+            "stat_number": "I2Days",
+            "stat_label": "InstallTime"
           }
         },
         "stat_item_4": {
           "type": "stat_item",
           "settings": {
-            "stat_number": "330K+ m²",
-            "stat_label": "Global Warehouse"
-          }
-        },
-        "stat_item_5": {
-          "type": "stat_item",
-          "settings": {
-            "stat_number": "1070+",
-            "stat_label": "Global Patents"
+            "stat_number": "75%",
+            "stat_label": "Space Saved"
           }
         }
       },

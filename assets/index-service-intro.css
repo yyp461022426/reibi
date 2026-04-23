@@ -72,6 +72,7 @@
 }
 
 .stat-item {
+  flex: 1;
   text-align: center;
   color: #fff;
   padding: 0 12px;
@@ -115,7 +116,7 @@
   }
 
   .intro-header-left {
-    display: none;
+    margin-bottom: 12px;
   }
 
   .intro-header-right {
@@ -132,6 +133,14 @@
 
   .intro-image-wrap {
     border-radius: 8px;
+    height: 400px;
+  }
+
+  .intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .intro-stats {
@@ -139,25 +148,27 @@
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     flex-wrap: wrap;
-    padding: 20px 16px;
+    padding: 12px 10px;
     gap: 0;
-    row-gap: 16px;
+    row-gap: 2px;
   }
 
   .stat-item {
-    flex: 0 0 50%;
+    flex: 1 1 50%;
     text-align: center;
+    padding: 0 6px;
   }
 
   .stat-item:nth-child(n+3) {
-    flex: 0 0 33.333%;
+    flex: 1 1 33.333%;
   }
 
   .stat-number {
-    font-size: 22px;
+    font-size: 16px;
+    margin-bottom: 2px;
   }
 
   .stat-label {
-    font-size: 13px;
+    font-size: 11px;
   }
 }

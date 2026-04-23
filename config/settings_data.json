@@ -5369,36 +5369,29 @@
           "stat_item_1": {
             "type": "stat_item",
             "settings": {
-              "stat_number": "1600+",
-              "stat_label": "Employee"
+              "stat_number": "200%",
+              "stat_label": "Capacity Increase"
             }
           },
           "stat_item_2": {
             "type": "stat_item",
             "settings": {
-              "stat_number": "20M+",
-              "stat_label": "Families"
+              "stat_number": "50%",
+              "stat_label": "Time Saved"
             }
           },
           "stat_item_3": {
             "type": "stat_item",
             "settings": {
-              "stat_number": "70+",
-              "stat_label": "Countries & Regions"
+              "stat_number": "I2Days",
+              "stat_label": "InstallTime"
             }
           },
           "stat_item_4": {
             "type": "stat_item",
             "settings": {
-              "stat_number": "330K+ m²",
-              "stat_label": "Global Warehouse"
-            }
-          },
-          "stat_item_5": {
-            "type": "stat_item",
-            "settings": {
-              "stat_number": "1070+",
-              "stat_label": "Global Patents"
+              "stat_number": "75%",
+              "stat_label": "Space Saved"
             }
           }
         },
@@ -5411,8 +5404,8 @@
         ],
         "name": "Index Service Intro",
         "settings": {
-          "title": "About SONGMICS HOME",
-          "description": "We truly believe that everyone deserves to embrace their own ideal living space and lifestyle.",
+          "title": "Bulk Orders with Reibii – Starting at 7 Units",
+          "description": "Get factory-direct pricing for bulk orders. Our sales manager will reply within 12 hours.",
           "button_text": "View More",
           "button_link": "shopify://pages/large-order",
           "image": "shopify://shop_images/Heavy_Duty_Garage_Shelving_d6034056-09c5-4c05-bae5-fe76bf3797c0.webp"

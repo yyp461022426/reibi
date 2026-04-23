@@ -5399,8 +5399,7 @@
           "stat_item_1",
           "stat_item_2",
           "stat_item_3",
-          "stat_item_4",
-          "stat_item_5"
+          "stat_item_4"
         ],
         "name": "Index Service Intro",
         "settings": {
@@ -5408,7 +5407,7 @@
           "description": "Get factory-direct pricing for bulk orders. Our sales manager will reply within 12 hours.",
           "button_text": "View More",
           "button_link": "shopify://pages/large-order",
-          "image": "shopify://shop_images/Heavy_Duty_Garage_Shelving_d6034056-09c5-4c05-bae5-fe76bf3797c0.webp"
+          "image": "shopify://shop_images/pic1.png"
         }
       },
       "index_comparison_before_and_after_RBRdi9": {

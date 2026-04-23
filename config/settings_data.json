@@ -3951,30 +3951,7 @@
       },
       "index_full_screen_video_cMqAay": {
         "type": "index-full-screen-video",
-        "blocks": {
-          "card_show_NTd7T8": {
-            "type": "card-show",
-            "settings": {
-              "card_title": "Before: Disorganized Chaos",
-              "card_desc": "<div>Items scattered everywhere</div>\n<div>Wasted vertical space</div>\n<div>Difficulty finding essentials</div>\n<div>Safety hazards from unstable stacking</div><div>Reduced usable floor space</div>"
-            }
-          },
-          "card_show_4C8Y37": {
-            "type": "card-show",
-            "settings": {
-              "card_title": "After: Organized Efficency",
-              "card_desc": "<div>Everything has designated place</div><div>Maximum space utiization</div><div>Easy access and visibility</div><div>Safe, stable storage ystems</div><div>Clean, functional environment</div>"
-            }
-          }
-        },
-        "block_order": [
-          "card_show_NTd7T8",
-          "card_show_4C8Y37"
-        ],
         "settings": {
-          "title": "Common Storage Challenges We Soive",
-          "title_style": "2",
-          "title_add_desc": "Reliable Built to Brighten Storage Racks. Discover how proper storage solutlons elmlinate clutter, maximize spce effand transform disorganized areas into functional,productive environments.",
           "video": "shopify://files/videos/Affordable Furniture Efficient Storage Elevate Your Home Reibii.mp4"
         }
       },
@@ -5440,6 +5417,20 @@
           "button_link": "shopify://pages/large-order",
           "image": "shopify://shop_images/Reibii6-TierGarageStorageShelves_IdealforGarageToolRooms_OrganizedMetalShelvingSystems.webp"
         }
+      },
+      "index_comparison_before_and_after_RBRdi9": {
+        "type": "index-comparison-before-and-after",
+        "name": "Index Before And After",
+        "settings": {
+          "title": "Common Storage Challenges We Soive",
+          "title_style": "2",
+          "title_add_desc": "Reliable Built to Brighten Storage Racks. Discover how proper storage solutlons elmlinate clutter, maximize spce effand transform disorganized areas into functional,productive environments.",
+          "compare_image": "shopify://shop_images/compare_img.jpg",
+          "card_title_before": "Before: Disorganized Chaos",
+          "card_desc_before": "<div>Items scattered everywhere</div>\n<div>Wasted vertical space</div>\n<div>Difficulty finding essentials</div>\n<div>Safety hazards from unstable stacking</div><div>Reduced usable floor space</div>",
+          "card_title_after": "After: Organized Efficency",
+          "card_desc_after": "<div>Everything has designated place</div><div>Maximum space utiization</div><div>Easy access and visibility</div><div>Safe, stable storage ystems</div><div>Clean, functional environment</div>"
+        }
       }
     },
     "content_for_index": [
@@ -5455,6 +5446,7 @@
       "index_scene_display_etLFD8",
       "index_service_intro_CFymiJ",
       "index_new_arrivals_q4YVnH",
+      "index_comparison_before_and_after_RBRdi9",
       "index_full_screen_video_cMqAay",
       "index_advantage_display_Hy3nh6",
       "home_slideshow_dFfkAR",

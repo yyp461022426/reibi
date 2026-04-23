@@ -32,56 +32,6 @@
   user-select: none;
 }
 
-/* ===================================== */
-.index-full-screen-video .card-box{
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 32px;
-  gap: 12px;
-}
-.index-full-screen-video .card-item{
-  padding: 10px 150px 10px 32px;
-  border-radius: 10px;
-  background: #F5F9FF;
-  position: relative;
-  overflow: hidden;
-}
-.index-full-screen-video .card-item::before{
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 100%;
-    background: var(--color_base);
-    left: 0;
-    top: 0;
-}
-.index-full-screen-video .card-title{
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text_color);
-  margin-bottom: 16px;
-}
-
-.index-full-screen-video .card-desc-list >div {
-    display: flex;
-    align-items: center;
-}
-
-.index-full-screen-video .card-desc-list >div:not(:last-child){
-    margin-bottom: 2px;
-}
-
-.index-full-screen-video .card-desc-list >div:before{
-    content: "";
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: #bfbfbf;
-    display: block;
-    margin-right: 8px;
-    flex-shrink: 0;
-}
-
 @media (min-width: 1200px) {
 }
 @media (max-width: 1199px) {

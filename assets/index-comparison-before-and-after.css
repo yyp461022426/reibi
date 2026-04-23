@@ -1,0 +1,88 @@
+.index-before-after .content-box{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.index-before-after .compare-image{
+  width: 50%;
+}
+.index-before-after .card-box{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 16px;
+}
+.index-before-after .card-item{
+  padding: 10px 150px 10px 32px;
+  border-radius: 10px;
+  background: #F5F9FF;
+  position: relative;
+  overflow: hidden;
+}
+.index-before-after .card-item::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: var(--color_base);
+    left: 0;
+    top: 0;
+}
+.index-before-after .card-title{
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text_color);
+  margin-bottom: 16px;
+}
+
+.index-before-after .card-desc-list >div {
+    display: flex;
+    align-items: center;
+}
+
+.index-before-after .card-desc-list >div:not(:last-child){
+    margin-bottom: 2px;
+}
+
+.index-before-after .card-desc-list >div:before{
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #bfbfbf;
+    display: block;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1000px) {
+  /* 新增：上下堆叠布局 */
+  .index-before-after .content-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .index-before-after .compare-image {
+    width: 100%;
+  }
+  .index-before-after .card-box {
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* 原有样式保持不变 */
+  .index-before-after .card-item {
+    padding: 12px 24px;
+  }
+  .index-before-after .card-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .index-before-after .card-desc-list > div {
+    font-size: 16px;
+  }
+  .index-before-after .card-box {
+    justify-content: space-around;
+    flex-direction: column;
+  }
+}

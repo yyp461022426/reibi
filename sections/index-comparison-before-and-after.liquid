@@ -1,0 +1,111 @@
+<link rel="stylesheet" type="text/css" href="{{ 'index-comparison-before-and-after.css' | asset_url }}">
+<div class="index-before-after index-normal-component">
+  <div class="container">
+    {% if section.settings.title and section.settings.title != '' %}
+      <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
+        {% if section.settings.title_style == '1' %}
+          <span class="small-title">{{ section.settings.title | upcase }}</span>
+          <span class="text-shadow">{{ section.settings.title | upcase }}</span>
+        {% else %}
+          <span class="small-title2">{{ section.settings.title }}</span>
+        {% endif %}
+      </h2>
+      {% if section.settings.title_add_desc %}
+        <div class="desc-add">
+          {{ section.settings.title_add_desc }}
+        </div>
+      {% endif %}
+    {% endif %}
+    <div class="content-box">
+      {{
+        section.settings.compare_image
+        | image_url: width: 1200
+        | image_tag: class: 'compare-image', widths: '400, 800, 1200', sizes: '(max-width: 767px) 100vw, 50vw'
+      }}
+      <div
+        class="card-box"
+      >
+        <div class="card-item">
+          <div class="card-title">{{ section.settings.card_title_before }}</div>
+          <div class="card-desc-list">{{ section.settings.card_desc_before }}</div>
+        </div>
+        <div class="card-item">
+          <div class="card-title">{{ section.settings.card_title_after }}</div>
+          <div class="card-desc-list">{{ section.settings.card_desc_after }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Index Before And After",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "radio",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title Style1(叠影)"
+        },
+        {
+          "value": "2",
+          "label": "Title Style1(单色)"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title_add_desc",
+      "label": "标题下方的描述"
+    },
+    {
+      "type": "header",
+      "content": "模块内容设置"
+    },
+    {
+      "type": "image_picker",
+      "id": "compare_image",
+      "label": "对比图片"
+    },
+    {
+      "type": "text",
+      "id": "card_title_before",
+      "label": "Before卡片标题"
+    },
+    {
+      "type": "textarea",
+      "id": "card_desc_before",
+      "label": "Before卡片描述"
+    },
+    {
+      "type": "header",
+      "content": "After文本内容"
+    },
+    {
+      "type": "text",
+      "id": "card_title_after",
+      "label": "After卡片标题"
+    },
+    {
+      "type": "textarea",
+      "id": "card_desc_after",
+      "label": "After卡片描述"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Before And After"
+    }
+  ]
+}
+{% endschema %}

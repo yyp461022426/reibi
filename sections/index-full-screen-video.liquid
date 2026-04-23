@@ -1,32 +1,5 @@
 <link rel="stylesheet" type="text/css" href="{{ 'index-full-screen-video.css' | asset_url }}">
 <div class="index-full-screen-video index-normal-component">
-  <div class="container">
-    {% if section.settings.title and section.settings.title != '' %}
-      <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
-        {% if section.settings.title_style == '1' %}
-          <span class="small-title">{{ section.settings.title | upcase }}</span>
-          <span class="text-shadow">{{ section.settings.title | upcase }}</span>
-        {% else %}
-          <span class="small-title2">{{ section.settings.title }}</span>
-        {% endif %}
-      </h2>
-      {% if section.settings.title_add_desc %}
-        <div class="desc-add">
-          {{ section.settings.title_add_desc }}
-        </div>
-      {% endif %}
-    {% endif %}
-    <div
-      class="card-box"
-    >
-      {% for block in section.blocks limit: 3 %}
-        <div class="card-item">
-          <div class="card-title">{{ block.settings.card_title }}</div>
-          <div class="card-desc-list">{{ block.settings.card_desc }}</div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
   <div class="video-box">
     {{
       section.settings.video
@@ -77,54 +50,11 @@
 {
   "name": "Index Full Screen Video",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Section title"
-    },
-    {
-      "type": "radio",
-      "id": "title_style",
-      "label": "Title Style",
-      "options": [
-        {
-          "value": "1",
-          "label": "Title Style1(叠影)"
-        },
-        {
-          "value": "2",
-          "label": "Title Style1(单色)"
-        }
-      ],
-      "default": "1"
-    },
-    {
-      "type": "text",
-      "id": "title_add_desc",
-      "label": "标题下方的描述"
-    },
+    
     {
       "type": "video",
       "id": "video",
       "label": "A Shopify-hosted video"
-    }
-  ],
-  "blocks": [
-    {
-      "name": "Every block",
-      "type": "card-show",
-      "settings": [
-        {
-          "type": "text",
-          "id": "card_title",
-          "label": "Card Title"
-        },
-        {
-          "type": "textarea",
-          "id": "card_desc",
-          "label": "卡片描述"
-        }
-      ]
     }
   ],
   "presets": [

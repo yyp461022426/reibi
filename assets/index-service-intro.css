@@ -2,33 +2,34 @@
 
 .intro-header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 24px;
 }
 
 .intro-header-left {
-  display: none;
+  flex: 1;
 }
 
 .intro-title {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
-  color: #000;
+  color: #0D489D;
   margin: 0 0 8px;
-  line-height: 1.3;
+  line-height: 32px;
 }
 
 .intro-desc {
-  font-size: 16px;
-  color: #333;
+  font-size: 18px;
   margin: 0;
   line-height: 1.5;
-  max-width: 600px;
+  font-weight: 700;
+  color: #000000a6;
 }
 
 .intro-header-right {
   flex-shrink: 0;
+  margin-left: 24px;
   display: flex;
   align-items: flex-start;
 }
@@ -111,6 +112,10 @@
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 16px;
+  }
+
+  .intro-header-left {
+    display: none;
   }
 
   .intro-header-right {

@@ -1,23 +1,5 @@
 <link rel="stylesheet" type="text/css" href="{{ 'index-service-intro.css' | asset_url }}">
 <div class="index-service-intro container index-normal-component">
-  <div class="intro-header">
-    <div class="intro-header-left">
-      {% if section.settings.title != blank %}
-        <h2 class="intro-title">{{ section.settings.title }}</h2>
-      {% endif %}
-      {% if section.settings.description != blank %}
-        <p class="intro-desc">{{ section.settings.description }}</p>
-      {% endif %}
-    </div>
-    <div class="intro-header-right">
-      {% if section.settings.button_text != blank %}
-        <a
-          class="custom-action-btn action-full-btn intro-view-more"
-          href="{{ section.settings.button_link | default: '/pages/large-order#Contact' }}"
-        >{{ section.settings.button_text }}</a>
-      {% endif %}
-    </div>
-  </div>
   <div class="intro-image-wrap">
     {% if section.settings.image != blank %}
       <img
@@ -44,29 +26,6 @@
 {
   "name": "BtoB Service Intro",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "标题",
-      "default": "About SONGMICS HOME"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "描述",
-      "default": "We truly believe that everyone deserves to embrace their own ideal living space and lifestyle."
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "按钮文字",
-      "default": "View More"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "按钮链接"
-    },
     {
       "type": "image_picker",
       "id": "image",

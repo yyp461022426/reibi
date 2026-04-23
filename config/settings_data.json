@@ -5389,62 +5389,56 @@
       "index_service_intro_CFymiJ": {
         "type": "index-service-intro",
         "blocks": {
-          "card_show_M9Gw9j": {
-            "type": "card-show",
+          "stat_item_1": {
+            "type": "stat_item",
             "settings": {
-              "card_title": "RETURN ON INVESTMENT",
-              "card_count": "650.00%",
-              "card_desc": "Exellent retuml Your space savings exceed the shelf cost."
+              "stat_number": "1600+",
+              "stat_label": "Employee"
             }
           },
-          "card_show_6ctDhU": {
-            "type": "card-show",
+          "stat_item_2": {
+            "type": "stat_item",
             "settings": {
-              "card_title": "AVERAGE SPACE SAVED",
-              "card_count": "25.0 sqft",
-              "card_desc": "Additional usable space in your home."
+              "stat_number": "20M+",
+              "stat_label": "Families"
             }
           },
-          "card_show_KN3EyY": {
-            "type": "card-show",
+          "stat_item_3": {
+            "type": "stat_item",
             "settings": {
-              "card_title": "MONETARY VALUE",
-              "card_count": "$3,750",
-              "card_desc": "Value of the spaceyou save"
+              "stat_number": "70+",
+              "stat_label": "Countries & Regions"
+            }
+          },
+          "stat_item_4": {
+            "type": "stat_item",
+            "settings": {
+              "stat_number": "330K+ m²",
+              "stat_label": "Global Warehouse"
+            }
+          },
+          "stat_item_5": {
+            "type": "stat_item",
+            "settings": {
+              "stat_number": "1070+",
+              "stat_label": "Global Patents"
             }
           }
         },
         "block_order": [
-          "card_show_M9Gw9j",
-          "card_show_6ctDhU",
-          "card_show_KN3EyY"
+          "stat_item_1",
+          "stat_item_2",
+          "stat_item_3",
+          "stat_item_4",
+          "stat_item_5"
         ],
         "name": "Index Service Intro",
         "settings": {
-          "title": "Bulk Orders with Reibii – Starting at 7 Units",
-          "title_style": "2",
-          "title_add_desc": "Get factory-direct pricing for bulk orders. Our sales manager will reply within 12 hours.",
-          "first_url": "shopify://pages/large-order",
-          "is_bigger_card1": true,
-          "card_title_1": "Small Business Warehouse Optimization",
-          "card_desc_1": "See how Reibii Inc. doubled their storage capacity and improved",
-          "card_count_1_1": "200%",
-          "card_desc_1_1": "Capacity Increase",
-          "card_count_1_2": "50%",
-          "card_desc_1_2": "Time Saved",
-          "card_count_1_3": "2499$",
-          "card_desc_1_3": "Investment",
-          "bigger_card_link_1": "",
-          "is_bigger_card2": true,
-          "card_title_2": "From Cluttered Chaos to Organized Paradise",
-          "card_desc_2": "How transformed 2-car garage from unusable\n storage space into a functional workshop and parking area.",
-          "card_count_2_1": "75%",
-          "card_desc_2_1": "Space Saved",
-          "card_count_2_2": "I2Days",
-          "card_desc_2_2": "InstallTime",
-          "card_count_2_3": "$899",
-          "card_desc_2_3": "Total Cost",
-          "bigger_card_link_2": ""
+          "title": "About SONGMICS HOME",
+          "description": "We truly believe that everyone deserves to embrace their own ideal living space and lifestyle.",
+          "button_text": "View More",
+          "button_link": "shopify://pages/large-order",
+          "image": "shopify://shop_images/Reibii6-TierGarageStorageShelves_IdealforGarageToolRooms_OrganizedMetalShelvingSystems.webp"
         }
       }
     },

@@ -1,32 +1,39 @@
-<link rel="stylesheet" type="text/css" href="{{ 'b2b-mock-comments.css' | asset_url }}">
-{% assign anchor = section.settings.anchor %}
-<div class="b2b-mock-comments normal-floor blue-background-right anchor-content with-tab" id="{{ anchor }}">
-  <div class="container">
-    <div class="floor-title">
-      {{ section.settings.sec_title_widthout_strong -}}
-      <span class="orange-strong"> {{ section.settings.sec_title_orange_strong }}</span>
+<link rel="stylesheet" type="text/css" href="{{ 'index-service-intro.css' | asset_url }}">
+<div class="index-service-intro container index-normal-component">
+  <div class="intro-header">
+    <div class="intro-header-left">
+      {% if section.settings.title != blank %}
+        <h2 class="intro-title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="intro-desc">{{ section.settings.description }}</p>
+      {% endif %}
     </div>
-    <div class="reviews-cards">
-      {% for block in section.blocks limit: 5 -%}
-        <div class="card-item-outer">
-          <div class="card-item">
-            {{ block.settings.review_image | image_url: width: 240, height: 240 | image_tag: class: 'card-img' }}
-            <div class="strat-box">
-              <ul class="start-list">
-                <li>{%- render 'icon-fill-start' -%}</li>
-                <li>{%- render 'icon-fill-start' -%}</li>
-                <li>{%- render 'icon-fill-start' -%}</li>
-                <li>{%- render 'icon-fill-start' -%}</li>
-                <li>{%- render 'icon-fill-start' -%}</li>
-              </ul>
-            </div>
-            <div class="review-data">
-              <p class="review-content">
-                {{ block.settings.review_content }}
-              </p>
-              <span class="customer">——{{ block.settings.customer }}</span>
-            </div>
-          </div>
+    <div class="intro-header-right">
+      {% if section.settings.button_text != blank %}
+        <a
+          class="custom-action-btn action-full-btn intro-view-more"
+          href="{{ section.settings.button_link | default: '/pages/large-order#Contact' }}"
+        >{{ section.settings.button_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="intro-image-wrap">
+    {% if section.settings.image != blank %}
+      <img
+        class="intro-image"
+        src="{{ section.settings.image | image_url: width: 1600 }}"
+        alt="{{ section.settings.image.alt | default: section.settings.title }}"
+        loading="lazy"
+        width="1600"
+        height="{{ 1600 | divided_by: section.settings.image.aspect_ratio | round }}"
+      >
+    {% endif %}
+    <div class="intro-stats">
+      {% for block in section.blocks %}
+        <div class="stat-item" {{ block.shopify_attributes }}>
+          <div class="stat-number">{{ block.settings.stat_number }}</div>
+          <div class="stat-label">{{ block.settings.stat_label }}</div>
         </div>
       {% endfor %}
     </div>
@@ -35,50 +42,97 @@
 
 {% schema %}
 {
-  "name": "BtoB Mock Comments",
+  "name": "BtoB Service Intro",
   "settings": [
     {
       "type": "text",
-      "id": "anchor",
-      "label": "AnchorName"
+      "id": "title",
+      "label": "标题",
+      "default": "About SONGMICS HOME"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "描述",
+      "default": "We truly believe that everyone deserves to embrace their own ideal living space and lifestyle."
     },
     {
       "type": "text",
-      "id": "sec_title_widthout_strong",
-      "label": "title widthout strong"
+      "id": "button_text",
+      "label": "按钮文字",
+      "default": "View More"
     },
     {
-      "type": "text",
-      "id": "sec_title_orange_strong",
-      "label": "title width orange strong"
+      "type": "url",
+      "id": "button_link",
+      "label": "按钮链接"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "背景图片"
     }
   ],
   "blocks": [
     {
-      "name": "Card Blocks",
-      "type": "comment-card",
+      "name": "统计项",
+      "type": "stat_item",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "review_image",
-          "label": "Review Image"
+          "type": "text",
+          "id": "stat_number",
+          "label": "数字",
+          "default": "1600+"
         },
         {
           "type": "text",
-          "id": "customer",
-          "label": "Customer Name"
-        },
-        {
-          "type": "text",
-          "id": "review_content",
-          "label": "Review Content"
+          "id": "stat_label",
+          "label": "描述",
+          "default": "Employee"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "BtoB Mock Comments"
+      "name": "BtoB Service Intro",
+      "blocks": [
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "1600+",
+            "stat_label": "Employee"
+          }
+        },
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "20M+",
+            "stat_label": "Families"
+          }
+        },
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "70+",
+            "stat_label": "Countries & Regions"
+          }
+        },
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "330K+ m²",
+            "stat_label": "Global Warehouse"
+          }
+        },
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "1070+",
+            "stat_label": "Global Patents"
+          }
+        }
+      ]
     }
   ]
 }

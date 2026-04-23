@@ -231,40 +231,55 @@
     "b2b_mock_comments_b2bMkC": {
       "type": "b2b-mock-comments",
       "blocks": {
-        "comment_card_46P8UV": {
-          "type": "comment-card",
+        "stat_item_1": {
+          "type": "stat_item",
           "settings": {
-            "review_image": "shopify://shop_images/b2b_review_1.jpg",
-            "customer": "Gloria Lee",
-            "review_content": "I am very pleased with the heavy-duty shelving from REIBII. I purchased 200 units for use in my warehouse, and they are extremely sturdy and easy to install. We were able to install all of them in under half a day. The shelves seem to have an anti-rust coating, though I haven't used them for an extended period yet. I am hopeful that they will prove to be as corrosion-resistant as described"
+            "stat_number": "1600+",
+            "stat_label": "Employee"
           }
         },
-        "comment_card_zFc84F": {
-          "type": "comment-card",
+        "stat_item_2": {
+          "type": "stat_item",
           "settings": {
-            "review_image": "shopify://shop_images/b2b_review_2.jpg",
-            "customer": "Lisa T., Facilities Manager",
-            "review_content": "I purchased 250 units of the REIBII shelving for our manufacturing plant. The strength and easy assembly made this a great decision for our business. It's been a pleasure working with their team, and we're already planning future orders as our operations grow."
+            "stat_number": "20M+",
+            "stat_label": "Families"
           }
         },
-        "comment_card_P4BrjC": {
-          "type": "comment-card",
+        "stat_item_3": {
+          "type": "stat_item",
           "settings": {
-            "review_image": "shopify://shop_images/b2b_review_3.png",
-            "customer": "Mark L., Warehouse Manager",
-            "review_content": "REIBII's shelving solutions have been instrumental in helping us organize our warehouse. We bought 1,500 units, and they have delivered both in terms of quality and reliability. The shelves are solid, and the customer service is top-notch. Highly recommend for large-scale operations!"
+            "stat_number": "70+",
+            "stat_label": "Countries & Regions"
+          }
+        },
+        "stat_item_4": {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "330K+ m²",
+            "stat_label": "Global Warehouse"
+          }
+        },
+        "stat_item_5": {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "1070+",
+            "stat_label": "Global Patents"
           }
         }
       },
       "block_order": [
-        "comment_card_46P8UV",
-        "comment_card_zFc84F",
-        "comment_card_P4BrjC"
+        "stat_item_1",
+        "stat_item_2",
+        "stat_item_3",
+        "stat_item_4",
+        "stat_item_5"
       ],
       "settings": {
-        "anchor": "reviews",
-        "sec_title_widthout_strong": "Business Client",
-        "sec_title_orange_strong": "Reviews"
+        "title": "About SONGMICS HOME",
+        "description": "We truly believe that everyone deserves to embrace their own ideal living space and lifestyle.",
+        "button_text": "View More",
+        "button_link": "",
+        "image": ""
       }
     },
     "b2b_third_floor_tjxnQf": {

@@ -1,109 +1,39 @@
 <link rel="stylesheet" type="text/css" href="{{ 'index-service-intro.css' | asset_url }}">
 <div class="index-service-intro container index-normal-component">
-  <div class="deals-box">
-    {% if section.settings.title and section.settings.title != '' %}
-      <h2 class="main-page-title {% if section.settings.title_add_desc %}with-desc{% endif %}">
-        {% if section.settings.title_style == '1' %}
-          <span class="small-title">{{ section.settings.title | upcase }}</span>
-          <span class="text-shadow">{{ section.settings.title | upcase }}</span>
-        {% else %}
-          <span class="small-title2">{{ section.settings.title }}</span>
-        {% endif %}
-      </h2>
-      {% if section.settings.title_add_desc %}
-        <div class="desc-add">
-          {{ section.settings.title_add_desc }}
-        </div>
+  <div class="intro-header">
+    <div class="intro-header-left">
+      {% if section.settings.title != blank %}
+        <h2 class="intro-title">{{ section.settings.title }}</h2>
       {% endif %}
-    {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="intro-desc">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+    <div class="intro-header-right">
+      {% if section.settings.button_text != blank %}
+        <a
+          class="custom-action-btn action-full-btn intro-view-more"
+          href="{{ section.settings.button_link | default: '/pages/large-order#Contact' }}"
+        >{{ section.settings.button_text }}</a>
+      {% endif %}
+    </div>
   </div>
-  <div class="content-box">
-    <div class="bigger-card-content">
-      {% if section.settings.is_bigger_card1 %}
-        <div class="bigger-card-item">
-          <div class="bigger-card-header">
-            <div class="card-title">{{ section.settings.card_title_1 }}</div>
-            <div class="card-desc">
-              {{ section.settings.card_desc_1 }}
-            </div>
-          </div>
-          <div
-            class="bigger-card-count"
-            style="{% if section.settings.bigger_card_link_1 == blank %}margin-bottom: 0;{% endif %}"
-          >
-            <div class="count-item">
-              <div class="count">{{ section.settings.card_count_1_1 }}</div>
-              <div class="count-desc">{{ section.settings.card_desc_1_1 }}</div>
-            </div>
-            <div class="count-item">
-              <div class="count">{{ section.settings.card_count_1_2 }}</div>
-              <div class="count-desc">{{ section.settings.card_desc_1_2 }}</div>
-            </div>
-            <div class="count-item">
-              <div class="count">{{ section.settings.card_count_1_3 }}</div>
-              <div class="count-desc">{{ section.settings.card_desc_1_3 }}</div>
-            </div>
-          </div>
-          {% if section.settings.bigger_card_link_1 != blank %}
-            <div class="started-now">
-              <a class="start-link custom-action-btn action-empty-btn" href="{{ section.settings.bigger_card_link_1 }}"
-                >Get Started Now!</a
-              >
-            </div>
-          {% endif %}
-        </div>
-      {% endif %}
-      {% if section.settings.is_bigger_card2 %}
-        <div class="bigger-card-item">
-          <div class="bigger-card-header">
-            <div class="card-title">{{ section.settings.card_title_2 }}</div>
-            <div class="card-desc">
-              {{ section.settings.card_desc_2 }}
-            </div>
-          </div>
-          <div
-            class="bigger-card-count"
-            style="{% if section.settings.bigger_card_link_2 == blank %}margin-bottom: 0;{% endif %}"
-          >
-            <div class="count-item">
-              <div class="count">{{ section.settings.card_count_2_1 }}</div>
-              <div class="count-desc">{{ section.settings.card_desc_2_1 }}</div>
-            </div>
-            <div class="count-item">
-              <div class="count">{{ section.settings.card_count_2_2 }}</div>
-              <div class="count-desc">{{ section.settings.card_desc_2_2 }}</div>
-            </div>
-            <div class="count-item">
-              <div class="count">{{ section.settings.card_count_2_3 }}</div>
-              <div class="count-desc">{{ section.settings.card_desc_2_3 }}</div>
-            </div>
-          </div>
-          {% if section.settings.bigger_card_link_2 != blank %}
-            <div class="started-now">
-              <a class="start-link custom-action-btn action-empty-btn" href="{{ section.settings.bigger_card_link_2 }}"
-                >Get Started Now!</a
-              >
-            </div>
-          {% endif %}
-        </div>
-      {% endif %}
-    </div>
-    <div class="more-info">
-      <a class="custom-action-btn action-full-btn" href="{{ section.settings.first_url }}">MORE INFO!</a>
-    </div>
-    <div
-      class="sm-card-swiper line-dots"
-      data-loader-script="{{ 'halo.slide-custom.js' | asset_url }}"
-      slide-custom-init
-      data-mb-dots="true"
-      data-arrow-enable="true"
-      data-mb-slides-to-show="2"
-    >
-      {% for block in section.blocks limit: 3 %}
-        <div class="card-item">
-          <div class="card-title">{{ block.settings.card_title }}</div>
-          <div class="card-count">{{ block.settings.card_count }}</div>
-          <div class="card-desc">{{ block.settings.card_desc }}</div>
+  <div class="intro-image-wrap">
+    {% if section.settings.image != blank %}
+      <img
+        class="intro-image"
+        src="{{ section.settings.image | image_url: width: 1600 }}"
+        alt="{{ section.settings.image.alt | default: section.settings.title }}"
+        loading="lazy"
+        width="1600"
+        height="{{ 1600 | divided_by: section.settings.image.aspect_ratio | round }}"
+      >
+    {% endif %}
+    <div class="intro-stats">
+      {% for block in section.blocks %}
+        <div class="stat-item" {{ block.shopify_attributes }}>
+          <div class="stat-number">{{ block.settings.stat_number }}</div>
+          <div class="stat-label">{{ block.settings.stat_label }}</div>
         </div>
       {% endfor %}
     </div>
@@ -117,171 +47,92 @@
     {
       "type": "text",
       "id": "title",
-      "label": "Section title"
-    },
-    {
-      "type": "radio",
-      "id": "title_style",
-      "label": "Title Style",
-      "options": [
-        {
-          "value": "1",
-          "label": "Title Style1(叠影)"
-        },
-        {
-          "value": "2",
-          "label": "Title Style1(单色)"
-        }
-      ],
-      "default": "1"
-    },
-    {
-      "type": "text",
-      "id": "title_add_desc",
-      "label": "标题下方的描述"
-    },
-    {
-      "type": "url",
-      "id": "first_url",
-      "label": "More Info Link To"
-    },
-    {
-      "type": "header",
-      "content": "大卡片1=============="
-    },
-    {
-      "type": "checkbox",
-      "id": "is_bigger_card1",
-      "label": "是否展示大卡片1?",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "card_title_1",
-      "label": "大卡片1标题"
+      "label": "标题",
+      "default": "About SONGMICS HOME"
     },
     {
       "type": "textarea",
-      "id": "card_desc_1",
-      "label": "大卡片1描述"
+      "id": "description",
+      "label": "描述",
+      "default": "We truly believe that everyone deserves to embrace their own ideal living space and lifestyle."
     },
     {
       "type": "text",
-      "id": "card_count_1_1",
-      "label": "大卡片1的第一个计数"
-    },
-    {
-      "type": "text",
-      "id": "card_desc_1_1",
-      "label": "大卡片1的第一个计数下的描述"
-    },
-    {
-      "type": "text",
-      "id": "card_count_1_2",
-      "label": "大卡片1的第二个计数"
-    },
-    {
-      "type": "text",
-      "id": "card_desc_1_2",
-      "label": "大卡片1的第二个计数下的描述"
-    },
-    {
-      "type": "text",
-      "id": "card_count_1_3",
-      "label": "大卡片1的第三个计数"
-    },
-    {
-      "type": "text",
-      "id": "card_desc_1_3",
-      "label": "大卡片1的第三个计数下的描述"
+      "id": "button_text",
+      "label": "按钮文字",
+      "default": "View More"
     },
     {
       "type": "url",
-      "id": "bigger_card_link_1",
-      "label": "大卡片1的链接"
+      "id": "button_link",
+      "label": "按钮链接"
     },
     {
-      "type": "header",
-      "content": "大卡片2=============="
-    },
-    {
-      "type": "checkbox",
-      "id": "is_bigger_card2",
-      "label": "是否展示大卡片2?",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "card_title_2",
-      "label": "大卡片2标题"
-    },
-    {
-      "type": "textarea",
-      "id": "card_desc_2",
-      "label": "大卡片2描述"
-    },
-    {
-      "type": "text",
-      "id": "card_count_2_1",
-      "label": "大卡片2的第一个计数"
-    },
-    {
-      "type": "text",
-      "id": "card_desc_2_1",
-      "label": "大卡片2的第一个计数下的描述"
-    },
-    {
-      "type": "text",
-      "id": "card_count_2_2",
-      "label": "大卡片2的第二个计数"
-    },
-    {
-      "type": "text",
-      "id": "card_desc_2_2",
-      "label": "大卡片2的第二个计数下的描述"
-    },
-    {
-      "type": "text",
-      "id": "card_count_2_3",
-      "label": "大卡片2的第三个计数"
-    },
-    {
-      "type": "text",
-      "id": "card_desc_2_3",
-      "label": "大卡片2的第三个计数下的描述"
-    },
-    {
-      "type": "url",
-      "id": "bigger_card_link_2",
-      "label": "大卡片2的链接"
+      "type": "image_picker",
+      "id": "image",
+      "label": "背景图片"
     }
   ],
   "blocks": [
     {
-      "name": "Every block",
-      "type": "card-show",
+      "name": "统计项",
+      "type": "stat_item",
       "settings": [
         {
           "type": "text",
-          "id": "card_title",
-          "label": "Card Title"
+          "id": "stat_number",
+          "label": "数字",
+          "default": "1600+"
         },
         {
-          "type": "textarea",
-          "id": "card_count",
-          "label": "Card Count"
-        },
-        {
-          "type": "textarea",
-          "id": "card_desc",
-          "label": "卡片描述"
+          "type": "text",
+          "id": "stat_label",
+          "label": "描述",
+          "default": "Employee"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Index Service Intro"
+      "name": "Index Service Intro",
+      "blocks": [
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "1600+",
+            "stat_label": "Employee"
+          }
+        },
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "20M+",
+            "stat_label": "Families"
+          }
+        },
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "70+",
+            "stat_label": "Countries & Regions"
+          }
+        },
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "330K+ m²",
+            "stat_label": "Global Warehouse"
+          }
+        },
+        {
+          "type": "stat_item",
+          "settings": {
+            "stat_number": "1070+",
+            "stat_label": "Global Patents"
+          }
+        }
+      ]
     }
   ]
 }

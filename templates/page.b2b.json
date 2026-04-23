@@ -234,28 +234,28 @@
         "stat_item_iLAmnK": {
           "type": "stat_item",
           "settings": {
-            "stat_number": "200%",
+            "stat_number": "200%+",
             "stat_label": "Capacity Increase"
           }
         },
         "stat_item_2": {
           "type": "stat_item",
           "settings": {
-            "stat_number": "50%",
+            "stat_number": "50%+",
             "stat_label": "Time Saved"
           }
         },
         "stat_item_3": {
           "type": "stat_item",
           "settings": {
-            "stat_number": "I2Days",
+            "stat_number": "I2Days+",
             "stat_label": "InstallTime"
           }
         },
         "stat_item_4": {
           "type": "stat_item",
           "settings": {
-            "stat_number": "75%",
+            "stat_number": "75%+",
             "stat_label": "Space Saved"
           }
         }
@@ -267,7 +267,7 @@
         "stat_item_4"
       ],
       "settings": {
-        "image": "shopify://shop_images/pic1.png"
+        "image": "shopify://shop_images/bg_2026_04_23.jpg"
       }
     },
     "b2b_third_floor_tjxnQf": {

@@ -18,6 +18,7 @@
   background: #F5F9FF;
   position: relative;
   overflow: hidden;
+  height: 50%;
 }
 .index-before-after .card-item::before{
     content: "";

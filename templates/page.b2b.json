@@ -236,7 +236,7 @@
           "settings": {
             "review_image": "shopify://shop_images/b2b_review_1.jpg",
             "customer": "Gloria Lee",
-            "review_content": "I am very pleased with the heavy-duty shelving from REIBII. I purchased 200 units for use in my warehouse, and they are extremely sturdy and easy to install. We were able to install all of them in under half a day. The shelves seem to have an anti-rust coating, though I haven't used them for an extended period yet. I am hopeful that they will prove to be as corrosion-resistant as described"
+            "review_content": "<p>I am very pleased with the heavy-duty shelving from REIBII. I purchased 200 units for use in my warehouse, and they are extremely sturdy and easy to install. We were able to install all of them in under half a day. The shelves seem to have an anti-rust coating, though I haven't used them for an extended period yet. I am hopeful that they will prove to be as corrosion-resistant as described</p>"
           }
         },
         "comment_card_zFc84F": {
@@ -244,7 +244,7 @@
           "settings": {
             "review_image": "shopify://shop_images/b2b_review_2.jpg",
             "customer": "Lisa T., Facilities Manager",
-            "review_content": "I purchased 250 units of the REIBII shelving for our manufacturing plant. The strength and easy assembly made this a great decision for our business. It's been a pleasure working with their team, and we're already planning future orders as our operations grow."
+            "review_content": "<p>I purchased 250 units of the REIBII shelving for our manufacturing plant. The strength and easy assembly made this a great decision for our business. It's been a pleasure working with their team, and we're already planning future orders as our operations grow.</p>"
           }
         },
         "comment_card_P4BrjC": {
@@ -252,7 +252,7 @@
           "settings": {
             "review_image": "shopify://shop_images/b2b_review_3.png",
             "customer": "Mark L., Warehouse Manager",
-            "review_content": "REIBII's shelving solutions have been instrumental in helping us organize our warehouse. We bought 1,500 units, and they have delivered both in terms of quality and reliability. The shelves are solid, and the customer service is top-notch. Highly recommend for large-scale operations!"
+            "review_content": "<p>REIBII's shelving solutions have been instrumental in helping us organize our warehouse. We bought 1,500 units, and they have delivered both in terms of quality and reliability. The shelves are solid, and the customer service is top-notch. Highly recommend for large-scale operations!</p>"
           }
         }
       },
